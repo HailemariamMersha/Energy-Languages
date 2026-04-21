@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o fannkuchredux.go_run
+LANG    = Go
+TEST    = fannkuch-redux
+SOURCE  = fannkuchredux.go
+OUTPUT  = fannkuch-redux.go_run
+ARG     = 12
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.go_run 12" Go fannkuch-redux
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./fannkuchredux.go_run 12
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
 
-mem:
-	/usr/bin/time -v ./fannkuchredux.go_run 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fannkuchredux.go_run 12
+include ../../perfarena.mk

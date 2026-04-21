@@ -1,16 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 -std=c++11 fasta.gpp-5.c++ -o fasta.gpp-5.c++.o &&  /usr/bin/g++ fasta.gpp-5.c++.o -o fasta.gpp-5.gpp_run -lpthread 
+LANG    = C++
+TEST    = fasta
+SOURCE  = fasta.gpp-5.c++
+OUTPUT  = fasta.gpp_run
+ARG     = 11
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.gpp-5.gpp_run 25000000" C++ fasta
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-run:
-	./fasta.gpp-5.gpp_run 25000000
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-mem:
-	/usr/bin/time -v ./fasta.gpp-5.gpp_run 25000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.gpp-5.gpp_run 25000000
-
+include ../../perfarena.mk

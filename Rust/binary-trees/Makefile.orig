@@ -1,0 +1,21 @@
+LANG    = Rust
+TEST    = binary-trees
+SOURCE  = binarytrees.rs
+OUTPUT  = binarytrees.rust_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
+
+# rustc respects --target; PerfArena sets CARGO_BUILD_TARGET when
+# cross-compiling for the measurement host. Falls back to the
+# default host target otherwise.
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
+
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
+
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
+

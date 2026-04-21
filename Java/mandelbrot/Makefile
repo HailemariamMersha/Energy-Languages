@@ -1,15 +1,16 @@
-compile:
-	cp mandelbrot.java-2.java mandelbrot.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  mandelbrot.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   mandelbrot 16000" Java mandelbrot
+LANG    = Java
+TEST    = mandelbrot
+SOURCE  = mandelbrot.java-2.java
+OUTPUT  = mandelbrot.class
+ARG     = 16000
+RUN_CMD = java mandelbrot $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   mandelbrot 16000
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   mandelbrot 16000
+COMPILE_CMD = cp $(SOURCE) mandelbrot.java && $(JAVAC) -d . mandelbrot.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   mandelbrot 16000
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
+
+include ../../perfarena.mk

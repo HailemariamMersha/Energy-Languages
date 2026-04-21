@@ -1,14 +1,13 @@
-compile:
+LANG        = PHP
+TEST        = mandelbrot
+SOURCE      = mandelbrot.php-3.php
+OUTPUT      = mandelbrot.php
+ARG         = 16000
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php  mandelbrot.php-3.php 16000" PHP mandelbrot
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
 
-run:
-	php  mandelbrot.php-3.php 16000
-
-mem:
-	/usr/bin/time -v php  mandelbrot.php-3.php 16000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes php  mandelbrot.php-3.php 16000
+include ../../perfarena.mk

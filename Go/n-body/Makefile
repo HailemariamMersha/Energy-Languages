@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o nbody.go_run
+LANG    = Go
+TEST    = n-body
+SOURCE  = nbody.go
+OUTPUT  = n-body.go_run
+ARG     = 50000000
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.go_run 50000000" Go n-body
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./nbody.go_run 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-mem:
-	/usr/bin/time -v ./nbody.go_run 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.go_run 50000000
+include ../../perfarena.mk

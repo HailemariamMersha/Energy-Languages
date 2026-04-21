@@ -1,13 +1,16 @@
-compile:
-	cp mandelbrot.typescript mandelbrot.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  mandelbrot.ts
+LANG        = TypeScript
+TEST        = mandelbrot
+SOURCE      = mandelbrot.ts
+OUTPUT      = mandelbrot.js
+ARG         = 16000
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict mandelbrot.js 16000" TypeScript mandelbrot
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict mandelbrot.js 16000
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
+
+include ../../perfarena.mk

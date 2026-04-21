@@ -1,15 +1,23 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs mandelbrot.rs -o mandelbrot.rust-4.rust_run
+LANG    = Rust
+TEST    = mandelbrot
+SOURCE  = mandelbrot.rs
+OUTPUT  = mandelbrot.rust_run
+ARG     = 16
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.rust-4.rust_run 16000" Rust mandelbrot
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./mandelbrot.rust-4.rust_run 16000
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v  ./mandelbrot.rust-4.rust_run 16000
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./mandelbrot.rust-4.rust_run 16000
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
+
+include ../../perfarena.mk

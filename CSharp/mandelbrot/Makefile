@@ -1,16 +1,14 @@
-compile:
-	cp mandelbrot.csharpcore-5.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+LANG    = CSharp
+TEST    = mandelbrot
+SOURCE  = Program.cs
+OUTPUT  = bin/Release/mandelbrot
+ARG     = 16000
+RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 16000" CSharp mandelbrot
+COMPILE_CMD = dotnet build --configuration Release --nologo
 
-run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 16000
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
 
-mem:
-	/usr/bin/time -v /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 16000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 16000
+include ../../perfarena.mk

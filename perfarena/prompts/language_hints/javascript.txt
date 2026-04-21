@@ -1,0 +1,8 @@
+Target modern Node.js (v20 or later). The program will be invoked
+as `node <script>.js <N>` and may read from stdin via
+`process.stdin` / `fs.readFileSync("/dev/stdin")` for benchmarks
+that require it. Prefer typed arrays (`Uint8Array`, `Int32Array`,
+`Float64Array`) for numeric work to avoid the overhead of generic
+boxed arrays. Do not require any npm packages; the file must run
+with a bare Node install. Use `process.stdout.write` rather than
+`console.log` in hot loops to avoid per-call formatting overhead.

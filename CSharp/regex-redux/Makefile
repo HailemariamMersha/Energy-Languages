@@ -1,16 +1,14 @@
-compile:
-	cp regexredux.csharpcore-4.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+LANG    = CSharp
+TEST    = regex-redux
+SOURCE  = Program.cs
+OUTPUT  = bin/Release/regex-redux
+ARG     = 21
+RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt" CSharp regex-redux
+COMPILE_CMD = dotnet build --configuration Release --nologo
 
-run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 0 < ../../regexredux-input5000000.txt
+include ../../perfarena.mk

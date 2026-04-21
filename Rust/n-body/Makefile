@@ -1,15 +1,22 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -C llvm-args='-unroll-threshold=500' nbody.rs -o nbody.rust-2.rust_run
+LANG    = Rust
+TEST    = n-body
+SOURCE  = nbody.rs
+OUTPUT  = n-body.rust_run
+ARG     = 500
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.rust-2.rust_run 50000000" Rust n-body
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./nbody.rust-2.rust_run 50000000
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v ./nbody.rust-2.rust_run 50000000
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.rust-2.rust_run 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
+
+include ../../perfarena.mk

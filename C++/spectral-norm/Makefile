@@ -1,14 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse2 -fopenmp -mfpmath=sse -msse2 spectralnorm.gpp-6.c++ -o spectralnorm.gpp-6.c++.o &&  /usr/bin/g++ spectralnorm.gpp-6.c++.o -o spectralnorm.gpp-6.gpp_run -fopenmp
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.gpp-6.gpp_run 5500" C++ spectral-norm
+LANG    = C++
+TEST    = spectral-norm
+SOURCE  = spectralnorm.gpp-6.c++
+OUTPUT  = spectral-norm.gpp_run
+ARG     = 5500
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./spectralnorm.gpp-6.gpp_run 5500
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./spectralnorm.gpp-6.gpp_run 5500
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./spectralnorm.gpp-6.gpp_run 5500
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
+
+include ../../perfarena.mk

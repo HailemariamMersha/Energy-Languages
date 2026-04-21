@@ -1,0 +1,26 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+  File "/Users/rar9993/repos/research/perfarena/Energy-Languages/Python/k-nucleotide/knucleotide.python3-3.python3", line 28, in __call__
+    sequence = lean_buffer[lean_key]
+               ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 0
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rar9993/repos/research/perfarena/Energy-Languages/Python/k-nucleotide/knucleotide.python3-3.python3", line 186, in <module>
+    main()
+    ~~~~^^
+  File "/Users/rar9993/repos/research/perfarena/Energy-Languages/Python/k-nucleotide/knucleotide.python3-3.python3", line 179, in main
+    results = list(chain(*async_results.get()))
+                          ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+KeyError: 0

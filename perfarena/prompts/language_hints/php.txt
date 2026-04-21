@@ -1,0 +1,7 @@
+Target PHP 8.2 or later, invoked as `php <script>.php <N>`. Enable
+`declare(strict_types=1);` at the top of the file. Prefer
+`SplFixedArray` or plain PHP arrays for numeric work, depending on
+access pattern. Use `fwrite(STDOUT, ...)` or `echo` with a
+pre-built string rather than per-element `echo` in hot loops. Do
+not rely on Composer or any third-party package; the file must run
+under a stock PHP CLI install.

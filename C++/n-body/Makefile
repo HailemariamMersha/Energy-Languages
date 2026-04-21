@@ -1,16 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 --std=c++11 nbody.gpp-8.c++ -o nbody.gpp-8.c++.o &&  /usr/bin/g++ nbody.gpp-8.c++.o -o nbody.gpp-8.gpp_run -fopenmp
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./nbody.gpp-8.gpp_run 50000000" C++ n-body
+LANG    = C++
+TEST    = n-body
+SOURCE  = nbody.gpp-8.c++
+OUTPUT  = n-body.gpp_run
+ARG     = 11
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./nbody.gpp-8.gpp_run 50000000
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./nbody.gpp-8.gpp_run 50000000
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./nbody.gpp-8.gpp_run 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-
+include ../../perfarena.mk

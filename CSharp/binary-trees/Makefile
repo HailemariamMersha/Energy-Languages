@@ -1,16 +1,13 @@
-compile:
-	cp binarytrees.csharpcore-4.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+LANG    = CSharp
+TEST    = binary-trees
+SOURCE  = Program.cs
+OUTPUT  = bin/Release/binary-trees
+ARG     = 21
+RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 21" CSharp binary-trees
+COMPILE_CMD = dotnet build --configuration Release --nologo
 
-run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-mem:
-	/usr/bin/time -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 21
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 21
+include ../../perfarena.mk

@@ -1,11 +1,13 @@
-compile:
-	cp regexredux.python3 regexredux.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO regexredux.py 0 < ../../regexredux-input5000000.txt" Python regex-redux
+LANG        = Python
+TEST        = regex-redux
+SOURCE      = regexredux.python3
+OUTPUT      = regexredux.py
+ARG         = 21
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO regexredux.py 0 < ../../regexredux-input5000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO regexredux.py 0 < ../../regexredux-input5000000.txt
+include ../../perfarena.mk

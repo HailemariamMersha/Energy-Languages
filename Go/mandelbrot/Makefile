@@ -1,15 +1,14 @@
-compile:
-	/usr/bin/go build -o mandelbrot.go-3.go_run
+LANG    = Go
+TEST    = mandelbrot
+SOURCE  = mandelbrot.go-3.go
+OUTPUT  = mandelbrot.go_run
+ARG     = 16000
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./mandelbrot.go-3.go_run 16000" Go mandelbrot
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./mandelbrot.go-3.go_run 16000
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
 
-mem:
-	/usr/bin/time -v ./mandelbrot.go-3.go_run 16000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./mandelbrot.go-3.go_run 16000
+include ../../perfarena.mk

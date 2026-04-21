@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "perfarena"
+version = "0.1.0"
+description = "PerfArena: measurement and LLM-code-generation pipeline built on a fork of greensoftwarelab/Energy-Languages."
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "PerfArena" }]
+dependencies = [
+  "langchain-core>=0.3",
+  "langchain-openai>=0.2",
+  "langchain-anthropic>=0.2",
+  "langchain-google-genai>=2.0",
+  "langchain-community>=0.3",
+  "pydantic>=2.5",
+  "pyyaml>=6.0",
+  "paramiko>=3.4",
+  "psutil>=5.9",
+  "typer>=0.12",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+codecarbon = [
+  "codecarbon>=2.3",
+]
+dev = [
+  "pytest>=8",
+  "ruff>=0.5",
+  "codecarbon>=2.3",
+]
+
+[project.scripts]
+perfarena = "perfarena.cli:app"
+perfarena-agent = "perfarena.generation.agent:main"
+perfarena-cc-runner = "perfarena.runners.codecarbon_runner:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["perfarena"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"perfarena/prompts" = "perfarena/prompts"
+"perfarena/configs" = "perfarena/configs"
+"perfarena/tools" = "perfarena/tools"

@@ -1,0 +1,27 @@
+Implement the "{problem_name}" benchmark from the Computer Language
+Benchmarks Game in {language_name}.
+
+Problem description:
+{problem_description}
+
+Input specification:
+{input_spec}
+
+Output specification:
+{output_spec}
+
+Invocation:
+{invocation_hint}
+
+The reference default argument is N = {default_argument}. The
+program must produce output that matches the reference byte-for-byte
+(including whitespace, line endings, and numeric formatting).
+
+Algorithmic context (for orientation only):
+{algorithm_class}
+
+Language-specific guidance:
+{language_hint}
+
+Respond with a single fenced code block containing the complete
+source file and nothing else.

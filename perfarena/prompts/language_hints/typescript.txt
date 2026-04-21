@@ -1,0 +1,8 @@
+Target TypeScript with modern Node.js (v20 or later). The program
+will be compiled with `tsc` (strict mode enabled) and run under
+Node. Do not rely on non-standard TypeScript runtimes such as Deno
+or Bun. Prefer typed arrays for numeric work; keep type annotations
+explicit where they help performance (for example, when narrowing
+a `number` to `i32`-like semantics). Avoid importing npm packages;
+the file must build from a single `.ts` source. Stdin-reading
+benchmarks can use `fs.readFileSync("/dev/stdin")`.

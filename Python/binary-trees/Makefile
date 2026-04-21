@@ -1,11 +1,12 @@
-compile:
-	cp binarytrees.python3 binarytrees.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO binarytrees.py 21" Python binary-trees
+LANG        = Python
+TEST        = binary-trees
+SOURCE      = binarytrees.python3
+OUTPUT      = binarytrees.py
+ARG         = 21
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO binarytrees.py 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO binarytrees.py 21
+include ../../perfarena.mk

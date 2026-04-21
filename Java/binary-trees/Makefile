@@ -1,15 +1,15 @@
-compile:
-	cp binarytrees.java-7.java binarytrees.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  binarytrees.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java binarytrees 21" Java binary-trees
+LANG    = Java
+TEST    = binary-trees
+SOURCE  = binarytrees.java-7.java
+OUTPUT  = binarytrees.class
+ARG     = 21
+RUN_CMD = java binarytrees $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java binarytrees 21
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v/usr/local/src/jdk1.8.0_121/bin/ java binarytrees 21
+COMPILE_CMD = cp $(SOURCE) binarytrees.java && $(JAVAC) -d . binarytrees.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java binarytrees 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
+
+include ../../perfarena.mk

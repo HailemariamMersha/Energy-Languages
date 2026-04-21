@@ -1,0 +1,9 @@
+Target Java 21 with the default HotSpot JVM. The program will be
+compiled with `javac` and invoked as `java <MainClass> <N>`. Name
+the public class to match the source filename. Prefer primitive
+arrays over boxed collections for numeric workloads. Use
+`java.io.BufferedWriter` or `java.io.PrintStream` wrapping
+`System.out` with an explicit buffer, since unbuffered output
+dominates the runtime of several CLBG problems. Do not depend on
+any third-party library; only the standard library and
+`java.util.concurrent` are available.

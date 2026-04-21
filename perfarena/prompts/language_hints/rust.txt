@@ -1,0 +1,8 @@
+Target stable Rust (edition 2021 or 2024), compiled with
+`rustc -O` or equivalent release-mode flags. The program will be
+invoked as `./prog <N>` and may read stdin via `std::io::stdin`.
+Prefer `Vec<T>`, slices, and iterators over index-based loops where
+it compiles to equivalent code; wrap `std::io::stdout` in a
+`BufWriter` for hot output paths. Do not depend on any crate beyond
+the standard library; the file must build from a single `.rs`
+source with no `Cargo.toml`.

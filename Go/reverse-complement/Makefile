@@ -1,15 +1,14 @@
-compile:
-	/usr/bin/go build -o revcomp.go-6.go_run
+LANG    = Go
+TEST    = reverse-complement
+SOURCE  = revcomp.go-6.go
+OUTPUT  = reverse-complement.go_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt" Go reverse-complement
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v   ./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes   ./revcomp.go-6.go_run 0 < ../../revcomp-input25000000.txt
+include ../../perfarena.mk

@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o pidigits.go-3.go_run
+LANG    = Go
+TEST    = pidigits
+SOURCE  = pidigits.go-3.go
+OUTPUT  = pidigits.go_run
+ARG     = 10000
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.go-3.go_run 10000" Go pidigits
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./pidigits.go-3.go_run 10000
+VALIDATION_N       = 27
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
 
-mem:
-	/usr/bin/time -v ./pidigits.go-3.go_run 10000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.go-3.go_run 10000
+include ../../perfarena.mk

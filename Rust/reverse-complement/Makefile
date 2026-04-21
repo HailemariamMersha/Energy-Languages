@@ -1,15 +1,23 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs revcomp.rs -o revcomp.rust-2.rust_run
+LANG    = Rust
+TEST    = reverse-complement
+SOURCE  = revcomp.rs
+OUTPUT  = reverse-complement.rust_run
+ARG     = 16
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./revcomp.rust-2.rust_run 0 < ../../revcomp-input25000000.txt" Rust reverse-complement
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./revcomp.rust-2.rust_run 0 < ../../revcomp-input25000000.txt
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v ./revcomp.rust-2.rust_run 0 < ../../revcomp-input25000000.txt
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./revcomp.rust-2.rust_run 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o binarytrees.go-2.go_run
+LANG    = Go
+TEST    = binary-trees
+SOURCE  = binarytrees.go-2.go
+OUTPUT  = binary-trees.go_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.go-2.go_run 21" Go binary-trees
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./binarytrees.go-2.go_run 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-mem:
-	/usr/bin/time -v ./binarytrees.go-2.go_run 21
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.go-2.go_run 21
+include ../../perfarena.mk

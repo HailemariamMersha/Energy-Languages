@@ -1,16 +1,10 @@
-compile:
-	cp chameneosredux.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+LANG    = CSharp
+TEST    = chameneos-redux
+SOURCE  = Program.cs
+OUTPUT  = bin/Release/chameneos-redux
+ARG     = 6000000
+RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 6000000"
+COMPILE_CMD = dotnet build --configuration Release --nologo
 
-run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 6000000
-
-mem:
-	/usr/bin/time -v /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 6000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 6000000
+include ../../perfarena.mk

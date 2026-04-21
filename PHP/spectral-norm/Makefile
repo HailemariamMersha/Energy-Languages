@@ -1,14 +1,12 @@
-compile:
+LANG        = PHP
+TEST        = spectral-norm
+SOURCE      = spectralnorm.php
+OUTPUT      = spectral-norm.php
+ARG         = 5500
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php -n  spectralnorm.php 5500" PHP spectral-norm
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
 
-run:
-	php -n  spectralnorm.php 5500
-
-mem:
-	/usr/bin/time -v php -n  spectralnorm.php 5500
-
-valgrind:
-	valgrind --tool=massif --stacks=yes php -n  spectralnorm.php 5500
+include ../../perfarena.mk

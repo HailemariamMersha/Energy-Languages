@@ -1,15 +1,22 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs spectralnorm.rs -o spectralnorm.rust-4.rust_run
+LANG    = Rust
+TEST    = spectral-norm
+SOURCE  = spectralnorm.rs
+OUTPUT  = spectral-norm.rust_run
+ARG     = 16
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.rust-4.rust_run 5500" Rust spectral-norm
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./spectralnorm.rust-4.rust_run 5500
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v ./spectralnorm.rust-4.rust_run 5500
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./spectralnorm.rust-4.rust_run 5500
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
+
+include ../../perfarena.mk

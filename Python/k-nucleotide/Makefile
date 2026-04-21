@@ -1,11 +1,13 @@
-compile:
-	cp knucleotide.python3-3.python3 knucleotide.python3-3.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO knucleotide.python3-3.py 0 < knucleotide-input25000000.txt" Python k-nucleotide
+LANG        = Python
+TEST        = k-nucleotide
+SOURCE      = knucleotide.python3-3.python3
+OUTPUT      = knucleotide.py
+ARG         = 21
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO knucleotide.python3-3.py 0 < knucleotide-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO knucleotide.python3-3.py 0 < knucleotide-input25000000.txt
+include ../../perfarena.mk

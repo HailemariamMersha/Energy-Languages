@@ -1,20 +1,15 @@
-compile:
-	cp binarytrees.typescript-2.typescript binarytrees.typescript-2.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  binarytrees.typescript-2.ts
+LANG        = TypeScript
+TEST        = binary-trees
+SOURCE      = binarytrees.typescript-2.ts
+OUTPUT      = binary-trees.js
+ARG         = 21
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict binarytrees.typescript-2.js 21" TypeScript binary-trees
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict binarytrees.typescript-2.js 21
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict binarytrees.typescript-2.js 21
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict binarytrees.typescript-2.js 21
-
+include ../../perfarena.mk

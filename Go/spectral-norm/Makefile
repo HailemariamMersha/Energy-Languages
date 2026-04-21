@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o spectralnorm.go-4.go_run
+LANG    = Go
+TEST    = spectral-norm
+SOURCE  = spectralnorm.go-4.go
+OUTPUT  = spectral-norm.go_run
+ARG     = 5500
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./spectralnorm.go-4.go_run 5500" Go spectral-norm
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./spectralnorm.go-4.go_run 5500
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
 
-mem:
-	/usr/bin/time -v  ./spectralnorm.go-4.go_run 5500
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./spectralnorm.go-4.go_run 5500
+include ../../perfarena.mk

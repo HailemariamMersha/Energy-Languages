@@ -1,15 +1,13 @@
-compile:
+LANG        = Ruby
+TEST        = mandelbrot
+SOURCE      = mandelbrot.yarv-5.yarv
+OUTPUT      = mandelbrot.rb
+ARG         = 16000
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000" Ruby mandelbrot
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
-
-mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 mandelbrot.yarv-5.yarv 16000
+include ../../perfarena.mk

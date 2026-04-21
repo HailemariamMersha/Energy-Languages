@@ -1,15 +1,12 @@
-compile:
+LANG        = Ruby
+TEST        = fannkuch-redux
+SOURCE      = fannkuchredux.yarv-2.yarv
+OUTPUT      = fannkuch-redux.rb
+ARG         = 12
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12" Ruby fannkuch-redux
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
-
-mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 fannkuchredux.yarv-2.yarv 12
+include ../../perfarena.mk

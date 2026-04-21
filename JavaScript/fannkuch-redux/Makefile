@@ -1,14 +1,12 @@
-compile:
-	cp -L fannkuchredux.node-4.node fannkuchredux.node-4.js
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node fannkuchredux.node-4.js 12" JavaScript fannkuch-redux
+LANG        = JavaScript
+TEST        = fannkuch-redux
+SOURCE      = fannkuchredux.node-4.node
+OUTPUT      = fannkuch-redux.js
+ARG         = 12
+RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node fannkuchredux.node-4.js 12
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node fannkuchredux.node-4.js 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node fannkuchredux.node-4.js 12
+include ../../perfarena.mk

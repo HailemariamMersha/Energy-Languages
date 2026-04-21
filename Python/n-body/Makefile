@@ -1,11 +1,12 @@
-compile:
-	cp nbody.python3 nbody.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO nbody.py 50000000" Python n-body
+LANG        = Python
+TEST        = n-body
+SOURCE      = nbody.python3
+OUTPUT      = nbody.py
+ARG         = 50000000
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO nbody.py 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO nbody.py 50000000
+include ../../perfarena.mk

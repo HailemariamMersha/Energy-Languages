@@ -1,16 +1,12 @@
-compile:
+LANG        = Ruby
+TEST        = spectral-norm
+SOURCE      = spectralnorm.yarv-5.yarv
+OUTPUT      = spectral-norm.rb
+ARG         = 5500
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 spectralnorm.yarv-5.yarv 5500" Ruby spectral-norm
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 spectralnorm.yarv-5.yarv 5500
-
-mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 spectralnorm.yarv-5.yarv 5500
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 spectralnorm.yarv-5.yarv 5500
-
+include ../../perfarena.mk

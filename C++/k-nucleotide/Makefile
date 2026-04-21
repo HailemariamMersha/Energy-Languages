@@ -1,14 +1,16 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++14 knucleotide.gpp-3.c++ -o knucleotide.gpp-3.c++.o &&  /usr/bin/g++ knucleotide.gpp-3.c++.o -o knucleotide.gpp-3.gpp_run -Wl,--no-as-needed -lpthread 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./knucleotide.gpp-3.gpp_run 0 < knucleotide-input25000000.txt" C++ k-nucleotide
+LANG    = C++
+TEST    = k-nucleotide
+SOURCE  = knucleotide.gpp-3.c++
+OUTPUT  = k-nucleotide.gpp_run
+ARG     = 14
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./knucleotide.gpp-3.gpp_run 0 < knucleotide-input25000000.txt
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./knucleotide.gpp-3.gpp_run 0 < knucleotide-input25000000.txt
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./knucleotide.gpp-3.gpp_run 0 < knucleotide-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

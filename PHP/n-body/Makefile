@@ -1,14 +1,12 @@
-compile:
+LANG        = PHP
+TEST        = n-body
+SOURCE      = nbody.php-3.php
+OUTPUT      = n-body.php
+ARG         = 50000000
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php -n  nbody.php-3.php 50000000" PHP n-body
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-run:
-	php -n  nbody.php-3.php 50000000
-
-mem:
-	/usr/bin/time -v  php -n  nbody.php-3.php 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  php -n  nbody.php-3.php 50000000
+include ../../perfarena.mk

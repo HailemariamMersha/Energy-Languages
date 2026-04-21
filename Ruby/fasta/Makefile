@@ -1,15 +1,12 @@
-compile:
+LANG        = Ruby
+TEST        = fasta
+SOURCE      = fasta.yarv-3.yarv
+OUTPUT      = fasta.rb
+ARG         = 25000000
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000" Ruby fasta
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
-
-mem:
-	/usr/bin/time -v  /usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/ruby/bin/ruby -W0 fasta.yarv-3.yarv 25000000
+include ../../perfarena.mk

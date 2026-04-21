@@ -1,15 +1,22 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs fasta.rs -o fasta.rust-2.rust_run
+LANG    = Rust
+TEST    = fasta
+SOURCE  = fasta.rs
+OUTPUT  = fasta.rust_run
+ARG     = 16
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.rust-2.rust_run 25000000" Rust fasta
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./fasta.rust-2.rust_run 25000000
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v ./fasta.rust-2.rust_run 25000000
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.rust-2.rust_run 25000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
+
+include ../../perfarena.mk

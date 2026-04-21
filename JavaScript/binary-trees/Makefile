@@ -1,14 +1,12 @@
-compile:
-	cp -L binarytrees.node binarytrees.js
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21" JavaScript binary-trees
+LANG        = JavaScript
+TEST        = binary-trees
+SOURCE      = binarytrees.node
+OUTPUT      = binary-trees.js
+ARG         = 21
+RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node binarytrees.js 21
+include ../../perfarena.mk

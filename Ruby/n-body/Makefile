@@ -1,15 +1,12 @@
-compile:
+LANG        = Ruby
+TEST        = n-body
+SOURCE      = nbody.yarv-2.yarv
+OUTPUT      = n-body.rb
+ARG         = 50000000
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 nbody.yarv-2.yarv 50000000" Ruby n-body
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 nbody.yarv-2.yarv 50000000
-
-mem:
-	/usr/bin/time -v /usr/local/src/ruby/bin/ruby -W0 nbody.yarv-2.yarv 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/ruby/bin/ruby -W0 nbody.yarv-2.yarv 50000000
+include ../../perfarena.mk

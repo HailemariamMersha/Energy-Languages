@@ -1,0 +1,9 @@
+Target Python 3.11 or later. Prefer the standard library; `array`,
+`bisect`, `heapq`, `itertools`, `collections`, and `struct` are all
+available. The program will be invoked as `python3 <script>.py <N>`
+and may read from stdin for the benchmarks that require it. Do not
+rely on third-party packages such as NumPy unless the benchmark
+itself is known to need vectorization, in which case note the
+dependency in a module-level comment. Avoid top-level side effects
+that run at import; put the entry point behind `if __name__ ==
+"__main__":`.

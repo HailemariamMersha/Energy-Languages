@@ -1,14 +1,12 @@
-compile:
+LANG        = PHP
+TEST        = binary-trees
+SOURCE      = binarytrees.php-5.php
+OUTPUT      = binary-trees.php
+ARG         = 21
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php -n -d memory_limit=4096M binarytrees.php-5.php 21" PHP binary-trees
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-run:
-	php -n -d memory_limit=4096M binarytrees.php-5.php 21
-
-mem:
-	/usr/bin/time -v php -n -d memory_limit=4096M binarytrees.php-5.php 21
-
-valgrind:
-	valgrind --tool=massif --stacks=yes php -n -d memory_limit=4096M binarytrees.php-5.php 21
+include ../../perfarena.mk

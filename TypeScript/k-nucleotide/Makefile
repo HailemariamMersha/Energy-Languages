@@ -1,20 +1,16 @@
-compile:
-	cp knucleotide.typescript knucleotide.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  knucleotide.ts
-	/usr/local/src/node-v7.9.0-linux-x64/lib/node_modules/babel-cli/bin/babel.js --plugins transform-es2015-modules-commonjs knucleotide.js -o knucleotide.js
+LANG        = TypeScript
+TEST        = k-nucleotide
+SOURCE      = knucleotide.ts
+OUTPUT      = k-nucleotide.js
+ARG         = 21
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict knucleotide.js 0 < knucleotide-input25000000.txt" TypeScript k-nucleotide
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict knucleotide.js 0 < knucleotide-input25000000.txt
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict knucleotide.js 0 < knucleotide-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict knucleotide.js 0 < knucleotide-input25000000.txt
+include ../../perfarena.mk

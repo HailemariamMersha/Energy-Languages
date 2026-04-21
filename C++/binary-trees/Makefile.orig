@@ -1,0 +1,15 @@
+LANG    = C++
+TEST    = binary-trees
+SOURCE  = binarytrees.gpp-9.c++
+OUTPUT  = binarytrees.gpp_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
+
+# $(CXX) is set by the PerfArena harness based on the target arch:
+# `g++` for native x86_64 builds, `aarch64-linux-gnu-g++` for
+# cross-compile to aarch64. -fopenmp is preserved for parity with
+# the original 2017 harness.
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
+
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
+

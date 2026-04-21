@@ -1,14 +1,15 @@
-compile:
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  fannkuchredux.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12" Java fannkuch-redux
+LANG    = Java
+TEST    = fannkuch-redux
+SOURCE  = fannkuchredux.java
+OUTPUT  = fannkuchredux.class
+ARG     = 12
+RUN_CMD = java fannkuchredux $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v  /usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
+COMPILE_CMD = cp $(SOURCE) fannkuchredux.java && $(JAVAC) -d . fannkuchredux.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
+
+include ../../perfarena.mk

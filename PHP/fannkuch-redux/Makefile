@@ -1,14 +1,12 @@
-compile:
+LANG        = PHP
+TEST        = fannkuch-redux
+SOURCE      = fannkuchredux.php-3.php
+OUTPUT      = fannkuch-redux.php
+ARG         = 12
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php  fannkuchredux.php-3.php 12" PHP fannkuch-redux
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
 
-run:
-	php  fannkuchredux.php-3.php 12
-
-mem:
-	/usr/bin/time -v php  fannkuchredux.php-3.php 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes php  fannkuchredux.php-3.php 12
+include ../../perfarena.mk

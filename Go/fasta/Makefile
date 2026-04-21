@@ -1,15 +1,13 @@
-compile:
-	/usr/bin/go build -o fasta.go-3.go_run
+LANG    = Go
+TEST    = fasta
+SOURCE  = fasta.go-3.go
+OUTPUT  = fasta.go_run
+ARG     = 25000000
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./fasta.go-3.go_run 25000000" Go fasta
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./fasta.go-3.go_run 25000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
 
-mem:
-	/usr/bin/time -v ./fasta.go-3.go_run 25000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./fasta.go-3.go_run 25000000
+include ../../perfarena.mk

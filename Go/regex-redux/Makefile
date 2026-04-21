@@ -1,15 +1,14 @@
-compile:
-	/usr/bin/go build -o regexredux.go-2.go_run
+LANG    = Go
+TEST    = regex-redux
+SOURCE  = regexredux.go-2.go
+OUTPUT  = regex-redux.go_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt" Go regex-redux
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
 
-run:
-	./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v ./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.go-2.go_run 0 < ../../regexredux-input5000000.txt
+include ../../perfarena.mk

@@ -1,0 +1,230 @@
+# PerfArena problem set: the 10 Computer Language Benchmarks Game
+# problems used by the greensoftwarelab/Energy-Languages harness.
+#
+# Every problem uses the same invocation contract:
+#   $(RUN_CMD)
+# which the Makefile expands to the benchmark binary/interpreter plus
+# the default argument. For the three problems that also need stdin
+# (k-nucleotide, regex-redux, reverse-complement), the Makefile
+# appends `< $(STDIN_FILE)` to $(RUN_CMD) so the harness and the
+# RAPL runner see a uniform command.
+#
+# Validation: each problem has a `validation_n` (a small N that runs
+# in <1 s) and a reference output file under `reference/outputs/`.
+# The `make validate` target compares the benchmark's stdout at
+# validation_n against the reference.
+problems:
+  - key: binary-trees
+    name: "binary-trees"
+    description: >-
+      Allocate and deallocate many binary trees to exercise memory
+      management. Build one "stretch" tree of depth N+1, one
+      long-lived tree of depth N, and for each depth d in 4, 6, ...,
+      N build 2^(N-d+4) short-lived trees of depth d. Print the
+      node-count checksums for each group.
+    input_spec: "A single non-negative integer N read as a command-line argument."
+    output_spec: |
+      stretch tree of depth N+1\t check: <count>
+      <count>\t trees of depth 4\t check: <sum>
+      ...
+      long lived tree of depth N\t check: <count>
+    default_argument: "21"
+    invocation_hint: "The program is invoked as: <prog> 21"
+    algorithm_class: "recursive allocation, globally structured"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "10"
+    reference_output: "reference/outputs/binary-trees.txt"
+    binary_output: false
+
+  - key: fannkuch-redux
+    name: "fannkuch-redux"
+    description: >-
+      Enumerate all permutations of (1..N) in a specific order and,
+      for each, compute the number of "pancake flips" needed to
+      bring 1 to the front. Report the maximum flip count and a
+      checksum that depends on the parity of the permutation index.
+    input_spec: "A single positive integer N read as a command-line argument."
+    output_spec: |
+      <checksum>
+      Pfannkuchen(N) = <max_flips>
+    default_argument: "12"
+    invocation_hint: "The program is invoked as: <prog> 12"
+    algorithm_class: "exhaustive permutation enumeration"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "7"
+    reference_output: "reference/outputs/fannkuch-redux.txt"
+    binary_output: false
+
+  - key: fasta
+    name: "fasta"
+    description: >-
+      Generate three DNA-like sequences and write them in FASTA
+      format. The first sequence is produced by repeating a fixed
+      "ALU" string. The second and third are produced by sampling
+      from weighted symbol distributions using a specified linear
+      congruential PRNG (IM=139968, IA=3877, IC=29573) seeded at 42.
+    input_spec: "A single positive integer N read as a command-line argument."
+    output_spec: |
+      >ONE Homo sapiens alu
+      <ALU-derived sequence of length 2N, wrapped at 60 cols>
+      >TWO IUB ambiguity codes
+      <weighted-random sequence of length 3N, wrapped at 60 cols>
+      >THREE Homo sapiens frequency
+      <weighted-random sequence of length 5N, wrapped at 60 cols>
+    default_argument: "25000000"
+    invocation_hint: "The program is invoked as: <prog> 25000000"
+    algorithm_class: "deterministic PRNG streaming, I/O-bound"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "1000"
+    reference_output: "reference/outputs/fasta.txt"
+    binary_output: false
+
+  - key: k-nucleotide
+    name: "k-nucleotide"
+    description: >-
+      Read a DNA sequence from stdin (the THREE sequence emitted by
+      the fasta benchmark), normalize it to upper case, and report
+      nucleotide frequencies for k-mer lengths 1 and 2 as well as
+      occurrence counts for the specific fragments GGT, GGTA, GGTATT,
+      GGTATTTTAATT, and GGTATTTTAATTTATAGT.
+    input_spec: "A FASTA-formatted DNA sequence on stdin (the THREE section)."
+    output_spec: |
+      <1-mer frequencies, one per line, sorted by descending count>
+      <2-mer frequencies, one per line, sorted by descending count>
+      <count>\tGGT
+      ...
+    default_argument: "0"
+    invocation_hint: "The program reads from stdin. Input is piped from the fasta output."
+    algorithm_class: "hash-map aggregation, memory-bound"
+    needs_stdin: true
+    stdin_input_file: "reference/inputs/fasta-10000.txt"
+    validation_n: "0"
+    reference_output: "reference/outputs/k-nucleotide.txt"
+    binary_output: false
+
+  - key: mandelbrot
+    name: "mandelbrot"
+    description: >-
+      Compute an N-by-N pixel rendering of the Mandelbrot set using
+      the standard z_{n+1} = z_n^2 + c iteration with escape radius
+      2 and an iteration cap of 50. Write the result in binary PBM
+      (portable bitmap) format, one bit per pixel, to stdout.
+    input_spec: "A single positive integer N read as a command-line argument."
+    output_spec: "A binary PBM image N pixels wide and N pixels tall, written to stdout."
+    default_argument: "16000"
+    invocation_hint: "The program is invoked as: <prog> 16000"
+    algorithm_class: "Euclidean-structured numerical, embarrassingly parallel"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "200"
+    reference_output: "reference/outputs/mandelbrot.pbm"
+    binary_output: true
+
+  - key: n-body
+    name: "n-body"
+    description: >-
+      Simulate the gravitational interaction of Jupiter, Saturn,
+      Uranus, Neptune and the Sun for N symplectic integration
+      timesteps. Use the initial positions and velocities specified
+      by the CLBG problem statement. Print the total system energy
+      to nine decimal places before and after the simulation.
+    input_spec: "A single positive integer N (number of timesteps) read as a command-line argument."
+    output_spec: |
+      <initial energy, 9 decimal places>
+      <final energy, 9 decimal places>
+    default_argument: "50000000"
+    invocation_hint: "The program is invoked as: <prog> 50000000"
+    algorithm_class: "numerical integration, locally optimized data layout"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "1000"
+    reference_output: "reference/outputs/n-body.txt"
+    binary_output: false
+
+  - key: pidigits
+    name: "pidigits"
+    description: >-
+      Compute the first N decimal digits of pi using an unbounded
+      spigot algorithm. Print the digits in groups of 10 per line,
+      followed by a tab, a colon, and the running digit index.
+    input_spec: "A single positive integer N read as a command-line argument."
+    output_spec: |
+      <digits 1-10>\t:10
+      <digits 11-20>\t:20
+      ...
+      <digits N-9..N>\t:N
+    default_argument: "10000"
+    invocation_hint: "The program is invoked as: <prog> 10000"
+    algorithm_class: "arbitrary-precision arithmetic"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "27"
+    reference_output: "reference/outputs/pidigits.txt"
+    binary_output: false
+
+  - key: regex-redux
+    name: "regex-redux"
+    description: >-
+      Read a FASTA-formatted DNA sequence from stdin, strip the
+      FASTA headers and newlines, count occurrences of eight
+      specific IUPAC regex patterns on the stripped sequence, then
+      apply a series of regex substitutions to produce an
+      "IUPAC-encoded" sequence and report the original and
+      post-processing lengths.
+    input_spec: "A FASTA-formatted DNA sequence on stdin."
+    output_spec: |
+      <pattern_1> <count>
+      ...
+      <pattern_8> <count>
+      <original length>
+      <stripped length>
+      <post-substitution length>
+    default_argument: "0"
+    invocation_hint: "The program reads from stdin. Input is piped from the fasta output."
+    algorithm_class: "regex engine, string I/O"
+    needs_stdin: true
+    stdin_input_file: "reference/inputs/fasta-10000.txt"
+    validation_n: "0"
+    reference_output: "reference/outputs/regex-redux.txt"
+    binary_output: false
+
+  - key: reverse-complement
+    name: "reverse-complement"
+    description: >-
+      Read FASTA-formatted DNA from stdin. For each sequence,
+      reverse it and complement each base (A<->T, C<->G,
+      with IUPAC ambiguity codes handled symmetrically), then
+      write the reverse-complemented sequence to stdout preserving
+      the original FASTA header and line-wrapping.
+    input_spec: "A FASTA-formatted DNA sequence on stdin."
+    output_spec: "FASTA-formatted reverse-complemented sequences on stdout."
+    default_argument: "0"
+    invocation_hint: "The program reads from stdin. Input is piped from the fasta output."
+    algorithm_class: "linear-scan I/O with in-place transformation"
+    needs_stdin: true
+    stdin_input_file: "reference/inputs/fasta-10000.txt"
+    validation_n: "0"
+    reference_output: "reference/outputs/reverse-complement.txt"
+    binary_output: false
+
+  - key: spectral-norm
+    name: "spectral-norm"
+    description: >-
+      Estimate the spectral norm of an infinite matrix A with
+      entries A[i][j] = 1 / ((i+j)*(i+j+1)/2 + i + 1) by running
+      N iterations of the power method, alternating multiplications
+      by A and A^T against a unit vector. Print the final estimate
+      to nine decimal places.
+    input_spec: "A single positive integer N (number of iterations) read as a command-line argument."
+    output_spec: "<estimate, 9 decimal places>"
+    default_argument: "5500"
+    invocation_hint: "The program is invoked as: <prog> 5500"
+    algorithm_class: "dense linear algebra, floating-point arithmetic"
+    needs_stdin: false
+    stdin_input_file: ""
+    validation_n: "100"
+    reference_output: "reference/outputs/spectral-norm.txt"
+    binary_output: false

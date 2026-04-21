@@ -1,15 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++14 -fopenmp -I/usr/include/apr-1.0 binarytrees.gpp-9.c++ -o binarytrees.gpp-9.c++.o &&  /usr/bin/g++ binarytrees.gpp-9.c++.o -o binarytrees.gpp-9.gpp_run -fopenmp -lapr-1 
+LANG    = C++
+TEST    = binary-trees
+SOURCE  = binarytrees.gpp-9.c++
+OUTPUT  = binary-trees.gpp_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./binarytrees.gpp-9.gpp_run 21" C++ binary-trees
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-run:
-	./binarytrees.gpp-9.gpp_run 21
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-mem:
-	/usr/bin/time -v ./binarytrees.gpp-9.gpp_run 21
+VALIDATION_N       = 10
+REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.gpp-9.gpp_run 21
+include ../../perfarena.mk

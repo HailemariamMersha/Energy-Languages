@@ -1,14 +1,13 @@
-compile:
+LANG        = PHP
+TEST        = k-nucleotide
+SOURCE      = knucleotide.php-4.php
+OUTPUT      = k-nucleotide.php
+ARG         = 21
+RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "php -d memory_limit=1024M knucleotide.php-4.php 0 < knucleotide-input25000000.txt" PHP k-nucleotide
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-run:
-	php -d memory_limit=1024M knucleotide.php-4.php 0 < knucleotide-input25000000.txt
-
-mem:
-	/usr/bin/time -v php -d memory_limit=1024M knucleotide.php-4.php 0 < knucleotide-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes php -d memory_limit=1024M knucleotide.php-4.php 0 < knucleotide-input25000000.txt
+include ../../perfarena.mk

@@ -1,15 +1,23 @@
-compile:
-	/usr/local/src/rust-1.16.0/bin/rustc -C opt-level=3 -C target-cpu=core2 -C lto -L /usr/local/src/rust-libs regexredux.rs -o regexredux.rust_run
+LANG    = Rust
+TEST    = regex-redux
+SOURCE  = regexredux.rs
+OUTPUT  = regex-redux.rust_run
+ARG     = 16
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.rust_run 0 < ../../regexredux-input5000000.txt" Rust regex-redux
+RUSTC       ?= rustc
+RUSTC_FLAGS ?= -C opt-level=3 -C lto
 
-run:
-	./regexredux.rust_run 0 < ../../regexredux-input5000000.txt
+ifneq ($(CARGO_BUILD_TARGET),)
+  RUSTC_TARGET_FLAG = --target $(CARGO_BUILD_TARGET)
+else
+  RUSTC_TARGET_FLAG =
+endif
 
-mem:
-	/usr/bin/time -v ./regexredux.rust_run 0 < ../../regexredux-input5000000.txt
+COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.rust_run 0 < ../../regexredux-input5000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

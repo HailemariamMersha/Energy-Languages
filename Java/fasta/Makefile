@@ -1,15 +1,15 @@
-compile:
-	cp fasta.java-5.java fasta.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  fasta.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000" Java fasta
+LANG    = Java
+TEST    = fasta
+SOURCE  = fasta.java-5.java
+OUTPUT  = fasta.class
+ARG     = 25000000
+RUN_CMD = java fasta $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
+COMPILE_CMD = cp $(SOURCE) fasta.java && $(JAVAC) -d . fasta.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
+
+include ../../perfarena.mk

@@ -1,16 +1,15 @@
-compile:
-	cp pidigits.java-2.java pidigits.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  pidigits.java
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000" Java pidigits
+LANG    = Java
+TEST    = pidigits
+SOURCE  = pidigits.java-2.java
+OUTPUT  = pidigits.class
+ARG     = 10000
+RUN_CMD = java pidigits $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000
+COMPILE_CMD = cp $(SOURCE) pidigits.java && $(JAVAC) -d . pidigits.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java -Djava.library.path=Include/java  pidigits 10000
+VALIDATION_N       = 27
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
 
+include ../../perfarena.mk

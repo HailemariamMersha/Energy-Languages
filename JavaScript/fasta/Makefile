@@ -1,16 +1,12 @@
-compile:
-	cp -L fasta.node-4.node fasta.node-4.js
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node fasta.node-4.js 25000000" JavaScript fasta
+LANG        = JavaScript
+TEST        = fasta
+SOURCE      = fasta.node-4.node
+OUTPUT      = fasta.js
+ARG         = 25000000
+RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node fasta.node-4.js 25000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node fasta.node-4.js 25000000
-
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node fasta.node-4.js 25000000
-
+include ../../perfarena.mk

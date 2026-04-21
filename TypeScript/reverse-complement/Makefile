@@ -1,19 +1,16 @@
-compile:
-	cp revcomp.typescript revcomp.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  revcomp.ts
-	
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < ../../revcomp-input25000000.txt" TypeScript reverse-complement
+LANG        = TypeScript
+TEST        = reverse-complement
+SOURCE      = revcomp.ts
+OUTPUT      = reverse-complement.js
+ARG         = 21
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < ../../revcomp-input25000000.txt
+TSC ?= tsc
 
-clean:
-	rm -rf *.js *.ts
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict revcomp.js 0 < ../../revcomp-input25000000.txt
+include ../../perfarena.mk

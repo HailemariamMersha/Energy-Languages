@@ -1,0 +1,12 @@
+LANG    = Go
+TEST    = binary-trees
+SOURCE  = binarytrees.go
+OUTPUT  = binarytrees.go_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
+
+# Go cross-compiles entirely via GOOS / GOARCH environment
+# variables, which the PerfArena harness exports based on the
+# resolved target arch.
+COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)
+

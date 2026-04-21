@@ -1,14 +1,16 @@
-compile:
-	/usr/local/src/jdk1.8.0_121/bin/javac -d . -cp .:/usr/local/src/java-libs/fastutil-7.0.12.jar knucleotide.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java  -cp .:/usr/local/src/java-libs/fastutil-7.0.12.jar knucleotide 0 < knucleotide-input25000000.txt" Java k-nucleotide
+LANG    = Java
+TEST    = k-nucleotide
+SOURCE  = knucleotide.java
+OUTPUT  = knucleotide.class
+ARG     = 12
+RUN_CMD = java knucleotide $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java  -cp .:/usr/local/src/java-libs/fastutil-7.0.12.jar knucleotide 0 < knucleotide-input25000000.txt
+JAVAC ?= javac
 
-mem:
-	/usr/local/src/jdk1.8.0_121/bin//usr/bin/time -v  java  -cp .:/usr/local/src/java-libs/fastutil-7.0.12.jar knucleotide 0 < knucleotide-input25000000.txt
+COMPILE_CMD = cp $(SOURCE) knucleotide.java && $(JAVAC) -d . knucleotide.java
 
-valgrind:
-	/usr/local/src/jdk1.8.0_121/bin/valgrind --tool=massif --stacks=yes  java  -cp .:/usr/local/src/java-libs/fastutil-7.0.12.jar knucleotide 0 < knucleotide-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

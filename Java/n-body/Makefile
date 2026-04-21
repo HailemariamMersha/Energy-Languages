@@ -1,15 +1,15 @@
-compile:
-	cp nbody.java-4.java nbody.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  nbody.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000" Java n-body
+LANG    = Java
+TEST    = n-body
+SOURCE  = nbody.java-4.java
+OUTPUT  = nbody.class
+ARG     = 50000000
+RUN_CMD = java nbody $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
+COMPILE_CMD = cp $(SOURCE) nbody.java && $(JAVAC) -d . nbody.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
+
+include ../../perfarena.mk

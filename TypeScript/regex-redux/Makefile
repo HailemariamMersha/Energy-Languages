@@ -1,19 +1,16 @@
-compile:
-	cp regexredux.typescript-3.typescript regexredux.typescript-3.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT --lib es7 regexredux.typescript-3.ts
+LANG        = TypeScript
+TEST        = regex-redux
+SOURCE      = regexredux.typescript-3.ts
+OUTPUT      = regex-redux.js
+ARG         = 21
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < ../../regexredux-input5000000.txt" TypeScript regex-redux
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < ../../regexredux-input5000000.txt
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < ../../regexredux-input5000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict regexredux.typescript-3.js 0 < ../../regexredux-input5000000.txt
+include ../../perfarena.mk

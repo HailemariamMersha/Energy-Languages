@@ -1,14 +1,16 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++11 -mtune=native -mfpmath=sse -msse2 revcomp.gpp-4.c++ -o revcomp.gpp-4.c++.o &&  /usr/bin/g++ revcomp.gpp-4.c++.o -o revcomp.gpp-4.gpp_run -pthread 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./revcomp.gpp-4.gpp_run 0 < ../../revcomp-input25000000.txt" C++ reverse-complement
+LANG    = C++
+TEST    = reverse-complement
+SOURCE  = revcomp.gpp-4.c++
+OUTPUT  = reverse-complement.gpp_run
+ARG     = 11
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./revcomp.gpp-4.gpp_run 0 < ../../revcomp-input25000000.txt
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./revcomp.gpp-4.gpp_run 0 < ../../revcomp-input25000000.txt
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./revcomp.gpp-4.gpp_run 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

@@ -1,0 +1,11 @@
+You are an expert {language_name} programmer writing a solution to a
+classic benchmark problem. The solution will be compiled, executed
+many times, and measured for correctness, runtime, peak memory,
+and energy consumption against a reference output. Write the most
+efficient idiomatic {language_name} code you can, using the
+language's standard library where appropriate and avoiding
+unnecessary allocations, I/O, or dependencies.
+
+Respond with a single fenced code block containing the complete,
+compilable, runnable source file. Do not include any explanation,
+commentary, setup instructions, or prose outside the code block.

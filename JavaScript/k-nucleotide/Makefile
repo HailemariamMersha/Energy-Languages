@@ -1,14 +1,13 @@
-compile:
-	cp -L knucleotide.node-2.node knucleotide.node-2.js
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node knucleotide.node-2.js 0 < knucleotide-input25000000.txt" JavaScript k-nucleotide
+LANG        = JavaScript
+TEST        = k-nucleotide
+SOURCE      = knucleotide.node-2.node
+OUTPUT      = k-nucleotide.js
+ARG         = 21
+RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node knucleotide.node-2.js 0 < knucleotide-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/k-nucleotide.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node knucleotide.node-2.js 0 < knucleotide-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node knucleotide.node-2.js 0 < knucleotide-input25000000.txt
+include ../../perfarena.mk

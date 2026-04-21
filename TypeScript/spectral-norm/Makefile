@@ -1,20 +1,15 @@
-compile:
-	cp spectralnorm.typescript spectralnorm.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  spectralnorm.ts
+LANG        = TypeScript
+TEST        = spectral-norm
+SOURCE      = spectralnorm.ts
+OUTPUT      = spectral-norm.js
+ARG         = 5500
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict spectralnorm.js 5500" TypeScript spectral-norm
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict spectralnorm.js 5500
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict spectralnorm.js 5500
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict spectralnorm.js 5500
-
+include ../../perfarena.mk

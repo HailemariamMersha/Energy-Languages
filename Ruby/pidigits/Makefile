@@ -1,15 +1,12 @@
-compile:
+LANG        = Ruby
+TEST        = pidigits
+SOURCE      = pidigits.yarv-5.yarv
+OUTPUT      = pidigits.rb
+ARG         = 10000
+RUN_CMD     = ruby $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
+VALIDATION_N       = 27
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
 
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000" Ruby pidigits
-
-run:
-	/usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
-
-mem:
-	/usr/bin/time -v  /usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/ruby/bin/ruby -W0 pidigits.yarv-5.yarv 10000
+include ../../perfarena.mk

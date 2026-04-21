@@ -1,0 +1,55 @@
+# PerfArena target languages.
+# The `folder` field matches the directory name inside the
+# greensoftwarelab/Energy-Languages fork so the harness can slot
+# generated sources into the existing CLBG tree.
+languages:
+  - key: python
+    display_name: "Python 3"
+    folder: "Python"
+    file_extension: ".py"
+    paradigm: "dynamic, interpreted"
+  - key: javascript
+    display_name: "JavaScript (Node.js)"
+    folder: "JavaScript"
+    file_extension: ".js"
+    paradigm: "dynamic, JIT (V8)"
+  - key: typescript
+    display_name: "TypeScript"
+    folder: "TypeScript"
+    file_extension: ".ts"
+    paradigm: "static, transpiled to JS"
+  - key: java
+    display_name: "Java"
+    folder: "Java"
+    file_extension: ".java"
+    paradigm: "static, JIT (JVM)"
+  - key: csharp
+    display_name: "C# (.NET)"
+    folder: "CSharp"
+    file_extension: ".cs"
+    paradigm: "static, JIT (CLR)"
+  - key: cpp
+    display_name: "C++"
+    folder: "C++"
+    file_extension: ".cpp"
+    paradigm: "static, AOT compiled"
+  - key: php
+    display_name: "PHP"
+    folder: "PHP"
+    file_extension: ".php"
+    paradigm: "dynamic, interpreted"
+  - key: go
+    display_name: "Go"
+    folder: "Go"
+    file_extension: ".go"
+    paradigm: "static, AOT compiled"
+  - key: rust
+    display_name: "Rust"
+    folder: "Rust"
+    file_extension: ".rs"
+    paradigm: "static, AOT compiled"
+  - key: ruby
+    display_name: "Ruby"
+    folder: "Ruby"
+    file_extension: ".rb"
+    paradigm: "dynamic, interpreted"

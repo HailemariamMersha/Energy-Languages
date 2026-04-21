@@ -1,14 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++14 -g pidigits.gpp-4.c++ -o pidigits.gpp-4.c++.o &&  /usr/bin/g++ pidigits.gpp-4.c++.o -o pidigits.gpp-4.gpp_run -lgmp -lgmpxx 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./pidigits.gpp-4.gpp_run 10000" C++ pidigits
+LANG    = C++
+TEST    = pidigits
+SOURCE  = pidigits.gpp-4.c++
+OUTPUT  = pidigits.gpp_run
+ARG     = 14
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./pidigits.gpp-4.gpp_run 10000
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./pidigits.gpp-4.gpp_run 10000
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./pidigits.gpp-4.gpp_run 10000
+VALIDATION_N       = 27
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
+
+include ../../perfarena.mk

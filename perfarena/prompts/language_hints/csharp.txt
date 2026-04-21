@@ -1,0 +1,7 @@
+Target .NET 8 with the default CoreCLR runtime. The program will
+be built with `dotnet build -c Release` and run via `dotnet run`
+or the produced binary. Use `System.Span<T>`, `System.Buffers`, and
+`System.IO.Pipelines` where they help. Prefer `Console.Out` wrapped
+in a buffered writer for hot output paths. The source file must be
+a self-contained top-level program or a single class with a `Main`
+method; do not rely on any third-party NuGet packages.

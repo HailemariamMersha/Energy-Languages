@@ -1,0 +1,7 @@
+Target Go 1.22 or later. The program will be built with `go build`
+and invoked as `./prog <N>`. Declare `package main` and a `func
+main()`. Prefer `bufio.Writer` wrapping `os.Stdout` for hot output
+paths; unbuffered `fmt.Println` is a common performance trap. Use
+typed slices rather than interface slices. Do not depend on any
+module beyond the standard library; the file must build from a
+single `.go` source with no `go.mod` required.

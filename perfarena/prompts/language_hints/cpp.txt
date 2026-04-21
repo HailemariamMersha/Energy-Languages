@@ -1,0 +1,9 @@
+Target C++20 with GCC (`g++ -O3 -march=native -std=c++20`). The
+program will be invoked as `./prog <N>` and may read stdin via
+`std::cin` or `read(0, ...)`. Prefer raw arrays, `std::vector`, and
+`std::array` over higher-level abstractions; avoid `std::endl`
+(which flushes) in favor of `'\n'`; call
+`std::ios_base::sync_with_stdio(false);` and `std::cin.tie(nullptr);`
+at program start. Use `<cstdio>` for output when formatting is
+simple. Do not depend on any third-party library beyond the C++
+standard library.

@@ -1,15 +1,16 @@
-compile:
-	cp revcomp.java-3.java revcomp.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  revcomp.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   revcomp 0 < ../../revcomp-input25000000.txt" Java reverse-complement
+LANG    = Java
+TEST    = reverse-complement
+SOURCE  = revcomp.java-3.java
+OUTPUT  = revcomp.class
+ARG     = 21
+RUN_CMD = java revcomp $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   revcomp 0 < ../../revcomp-input25000000.txt
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   revcomp 0 < ../../revcomp-input25000000.txt
+COMPILE_CMD = cp $(SOURCE) revcomp.java && $(JAVAC) -d . revcomp.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   revcomp 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

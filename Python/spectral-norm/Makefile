@@ -1,11 +1,12 @@
-compile:
-	cp spectralnorm.python3-5.python3 spectralnorm.python3-5.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO spectralnorm.python3-5.py 5500" Python spectral-norm
+LANG        = Python
+TEST        = spectral-norm
+SOURCE      = spectralnorm.python3-5.python3
+OUTPUT      = spectralnorm.py
+ARG         = 5500
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO spectralnorm.python3-5.py 5500
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO spectralnorm.python3-5.py 5500
+include ../../perfarena.mk

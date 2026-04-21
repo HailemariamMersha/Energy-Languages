@@ -1,16 +1,13 @@
-compile:
-	cp nbody.csharpcore-3.csharpcore Program.cs
-	/usr/bin/dotnet build -c Release
+LANG    = CSharp
+TEST    = n-body
+SOURCE  = Program.cs
+OUTPUT  = bin/Release/n-body
+ARG     = 50000000
+RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000" CSharp n-body
+COMPILE_CMD = dotnet build --configuration Release --nologo
 
-run:
-	/usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-mem:
-	/usr/bin/time -v  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/bin/dotnet ./bin/Release/netcoreapp1.1/tmp.dll 50000000
+include ../../perfarena.mk

@@ -1,10 +1,12 @@
-compile:
-	cp pidigits.python3-2.python3 pidigits.python3-2.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO pidigits.python3-2.py 10000" Python pidigits
+LANG        = Python
+TEST        = pidigits
+SOURCE      = pidigits.python3-2.python3
+OUTPUT      = pidigits.py
+ARG         = 10000
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO pidigits.python3-2.py 10000
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO pidigits.python3-2.py 10000
+VALIDATION_N       = 27
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
+
+include ../../perfarena.mk

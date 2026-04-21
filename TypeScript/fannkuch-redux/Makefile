@@ -1,19 +1,15 @@
-compile:
-	cp fannkuchredux.typescript fannkuchredux.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  fannkuchredux.ts
+LANG        = TypeScript
+TEST        = fannkuch-redux
+SOURCE      = fannkuchredux.ts
+OUTPUT      = fannkuch-redux.js
+ARG         = 12
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12" TypeScript fannkuch-redux
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict fannkuchredux.js 12
+include ../../perfarena.mk

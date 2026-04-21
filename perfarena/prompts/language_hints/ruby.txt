@@ -1,0 +1,8 @@
+Target Ruby 3.2 or later, invoked as `ruby <script>.rb <N>`. Prefer
+the standard library; `Array`, `Enumerable`, and `StringIO` are all
+available. Use `STDOUT.write` for hot output paths rather than
+`puts`, which formats per call. Do not depend on any gem beyond the
+standard library. If the benchmark is numeric-heavy, note that
+CRuby has a single-threaded GC and that object allocation in hot
+loops dominates runtime; prefer mutating pre-allocated buffers
+where possible.

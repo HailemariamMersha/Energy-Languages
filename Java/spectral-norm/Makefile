@@ -1,15 +1,15 @@
-compile:
-	cp spectralnorm.java-2.java spectralnorm.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  spectralnorm.java
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "java   spectralnorm 5500" Java spectral-norm
+LANG    = Java
+TEST    = spectral-norm
+SOURCE  = spectralnorm.java-2.java
+OUTPUT  = spectralnorm.class
+ARG     = 5500
+RUN_CMD = java spectralnorm $(ARG)
 
-run:
-	/usr/local/src/jdk1.8.0_121/bin/java   spectralnorm 5500
+JAVAC ?= javac
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   spectralnorm 5500
+COMPILE_CMD = cp $(SOURCE) spectralnorm.java && $(JAVAC) -d . spectralnorm.java
 
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   spectralnorm 5500
+VALIDATION_N       = 100
+REFERENCE_OUTPUT   = ../../reference/outputs/spectral-norm.txt
+
+include ../../perfarena.mk

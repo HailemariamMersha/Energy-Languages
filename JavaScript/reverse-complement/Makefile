@@ -1,14 +1,13 @@
-compile:
-	cp -L revcomp.node-7.node revcomp.node-7.js
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < ../../revcomp-input25000000.txt" JavaScript reverse-complement
+LANG        = JavaScript
+TEST        = reverse-complement
+SOURCE      = revcomp.node-7.node
+OUTPUT      = reverse-complement.js
+ARG         = 21
+RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < ../../revcomp-input25000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < ../../revcomp-input25000000.txt
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node revcomp.node-7.js 0 < ../../revcomp-input25000000.txt
+include ../../perfarena.mk

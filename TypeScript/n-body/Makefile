@@ -1,19 +1,15 @@
-compile:
-	cp nbody.typescript-3.typescript nbody.typescript-3.ts
-	/usr/local/src/node-v7.9.0-linux-x64/bin/tsc --alwaysStrict -t ESNEXT  nbody.typescript-3.ts
+LANG        = TypeScript
+TEST        = n-body
+SOURCE      = nbody.typescript-3.ts
+OUTPUT      = n-body.js
+ARG         = 50000000
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000" TypeScript n-body
+TSC ?= tsc
 
-run:
-	/usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000
+COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)
 
-clean:
-	rm -rf *.js *.ts
+VALIDATION_N       = 1000
+REFERENCE_OUTPUT   = ../../reference/outputs/n-body.txt
 
-mem:
-	/usr/bin/time -v /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/node-v7.9.0-linux-x64/bin/node --use_strict nbody.typescript-3.js 50000000
+include ../../perfarena.mk

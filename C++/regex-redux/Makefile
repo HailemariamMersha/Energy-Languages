@@ -1,14 +1,16 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -fopenmp regexredux.gpp-3.c++ -o regexredux.gpp-3.c++.o &&  /usr/bin/g++ regexredux.gpp-3.c++.o -o regexredux.gpp-3.gpp_run -fopenmp -lboost_regex 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./regexredux.gpp-3.gpp_run 0 < ../../regexredux-input5000000.txt" C++ regex-redux
+LANG    = C++
+TEST    = regex-redux
+SOURCE  = regexredux.gpp-3.c++
+OUTPUT  = regex-redux.gpp_run
+ARG     = 21
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./regexredux.gpp-3.gpp_run 0 < ../../regexredux-input5000000.txt
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	/usr/bin/time -v ./regexredux.gpp-3.gpp_run 0 < ../../regexredux-input5000000.txt
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./regexredux.gpp-3.gpp_run 0 < ../../regexredux-input5000000.txt
+VALIDATION_N       = 0
+REFERENCE_OUTPUT   = ../../reference/outputs/regex-redux.txt
+STDIN_FILE         = ../../reference/inputs/fasta-10000.txt
+
+include ../../perfarena.mk

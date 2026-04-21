@@ -1,11 +1,13 @@
-cmpile:
-	cp mandelbrot.python3-7.python3 mandelbrot.python3-7.py
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/Python-3.6.1/bin/python3.6 -OO mandelbrot.python3-7.py 16000" Python mandelbrot
+LANG        = Python
+TEST        = mandelbrot
+SOURCE      = mandelbrot.python3-7.python3
+OUTPUT      = mandelbrot.py
+ARG         = 16000
+RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
-run:
-	/usr/local/src/Python-3.6.1/bin/python3.6 -OO mandelbrot.python3-7.py 16000
+VALIDATION_N       = 200
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+BINARY_OUTPUT      = 1
 
-mem:
-	/usr/bin/time -v /usr/local/src/Python-3.6.1/bin/python3.6 -OO mandelbrot.python3-7.py 16000
+include ../../perfarena.mk

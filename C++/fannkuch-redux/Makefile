@@ -1,14 +1,15 @@
-compile:
-	/usr/bin/g++ -c -pipe -O3 -fomit-frame-pointer -march=native  -std=c++11 -fopenmp fannkuchredux.gpp-5.c++ -o fannkuchredux.gpp-5.c++.o &&  /usr/bin/g++ fannkuchredux.gpp-5.c++.o -o fannkuchredux.gpp-5.gpp_run -fopenmp 
-measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "./fannkuchredux.gpp-5.gpp_run 12" C++ fannkuch-redux
+LANG    = C++
+TEST    = fannkuch-redux
+SOURCE  = fannkuchredux.gpp-5.c++
+OUTPUT  = fannkuch-redux.gpp_run
+ARG     = 11
+RUN_CMD = ./$(OUTPUT) $(ARG)
 
-run:
-	./fannkuchredux.gpp-5.gpp_run 12
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
 
-mem:
-	 /usr/bin/time -v  ./fannkuchredux.gpp-5.gpp_run 12
-valgrind:
-	valgrind --tool=massif --stacks=yes  ./fannkuchredux.gpp-5.gpp_run 12
+COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 
+VALIDATION_N       = 7
+REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt
+
+include ../../perfarena.mk
