@@ -242,13 +242,12 @@ preserved; modified Makefiles have a `.orig` backup alongside them.
 
 | File | What it covers |
 |------|---------------|
-| `SYSTEM_OVERVIEW.md` | Plain-language explanation of how the system works and how each research question maps to specific PerfArena features. |
-| `LOCAL_DEMO.md` | Step-by-step local demo on macOS using Ollama. |
-| `perfarena/README.md` | Package-level documentation, build instructions, CLI usage. |
-| `perfarena/GUIDE.md` | 26-section step-by-step guide covering every operation. |
-| `perfarena/PIPELINE.md` | Sequence diagram and artifact flow table for the full pipeline. |
-| `perfarena/DESIGN_REVIEW.md` | Design trade-offs, implementation status, and known limitations. |
-| `perfarena/PROFILING_AUDIT.md` | Detailed audit of measurement validity and statistical correctness. |
+| `docs/SYSTEM_OVERVIEW.md` | Plain-language explanation of how the system works and how each research question maps to specific PerfArena features. |
+| `docs/LOCAL_DEMO.md` | Step-by-step local demo on macOS using Ollama. |
+| `docs/GUIDE.md` | 26-section step-by-step guide covering every operation. |
+| `docs/PIPELINE.md` | Sequence diagram and artifact flow table for the full pipeline. |
+| `docs/DESIGN_REVIEW.md` | Design trade-offs, implementation status, and known limitations. |
+| `docs/PROFILING_AUDIT.md` | Detailed audit of measurement validity and statistical correctness. |
 
 ### New: tests
 
