@@ -1,0 +1,74 @@
+{
+  "generation_parameters": {
+    "max_tokens": 4096,
+    "seed": null,
+    "temperature": 0.2,
+    "top_k": null,
+    "top_p": null
+  },
+  "inference": {
+    "agent_version": "0.1.0",
+    "finished_at": "2026-04-21T21:28:29.002648+00:00",
+    "host": {
+      "codecarbon_available": true,
+      "cpu_count": 12,
+      "energy_backend": "codecarbon",
+      "hostname": "ADUAEI20753LPMX",
+      "machine": "arm64",
+      "platform": "Darwin",
+      "rapl_available": false,
+      "release": "24.6.0",
+      "total_memory_bytes": 19327352832
+    },
+    "metrics": {
+      "cpu_time_s": 1.9428519999999998,
+      "energy_source": "codecarbon",
+      "energy_uj": 3760508,
+      "notes": [
+        "codecarbon: cpu_energy_kwh=0.0009153608346223135, gpu_energy_kwh=0.0, ram_energy_kwh=0.0001292247806933301, duration_s=77.53695791601785"
+      ],
+      "peak_rss_kb": 127744,
+      "rss_delta_kb": 6736,
+      "target_cpu_delta_s": null,
+      "target_pid": null,
+      "target_rss_kb_end": null,
+      "wall_time_s": 78.75052620799397
+    },
+    "started_at": "2026-04-21T21:27:10.175743+00:00",
+    "target_pid": null,
+    "target_process": null
+  },
+  "language": "cpp",
+  "language_folder": "C++",
+  "mode": "agent",
+  "model": "gemma4:e4b",
+  "paths": {
+    "raw": "/Users/rar9993/repos/research/perfarena/Energy-Languages/perfarena_out/generations/ollama__gemma4_e4b/C++/binary-trees/sample_00.cpp.raw.md",
+    "source": "/Users/rar9993/repos/research/perfarena/Energy-Languages/perfarena_out/generations/ollama__gemma4_e4b/C++/binary-trees/sample_00.cpp"
+  },
+  "perfarena_version": "0.1.0",
+  "problem": "binary-trees",
+  "prompts": {
+    "prompt_pair_sha256": "05b67b3b6411e0cfa5b056d9ec72fa5f2060ca0f4a9fbe2124f5883b29521067",
+    "system_prompt_sha256": "be9b7173795b818e313c6da13a7841efdd6e98503d11943e9669b00f58406d05",
+    "system_template_name": "system.txt",
+    "user_prompt_sha256": "4eff63fdeb9b8ad5c9b58e61c22f86f049d0da421ac5ec26ff7d01b66cae5f79",
+    "user_template_name": "user.txt"
+  },
+  "provenance": {
+    "container_hostname": "",
+    "git_sha": "171810cc0c9feea2a0bbe5e71708e3544bd594a5",
+    "image_build_date": "unknown",
+    "image_tag": "unknown",
+    "toolchains": {}
+  },
+  "provider": "ollama",
+  "response": {
+    "extracted_code_chars": 1,
+    "orchestrator_duration_s": 79.51455424999585,
+    "raw_chars": 0,
+    "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sample_id": 0,
+  "schema_version": 1
+}

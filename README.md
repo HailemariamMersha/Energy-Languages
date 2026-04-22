@@ -151,6 +151,128 @@ The `Makefiles` have specified, for some cases, the path for the language's comp
 It is most likely that you will not have them in the same path of your machine.
 If you would like to properly test every benchmark of every language, please make sure you have all compilers/runners installed, and adapt the `Makefiles` accordingly.
 
+---
+
+## PerfArena changelog
+
+This fork extends the original Energy-Languages repository with
+the PerfArena benchmarking infrastructure. Everything below was
+added on top of the original codebase. The original files are
+preserved; modified Makefiles have a `.orig` backup alongside them.
+
+### New: build and packaging infrastructure
+
+| File | What it does |
+|------|-------------|
+| `Dockerfile` | Build container with all 10 language toolchains, cross-compilers for aarch64, and the `perfarena` Python package. |
+| `.dockerignore` | Keeps the container image clean. |
+| `pyproject.toml` | Python package definition, dependencies (LangChain, paramiko, psutil, CodeCarbon), and three console-script entry points (`perfarena`, `perfarena-agent`, `perfarena-cc-runner`). |
+| `perfarena.mk` | Common Makefile include that all per-benchmark Makefiles now delegate to. Implements `compile`, `run`, `measure`, `validate`, `mem`, `clean` targets, with automatic stdin piping, validation against reference outputs, and platform-aware runner selection (C RAPL runner on Linux, CodeCarbon runner on macOS). |
+
+### New: the `perfarena` Python package
+
+| Module | What it does |
+|--------|-------------|
+| `cli.py` | Command-line interface: `list-problems`, `list-languages`, `generate`, `exec-check`, `harness-run`, `patch-makefiles`, `static-analyze`, `ingest-measurements`. |
+| `config.py` | Loads problem and language definitions from YAML. |
+| `harness.py` | Drives `make compile / validate / measure` through one or two executors (local + remote split), with cross-compile env-var injection, automatic artifact staging via SFTP, and `SOURCE=` override for LLM-generated code. |
+| `measurement.py` | Parses RAPL/CodeCarbon JSONL traces, joins them with generation metadata, writes measurement rows as JSONL or Parquet. |
+| `stats.py` | Harmonic mean, bootstrap 95% CI, Mann-Whitney U, Kendall's tau-b, Holm-Bonferroni correction, refuse-to-rank policy, Break-Even Point formula. |
+| `provenance.py` | Captures git SHA, container image tag, and toolchain versions at run time for per-row traceability. |
+| `classification.py` | Pairwise "pick the faster implementation" test, scored against measurement ground truth. |
+| `perturb.py` | Contamination probe: renames canonical identifiers and rescales inputs to test memorization vs understanding. |
+| `static_analysis.py` | Runs per-language linters (pylint, cppcheck, rustc lints, go vet, eslint, tsc) and reports issue density per kLoC. |
+
+| Module (generation) | What it does |
+|---------------------|-------------|
+| `generation/pipeline.py` | Loads prompt templates from files, calls the LLM via LangChain, extracts code from fenced blocks, writes three files per sample (source, raw response, provenance metadata sidecar). |
+| `generation/agent.py` | Isolated subprocess that wraps a single LLM call in the profiler. One-shot and persistent (line-by-line) modes. |
+| `generation/profiler.py` | Context manager that records wall time, CPU time, peak RSS, and energy (RAPL on Linux, CodeCarbon on macOS). Fixes the `ru_maxrss` bytes-vs-kilobytes discrepancy on macOS. |
+| `generation/llm.py` | LangChain chat-model factory for OpenAI, Anthropic, Google, and Ollama, with `OLLAMA_HOST` env-var support. |
+
+| Module (executors) | What it does |
+|--------------------|-------------|
+| `executors/local.py` | Runs commands via `subprocess` on the local machine or inside the container. |
+| `executors/ssh.py` | Forwards commands to a remote bare-metal host over SSH (paramiko), with SFTP file staging and architecture probing via `uname`. |
+
+| Module (runners) | What it does |
+|------------------|-------------|
+| `runners/codecarbon_runner.py` | Python-based measurement runner for macOS. Wraps each benchmark iteration in a CodeCarbon tracker, produces the same JSONL schema as the C RAPL runner. |
+
+| Module (tools) | What it does |
+|----------------|-------------|
+| `tools/patch_makefiles.py` | Rewrites all per-benchmark Makefiles for the 10 target languages to delegate to `perfarena.mk`, with per-language compile commands, cross-compile variables, validation metadata, and stdin-input handling. Idempotent, reversible (writes `.orig` backups). |
+
+### New: prompt templates
+
+| File | What it does |
+|------|-------------|
+| `prompts/system.txt` | System prompt: "you are an expert programmer, single code block, no commentary." |
+| `prompts/user.txt` | User prompt template with placeholders for problem description, input/output spec, invocation hint, algorithm class, and per-language guidance. |
+| `prompts/language_hints/*.txt` | One file per target language (10 files) with idiomatic tips, runtime invocation conventions, and common performance traps. |
+
+### New: configuration
+
+| File | What it does |
+|------|-------------|
+| `configs/problems.yaml` | The 10 CLBG problems with descriptions, default arguments, invocation hints, algorithm-class tags, validation N, reference output paths, stdin-input flags, and binary-output flags. |
+| `configs/languages.yaml` | The 10 target languages with folder names, file extensions, and paradigm labels. |
+
+### New: reference data
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `reference/outputs/` | Known-correct reference outputs for all 10 problems at a small validation N, generated from the original human-written Python implementations. Used by the `make validate` correctness oracle. |
+| `reference/inputs/` | Pre-generated stdin input file (`fasta-10000.txt`) used by the three stdin-input problems (k-nucleotide, regex-redux, reverse-complement). |
+
+### New: measurement tool
+
+| File | What it does |
+|------|-------------|
+| `RAPL/perfarena_runner.c` | Replacement for the original `RAPL/main.c` that adds: periodic RAPL sampling at ~10 Hz via a fork/exec/waitpid loop, idle-baseline capture, configurable warm-up/measurement iteration split, and JSONL output. The original `main.c` is preserved for 2017-replication runs. |
+
+### New: campaign scripts
+
+| File | What it does |
+|------|-------------|
+| `scripts/run_campaign.sh` | Full-sweep campaign runner: iterates over languages and problems, generates samples, validates each one, and reports pass/fail counts. |
+| `scripts/analyze_campaign.py` | Reads all `meta.json` files from a generation run and prints a summary table of inference times, energy, and code sizes per cell. |
+
+### New: documentation
+
+| File | What it covers |
+|------|---------------|
+| `SYSTEM_OVERVIEW.md` | Plain-language explanation of how the system works and how each research question maps to specific PerfArena features. |
+| `LOCAL_DEMO.md` | Step-by-step local demo on macOS using Ollama. |
+| `perfarena/README.md` | Package-level documentation, build instructions, CLI usage. |
+| `perfarena/GUIDE.md` | 26-section step-by-step guide covering every operation. |
+| `perfarena/PIPELINE.md` | Sequence diagram and artifact flow table for the full pipeline. |
+| `perfarena/DESIGN_REVIEW.md` | Design trade-offs, implementation status, and known limitations. |
+| `perfarena/PROFILING_AUDIT.md` | Detailed audit of measurement validity and statistical correctness. |
+
+### New: tests
+
+| Directory | What it covers |
+|-----------|---------------|
+| `perfarena/tests/` | 34 pytest tests covering config loading, code extraction, harness build-env logic, the profiler, the statistics layer, the perturbation generator, and the measurement ingest roundtrip. |
+
+### Modified: existing files
+
+| What changed | Details |
+|-------------|---------|
+| `RAPL/Makefile` | Added a `perfarena_runner` build target alongside the original `main` target. |
+| 101 per-benchmark `Makefile`s | Rewritten by `patch_makefiles.py` to delegate to `perfarena.mk`. Each patched Makefile sets `LANG`, `TEST`, `SOURCE`, `OUTPUT`, `ARG`, `RUN_CMD`, `COMPILE_CMD`, plus validation metadata (`VALIDATION_N`, `REFERENCE_OUTPUT`, `STDIN_FILE`, `BINARY_OUTPUT` where applicable), and includes `../../perfarena.mk`. Originals are preserved as `Makefile.orig`. |
+
+### Not changed
+
+The original `compile_all.py`, `gen-input.sh`, `RAPL/main.c`,
+`RAPL/rapl.c`, `RAPL/rapl.h`, all 28 language directories, and
+all original benchmark source files are untouched. The `README.md`
+(this file) retains the original documentation above; this
+changelog is appended below it.
+
+---
+
 ### Contacts and References
 
 [Green Software Lab](http://greenlab.di.uminho.pt)
