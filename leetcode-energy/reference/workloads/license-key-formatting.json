@@ -1,0 +1,435 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"AB-CD-EF-GH-IJ\", k = 2",
+      "output": "AB-CD-EF-GH-IJ"
+    },
+    {
+      "input": "s = \"abcdefg-hijkl-mnopqr-stuv-wxyz\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+    },
+    {
+      "input": "s = \"\", k = 1",
+      "output": ""
+    },
+    {
+      "input": "s = \"\", k = 10",
+      "output": ""
+    },
+    {
+      "input": "s = \"1234567890\", k = 3",
+      "output": "1-234-567-890"
+    },
+    {
+      "input": "s = \"2-4A0r7-4k\", k = 3",
+      "output": "24-A0R-74K"
+    },
+    {
+      "input": "s = \"2-5g-3-J\", k = 2",
+      "output": "2-5G-3J"
+    },
+    {
+      "input": "s = \"5F3Z-2e-9-w\", k = 4",
+      "output": "5F3Z-2E9W"
+    },
+    {
+      "input": "s = \"----\", k = 2",
+      "output": ""
+    },
+    {
+      "input": "s = \"abcdefg\", k = 2",
+      "output": "A-BC-DE-FG"
+    },
+    {
+      "input": "s = \"a-a-a-a-\", k = 1",
+      "output": "A-A-A-A"
+    },
+    {
+      "input": "s = \"1-23-456\", k = 2",
+      "output": "12-34-56"
+    },
+    {
+      "input": "s = \"ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ\", k = 1",
+      "output": "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+    },
+    {
+      "input": "s = \"-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\", k = 6",
+      "output": "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"0000-0000-0000-0000-0000-0000\", k = 8",
+      "output": "00000000-00000000-00000000"
+    },
+    {
+      "input": "s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890\", k = 3",
+      "output": "ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ1-234-567-890"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\", k = 6",
+      "output": "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"a-\", k = 2",
+      "output": "A"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 1",
+      "output": "1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+    },
+    {
+      "input": "s = \"X1-Y2-Z3\", k = 1",
+      "output": "X-1-Y-2-Z-3"
+    },
+    {
+      "input": "s = \"123-4567-890-ABCD-EFGH-IJKL\", k = 3",
+      "output": "1-234-567-890-ABC-DEF-GHI-JKL"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 10",
+      "output": "123456-7890ABCDEF-GHIJKLMNOP-QRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"a-\", k = 1",
+      "output": "A"
+    },
+    {
+      "input": "s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+    },
+    {
+      "input": "s = \"x-y-z\", k = 10",
+      "output": "XYZ"
+    },
+    {
+      "input": "s = \"123-456-789-0123-4567-8901\", k = 4",
+      "output": "1-2345-6789-0123-4567-8901"
+    },
+    {
+      "input": "s = \"M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 6",
+      "output": "MN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"1234567890\", k = 1",
+      "output": "1-2-3-4-5-6-7-8-9-0"
+    },
+    {
+      "input": "s = \"xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX\", k = 5",
+      "output": "X-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+    },
+    {
+      "input": "s = \"aBcDeFgHiJkLmNoPqRsTuVwXyZ\", k = 3",
+      "output": "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+    },
+    {
+      "input": "s = \"----\", k = 1",
+      "output": ""
+    },
+    {
+      "input": "s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890\", k = 7",
+      "output": "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890"
+    },
+    {
+      "input": "s = \"Z1-23X4-567-89A-BCD-EFG-HIJ-KLM-NOP-QRS-TUV-WXY-Z\", k = 3",
+      "output": "Z-123-X45-678-9AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+    },
+    {
+      "input": "s = \"A1-B2-C3-D4-E5-F6-G7-H8-I9-J0-K1-L2-M3-N4-O5-P6-Q7-R8-S9-T0-U1-V2-W3-X4-Y5-Z6\", k = 6",
+      "output": "A1B2-C3D4E5-F6G7H8-I9J0K1-L2M3N4-O5P6Q7-R8S9T0-U1V2W3-X4Y5Z6"
+    },
+    {
+      "input": "s = \"a-1-b-2-c-3-d-4-e-5-f-6-g-7-h-8-i-9-j-0\", k = 2",
+      "output": "A1-B2-C3-D4-E5-F6-G7-H8-I9-J0"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\", k = 4",
+      "output": "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+    },
+    {
+      "input": "s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\", k = 3",
+      "output": "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+    },
+    {
+      "input": "s = \"aA-bB-cC-dD-eE-fF-gG-hH-iI-jJ-kK-lL-mM-nN-oO-pP-qQ-rR-sS-tT-uU-vV-wW-xX-yY-zZ\", k = 5",
+      "output": "AA-BBCCD-DEEFF-GGHHI-IJJKK-LLMMN-NOOPP-QQRRS-STTUU-VVWWX-XYYZZ"
+    },
+    {
+      "input": "s = \"-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-\", k = 2",
+      "output": "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+    },
+    {
+      "input": "s = \"0-0-0-0-0-0-0-0-0-0\", k = 2",
+      "output": "00-00-00-00-00"
+    },
+    {
+      "input": "s = \"abcdefghij-klmnopqrstuvwxyz\", k = 6",
+      "output": "AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0\", k = 3",
+      "output": "12-345-678-901-234-567-890-123-456-789-012-345-678-901-234-567-890"
+    },
+    {
+      "input": "s = \"x-y-z-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 7",
+      "output": "XYZ1-2345678-90ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ"
+    },
+    {
+      "input": "s = \"000-000-000-000-000\", k = 5",
+      "output": "00000-00000-00000"
+    },
+    {
+      "input": "s = \"123-456-7890-ABCD-EFGH-IJKL\", k = 3",
+      "output": "1-234-567-890-ABC-DEF-GHI-JKL"
+    },
+    {
+      "input": "s = \"2-5G-3-J-\", k = 1",
+      "output": "2-5-G-3-J"
+    },
+    {
+      "input": "s = \"-this-is-a-test-string-for-the-problem-description-\", k = 5",
+      "output": "T-HISIS-ATEST-STRIN-GFORT-HEPRO-BLEMD-ESCRI-PTION"
+    },
+    {
+      "input": "s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-12345-67890\", k = 6",
+      "output": "ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ1234-567890"
+    },
+    {
+      "input": "s = \"W3LC--DR5F--HR5P-TR22--W48P\", k = 4",
+      "output": "W3LC-DR5F-HR5P-TR22-W48P"
+    },
+    {
+      "input": "s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 26",
+      "output": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"abcdef\", k = 10",
+      "output": "ABCDEF"
+    },
+    {
+      "input": "s = \"---\", k = 1",
+      "output": ""
+    },
+    {
+      "input": "s = \"aBcDeFgHiJkLmNoPqRsTuVwXyZ\", k = 7",
+      "output": "ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\", k = 4",
+      "output": "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ01-2345-6789"
+    },
+    {
+      "input": "s = \"---\", k = 2",
+      "output": ""
+    },
+    {
+      "input": "s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+    },
+    {
+      "input": "s = \"a\", k = 2",
+      "output": "A"
+    },
+    {
+      "input": "s = \"-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9---\", k = 1",
+      "output": "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9"
+    },
+    {
+      "input": "s = \"X-5F3Z-2E-9-W\", k = 3",
+      "output": "X5F-3Z2-E9W"
+    },
+    {
+      "input": "s = \"WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789\", k = 3",
+      "output": "WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789"
+    },
+    {
+      "input": "s = \"-\", k = 1",
+      "output": ""
+    },
+    {
+      "input": "s = \"1234567890-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\", k = 10",
+      "output": "12-34567890AB-CDEFGHIJKL-MNOPQRSTUV-WXYZABCDEF-GHIJKLMNOP-QRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"1234567890-1234567890-1234567890-1234567890\", k = 9",
+      "output": "1234-567890123-456789012-345678901-234567890"
+    },
+    {
+      "input": "s = \"Z1234567890123456789012345678901234567890\", k = 15",
+      "output": "Z1234567890-123456789012345-678901234567890"
+    },
+    {
+      "input": "s = \"a0b1-c2d3-e4f5-g6h7-i8j9-k0l1-m2n3-o4p5-q6r7-s8t9-u0v1-w2x3-y4z5\", k = 3",
+      "output": "A-0B1-C2D-3E4-F5G-6H7-I8J-9K0-L1M-2N3-O4P-5Q6-R7S-8T9-U0V-1W2-X3Y-4Z5"
+    },
+    {
+      "input": "s = \"-a\", k = 1",
+      "output": "A"
+    },
+    {
+      "input": "s = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", k = 13",
+      "output": "ABCDEFGHIJKLM-NOPQRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0\", k = 1",
+      "output": "1-2-3-4-5-6-7-8-9-0"
+    },
+    {
+      "input": "s = \"---a---b---c---d---e---f---g---h---i---j---\", k = 2",
+      "output": "AB-CD-EF-GH-IJ"
+    },
+    {
+      "input": "s = \"abcdef-ghijklm-nopqrst-uvwxyz-012345-67890\", k = 6",
+      "output": "A-BCDEFG-HIJKLM-NOPQRS-TUVWXY-Z01234-567890"
+    },
+    {
+      "input": "s = \"1234567890-abcdefghij-klmnopqrstuvwxyz\", k = 6",
+      "output": "123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"-a-b--c-d--e-f--g-h--i-j--k-l--m-n--o-p--q-r--s-t--u-v--w-x--y-z-\", k = 4",
+      "output": "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+    },
+    {
+      "input": "s = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789\", k = 8",
+      "output": "ABCD-EFGHIJKL-MNOPQRST-UVWXYZ01-23456789"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9\", k = 7",
+      "output": "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ012-3456789"
+    },
+    {
+      "input": "s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\", k = 2",
+      "output": "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+    },
+    {
+      "input": "s = \"1234567890-abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ\", k = 6",
+      "output": "12-345678-90ABCD-EFGHIJ-KLMNOP-QRSTUV-WXYZAB-CDEFGH-IJKLMN-OPQRST-UVWXYZ"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 1",
+      "output": "1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+    },
+    {
+      "input": "s = \"123-456-789-0ABC-DEF\", k = 4",
+      "output": "1234-5678-90AB-CDEF"
+    },
+    {
+      "input": "s = \"9876543210-zyxwvutsrqponmlkjihgfedcba-9876543210-zyxwvutsrqponmlkjihgfedcba\", k = 5",
+      "output": "98-76543-210ZY-XWVUT-SRQPO-NMLKJ-IHGFE-DCBA9-87654-3210Z-YXWVU-TSRQP-ONMLK-JIHGF-EDCBA"
+    },
+    {
+      "input": "s = \"123-456-789-0-ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ\", k = 2",
+      "output": "12-34-56-78-90-AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+    },
+    {
+      "input": "s = \"0123456789\", k = 2",
+      "output": "01-23-45-67-89"
+    },
+    {
+      "input": "s = \"ZEBRA-1234-APPLE-5678-BANANA-9012-CHERRY\", k = 4",
+      "output": "ZE-BRA1-234A-PPLE-5678-BANA-NA90-12CH-ERRY"
+    },
+    {
+      "input": "s = \"-abc-def-ghi-jkl-mno-pqr-stu-vwx-yz-123-456-789-0\", k = 7",
+      "output": "A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890"
+    },
+    {
+      "input": "s = \"X-Y-Z\", k = 1",
+      "output": "X-Y-Z"
+    },
+    {
+      "input": "s = \"-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ-\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+    },
+    {
+      "input": "s = \"Z\", k = 10",
+      "output": "Z"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0\", k = 10",
+      "output": "1234567890"
+    },
+    {
+      "input": "s = \"123-456-7890-ABC-DEF\", k = 3",
+      "output": "1-234-567-890-ABC-DEF"
+    },
+    {
+      "input": "s = \"123-456-789-0ABC-DEF\", k = 3",
+      "output": "1-234-567-890-ABC-DEF"
+    },
+    {
+      "input": "s = \"1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ\", k = 15",
+      "output": "123456-7890ABCDEFGHIJK-LMNOPQRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"1234567890-abcdef-1234567890-ABCDEF\", k = 7",
+      "output": "1234-567890A-BCDEF12-3456789-0ABCDEF"
+    },
+    {
+      "input": "s = \"0000-0000-0000-0000\", k = 4",
+      "output": "0000-0000-0000-0000"
+    },
+    {
+      "input": "s = \"--a-b--c-d--e-f--g-h--i-j--\", k = 2",
+      "output": "AB-CD-EF-GH-IJ"
+    },
+    {
+      "input": "s = \"Z\", k = 1",
+      "output": "Z"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\", k = 27",
+      "output": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\", k = 4",
+      "output": "AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ"
+    },
+    {
+      "input": "s = \"-A--B--C--D--E--F--G--H--I--J--K--L--M--N--O--P--Q--R--S--T--U--V--W--X--Y--Z-\", k = 2",
+      "output": "AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ"
+    },
+    {
+      "input": "s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9-\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789"
+    },
+    {
+      "input": "s = \"LICENSE-KEY-FOR-EXAMPLE-1234567\", k = 7",
+      "output": "LICENS-EKEYFOR-EXAMPLE-1234567"
+    },
+    {
+      "input": "s = \"a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a\", k = 2",
+      "output": "A-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA"
+    },
+    {
+      "input": "s = \"---a---b---c---d---e---f---g---h---i---j---k---l---m---n---o---p---q---r---s---t---u---v---w---x---y---z---\", k = 5",
+      "output": "A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ"
+    },
+    {
+      "input": "s = \"0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0\", k = 4",
+      "output": "00-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000"
+    },
+    {
+      "input": "s = \"1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0\", k = 10",
+      "output": "1234567890-1234567890-1234567890"
+    },
+    {
+      "input": "s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\", k = 3",
+      "output": "AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ"
+    }
+  ],
+  "entry_point": "Solution().licenseKeyFormatting",
+  "language_independent_cases": true,
+  "problem": "license-key-formatting",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def licenseKeyFormatting(self, s: str, k: int) -> str:\n        ",
+  "test": "def check(candidate):\n    assert candidate(s = \"AB-CD-EF-GH-IJ\",k = 2) == \"AB-CD-EF-GH-IJ\"\n    assert candidate(s = \"abcdefg-hijkl-mnopqr-stuv-wxyz\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ\"\n    assert candidate(s = \"\",k = 1) == \"\"\n    assert candidate(s = \"\",k = 10) == \"\"\n    assert candidate(s = \"1234567890\",k = 3) == \"1-234-567-890\"\n    assert candidate(s = \"2-4A0r7-4k\",k = 3) == \"24-A0R-74K\"\n    assert candidate(s = \"2-5g-3-J\",k = 2) == \"2-5G-3J\"\n    assert candidate(s = \"5F3Z-2e-9-w\",k = 4) == \"5F3Z-2E9W\"\n    assert candidate(s = \"----\",k = 2) == \"\"\n    assert candidate(s = \"abcdefg\",k = 2) == \"A-BC-DE-FG\"\n    assert candidate(s = \"a-a-a-a-\",k = 1) == \"A-A-A-A\"\n    assert candidate(s = \"1-23-456\",k = 2) == \"12-34-56\"\n    assert candidate(s = \"ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ\",k = 1) == \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\"\n    assert candidate(s = \"-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\",k = 6) == \"123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"0000-0000-0000-0000-0000-0000\",k = 8) == \"00000000-00000000-00000000\"\n    assert candidate(s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890\",k = 3) == \"ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ1-234-567-890\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\",k = 6) == \"AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"a-\",k = 2) == \"A\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 1) == \"1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\"\n    assert candidate(s = \"X1-Y2-Z3\",k = 1) == \"X-1-Y-2-Z-3\"\n    assert candidate(s = \"123-4567-890-ABCD-EFGH-IJKL\",k = 3) == \"1-234-567-890-ABC-DEF-GHI-JKL\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 10) == \"123456-7890ABCDEF-GHIJKLMNOP-QRSTUVWXYZ\"\n    assert candidate(s = \"a-\",k = 1) == \"A\"\n    assert candidate(s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ\"\n    assert candidate(s = \"x-y-z\",k = 10) == \"XYZ\"\n    assert candidate(s = \"123-456-789-0123-4567-8901\",k = 4) == \"1-2345-6789-0123-4567-8901\"\n    assert candidate(s = \"M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 6) == \"MN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"1234567890\",k = 1) == \"1-2-3-4-5-6-7-8-9-0\"\n    assert candidate(s = \"xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX-xXxX\",k = 5) == \"X-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX\"\n    assert candidate(s = \"aBcDeFgHiJkLmNoPqRsTuVwXyZ\",k = 3) == \"AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ\"\n    assert candidate(s = \"----\",k = 1) == \"\"\n    assert candidate(s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-1234567890\",k = 7) == \"A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890\"\n    assert candidate(s = \"Z1-23X4-567-89A-BCD-EFG-HIJ-KLM-NOP-QRS-TUV-WXY-Z\",k = 3) == \"Z-123-X45-678-9AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ\"\n    assert candidate(s = \"A1-B2-C3-D4-E5-F6-G7-H8-I9-J0-K1-L2-M3-N4-O5-P6-Q7-R8-S9-T0-U1-V2-W3-X4-Y5-Z6\",k = 6) == \"A1B2-C3D4E5-F6G7H8-I9J0K1-L2M3N4-O5P6Q7-R8S9T0-U1V2W3-X4Y5Z6\"\n    assert candidate(s = \"a-1-b-2-c-3-d-4-e-5-f-6-g-7-h-8-i-9-j-0\",k = 2) == \"A1-B2-C3-D4-E5-F6-G7-H8-I9-J0\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\",k = 4) == \"AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ\"\n    assert candidate(s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\",k = 3) == \"AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ\"\n    assert candidate(s = \"aA-bB-cC-dD-eE-fF-gG-hH-iI-jJ-kK-lL-mM-nN-oO-pP-qQ-rR-sS-tT-uU-vV-wW-xX-yY-zZ\",k = 5) == \"AA-BBCCD-DEEFF-GGHHI-IJJKK-LLMMN-NOOPP-QQRRS-STTUU-VVWWX-XYYZZ\"\n    assert candidate(s = \"-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-\",k = 2) == \"AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ\"\n    assert candidate(s = \"0-0-0-0-0-0-0-0-0-0\",k = 2) == \"00-00-00-00-00\"\n    assert candidate(s = \"abcdefghij-klmnopqrstuvwxyz\",k = 6) == \"AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0\",k = 3) == \"12-345-678-901-234-567-890-123-456-789-012-345-678-901-234-567-890\"\n    assert candidate(s = \"x-y-z-1-2-3-4-5-6-7-8-9-0-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 7) == \"XYZ1-2345678-90ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ\"\n    assert candidate(s = \"000-000-000-000-000\",k = 5) == \"00000-00000-00000\"\n    assert candidate(s = \"123-456-7890-ABCD-EFGH-IJKL\",k = 3) == \"1-234-567-890-ABC-DEF-GHI-JKL\"\n    assert candidate(s = \"2-5G-3-J-\",k = 1) == \"2-5-G-3-J\"\n    assert candidate(s = \"-this-is-a-test-string-for-the-problem-description-\",k = 5) == \"T-HISIS-ATEST-STRIN-GFORT-HEPRO-BLEMD-ESCRI-PTION\"\n    assert candidate(s = \"abcdefg-hijkl-mnopqr-stuv-wxyz-12345-67890\",k = 6) == \"ABCDEF-GHIJKL-MNOPQR-STUVWX-YZ1234-567890\"\n    assert candidate(s = \"W3LC--DR5F--HR5P-TR22--W48P\",k = 4) == \"W3LC-DR5F-HR5P-TR22-W48P\"\n    assert candidate(s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 26) == \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n    assert candidate(s = \"abcdef\",k = 10) == \"ABCDEF\"\n    assert candidate(s = \"---\",k = 1) == \"\"\n    assert candidate(s = \"aBcDeFgHiJkLmNoPqRsTuVwXyZ\",k = 7) == \"ABCDE-FGHIJKL-MNOPQRS-TUVWXYZ\"\n    assert candidate(s = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\",k = 4) == \"AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ01-2345-6789\"\n    assert candidate(s = \"---\",k = 2) == \"\"\n    assert candidate(s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ\"\n    assert candidate(s = \"a\",k = 2) == \"A\"\n    assert candidate(s = \"-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9---\",k = 1) == \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9\"\n    assert candidate(s = \"X-5F3Z-2E-9-W\",k = 3) == \"X5F-3Z2-E9W\"\n    assert candidate(s = \"WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789\",k = 3) == \"WXY-ZAB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ-123-456-789\"\n    assert candidate(s = \"-\",k = 1) == \"\"\n    assert candidate(s = \"1234567890-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\",k = 10) == \"12-34567890AB-CDEFGHIJKL-MNOPQRSTUV-WXYZABCDEF-GHIJKLMNOP-QRSTUVWXYZ\"\n    assert candidate(s = \"1234567890-1234567890-1234567890-1234567890\",k = 9) == \"1234-567890123-456789012-345678901-234567890\"\n    assert candidate(s = \"Z1234567890123456789012345678901234567890\",k = 15) == \"Z1234567890-123456789012345-678901234567890\"\n    assert candidate(s = \"a0b1-c2d3-e4f5-g6h7-i8j9-k0l1-m2n3-o4p5-q6r7-s8t9-u0v1-w2x3-y4z5\",k = 3) == \"A-0B1-C2D-3E4-F5G-6H7-I8J-9K0-L1M-2N3-O4P-5Q6-R7S-8T9-U0V-1W2-X3Y-4Z5\"\n    assert candidate(s = \"-a\",k = 1) == \"A\"\n    assert candidate(s = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",k = 13) == \"ABCDEFGHIJKLM-NOPQRSTUVWXYZ\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0\",k = 1) == \"1-2-3-4-5-6-7-8-9-0\"\n    assert candidate(s = \"---a---b---c---d---e---f---g---h---i---j---\",k = 2) == \"AB-CD-EF-GH-IJ\"\n    assert candidate(s = \"abcdef-ghijklm-nopqrst-uvwxyz-012345-67890\",k = 6) == \"A-BCDEFG-HIJKLM-NOPQRS-TUVWXY-Z01234-567890\"\n    assert candidate(s = \"1234567890-abcdefghij-klmnopqrstuvwxyz\",k = 6) == \"123456-7890AB-CDEFGH-IJKLMN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"-a-b--c-d--e-f--g-h--i-j--k-l--m-n--o-p--q-r--s-t--u-v--w-x--y-z-\",k = 4) == \"AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ\"\n    assert candidate(s = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789\",k = 8) == \"ABCD-EFGHIJKL-MNOPQRST-UVWXYZ01-23456789\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-0-1-2-3-4-5-6-7-8-9\",k = 7) == \"A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ012-3456789\"\n    assert candidate(s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-\",k = 2) == \"AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ\"\n    assert candidate(s = \"1234567890-abcdefghijklmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ\",k = 6) == \"12-345678-90ABCD-EFGHIJ-KLMNOP-QRSTUV-WXYZAB-CDEFGH-IJKLMN-OPQRST-UVWXYZ\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 1) == \"1-2-3-4-5-6-7-8-9-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\"\n    assert candidate(s = \"123-456-789-0ABC-DEF\",k = 4) == \"1234-5678-90AB-CDEF\"\n    assert candidate(s = \"9876543210-zyxwvutsrqponmlkjihgfedcba-9876543210-zyxwvutsrqponmlkjihgfedcba\",k = 5) == \"98-76543-210ZY-XWVUT-SRQPO-NMLKJ-IHGFE-DCBA9-87654-3210Z-YXWVU-TSRQP-ONMLK-JIHGF-EDCBA\"\n    assert candidate(s = \"123-456-789-0-ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ\",k = 2) == \"12-34-56-78-90-AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ\"\n    assert candidate(s = \"0123456789\",k = 2) == \"01-23-45-67-89\"\n    assert candidate(s = \"ZEBRA-1234-APPLE-5678-BANANA-9012-CHERRY\",k = 4) == \"ZE-BRA1-234A-PPLE-5678-BANA-NA90-12CH-ERRY\"\n    assert candidate(s = \"-abc-def-ghi-jkl-mno-pqr-stu-vwx-yz-123-456-789-0\",k = 7) == \"A-BCDEFGH-IJKLMNO-PQRSTUV-WXYZ123-4567890\"\n    assert candidate(s = \"X-Y-Z\",k = 1) == \"X-Y-Z\"\n    assert candidate(s = \"-ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ-\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ\"\n    assert candidate(s = \"Z\",k = 10) == \"Z\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0\",k = 10) == \"1234567890\"\n    assert candidate(s = \"123-456-7890-ABC-DEF\",k = 3) == \"1-234-567-890-ABC-DEF\"\n    assert candidate(s = \"123-456-789-0ABC-DEF\",k = 3) == \"1-234-567-890-ABC-DEF\"\n    assert candidate(s = \"1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ\",k = 15) == \"123456-7890ABCDEFGHIJK-LMNOPQRSTUVWXYZ\"\n    assert candidate(s = \"1234567890-abcdef-1234567890-ABCDEF\",k = 7) == \"1234-567890A-BCDEF12-3456789-0ABCDEF\"\n    assert candidate(s = \"0000-0000-0000-0000\",k = 4) == \"0000-0000-0000-0000\"\n    assert candidate(s = \"--a-b--c-d--e-f--g-h--i-j--\",k = 2) == \"AB-CD-EF-GH-IJ\"\n    assert candidate(s = \"Z\",k = 1) == \"Z\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\",k = 27) == \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n    assert candidate(s = \"A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z\",k = 4) == \"AB-CDEF-GHIJ-KLMN-OPQR-STUV-WXYZ\"\n    assert candidate(s = \"-A--B--C--D--E--F--G--H--I--J--K--L--M--N--O--P--Q--R--S--T--U--V--W--X--Y--Z-\",k = 2) == \"AB-CD-EF-GH-IJ-KL-MN-OP-QR-ST-UV-WX-YZ\"\n    assert candidate(s = \"-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-0-1-2-3-4-5-6-7-8-9-\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ-01234-56789\"\n    assert candidate(s = \"LICENSE-KEY-FOR-EXAMPLE-1234567\",k = 7) == \"LICENS-EKEYFOR-EXAMPLE-1234567\"\n    assert candidate(s = \"a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a-a\",k = 2) == \"A-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA-AA\"\n    assert candidate(s = \"---a---b---c---d---e---f---g---h---i---j---k---l---m---n---o---p---q---r---s---t---u---v---w---x---y---z---\",k = 5) == \"A-BCDEF-GHIJK-LMNOP-QRSTU-VWXYZ\"\n    assert candidate(s = \"0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0\",k = 4) == \"00-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000-0000\"\n    assert candidate(s = \"1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0-1-2-3-4-5-6-7-8-9-0\",k = 10) == \"1234567890-1234567890-1234567890\"\n    assert candidate(s = \"a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z\",k = 3) == \"AB-CDE-FGH-IJK-LMN-OPQ-RST-UVW-XYZ\"\n",
+  "workload_hash": "a75bd1a7f53034a781bde0b768aff83063fb16e10e54ab1de791937659e363b0"
+}

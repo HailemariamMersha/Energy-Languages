@@ -5,4 +5,10 @@ tmp.*
 *.class
 lshw
 sysinfo.*
-
+__pycache__/
+*.py[cod]
+.pytest_cache/
+perfarena_out/
+leetcode-energy/**/compile.json
+leetcode-energy/**/result_*.json
+leetcode-energy/**/energy_*.json

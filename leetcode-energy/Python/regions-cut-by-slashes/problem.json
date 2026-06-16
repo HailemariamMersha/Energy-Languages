@@ -1,0 +1,19 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def regionsBySlashes(self, grid: List[str]) -> int:\n        "
+  },
+  "content": "An `n x n` grid is composed of `1 x 1` squares where each `1 x 1` square consists of a `'/'`, `'\\'`, or blank space `' '`. These characters divide the square into contiguous regions.\n\nGiven the grid `grid` represented as a string array, return _the number of regions_.\n\nNote that backslash characters are escaped, so a `'\\'` is represented as `'\\\\'`.\n\n**Example 1:**\n\n**Input:** grid = \\[ \" / \", \"/  \"\\]\n**Output:** 2\n\n**Example 2:**\n\n**Input:** grid = \\[ \" / \", \"   \"\\]\n**Output:** 1\n\n**Example 3:**\n\n**Input:** grid = \\[ \"/\\\\\\\\ \", \"\\\\/ \"\\]\n**Output:** 5\n**Explanation:** Recall that because \\\\ characters are escaped,  \"\\\\/ \" refers to /, and  \"/\\\\\\\\ \" refers to /\\\\.\n\n**Constraints:**\n\n*   `n == grid.length == grid[i].length`\n*   `1 <= n <= 30`\n*   `grid[i][j]` is either `'/'`, `'\\'`, or `' '`.",
+  "hints": null,
+  "id": 55,
+  "level": "Medium",
+  "tags": [
+    "Array",
+    "Hash Table",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Union-Find",
+    "Matrix"
+  ],
+  "title": "Regions Cut By Slashes",
+  "title_slug": "regions-cut-by-slashes"
+}

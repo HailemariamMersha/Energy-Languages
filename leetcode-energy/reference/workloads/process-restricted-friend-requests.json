@@ -1,0 +1,303 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "n = 4, restrictions = [[0,2],[1,3]], requests = [[0,1],[2,3],[0,3]]",
+      "output": "[True, True, False]"
+    },
+    {
+      "input": "n = 4, restrictions = [], requests = [[0,1],[1,2],[2,3],[3,0]]",
+      "output": "[True, True, True, True]"
+    },
+    {
+      "input": "n = 4, restrictions = [[0,2],[1,3]], requests = [[0,1],[2,3],[1,2]]",
+      "output": "[True, True, False]"
+    },
+    {
+      "input": "n = 5, restrictions = [[0,1],[1,2],[2,3]], requests = [[0,4],[1,2],[3,1],[3,4]]",
+      "output": "[True, False, True, False]"
+    },
+    {
+      "input": "n = 6, restrictions = [[1,4],[2,5]], requests = [[0,3],[1,2],[3,4]]",
+      "output": "[True, True, True]"
+    },
+    {
+      "input": "n = 6, restrictions = [[0,1],[2,3],[4,5]], requests = [[0,2],[1,3],[2,4],[3,5],[4,0],[5,1]]",
+      "output": "[True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 6, restrictions = [[0,1],[2,3],[4,5]], requests = [[0,2],[1,3],[4,5],[2,4]]",
+      "output": "[True, True, False, True]"
+    },
+    {
+      "input": "n = 3, restrictions = [[0,1]], requests = [[1,2],[0,2]]",
+      "output": "[True, False]"
+    },
+    {
+      "input": "n = 3, restrictions = [[0,1]], requests = [[0,2],[2,1]]",
+      "output": "[True, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0]], requests = [[0,5],[2,7],[4,9],[1,6]]",
+      "output": "[True, True, True, True]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11]], requests = [[0,2],[1,3],[4,6],[5,7],[8,10],[9,11],[0,5],[2,7],[4,9],[6,11]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,6],[1,5],[2,4]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0]]",
+      "output": "[True, True, True, False, True, True, False]"
+    },
+    {
+      "input": "n = 20, restrictions = [[0,10],[1,11],[2,12],[3,13],[4,14],[5,15],[6,16],[7,17],[8,18],[9,19]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0],[10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,10]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,3],[1,4],[2,5],[6,8]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,0],[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,0],[7,1],[8,2]]",
+      "output": "[True, True, False, True, True, True, True, False, True, True, False, False, True, True, True, False, False, True]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,3],[1,4],[2,5],[3,6],[4,0],[5,1],[6,2]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0]]",
+      "output": "[True, True, False, True, True, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,2],[1,3],[4,6],[5,7],[8,9]], requests = [[0,1],[2,3],[4,5],[6,7],[8,9],[0,9],[1,8],[2,7],[3,6],[4,3],[5,2],[6,1],[7,0],[8,5],[9,4]]",
+      "output": "[True, True, True, True, False, True, False, True, True, False, False, False, False, True, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14],[14,0]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9],[8,10],[9,11],[10,12],[11,13],[12,14],[13,0],[14,1]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, False, False, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,4],[1,5],[2,6],[3,7]], requests = [[0,1],[2,3],[4,5],[6,7],[0,5]]",
+      "output": "[True, True, True, True, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9]], requests = [[0,9],[1,8],[2,7],[3,6],[4,5]]",
+      "output": "[True, True, True, True, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,7],[1,6],[2,5],[3,4]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0]]",
+      "output": "[True, True, True, False, True, True, True, False]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,0],[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,0],[8,1]], requests = [[0,4],[1,5],[2,6],[3,7],[4,8],[5,0],[6,1],[7,2],[8,3]]",
+      "output": "[True, True, True, True, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9],[8,10],[9,11],[0,11],[1,10],[2,9],[3,8],[4,7],[5,6]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,0],[5,6],[6,7],[7,8],[8,5],[9,10],[10,11],[11,12],[12,9],[13,14],[14,13]], requests = [[0,3],[1,4],[2,0],[3,1],[4,2],[5,8],[6,9],[7,10],[8,11],[9,12],[10,5],[11,6],[12,7]]",
+      "output": "[True, True, False, False, False, False, True, True, True, False, True, True, True]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]], requests = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11],[0,11]]",
+      "output": "[True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,4],[1,5],[2,6],[3,7]], requests = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,5],[1,6],[2,7],[3,4]]",
+      "output": "[True, True, True, True, True, True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4]], requests = [[0,4],[1,5],[2,6],[3,7],[0,5],[1,6],[2,7],[3,4]]",
+      "output": "[True, True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4]], requests = [[0,4],[1,5],[2,6],[3,7]]",
+      "output": "[True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0]], requests = [[0,5],[2,7],[4,9],[1,6],[3,8]]",
+      "output": "[True, True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9]], requests = [[0,2],[1,3],[4,6],[5,7],[8,0],[9,1]]",
+      "output": "[True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,3],[1,4],[2,5],[3,6],[4,0],[5,1],[6,2]], requests = [[0,6],[1,5],[2,4],[3,0],[4,1],[5,2],[6,3]]",
+      "output": "[True, False, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,5],[1,6],[2,7],[3,8],[4,9],[5,10],[6,11],[7,12],[8,13],[9,14]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14]]",
+      "output": "[True, True, True, True, False, True, True, True, True, False, True, True, True, True]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,2],[1,3],[4,6],[5,7]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[0,3],[1,4],[2,5],[3,6],[4,7],[5,0],[6,1],[7,2]]",
+      "output": "[True, False, True, True, True, False, True, True, False, False, True, False, False, False, True, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11],[12,13],[14,0]], requests = [[0,2],[2,4],[4,6],[6,8],[8,10],[10,12],[12,14],[14,1]]",
+      "output": "[True, True, True, True, True, True, False, True]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[0,8]], requests = [[0,8],[1,7],[2,6],[3,5],[4,8],[0,7],[1,6],[2,5],[3,4]]",
+      "output": "[False, True, True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,9],[1,8],[2,7],[3,6],[4,5]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0],[0,2],[2,4],[4,6],[6,8],[8,0]]",
+      "output": "[True, True, True, True, False, True, True, True, True, False, True, True, False, True, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9],[8,0],[9,1]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,5],[1,6],[2,7],[3,8],[4,9],[5,10],[6,11],[7,12],[8,13],[9,14]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14],[14,0]]",
+      "output": "[True, True, True, True, False, True, True, True, True, False, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,2],[1,3],[4,6]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0],[0,3],[1,4],[2,5]]",
+      "output": "[True, False, True, True, True, False, True, False, False, True]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[6,7],[7,8],[8,9],[9,10],[10,11],[11,6],[0,7],[1,8],[2,9],[3,10],[4,11],[5,6]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,5],[1,6],[2,7],[3,8],[4,9]], requests = [[0,9],[1,8],[2,7],[3,6],[4,5],[5,0],[6,1],[7,2],[8,3],[9,4]]",
+      "output": "[True, True, False, True, True, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9],[8,10],[9,11],[10,12],[11,13],[12,14],[13,0],[14,1]], requests = [[0,14],[1,13],[2,12],[3,11],[4,10],[5,9],[6,8],[7,0]]",
+      "output": "[True, True, True, True, True, True, False, True]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11],[0,11],[1,10],[2,9],[3,8],[4,7],[5,6]], requests = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11],[6,0],[7,1],[8,2],[9,3],[10,4],[11,5]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,2],[1,3],[4,6]], requests = [[0,1],[2,3],[4,5],[5,6],[0,3],[2,5]]",
+      "output": "[True, True, True, False, False, True]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,0]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,0],[8,1]]",
+      "output": "[True, True, True, True, True, True, False, False, False]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,0]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,0],[8,1],[0,4]]",
+      "output": "[True, True, True, True, True, True, False, False, True, True]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,14],[1,13],[2,12],[3,11],[4,10],[5,9],[6,8]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14],[14,0],[0,13],[1,12],[2,11],[3,10],[4,9],[5,8],[6,7]]",
+      "output": "[True, True, True, True, True, True, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True]"
+    },
+    {
+      "input": "n = 5, restrictions = [[0,2],[1,3]], requests = [[0,1],[2,3],[1,4],[3,4]]",
+      "output": "[True, True, True, False]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6]], requests = [[0,6],[1,5],[2,4],[3,0],[4,1],[5,2],[6,3]]",
+      "output": "[True, True, True, True, False, False, True]"
+    },
+    {
+      "input": "n = 20, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,0]], requests = [[0,10],[1,11],[2,12],[3,13],[4,14],[5,15],[6,16],[7,17],[8,18],[9,19],[0,5],[1,6],[2,7],[3,8],[4,9],[10,15],[11,16],[12,17],[13,18],[14,19]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9]], requests = [[0,9],[1,8],[2,7],[3,6],[4,5]]",
+      "output": "[True, True, True, True, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,1],[2,3],[4,5],[5,6],[6,7]], requests = [[0,2],[1,4],[3,5],[5,7],[0,7],[4,6]]",
+      "output": "[True, True, True, True, False, True]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,4],[7,8],[8,9],[9,7],[10,11],[11,12],[12,10],[13,14]], requests = [[0,4],[1,5],[2,6],[3,7],[4,8],[5,9],[6,10],[7,11],[8,12],[9,13],[10,14],[11,0],[12,1],[13,2],[14,3]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,2],[1,3],[4,6],[5,7]], requests = [[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[2,6],[1,5],[3,7],[0,6],[2,4],[1,7],[3,5]]",
+      "output": "[True, True, True, True, False, False, False, False, True, True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 7, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,0]], requests = [[0,3],[1,4],[2,5],[3,6],[4,0],[5,1],[6,2]]",
+      "output": "[True, True, True, False, False, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0]], requests = [[0,9],[1,0],[2,1],[3,2],[4,3],[5,4],[6,5],[7,6],[8,7],[9,8]]",
+      "output": "[False, False, False, False, False, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11]], requests = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11],[6,0],[7,1],[8,2],[9,3],[10,4],[11,5]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,0]], requests = [[0,5],[5,6],[6,7],[7,8],[8,9],[9,5]]",
+      "output": "[True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,9],[1,8],[2,7],[3,6],[4,5]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[0,9]]",
+      "output": "[True, True, True, True, False, True, True, True, True, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,3],[1,4],[2,5],[3,6],[4,7]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[0,7],[1,6]]",
+      "output": "[True, True, True, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]], requests = [[0,5],[1,4],[2,3],[6,11],[7,10],[8,9],[0,11],[1,10],[2,9],[3,8],[4,7],[5,6]]",
+      "output": "[True, True, True, True, True, True, False, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,9],[1,8],[2,7],[3,6],[4,5]], requests = [[0,1],[1,2],[2,3],[3,4],[4,0],[5,6],[6,7],[7,8],[8,9],[9,5]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11]], requests = [[0,2],[1,3],[4,6],[5,7],[8,10],[9,11],[0,11],[1,10],[2,9],[3,8],[4,7],[5,6]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 11, restrictions = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9],[8,10],[9,0],[10,1]]",
+      "output": "[True, True, True, True, True, True, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 20, restrictions = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11],[12,13],[14,15],[16,17],[18,19]], requests = [[0,2],[1,3],[4,6],[5,7],[8,10],[9,11],[12,14],[13,15],[16,18],[17,19],[0,19],[1,18],[2,17],[3,16],[4,15],[5,14],[6,13],[7,12],[8,11],[9,10]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[0,7],[1,8],[2,9],[3,10],[4,11],[5,6]]",
+      "output": "[True, True, True, True, True, False, False, False, False, False, False]"
+    },
+    {
+      "input": "n = 15, restrictions = [[0,7],[1,8],[2,9],[3,10],[4,11],[5,12],[6,13],[7,14]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11],[11,12],[12,13],[13,14]]",
+      "output": "[True, True, True, True, True, True, False, True, True, True, True, True, True, False]"
+    },
+    {
+      "input": "n = 9, restrictions = [[0,1],[2,3],[4,5],[6,7]], requests = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,0],[8,1],[0,8],[1,7],[2,6],[3,5],[4,3],[5,2],[6,1],[7,0],[8,6],[0,4],[1,5],[2,7],[3,8]]",
+      "output": "[True, True, True, True, True, True, True, False, False, True, True, True, True, False, False, False, False, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 12, restrictions = [[0,3],[1,4],[2,5],[6,9],[7,10],[8,11]], requests = [[0,1],[1,2],[3,4],[4,5],[6,7],[7,8],[9,10],[10,11],[0,6],[1,7],[2,8],[3,9],[4,10],[5,11],[0,2],[1,3],[4,6],[5,7],[8,10],[9,11]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, True]"
+    },
+    {
+      "input": "n = 6, restrictions = [[0,1],[2,3],[4,5]], requests = [[0,2],[1,3],[2,4],[3,5],[0,5],[1,4]]",
+      "output": "[True, True, True, True, False, False]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,5],[1,6],[2,7],[3,8],[4,9]], requests = [[0,1],[1,2],[2,3],[3,4],[4,0],[5,6],[6,7],[7,8],[8,9],[9,5]]",
+      "output": "[True, True, True, True, True, True, True, True, True, True]"
+    },
+    {
+      "input": "n = 10, restrictions = [[0,9],[1,8],[2,7],[3,6],[4,5]], requests = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,0]]",
+      "output": "[True, True, True, True, False, True, True, True, True, False]"
+    },
+    {
+      "input": "n = 8, restrictions = [[0,2],[1,3],[2,4],[3,5],[4,6],[5,7]], requests = [[0,3],[1,4],[2,5],[3,6],[4,7],[0,1],[2,3],[4,5],[6,7]]",
+      "output": "[True, True, True, True, True, False, False, False, False]"
+    }
+  ],
+  "entry_point": "Solution().friendRequests",
+  "language_independent_cases": true,
+  "problem": "process-restricted-friend-requests",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def friendRequests(self, n: int, restrictions: List[List[int]], requests: List[List[int]]) -> List[bool]:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(n=4, restrictions=[[0, 2], [1, 3]], requests=[[0, 1], [2, 3], [0, 3]]) == [True, True, False]\n    assert candidate(n=4, restrictions=[], requests=[[0, 1], [1, 2], [2, 3], [3, 0]]) == [True, True, True, True]\n    assert candidate(n=4, restrictions=[[0, 2], [1, 3]], requests=[[0, 1], [2, 3], [1, 2]]) == [True, True, False]\n    assert candidate(n=5, restrictions=[[0, 1], [1, 2], [2, 3]], requests=[[0, 4], [1, 2], [3, 1], [3, 4]]) == [True, False, True, False]\n    assert candidate(n=6, restrictions=[[1, 4], [2, 5]], requests=[[0, 3], [1, 2], [3, 4]]) == [True, True, True]\n    assert candidate(n=6, restrictions=[[0, 1], [2, 3], [4, 5]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 0], [5, 1]]) == [True, True, True, True, True, True]\n    assert candidate(n=6, restrictions=[[0, 1], [2, 3], [4, 5]], requests=[[0, 2], [1, 3], [4, 5], [2, 4]]) == [True, True, False, True]\n    assert candidate(n=3, restrictions=[[0, 1]], requests=[[1, 2], [0, 2]]) == [True, False]\n    assert candidate(n=3, restrictions=[[0, 1]], requests=[[0, 2], [2, 1]]) == [True, False]\n    assert candidate(n=10, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0]], requests=[[0, 5], [2, 7], [4, 9], [1, 6]]) == [True, True, True, True]\n    assert candidate(n=12, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]], requests=[[0, 2], [1, 3], [4, 6], [5, 7], [8, 10], [9, 11], [0, 5], [2, 7], [4, 9], [6, 11]]) == [True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=7, restrictions=[[0, 6], [1, 5], [2, 4]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0]]) == [True, True, True, False, True, True, False]\n    assert candidate(n=20, restrictions=[[0, 10], [1, 11], [2, 12], [3, 13], [4, 14], [5, 15], [6, 16], [7, 17], [8, 18], [9, 19]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 10]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=9, restrictions=[[0, 3], [1, 4], [2, 5], [6, 8]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 0], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 0], [7, 1], [8, 2]]) == [True, True, False, True, True, True, True, False, True, True, False, False, True, True, True, False, False, True]\n    assert candidate(n=7, restrictions=[[0, 3], [1, 4], [2, 5], [3, 6], [4, 0], [5, 1], [6, 2]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0]]) == [True, True, False, True, True, False, False]\n    assert candidate(n=10, restrictions=[[0, 2], [1, 3], [4, 6], [5, 7], [8, 9]], requests=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [0, 9], [1, 8], [2, 7], [3, 6], [4, 3], [5, 2], [6, 1], [7, 0], [8, 5], [9, 4]]) == [True, True, True, True, False, True, False, True, True, False, False, False, False, True, False]\n    assert candidate(n=15, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 0]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 0], [14, 1]]) == [True, True, True, True, True, True, True, True, True, True, True, True, False, False, False]\n    assert candidate(n=8, restrictions=[[0, 4], [1, 5], [2, 6], [3, 7]], requests=[[0, 1], [2, 3], [4, 5], [6, 7], [0, 5]]) == [True, True, True, True, False]\n    assert candidate(n=10, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]], requests=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, False]\n    assert candidate(n=8, restrictions=[[0, 7], [1, 6], [2, 5], [3, 4]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0]]) == [True, True, True, False, True, True, True, False]\n    assert candidate(n=9, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 0], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 0], [8, 1]], requests=[[0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 0], [6, 1], [7, 2], [8, 3]]) == [True, True, True, True, False, False, False, False, False]\n    assert candidate(n=12, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [0, 11], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False]\n    assert candidate(n=15, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [5, 6], [6, 7], [7, 8], [8, 5], [9, 10], [10, 11], [11, 12], [12, 9], [13, 14], [14, 13]], requests=[[0, 3], [1, 4], [2, 0], [3, 1], [4, 2], [5, 8], [6, 9], [7, 10], [8, 11], [9, 12], [10, 5], [11, 6], [12, 7]]) == [True, True, False, False, False, False, True, True, True, False, True, True, True]\n    assert candidate(n=12, restrictions=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]], requests=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [0, 11]]) == [True, True, True, True, True, True, True]\n    assert candidate(n=8, restrictions=[[0, 4], [1, 5], [2, 6], [3, 7]], requests=[[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 5], [1, 6], [2, 7], [3, 4]]) == [True, True, True, True, True, True, True, True, False, False, False, False]\n    assert candidate(n=8, restrictions=[[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4]], requests=[[0, 4], [1, 5], [2, 6], [3, 7], [0, 5], [1, 6], [2, 7], [3, 4]]) == [True, True, True, True, False, False, False, False]\n    assert candidate(n=8, restrictions=[[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4]], requests=[[0, 4], [1, 5], [2, 6], [3, 7]]) == [True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0]], requests=[[0, 5], [2, 7], [4, 9], [1, 6], [3, 8]]) == [True, True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]], requests=[[0, 2], [1, 3], [4, 6], [5, 7], [8, 0], [9, 1]]) == [True, True, True, True, True, True]\n    assert candidate(n=7, restrictions=[[0, 3], [1, 4], [2, 5], [3, 6], [4, 0], [5, 1], [6, 2]], requests=[[0, 6], [1, 5], [2, 4], [3, 0], [4, 1], [5, 2], [6, 3]]) == [True, False, True, False, False, False, False]\n    assert candidate(n=15, restrictions=[[0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]]) == [True, True, True, True, False, True, True, True, True, False, True, True, True, True]\n    assert candidate(n=8, restrictions=[[0, 2], [1, 3], [4, 6], [5, 7]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0], [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 0], [6, 1], [7, 2]]) == [True, False, True, True, True, False, True, True, False, False, True, False, False, False, True, False]\n    assert candidate(n=15, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 0]], requests=[[0, 2], [2, 4], [4, 6], [6, 8], [8, 10], [10, 12], [12, 14], [14, 1]]) == [True, True, True, True, True, True, False, True]\n    assert candidate(n=9, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [0, 8]], requests=[[0, 8], [1, 7], [2, 6], [3, 5], [4, 8], [0, 7], [1, 6], [2, 5], [3, 4]]) == [False, True, True, True, True, False, False, False, False]\n    assert candidate(n=10, restrictions=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0], [0, 2], [2, 4], [4, 6], [6, 8], [8, 0]]) == [True, True, True, True, False, True, True, True, True, False, True, True, False, True, False]\n    assert candidate(n=10, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 0], [9, 1]]) == [True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=15, restrictions=[[0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 0]]) == [True, True, True, True, False, True, True, True, True, False, True, True, True, True, True]\n    assert candidate(n=7, restrictions=[[0, 2], [1, 3], [4, 6]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0], [0, 3], [1, 4], [2, 5]]) == [True, False, True, True, True, False, True, False, False, True]\n    assert candidate(n=12, restrictions=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 6], [0, 7], [1, 8], [2, 9], [3, 10], [4, 11], [5, 6]]) == [True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, False, False]\n    assert candidate(n=10, restrictions=[[0, 5], [1, 6], [2, 7], [3, 8], [4, 9]], requests=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5], [5, 0], [6, 1], [7, 2], [8, 3], [9, 4]]) == [True, True, False, True, True, False, False, False, False, False]\n    assert candidate(n=15, restrictions=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 11], [10, 12], [11, 13], [12, 14], [13, 0], [14, 1]], requests=[[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8], [7, 0]]) == [True, True, True, True, True, True, False, True]\n    assert candidate(n=12, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [0, 11], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]], requests=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 0], [7, 1], [8, 2], [9, 3], [10, 4], [11, 5]]) == [True, True, True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=7, restrictions=[[0, 2], [1, 3], [4, 6]], requests=[[0, 1], [2, 3], [4, 5], [5, 6], [0, 3], [2, 5]]) == [True, True, True, False, False, True]\n    assert candidate(n=9, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 0]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 0], [8, 1]]) == [True, True, True, True, True, True, False, False, False]\n    assert candidate(n=9, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 0]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 0], [8, 1], [0, 4]]) == [True, True, True, True, True, True, False, False, True, True]\n    assert candidate(n=15, restrictions=[[0, 14], [1, 13], [2, 12], [3, 11], [4, 10], [5, 9], [6, 8]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 0], [0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7]]) == [True, True, True, True, True, True, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True]\n    assert candidate(n=5, restrictions=[[0, 2], [1, 3]], requests=[[0, 1], [2, 3], [1, 4], [3, 4]]) == [True, True, True, False]\n    assert candidate(n=7, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]], requests=[[0, 6], [1, 5], [2, 4], [3, 0], [4, 1], [5, 2], [6, 3]]) == [True, True, True, True, False, False, True]\n    assert candidate(n=20, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19], [19, 0]], requests=[[0, 10], [1, 11], [2, 12], [3, 13], [4, 14], [5, 15], [6, 16], [7, 17], [8, 18], [9, 19], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9], [10, 15], [11, 16], [12, 17], [13, 18], [14, 19]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 1], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9]], requests=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]]) == [True, True, True, True, False]\n    assert candidate(n=8, restrictions=[[0, 1], [2, 3], [4, 5], [5, 6], [6, 7]], requests=[[0, 2], [1, 4], [3, 5], [5, 7], [0, 7], [4, 6]]) == [True, True, True, True, False, True]\n    assert candidate(n=15, restrictions=[[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 4], [7, 8], [8, 9], [9, 7], [10, 11], [11, 12], [12, 10], [13, 14]], requests=[[0, 4], [1, 5], [2, 6], [3, 7], [4, 8], [5, 9], [6, 10], [7, 11], [8, 12], [9, 13], [10, 14], [11, 0], [12, 1], [13, 2], [14, 3]]) == [True, True, True, True, True, True, True, True, True, True, True, False, False, False, False]\n    assert candidate(n=8, restrictions=[[0, 2], [1, 3], [4, 6], [5, 7]], requests=[[0, 1], [2, 3], [4, 5], [6, 7], [0, 2], [1, 3], [4, 6], [5, 7], [0, 4], [2, 6], [1, 5], [3, 7], [0, 6], [2, 4], [1, 7], [3, 5]]) == [True, True, True, True, False, False, False, False, True, True, True, True, False, False, False, False]\n    assert candidate(n=7, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0]], requests=[[0, 3], [1, 4], [2, 5], [3, 6], [4, 0], [5, 1], [6, 2]]) == [True, True, True, False, False, False, False]\n    assert candidate(n=10, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0]], requests=[[0, 9], [1, 0], [2, 1], [3, 2], [4, 3], [5, 4], [6, 5], [7, 6], [8, 7], [9, 8]]) == [False, False, False, False, False, False, False, False, False, False]\n    assert candidate(n=12, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11]], requests=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [6, 0], [7, 1], [8, 2], [9, 3], [10, 4], [11, 5]]) == [True, True, True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]], requests=[[0, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 5]]) == [True, True, True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [0, 9]]) == [True, True, True, True, False, True, True, True, True, False]\n    assert candidate(n=8, restrictions=[[0, 3], [1, 4], [2, 5], [3, 6], [4, 7]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [0, 7], [1, 6]]) == [True, True, True, True, True, True, False, False]\n    assert candidate(n=12, restrictions=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]], requests=[[0, 5], [1, 4], [2, 3], [6, 11], [7, 10], [8, 9], [0, 11], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [True, True, True, True, True, True, False, False, False, False, False, False]\n    assert candidate(n=10, restrictions=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [5, 6], [6, 7], [7, 8], [8, 9], [9, 5]]) == [True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=12, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11]], requests=[[0, 2], [1, 3], [4, 6], [5, 7], [8, 10], [9, 11], [0, 11], [1, 10], [2, 9], [3, 8], [4, 7], [5, 6]]) == [True, True, True, True, True, True, True, True, True, True, False, False]\n    assert candidate(n=11, restrictions=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 9], [8, 10], [9, 0], [10, 1]]) == [True, True, True, True, True, True, True, True, True, False, False]\n    assert candidate(n=20, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10, 11], [12, 13], [14, 15], [16, 17], [18, 19]], requests=[[0, 2], [1, 3], [4, 6], [5, 7], [8, 10], [9, 11], [12, 14], [13, 15], [16, 18], [17, 19], [0, 19], [1, 18], [2, 17], [3, 16], [4, 15], [5, 14], [6, 13], [7, 12], [8, 11], [9, 10]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False]\n    assert candidate(n=12, restrictions=[[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [0, 7], [1, 8], [2, 9], [3, 10], [4, 11], [5, 6]]) == [True, True, True, True, True, False, False, False, False, False, False]\n    assert candidate(n=15, restrictions=[[0, 7], [1, 8], [2, 9], [3, 10], [4, 11], [5, 12], [6, 13], [7, 14]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14]]) == [True, True, True, True, True, True, False, True, True, True, True, True, True, False]\n    assert candidate(n=9, restrictions=[[0, 1], [2, 3], [4, 5], [6, 7]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7], [6, 8], [7, 0], [8, 1], [0, 8], [1, 7], [2, 6], [3, 5], [4, 3], [5, 2], [6, 1], [7, 0], [8, 6], [0, 4], [1, 5], [2, 7], [3, 8]]) == [True, True, True, True, True, True, True, False, False, True, True, True, True, False, False, False, False, True, True, True, False, False]\n    assert candidate(n=12, restrictions=[[0, 3], [1, 4], [2, 5], [6, 9], [7, 10], [8, 11]], requests=[[0, 1], [1, 2], [3, 4], [4, 5], [6, 7], [7, 8], [9, 10], [10, 11], [0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11], [0, 2], [1, 3], [4, 6], [5, 7], [8, 10], [9, 11]]) == [True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, False, True]\n    assert candidate(n=6, restrictions=[[0, 1], [2, 3], [4, 5]], requests=[[0, 2], [1, 3], [2, 4], [3, 5], [0, 5], [1, 4]]) == [True, True, True, True, False, False]\n    assert candidate(n=10, restrictions=[[0, 5], [1, 6], [2, 7], [3, 8], [4, 9]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [5, 6], [6, 7], [7, 8], [8, 9], [9, 5]]) == [True, True, True, True, True, True, True, True, True, True]\n    assert candidate(n=10, restrictions=[[0, 9], [1, 8], [2, 7], [3, 6], [4, 5]], requests=[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0]]) == [True, True, True, True, False, True, True, True, True, False]\n    assert candidate(n=8, restrictions=[[0, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7]], requests=[[0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [0, 1], [2, 3], [4, 5], [6, 7]]) == [True, True, True, True, True, False, False, False, False]\n",
+  "workload_hash": "84444fccfd57cad4a8157ae4755b78f8d478682ec2212415469f2cc0f27d0629"
+}

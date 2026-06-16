@@ -1,0 +1,15 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def strWithout3a3b(self, a: int, b: int) -> str:\n        "
+  },
+  "content": "Given two integers `a` and `b`, return **any** string `s` such that:\n\n*   `s` has length `a + b` and contains exactly `a` `'a'` letters, and exactly `b` `'b'` letters,\n*   The substring `'aaa'` does not occur in `s`, and\n*   The substring `'bbb'` does not occur in `s`.\n\n**Example 1:**\n\n**Input:** a = 1, b = 2\n**Output:**  \"abb \"\n**Explanation:**  \"abb \",  \"bab \" and  \"bba \" are all correct answers.\n\n**Example 2:**\n\n**Input:** a = 4, b = 1\n**Output:**  \"aabaa \"\n\n**Constraints:**\n\n*   `0 <= a, b <= 100`\n*   It is guaranteed such an `s` exists for the given `a` and `b`.",
+  "hints": null,
+  "id": 50,
+  "level": "Medium",
+  "tags": [
+    "String",
+    "Greedy"
+  ],
+  "title": "String Without AAA or BBB",
+  "title_slug": "string-without-aaa-or-bbb"
+}

@@ -1,0 +1,15 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def minSteps(self, n: int) -> int:\n        "
+  },
+  "content": "There is only one character `'A'` on the screen of a notepad. You can perform one of two operations on this notepad for each step:\n\n*   Copy All: You can copy all the characters present on the screen (a partial copy is not allowed).\n*   Paste: You can paste the characters which are copied last time.\n\nGiven an integer `n`, return _the minimum number of operations to get the character_ `'A'` _exactly_ `n` _times on the screen_.\n\n**Example 1:**\n\n**Input:** n = 3\n**Output:** 3\n**Explanation:** Initially, we have one character 'A'.\nIn step 1, we use Copy All operation.\nIn step 2, we use Paste operation to get 'AA'.\nIn step 3, we use Paste operation to get 'AAA'.\n\n**Example 2:**\n\n**Input:** n = 1\n**Output:** 0\n\n**Constraints:**\n\n*   `1 <= n <= 1000`",
+  "hints": "How many characters may be there in the clipboard at the last step if n = 3? n = 7? n = 10? n = 24?",
+  "id": 42,
+  "level": "Medium",
+  "tags": [
+    "Math",
+    "Dynamic Programming"
+  ],
+  "title": "2 Keys Keyboard",
+  "title_slug": "2-keys-keyboard"
+}

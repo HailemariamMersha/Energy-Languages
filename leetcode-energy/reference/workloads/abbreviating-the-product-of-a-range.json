@@ -1,0 +1,311 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "left = 100, right = 105",
+      "output": "1158727752e3"
+    },
+    {
+      "input": "left = 1, right = 10000",
+      "output": "28462...79008e2499"
+    },
+    {
+      "input": "left = 10, right = 20",
+      "output": "6704425728e3"
+    },
+    {
+      "input": "left = 371, right = 375",
+      "output": "7219856259e3"
+    },
+    {
+      "input": "left = 1000, right = 1010",
+      "output": "10563...82688e5"
+    },
+    {
+      "input": "left = 5000, right = 5010",
+      "output": "49367...34144e6"
+    },
+    {
+      "input": "left = 1234, right = 1238",
+      "output": "28846...40584e1"
+    },
+    {
+      "input": "left = 999, right = 1000",
+      "output": "999e3"
+    },
+    {
+      "input": "left = 1, right = 10",
+      "output": "36288e2"
+    },
+    {
+      "input": "left = 1234, right = 1240",
+      "output": "44318...63424e2"
+    },
+    {
+      "input": "left = 5, right = 5",
+      "output": "5e0"
+    },
+    {
+      "input": "left = 1000, right = 1000",
+      "output": "1e3"
+    },
+    {
+      "input": "left = 10, right = 15",
+      "output": "36036e2"
+    },
+    {
+      "input": "left = 1000, right = 1004",
+      "output": "10100...50024e3"
+    },
+    {
+      "input": "left = 500, right = 510",
+      "output": "54464...59744e5"
+    },
+    {
+      "input": "left = 1, right = 100",
+      "output": "93326...16864e24"
+    },
+    {
+      "input": "left = 995, right = 1000",
+      "output": "98508...27388e4"
+    },
+    {
+      "input": "left = 9995, right = 10000",
+      "output": "99850...73988e5"
+    },
+    {
+      "input": "left = 1, right = 4",
+      "output": "24e0"
+    },
+    {
+      "input": "left = 2, right = 11",
+      "output": "399168e2"
+    },
+    {
+      "input": "left = 500, right = 505",
+      "output": "16099...69356e4"
+    },
+    {
+      "input": "left = 5000, right = 5005",
+      "output": "15671...18506e5"
+    },
+    {
+      "input": "left = 5, right = 10",
+      "output": "1512e2"
+    },
+    {
+      "input": "left = 8000, right = 8003",
+      "output": "40990...04048e3"
+    },
+    {
+      "input": "left = 5555, right = 6666",
+      "output": "28137...34688e279"
+    },
+    {
+      "input": "left = 9000, right = 9005",
+      "output": "53232...19508e4"
+    },
+    {
+      "input": "left = 100, right = 150",
+      "output": "61219...44768e15"
+    },
+    {
+      "input": "left = 5, right = 20",
+      "output": "10137...00736e4"
+    },
+    {
+      "input": "left = 3000, right = 3100",
+      "output": "81710...90592e27"
+    },
+    {
+      "input": "left = 1234, right = 1244",
+      "output": "10562...94176e2"
+    },
+    {
+      "input": "left = 1, right = 5000",
+      "output": "42285...33472e1249"
+    },
+    {
+      "input": "left = 9000, right = 9050",
+      "output": "53429...51328e15"
+    },
+    {
+      "input": "left = 100, right = 1000",
+      "output": "43116...46048e227"
+    },
+    {
+      "input": "left = 6000, right = 6005",
+      "output": "46772...86472e4"
+    },
+    {
+      "input": "left = 7000, right = 7020",
+      "output": "57553...63648e7"
+    },
+    {
+      "input": "left = 100, right = 200",
+      "output": "84505...02048e27"
+    },
+    {
+      "input": "left = 1234, right = 1250",
+      "output": "39811...24736e7"
+    },
+    {
+      "input": "left = 4000, right = 4100",
+      "output": "22481...83456e27"
+    },
+    {
+      "input": "left = 1000, right = 1050",
+      "output": "35045...20832e15"
+    },
+    {
+      "input": "left = 4995, right = 5000",
+      "output": "15578...18494e5"
+    },
+    {
+      "input": "left = 9500, right = 10000",
+      "output": "29333...52864e128"
+    },
+    {
+      "input": "left = 2000, right = 3000",
+      "output": "25024...18624e252"
+    },
+    {
+      "input": "left = 6000, right = 6100",
+      "output": "90528...09184e27"
+    },
+    {
+      "input": "left = 9995, right = 10005",
+      "output": "99999...99856e6"
+    },
+    {
+      "input": "left = 100, right = 2000",
+      "output": "35534...18272e477"
+    },
+    {
+      "input": "left = 7000, right = 7050",
+      "output": "15097...01664e15"
+    },
+    {
+      "input": "left = 5500, right = 5510",
+      "output": "14071...33184e5"
+    },
+    {
+      "input": "left = 9999, right = 10000",
+      "output": "9999e4"
+    },
+    {
+      "input": "left = 8000, right = 8010",
+      "output": "86491...39904e5"
+    },
+    {
+      "input": "left = 5, right = 50",
+      "output": "12672...06688e12"
+    },
+    {
+      "input": "left = 5000, right = 6000",
+      "output": "31736...43584e253"
+    },
+    {
+      "input": "left = 8000, right = 8020",
+      "output": "94684...81312e7"
+    },
+    {
+      "input": "left = 8000, right = 9000",
+      "output": "12498...67872e253"
+    },
+    {
+      "input": "left = 6500, right = 6530",
+      "output": "17034...07232e10"
+    },
+    {
+      "input": "left = 3000, right = 3010",
+      "output": "18042...06464e5"
+    },
+    {
+      "input": "left = 1000, right = 9999",
+      "output": "70734...94464e2249"
+    },
+    {
+      "input": "left = 5000, right = 5015",
+      "output": "15629...41184e7"
+    },
+    {
+      "input": "left = 3000, right = 3025",
+      "output": "28318...52192e9"
+    },
+    {
+      "input": "left = 1234, right = 5678",
+      "output": "11390...64288e1112"
+    },
+    {
+      "input": "left = 1000, right = 2000",
+      "output": "82415...74464e253"
+    },
+    {
+      "input": "left = 9000, right = 9999",
+      "output": "31626...93632e250"
+    },
+    {
+      "input": "left = 4321, right = 4325",
+      "output": "15098...31038e2"
+    },
+    {
+      "input": "left = 8765, right = 8780",
+      "output": "12301...69504e5"
+    },
+    {
+      "input": "left = 10000, right = 10010",
+      "output": "10055...00288e6"
+    },
+    {
+      "input": "left = 9990, right = 10000",
+      "output": "99451...72288e6"
+    },
+    {
+      "input": "left = 2000, right = 2010",
+      "output": "21050...98176e5"
+    },
+    {
+      "input": "left = 9990, right = 9999",
+      "output": "99451...72288e2"
+    },
+    {
+      "input": "left = 5000, right = 5050",
+      "output": "57259...77056e16"
+    },
+    {
+      "input": "left = 2500, right = 2600",
+      "output": "11420...49216e28"
+    },
+    {
+      "input": "left = 2500, right = 2510",
+      "output": "24371...13072e6"
+    },
+    {
+      "input": "left = 3000, right = 4000",
+      "output": "13222...08128e254"
+    },
+    {
+      "input": "left = 1000, right = 10000",
+      "output": "70734...94464e2253"
+    },
+    {
+      "input": "left = 7500, right = 7510",
+      "output": "42545...13216e6"
+    },
+    {
+      "input": "left = 9000, right = 9010",
+      "output": "31573...64992e5"
+    }
+  ],
+  "entry_point": "Solution().abbreviateProduct",
+  "language_independent_cases": true,
+  "problem": "abbreviating-the-product-of-a-range",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def abbreviateProduct(self, left: int, right: int) -> str:\n        ",
+  "test": "def check(candidate):\n    assert candidate(left = 100,right = 105) == \"1158727752e3\"\n    assert candidate(left = 1,right = 10000) == \"28462...79008e2499\"\n    assert candidate(left = 10,right = 20) == \"6704425728e3\"\n    assert candidate(left = 371,right = 375) == \"7219856259e3\"\n    assert candidate(left = 1000,right = 1010) == \"10563...82688e5\"\n    assert candidate(left = 5000,right = 5010) == \"49367...34144e6\"\n    assert candidate(left = 1234,right = 1238) == \"28846...40584e1\"\n    assert candidate(left = 999,right = 1000) == \"999e3\"\n    assert candidate(left = 1,right = 10) == \"36288e2\"\n    assert candidate(left = 1234,right = 1240) == \"44318...63424e2\"\n    assert candidate(left = 5,right = 5) == \"5e0\"\n    assert candidate(left = 1000,right = 1000) == \"1e3\"\n    assert candidate(left = 10,right = 15) == \"36036e2\"\n    assert candidate(left = 1000,right = 1004) == \"10100...50024e3\"\n    assert candidate(left = 500,right = 510) == \"54464...59744e5\"\n    assert candidate(left = 1,right = 100) == \"93326...16864e24\"\n    assert candidate(left = 995,right = 1000) == \"98508...27388e4\"\n    assert candidate(left = 9995,right = 10000) == \"99850...73988e5\"\n    assert candidate(left = 1,right = 4) == \"24e0\"\n    assert candidate(left = 2,right = 11) == \"399168e2\"\n    assert candidate(left = 500,right = 505) == \"16099...69356e4\"\n    assert candidate(left = 5000,right = 5005) == \"15671...18506e5\"\n    assert candidate(left = 5,right = 10) == \"1512e2\"\n    assert candidate(left = 8000,right = 8003) == \"40990...04048e3\"\n    assert candidate(left = 5555,right = 6666) == \"28137...34688e279\"\n    assert candidate(left = 9000,right = 9005) == \"53232...19508e4\"\n    assert candidate(left = 100,right = 150) == \"61219...44768e15\"\n    assert candidate(left = 5,right = 20) == \"10137...00736e4\"\n    assert candidate(left = 3000,right = 3100) == \"81710...90592e27\"\n    assert candidate(left = 1234,right = 1244) == \"10562...94176e2\"\n    assert candidate(left = 1,right = 5000) == \"42285...33472e1249\"\n    assert candidate(left = 9000,right = 9050) == \"53429...51328e15\"\n    assert candidate(left = 100,right = 1000) == \"43116...46048e227\"\n    assert candidate(left = 6000,right = 6005) == \"46772...86472e4\"\n    assert candidate(left = 7000,right = 7020) == \"57553...63648e7\"\n    assert candidate(left = 100,right = 200) == \"84505...02048e27\"\n    assert candidate(left = 1234,right = 1250) == \"39811...24736e7\"\n    assert candidate(left = 4000,right = 4100) == \"22481...83456e27\"\n    assert candidate(left = 1000,right = 1050) == \"35045...20832e15\"\n    assert candidate(left = 4995,right = 5000) == \"15578...18494e5\"\n    assert candidate(left = 9500,right = 10000) == \"29333...52864e128\"\n    assert candidate(left = 2000,right = 3000) == \"25024...18624e252\"\n    assert candidate(left = 6000,right = 6100) == \"90528...09184e27\"\n    assert candidate(left = 9995,right = 10005) == \"99999...99856e6\"\n    assert candidate(left = 100,right = 2000) == \"35534...18272e477\"\n    assert candidate(left = 7000,right = 7050) == \"15097...01664e15\"\n    assert candidate(left = 5500,right = 5510) == \"14071...33184e5\"\n    assert candidate(left = 9999,right = 10000) == \"9999e4\"\n    assert candidate(left = 8000,right = 8010) == \"86491...39904e5\"\n    assert candidate(left = 5,right = 50) == \"12672...06688e12\"\n    assert candidate(left = 5000,right = 6000) == \"31736...43584e253\"\n    assert candidate(left = 8000,right = 8020) == \"94684...81312e7\"\n    assert candidate(left = 8000,right = 9000) == \"12498...67872e253\"\n    assert candidate(left = 6500,right = 6530) == \"17034...07232e10\"\n    assert candidate(left = 3000,right = 3010) == \"18042...06464e5\"\n    assert candidate(left = 1000,right = 9999) == \"70734...94464e2249\"\n    assert candidate(left = 5000,right = 5015) == \"15629...41184e7\"\n    assert candidate(left = 3000,right = 3025) == \"28318...52192e9\"\n    assert candidate(left = 1234,right = 5678) == \"11390...64288e1112\"\n    assert candidate(left = 1000,right = 2000) == \"82415...74464e253\"\n    assert candidate(left = 9000,right = 9999) == \"31626...93632e250\"\n    assert candidate(left = 4321,right = 4325) == \"15098...31038e2\"\n    assert candidate(left = 8765,right = 8780) == \"12301...69504e5\"\n    assert candidate(left = 10000,right = 10010) == \"10055...00288e6\"\n    assert candidate(left = 9990,right = 10000) == \"99451...72288e6\"\n    assert candidate(left = 2000,right = 2010) == \"21050...98176e5\"\n    assert candidate(left = 9990,right = 9999) == \"99451...72288e2\"\n    assert candidate(left = 5000,right = 5050) == \"57259...77056e16\"\n    assert candidate(left = 2500,right = 2600) == \"11420...49216e28\"\n    assert candidate(left = 2500,right = 2510) == \"24371...13072e6\"\n    assert candidate(left = 3000,right = 4000) == \"13222...08128e254\"\n    assert candidate(left = 1000,right = 10000) == \"70734...94464e2253\"\n    assert candidate(left = 7500,right = 7510) == \"42545...13216e6\"\n    assert candidate(left = 9000,right = 9010) == \"31573...64992e5\"\n",
+  "workload_hash": "e19e60fa56476094d6a162200766460a2f3b4e14a6829872ab65b5ae42eed55e"
+}

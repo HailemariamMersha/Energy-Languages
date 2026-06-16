@@ -1,0 +1,14 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def countVowelPermutation(self, n: int) -> int:\n        "
+  },
+  "content": "Given an integer `n`, your task is to count how many strings of length `n` can be formed under the following rules:\n\n*   Each character is a lower case vowel (`'a'`, `'e'`, `'i'`, `'o'`, `'u'`)\n*   Each vowel `'a'` may only be followed by an `'e'`.\n*   Each vowel `'e'` may only be followed by an `'a'` or an `'i'`.\n*   Each vowel `'i'` **may not** be followed by another `'i'`.\n*   Each vowel `'o'` may only be followed by an `'i'` or a `'u'`.\n*   Each vowel `'u'` may only be followed by an `'a'.`\n\nSince the answer may be too large, return it modulo `10^9 + 7.`\n\n**Example 1:**\n\n**Input:** n = 1\n**Output:** 5\n**Explanation:** All possible strings are:  \"a \",  \"e \",  \"i \" ,  \"o \" and  \"u \".\n\n**Example 2:**\n\n**Input:** n = 2\n**Output:** 10\n**Explanation:** All possible strings are:  \"ae \",  \"ea \",  \"ei \",  \"ia \",  \"ie \",  \"io \",  \"iu \",  \"oi \",  \"ou \" and  \"ua \".\n\n**Example 3:**\n\n**Input:** n = 5\n**Output:** 68\n\n**Constraints:**\n\n*   `1 <= n <= 2 * 10^4`",
+  "hints": "Do a bitmask DP. For each person, for each set of skills, we can update our understanding of a minimum set of people needed to perform this set of skills.",
+  "id": 94,
+  "level": "Hard",
+  "tags": [
+    "Dynamic Programming"
+  ],
+  "title": "Count Vowels Permutation",
+  "title_slug": "count-vowels-permutation"
+}

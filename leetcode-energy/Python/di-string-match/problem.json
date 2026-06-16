@@ -1,0 +1,17 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def diStringMatch(self, s: str) -> List[int]:\n        "
+  },
+  "content": "A permutation `perm` of `n + 1` integers of all the integers in the range `[0, n]` can be represented as a string `s` of length `n` where:\n\n*   `s[i] == 'I'` if `perm[i] < perm[i + 1]`, and\n*   `s[i] == 'D'` if `perm[i] > perm[i + 1]`.\n\nGiven a string `s`, reconstruct the permutation `perm` and return it. If there are multiple valid permutations perm, return **any of them**.\n\n**Example 1:**\n\n**Input:** s = \"IDID\"\n**Output:** \\[0,4,1,3,2\\]\n\n**Example 2:**\n\n**Input:** s = \"III\"\n**Output:** \\[0,1,2,3\\]\n\n**Example 3:**\n\n**Input:** s = \"DDI\"\n**Output:** \\[3,2,0,1\\]\n\n**Constraints:**\n\n*   `1 <= s.length <= 105`\n*   `s[i]` is either `'I'` or `'D'`.",
+  "hints": null,
+  "id": 2,
+  "level": "Easy",
+  "tags": [
+    "Array",
+    "Two Pointers",
+    "String",
+    "Greedy"
+  ],
+  "title": "DI String Match",
+  "title_slug": "di-string-match"
+}

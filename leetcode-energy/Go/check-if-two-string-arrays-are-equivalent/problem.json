@@ -1,0 +1,33 @@
+{
+  "code_snippets": {
+    "c": "bool arrayStringsAreEqual(char** word1, int word1Size, char** word2, int word2Size) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public bool ArrayStringsAreEqual(string[] word1, string[] word2) {\n        \n    }\n}",
+    "dart": "class Solution {\n  bool arrayStringsAreEqual(List<String> word1, List<String> word2) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec array_strings_are_equal(word1 :: [String.t], word2 :: [String.t]) :: boolean\n  def array_strings_are_equal(word1, word2) do\n    \n  end\nend",
+    "erlang": "-spec array_strings_are_equal(Word1 :: [unicode:unicode_binary()], Word2 :: [unicode:unicode_binary()]) -> boolean().\narray_strings_are_equal(Word1, Word2) ->\n  .",
+    "golang": "func arrayStringsAreEqual(word1 []string, word2 []string) bool {\n    \n}",
+    "java": "class Solution {\n    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {string[]} word1\n * @param {string[]} word2\n * @return {boolean}\n */\nvar arrayStringsAreEqual = function(word1, word2) {\n    \n};",
+    "kotlin": "class Solution {\n    fun arrayStringsAreEqual(word1: Array<String>, word2: Array<String>): Boolean {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param String[] $word1\n     * @param String[] $word2\n     * @return Boolean\n     */\n    function arrayStringsAreEqual($word1, $word2) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def arrayStringsAreEqual(self, word1, word2):\n        \"\"\"\n        :type word1: List[str]\n        :type word2: List[str]\n        :rtype: bool\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:\n        ",
+    "racket": "(define/contract (array-strings-are-equal word1 word2)\n  (-> (listof string?) (listof string?) boolean?)\n  )",
+    "ruby": "# @param {String[]} word1\n# @param {String[]} word2\n# @return {Boolean}\ndef array_strings_are_equal(word1, word2)\n    \nend",
+    "rust": "impl Solution {\n    pub fn array_strings_are_equal(word1: Vec<String>, word2: Vec<String>) -> bool {\n        \n    }\n}",
+    "scala": "object Solution {\n    def arrayStringsAreEqual(word1: Array[String], word2: Array[String]): Boolean = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func arrayStringsAreEqual(_ word1: [String], _ word2: [String]) -> Bool {\n        \n    }\n}",
+    "typescript": "function arrayStringsAreEqual(word1: string[], word2: string[]): boolean {\n    \n};"
+  },
+  "content": "Given two string arrays `word1` and `word2`, return `true` _if the two arrays **represent** the same string, and_ `false` _otherwise._\n\nA string is **represented** by an array if the array elements concatenated **in order** forms the string.\n\n**Example 1:**\n\n**Input:** word1 = \\[ \"ab \",  \"c \"\\], word2 = \\[ \"a \",  \"bc \"\\]\n**Output:** true\n**Explanation:**\nword1 represents string  \"ab \" +  \"c \" ->  \"abc \"\nword2 represents string  \"a \" +  \"bc \" ->  \"abc \"\nThe strings are the same, so return true.\n\n**Example 2:**\n\n**Input:** word1 = \\[ \"a \",  \"cb \"\\], word2 = \\[ \"ab \",  \"c \"\\]\n**Output:** false\n\n**Example 3:**\n\n**Input:** word1  = \\[ \"abc \",  \"d \",  \"defg \"\\], word2 = \\[ \"abcddefg \"\\]\n**Output:** true\n\n**Constraints:**\n\n*   `1 <= word1.length, word2.length <= 103`\n*   `1 <= word1[i].length, word2[i].length <= 103`\n*   `1 <= sum(word1[i].length), sum(word2[i].length) <= 103`\n*   `word1[i]` and `word2[i]` consist of lowercase letters.",
+  "hints": "Work backwards: try to go from nums to arr. You should try to divide by 2 as much as possible, but you can only divide by 2 if everything is even.",
+  "id": 15,
+  "level": "Easy",
+  "tags": [
+    "Array",
+    "String"
+  ],
+  "title": "Check If Two String Arrays are Equivalent",
+  "title_slug": "check-if-two-string-arrays-are-equivalent"
+}

@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:\n        "
+  },
+  "content": "A **transformation sequence** from word `beginWord` to word `endWord` using a dictionary `wordList` is a sequence of words `beginWord -> s1 -> s2 -> ... -> sk` such that:\n\n*   Every adjacent pair of words differs by a single letter.\n*   Every `si` for `1 <= i <= k` is in `wordList`. Note that `beginWord` does not need to be in `wordList`.\n*   `sk == endWord`\n\nGiven two words, `beginWord` and `endWord`, and a dictionary `wordList`, return _the **number of words** in the **shortest transformation sequence** from_ `beginWord` _to_ `endWord`_, or_ `0` _if no such sequence exists._\n\n**Example 1:**\n\n**Input:** beginWord =  \"hit \", endWord =  \"cog \", wordList = \\[ \"hot \", \"dot \", \"dog \", \"lot \", \"log \", \"cog \"\\]\n**Output:** 5\n**Explanation:** One shortest transformation sequence is  \"hit \" ->  \"hot \" ->  \"dot \" ->  \"dog \" -> cog \", which is 5 words long.\n\n**Example 2:**\n\n**Input:** beginWord =  \"hit \", endWord =  \"cog \", wordList = \\[ \"hot \", \"dot \", \"dog \", \"lot \", \"log \"\\]\n**Output:** 0\n**Explanation:** The endWord  \"cog \" is not in wordList, therefore there is no valid transformation sequence.\n\n**Constraints:**\n\n*   `1 <= beginWord.length <= 10`\n*   `endWord.length == beginWord.length`\n*   `1 <= wordList.length <= 5000`\n*   `wordList[i].length == beginWord.length`\n*   `beginWord`, `endWord`, and `wordList[i]` consist of lowercase English letters.\n*   `beginWord != endWord`\n*   All the words in `wordList` are **unique**.",
+  "hints": null,
+  "id": 74,
+  "level": "Hard",
+  "tags": [
+    "Hash Table",
+    "String",
+    "Breadth-First Search"
+  ],
+  "title": "Word Ladder",
+  "title_slug": "word-ladder"
+}

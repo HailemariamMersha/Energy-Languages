@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def removeInvalidParentheses(self, s: str) -> List[str]:\n        "
+  },
+  "content": "Given a string `s` that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid.\n\nReturn _a list of **unique strings** that are valid with the minimum number of removals_. You may return the answer in **any order**.\n\n**Example 1:**\n\n**Input:** s =  \"()())() \"\n**Output:** \\[ \"(())() \", \"()()() \"\\]\n\n**Example 2:**\n\n**Input:** s =  \"(a)())() \"\n**Output:** \\[ \"(a())() \", \"(a)()() \"\\]\n\n**Example 3:**\n\n**Input:** s =  \")( \"\n**Output:** \\[ \" \"\\]\n\n**Constraints:**\n\n*   `1 <= s.length <= 25`\n*   `s` consists of lowercase English letters and parentheses `'('` and `')'`.\n*   There will be at most `20` parentheses in `s`.",
+  "hints": "Since we don't know which of the brackets can possibly be removed, we try out all the options! We can use recursion to try out all possibilities for the given expression. For each of the brackets, we have 2 options:\r\n\r\n\r\n We keep the bracket and add it to the expression that we are building on the fly during recursion.\r\n OR, we can discard the bracket and move on. The one thing all these valid expressions have in common is that they will all be of the same length i.e. as compared to the original expression, all of these expressions will have the same number of characters removed. \r\n\r\nCan we somehow find the number of misplaced parentheses and use it in our solution? For every left parenthesis, we should have a corresponding right parenthesis. We can make use of two counters which keep track of misplaced left and right parenthesis and in one iteration we can find out these two values. \r\n\r\n\r\n0 1 2 3 4 5 6 7\r\n( ) ) ) ( ( ( )  \r\ni = 0, left = 1, right = 0\r\ni = 1, left = 0, right = 0\r\ni = 2, left = 0, right = 1\r\ni = 3, left = 0, right = 2\r\ni = 4, left = 1, right = 2\r\ni = 5, left = 2, right = 2\r\ni = 6, left = 3, right = 2\r\ni = 7, left = 2, right = 2\r\n\r\n\r\nWe have 2 misplaced left and 2 misplaced right parentheses. We found out that the exact number of left and right parenthesis that has to be removed to get a valid expression. So, e.g. in a 1000 parentheses string, if there are 2 misplaced left and 2 misplaced right parentheses, after we are done discarding 2 left and 2 right parentheses, we will have only one option per remaining character in the expression i.e. to consider them. We can't discard them.",
+  "id": 82,
+  "level": "Hard",
+  "tags": [
+    "String",
+    "Backtracking",
+    "Breadth-First Search"
+  ],
+  "title": "Remove Invalid Parentheses",
+  "title_slug": "remove-invalid-parentheses"
+}

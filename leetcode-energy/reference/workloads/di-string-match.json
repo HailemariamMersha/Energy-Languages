@@ -1,0 +1,643 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"DDI\"",
+      "output": "[3, 2, 0, 1]"
+    },
+    {
+      "input": "s = \"DDIDDI\"",
+      "output": "[6, 5, 0, 4, 3, 1, 2]"
+    },
+    {
+      "input": "s = \"IDDD\"",
+      "output": "[0, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDDDDD\"",
+      "output": "[8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"I\"",
+      "output": "[0, 1]"
+    },
+    {
+      "input": "s = \"IIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6]"
+    },
+    {
+      "input": "s = \"D\"",
+      "output": "[1, 0]"
+    },
+    {
+      "input": "s = \"IIII\"",
+      "output": "[0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"IDDDIII\"",
+      "output": "[0, 7, 6, 5, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"DDII\"",
+      "output": "[4, 3, 0, 1, 2]"
+    },
+    {
+      "input": "s = \"IDIDIDIDID\"",
+      "output": "[0, 10, 1, 9, 2, 8, 3, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"IIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8]"
+    },
+    {
+      "input": "s = \"DDDDDD\"",
+      "output": "[6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"III\"",
+      "output": "[0, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"IDID\"",
+      "output": "[0, 4, 1, 3, 2]"
+    },
+    {
+      "input": "s = \"DDDD\"",
+      "output": "[4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDIDDID\"",
+      "output": "[7, 6, 0, 5, 4, 1, 3, 2]"
+    },
+    {
+      "input": "s = \"IDIDIDID\"",
+      "output": "[0, 8, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IIDDD\"",
+      "output": "[0, 1, 5, 4, 3, 2]"
+    },
+    {
+      "input": "s = \"DDDII\"",
+      "output": "[5, 4, 3, 0, 1, 2]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDDDDDD\"",
+      "output": "[0, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDIIIDDDIIID\"",
+      "output": "[12, 11, 0, 1, 2, 10, 9, 8, 3, 4, 5, 7, 6]"
+    },
+    {
+      "input": "s = \"IDDDDDDDII\"",
+      "output": "[0, 10, 9, 8, 7, 6, 5, 4, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"DDDDDDIIIII\"",
+      "output": "[11, 10, 9, 8, 7, 6, 0, 1, 2, 3, 4, 5]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDIIIII\"",
+      "output": "[0, 14, 13, 12, 11, 10, 9, 8, 7, 1, 2, 3, 4, 5, 6]"
+    },
+    {
+      "input": "s = \"IIDIIDIIDI\"",
+      "output": "[0, 1, 10, 2, 3, 9, 4, 5, 8, 6, 7]"
+    },
+    {
+      "input": "s = \"DDIDDIDDID\"",
+      "output": "[10, 9, 0, 8, 7, 1, 6, 5, 2, 4, 3]"
+    },
+    {
+      "input": "s = \"DDDDDDIDID\"",
+      "output": "[10, 9, 8, 7, 6, 5, 0, 4, 1, 3, 2]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDIDDDD\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 7, 6, 0, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"IIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+    },
+    {
+      "input": "s = \"IDDDDDIIIIII\"",
+      "output": "[0, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDDDD\"",
+      "output": "[16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDDDDDIII\"",
+      "output": "[9, 8, 7, 6, 5, 4, 0, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"IIDDDDIIIDDD\"",
+      "output": "[0, 1, 12, 11, 10, 9, 2, 3, 4, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDIIIII\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 7, 6, 0, 1, 2, 3, 4, 5]"
+    },
+    {
+      "input": "s = \"DDDDIIIID\"",
+      "output": "[9, 8, 7, 6, 0, 1, 2, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDIDID\"",
+      "output": "[0, 14, 1, 13, 2, 12, 3, 11, 4, 10, 5, 9, 6, 8, 7]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDI\"",
+      "output": "[10, 9, 8, 7, 6, 5, 4, 3, 2, 0, 1]"
+    },
+    {
+      "input": "s = \"DDDIDIDIDI\"",
+      "output": "[10, 9, 8, 0, 7, 1, 6, 2, 5, 3, 4]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDID\"",
+      "output": "[11, 10, 9, 8, 7, 6, 5, 4, 3, 0, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDIDIDIDID\"",
+      "output": "[12, 11, 10, 9, 0, 8, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IIDIIIIIIIIDIDDDDD\"",
+      "output": "[0, 1, 18, 2, 3, 4, 5, 6, 7, 8, 9, 17, 10, 16, 15, 14, 13, 12, 11]"
+    },
+    {
+      "input": "s = \"IDDDIIIIIIII\"",
+      "output": "[0, 12, 11, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    },
+    {
+      "input": "s = \"DDDDIIIIIIIDIDIDIDIDID\"",
+      "output": "[22, 21, 20, 19, 0, 1, 2, 3, 4, 5, 6, 18, 7, 17, 8, 16, 9, 15, 10, 14, 11, 13, 12]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIID\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 13]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDID\"",
+      "output": "[0, 12, 1, 11, 2, 10, 3, 9, 4, 8, 5, 7, 6]"
+    },
+    {
+      "input": "s = \"IIIIIIIDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 12, 11, 10, 9, 8, 7]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDDDDID\"",
+      "output": "[0, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 1, 3, 2]"
+    },
+    {
+      "input": "s = \"IIDIIIDDD\"",
+      "output": "[0, 1, 9, 2, 3, 4, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIID\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 10]"
+    },
+    {
+      "input": "s = \"IIIIIIIDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 10, 9, 8, 7]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDIIIIIIIIIID\"",
+      "output": "[21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 10]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDI\"",
+      "output": "[0, 11, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDII\"",
+      "output": "[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 0, 1, 2]"
+    },
+    {
+      "input": "s = \"IDDDIIDDDIIDDDIIII\"",
+      "output": "[0, 18, 17, 16, 1, 2, 15, 14, 13, 3, 4, 12, 11, 10, 5, 6, 7, 8, 9]"
+    },
+    {
+      "input": "s = \"DDDDIIIIDDDD\"",
+      "output": "[12, 11, 10, 9, 0, 1, 2, 3, 8, 7, 6, 5, 4]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]"
+    },
+    {
+      "input": "s = \"IDIDIDDDDD\"",
+      "output": "[0, 10, 1, 9, 2, 8, 7, 6, 5, 4, 3]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIDDDDDDDDIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 28, 27, 26, 25, 24, 23, 22, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]"
+    },
+    {
+      "input": "s = \"IDIDIDIDDDD\"",
+      "output": "[0, 11, 1, 10, 2, 9, 3, 8, 7, 6, 5, 4]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDD\"",
+      "output": "[12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"IIIIIDDDDDID\"",
+      "output": "[0, 1, 2, 3, 4, 12, 11, 10, 9, 8, 5, 7, 6]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDDDDDIIIIIIIII\"",
+      "output": "[0, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+    },
+    {
+      "input": "s = \"IIDIDIDIDI\"",
+      "output": "[0, 1, 10, 2, 9, 3, 8, 4, 7, 5, 6]"
+    },
+    {
+      "input": "s = \"IIIIIDDDDDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"IIDIDIDIDID\"",
+      "output": "[0, 1, 11, 2, 10, 3, 9, 4, 8, 5, 7, 6]"
+    },
+    {
+      "input": "s = \"DDDIDIDIDID\"",
+      "output": "[11, 10, 9, 0, 8, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IIIDDDIIID\"",
+      "output": "[0, 1, 2, 10, 9, 8, 3, 4, 5, 7, 6]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIIIIIIID\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 18]"
+    },
+    {
+      "input": "s = \"DDIIDDIDID\"",
+      "output": "[10, 9, 0, 1, 8, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"DDDDIDDDDDDD\"",
+      "output": "[12, 11, 10, 9, 0, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDDD\"",
+      "output": "[15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DIIDIDIDID\"",
+      "output": "[10, 0, 1, 9, 2, 8, 3, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDIII\"",
+      "output": "[0, 12, 11, 10, 9, 8, 7, 6, 5, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"DDDDDDDDD\"",
+      "output": "[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDDIDDDDDDDD\"",
+      "output": "[12, 11, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"IIIIDDDDIII\"",
+      "output": "[0, 1, 2, 3, 11, 10, 9, 8, 4, 5, 6, 7]"
+    },
+    {
+      "input": "s = \"IIDIDID\"",
+      "output": "[0, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]"
+    },
+    {
+      "input": "s = \"IDIDDDIDID\"",
+      "output": "[0, 10, 1, 9, 8, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDDDDDDDD\"",
+      "output": "[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDD\"",
+      "output": "[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDI\"",
+      "output": "[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 0, 1]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDIDIDID\"",
+      "output": "[0, 16, 1, 15, 2, 14, 3, 13, 4, 12, 5, 11, 6, 10, 7, 9, 8]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDII\"",
+      "output": "[13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 0, 1, 2]"
+    },
+    {
+      "input": "s = \"IIIIIDIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 12, 5, 6, 7, 8, 9, 10, 11]"
+    },
+    {
+      "input": "s = \"IIDDDDDDDDDD\"",
+      "output": "[0, 1, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]"
+    },
+    {
+      "input": "s = \"IIIIIIIDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 11, 10, 9, 8, 7]"
+    },
+    {
+      "input": "s = \"IIIIDDDDDDID\"",
+      "output": "[0, 1, 2, 3, 12, 11, 10, 9, 8, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDIDDDDD\"",
+      "output": "[11, 10, 9, 8, 7, 0, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDIIII\"",
+      "output": "[8, 7, 6, 5, 0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIDDDDDDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11]"
+    },
+    {
+      "input": "s = \"DDDDDDDIIIII\"",
+      "output": "[12, 11, 10, 9, 8, 7, 6, 0, 1, 2, 3, 4, 5]"
+    },
+    {
+      "input": "s = \"IDIDIDIDDDDD\"",
+      "output": "[0, 12, 1, 11, 2, 10, 3, 9, 8, 7, 6, 5, 4]"
+    },
+    {
+      "input": "s = \"DDIDIDIDID\"",
+      "output": "[10, 9, 0, 8, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"DDIIDDDIIID\"",
+      "output": "[11, 10, 0, 1, 9, 8, 7, 2, 3, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"IIDDDDDDII\"",
+      "output": "[0, 1, 10, 9, 8, 7, 6, 5, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"IIDIDIDID\"",
+      "output": "[0, 1, 9, 2, 8, 3, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDIIIIIII\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 0, 1, 2, 3, 4, 5, 6, 7]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIIIDDDDDDDDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14]"
+    },
+    {
+      "input": "s = \"IIIIIDDDDIII\"",
+      "output": "[0, 1, 2, 3, 4, 12, 11, 10, 9, 5, 6, 7, 8]"
+    },
+    {
+      "input": "s = \"DIDIDIDIDIDIDIDIDIDIDIDID\"",
+      "output": "[25, 0, 24, 1, 23, 2, 22, 3, 21, 4, 20, 5, 19, 6, 18, 7, 17, 8, 16, 9, 15, 10, 14, 11, 13, 12]"
+    },
+    {
+      "input": "s = \"DDDDIIIIIIIDDDIIIIIDDDIIII\"",
+      "output": "[26, 25, 24, 23, 0, 1, 2, 3, 4, 5, 6, 22, 21, 20, 7, 8, 9, 10, 11, 19, 18, 17, 12, 13, 14, 15, 16]"
+    },
+    {
+      "input": "s = \"IIIDDDDDDD\"",
+      "output": "[0, 1, 2, 10, 9, 8, 7, 6, 5, 4, 3]"
+    },
+    {
+      "input": "s = \"IIIIIDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 10, 9, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDIIII\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDDDD\"",
+      "output": "[0, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDIIIIIIIIIIIIDDDDD\"",
+      "output": "[21, 20, 19, 18, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 17, 16, 15, 14, 13, 12]"
+    },
+    {
+      "input": "s = \"IIIIIDDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 11, 10, 9, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"IIDIIIIIDDDD\"",
+      "output": "[0, 1, 12, 2, 3, 4, 5, 6, 11, 10, 9, 8, 7]"
+    },
+    {
+      "input": "s = \"DDDDDDDDIII\"",
+      "output": "[11, 10, 9, 8, 7, 6, 5, 4, 0, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"DDIDIDIDIDID\"",
+      "output": "[12, 11, 0, 10, 1, 9, 2, 8, 3, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDIDIDID\"",
+      "output": "[15, 14, 13, 12, 11, 10, 9, 8, 7, 0, 6, 1, 5, 2, 4, 3]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]"
+    },
+    {
+      "input": "s = \"IIDDDIIIDDD\"",
+      "output": "[0, 1, 11, 10, 9, 2, 3, 4, 8, 7, 6, 5]"
+    },
+    {
+      "input": "s = \"DIDIDIDIDI\"",
+      "output": "[10, 0, 9, 1, 8, 2, 7, 3, 6, 4, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDD\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDDDDDIDDDII\"",
+      "output": "[12, 11, 10, 9, 8, 7, 0, 6, 5, 4, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"IDIDDDDDDD\"",
+      "output": "[0, 10, 1, 9, 8, 7, 6, 5, 4, 3, 2]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDIDIDIDIDIDIDID\"",
+      "output": "[0, 24, 1, 23, 2, 22, 3, 21, 4, 20, 5, 19, 6, 18, 7, 17, 8, 16, 9, 15, 10, 14, 11, 13, 12]"
+    },
+    {
+      "input": "s = \"DDDDIIIIIII\"",
+      "output": "[11, 10, 9, 8, 0, 1, 2, 3, 4, 5, 6, 7]"
+    },
+    {
+      "input": "s = \"DDDDDDIIID\"",
+      "output": "[10, 9, 8, 7, 6, 5, 0, 1, 2, 4, 3]"
+    },
+    {
+      "input": "s = \"IDIDIDIDIDIDIDIDIDID\"",
+      "output": "[0, 20, 1, 19, 2, 18, 3, 17, 4, 16, 5, 15, 6, 14, 7, 13, 8, 12, 9, 11, 10]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDD\"",
+      "output": "[13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"IIDDDDDDID\"",
+      "output": "[0, 1, 10, 9, 8, 7, 6, 5, 2, 4, 3]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+    },
+    {
+      "input": "s = \"DDDDDDIIII\"",
+      "output": "[10, 9, 8, 7, 6, 5, 0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"DDDDIIDDII\"",
+      "output": "[10, 9, 8, 7, 0, 1, 6, 5, 2, 3, 4]"
+    },
+    {
+      "input": "s = \"DIDIDIDIDID\"",
+      "output": "[11, 0, 10, 1, 9, 2, 8, 3, 7, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDID\"",
+      "output": "[13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 0, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDD\"",
+      "output": "[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]"
+    },
+    {
+      "input": "s = \"DDIIIDDDII\"",
+      "output": "[10, 9, 0, 1, 2, 8, 7, 6, 3, 4, 5]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDIIIIIIIIIIDDDDDDDD\"",
+      "output": "[27, 26, 25, 24, 23, 22, 21, 20, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 17, 16, 15, 14, 13, 12, 11, 10]"
+    },
+    {
+      "input": "s = \"DDDDDIIIIII\"",
+      "output": "[11, 10, 9, 8, 7, 0, 1, 2, 3, 4, 5, 6]"
+    },
+    {
+      "input": "s = \"IIDDDDDIII\"",
+      "output": "[0, 1, 10, 9, 8, 7, 6, 2, 3, 4, 5]"
+    },
+    {
+      "input": "s = \"IDIDDDDDDDDDDD\"",
+      "output": "[0, 14, 1, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDIIIIIIIIIIIII\"",
+      "output": "[26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]"
+    },
+    {
+      "input": "s = \"IIDDDDIIID\"",
+      "output": "[0, 1, 10, 9, 8, 7, 2, 3, 4, 6, 5]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIID\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 12]"
+    },
+    {
+      "input": "s = \"DDIIDDDIID\"",
+      "output": "[10, 9, 0, 1, 8, 7, 6, 2, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"DIDIDIDID\"",
+      "output": "[9, 0, 8, 1, 7, 2, 6, 3, 5, 4]"
+    },
+    {
+      "input": "s = \"IIIIIIIDDDDDDD\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 14, 13, 12, 11, 10, 9, 8, 7]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDD\"",
+      "output": "[0, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]"
+    },
+    {
+      "input": "s = \"IIIIIIIIIIID\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 11]"
+    },
+    {
+      "input": "s = \"IDIDIDDDDDD\"",
+      "output": "[0, 11, 1, 10, 2, 9, 8, 7, 6, 5, 4, 3]"
+    },
+    {
+      "input": "s = \"IIDDDDDDDD\"",
+      "output": "[0, 1, 10, 9, 8, 7, 6, 5, 4, 3, 2]"
+    },
+    {
+      "input": "s = \"IIDDDDDDDDID\"",
+      "output": "[0, 1, 12, 11, 10, 9, 8, 7, 6, 5, 2, 4, 3]"
+    },
+    {
+      "input": "s = \"IIIIIIIII\"",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    },
+    {
+      "input": "s = \"IDDDDDDDDDD\"",
+      "output": "[0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"IIIIIDIDIDIDIDIDIDDD\"",
+      "output": "[0, 1, 2, 3, 4, 20, 5, 19, 6, 18, 7, 17, 8, 16, 9, 15, 10, 14, 13, 12, 11]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDDDDDIDDD\"",
+      "output": "[19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 0, 4, 3, 2, 1]"
+    },
+    {
+      "input": "s = \"DDDDDDDDDDDIII\"",
+      "output": "[14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 0, 1, 2, 3]"
+    },
+    {
+      "input": "s = \"DIIIDDDIIIID\"",
+      "output": "[12, 0, 1, 2, 11, 10, 9, 3, 4, 5, 6, 8, 7]"
+    },
+    {
+      "input": "s = \"IDDDIDDDID\"",
+      "output": "[0, 10, 9, 8, 1, 7, 6, 5, 2, 4, 3]"
+    }
+  ],
+  "entry_point": "Solution().diStringMatch",
+  "language_independent_cases": true,
+  "problem": "di-string-match",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def diStringMatch(self, s: str) -> List[int]:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert _valid_di_string(candidate(s='DDI'), 'DDI')\n    assert _valid_di_string(candidate(s='DDIDDI'), 'DDIDDI')\n    assert _valid_di_string(candidate(s='IDDD'), 'IDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDD'), 'DDDDDDDD')\n    assert _valid_di_string(candidate(s='I'), 'I')\n    assert _valid_di_string(candidate(s='IIIIII'), 'IIIIII')\n    assert _valid_di_string(candidate(s='D'), 'D')\n    assert _valid_di_string(candidate(s='IIII'), 'IIII')\n    assert _valid_di_string(candidate(s='IDDDIII'), 'IDDDIII')\n    assert _valid_di_string(candidate(s='DDII'), 'DDII')\n    assert _valid_di_string(candidate(s='IDIDIDIDID'), 'IDIDIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIII'), 'IIIIIIII')\n    assert _valid_di_string(candidate(s='DDDDDD'), 'DDDDDD')\n    assert _valid_di_string(candidate(s='III'), 'III')\n    assert _valid_di_string(candidate(s='IDID'), 'IDID')\n    assert _valid_di_string(candidate(s='DDDD'), 'DDDD')\n    assert _valid_di_string(candidate(s='DDIDDID'), 'DDIDDID')\n    assert _valid_di_string(candidate(s='IDIDIDID'), 'IDIDIDID')\n    assert _valid_di_string(candidate(s='IIDDD'), 'IIDDD')\n    assert _valid_di_string(candidate(s='DDDII'), 'DDDII')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIIIII'), 'IIIIIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IDDDDDDDDDDDDD'), 'IDDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDIIIDDDIIID'), 'DDIIIDDDIIID')\n    assert _valid_di_string(candidate(s='IDDDDDDDII'), 'IDDDDDDDII')\n    assert _valid_di_string(candidate(s='DDDDDDIIIII'), 'DDDDDDIIIII')\n    assert _valid_di_string(candidate(s='IDDDDDDDDIIIII'), 'IDDDDDDDDIIIII')\n    assert _valid_di_string(candidate(s='IIDIIDIIDI'), 'IIDIIDIIDI')\n    assert _valid_di_string(candidate(s='DDIDDIDDID'), 'DDIDDIDDID')\n    assert _valid_di_string(candidate(s='DDDDDDIDID'), 'DDDDDDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDIDDDD'), 'DDDDDDDDDIDDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIIII'), 'IIIIIIIIII')\n    assert _valid_di_string(candidate(s='IDDDDDIIIIII'), 'IDDDDDIIIIII')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDDDD'), 'DDDDDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDIII'), 'DDDDDDIII')\n    assert _valid_di_string(candidate(s='IIDDDDIIIDDD'), 'IIDDDDIIIDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDIIIII'), 'DDDDDDDDDIIIII')\n    assert _valid_di_string(candidate(s='DDDDIIIID'), 'DDDDIIIID')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDIDID'), 'IDIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDI'), 'DDDDDDDDDI')\n    assert _valid_di_string(candidate(s='DDDIDIDIDI'), 'DDDIDIDIDI')\n    assert _valid_di_string(candidate(s='DDDDDDDDDID'), 'DDDDDDDDDID')\n    assert _valid_di_string(candidate(s='DDDDIDIDIDID'), 'DDDDIDIDIDID')\n    assert _valid_di_string(candidate(s='IIDIIIIIIIIDIDDDDD'), 'IIDIIIIIIIIDIDDDDD')\n    assert _valid_di_string(candidate(s='IDDDIIIIIIII'), 'IDDDIIIIIIII')\n    assert _valid_di_string(candidate(s='DDDDIIIIIIIDIDIDIDIDID'), 'DDDDIIIIIIIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIID'), 'IIIIIIIIIIIIID')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDID'), 'IDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIIDDDDD'), 'IIIIIIIDDDDD')\n    assert _valid_di_string(candidate(s='IDDDDDDDDDDDID'), 'IDDDDDDDDDDDID')\n    assert _valid_di_string(candidate(s='IIDIIIDDD'), 'IIDIIIDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIIIID'), 'IIIIIIIIIID')\n    assert _valid_di_string(candidate(s='IIIIIIIDDD'), 'IIIIIIIDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDIIIIIIIIIID'), 'DDDDDDDDDDIIIIIIIIIID')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDI'), 'IDIDIDIDIDI')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDII'), 'DDDDDDDDDDII')\n    assert _valid_di_string(candidate(s='IDDDIIDDDIIDDDIIII'), 'IDDDIIDDDIIDDDIIII')\n    assert _valid_di_string(candidate(s='DDDDIIIIDDDD'), 'DDDDIIIIDDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIII'), 'IIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IDIDIDDDDD'), 'IDIDIDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIDDDDDDDDIIIIIIIII'), 'IIIIIIIIIIIDDDDDDDDIIIIIIIII')\n    assert _valid_di_string(candidate(s='IDIDIDIDDDD'), 'IDIDIDIDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDD'), 'DDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIDDDDDID'), 'IIIIIDDDDDID')\n    assert _valid_di_string(candidate(s='IDDDDDDDDDDDDIIIIIIIII'), 'IDDDDDDDDDDDDIIIIIIIII')\n    assert _valid_di_string(candidate(s='IIDIDIDIDI'), 'IIDIDIDIDI')\n    assert _valid_di_string(candidate(s='IIIIIDDDDDDDDD'), 'IIIIIDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIDIDIDIDID'), 'IIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDIDIDIDID'), 'DDDIDIDIDID')\n    assert _valid_di_string(candidate(s='IIIDDDIIID'), 'IIIDDDIIID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIIIIIIID'), 'IIIIIIIIIIIIIIIIIID')\n    assert _valid_di_string(candidate(s='DDIIDDIDID'), 'DDIIDDIDID')\n    assert _valid_di_string(candidate(s='DDDDIDDDDDDD'), 'DDDDIDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDDD'), 'DDDDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DIIDIDIDID'), 'DIIDIDIDID')\n    assert _valid_di_string(candidate(s='IDDDDDDDDIII'), 'IDDDDDDDDIII')\n    assert _valid_di_string(candidate(s='DDDDDDDDD'), 'DDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDIDDDDDDDD'), 'DDDIDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIDDDDIII'), 'IIIIDDDDIII')\n    assert _valid_di_string(candidate(s='IIDIDID'), 'IIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIIIIIIIII'), 'IIIIIIIIIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IDIDDDIDID'), 'IDIDDDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDDDDDDDD'), 'DDDDDDDDDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDD'), 'DDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDI'), 'DDDDDDDDDDI')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDIDIDID'), 'IDIDIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDII'), 'DDDDDDDDDDDII')\n    assert _valid_di_string(candidate(s='IIIIIDIIIIII'), 'IIIIIDIIIIII')\n    assert _valid_di_string(candidate(s='IIDDDDDDDDDD'), 'IIDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIDDDD'), 'IIIIIIIDDDD')\n    assert _valid_di_string(candidate(s='IIIIDDDDDDID'), 'IIIIDDDDDDID')\n    assert _valid_di_string(candidate(s='DDDDDIDDDDD'), 'DDDDDIDDDDD')\n    assert _valid_di_string(candidate(s='DDDDIIII'), 'DDDDIIII')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIII'), 'IIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIDDDDDDDDDD'), 'IIIIIIIIIIIDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDIIIII'), 'DDDDDDDIIIII')\n    assert _valid_di_string(candidate(s='IDIDIDIDDDDD'), 'IDIDIDIDDDDD')\n    assert _valid_di_string(candidate(s='DDIDIDIDID'), 'DDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDIIDDDIIID'), 'DDIIDDDIIID')\n    assert _valid_di_string(candidate(s='IIDDDDDDII'), 'IIDDDDDDII')\n    assert _valid_di_string(candidate(s='IIDIDIDID'), 'IIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDIIIIIII'), 'DDDDDDDIIIIIII')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIIIDDDDDDDDDDDD'), 'IIIIIIIIIIIIIIDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIDDDDIII'), 'IIIIIDDDDIII')\n    assert _valid_di_string(candidate(s='DIDIDIDIDIDIDIDIDIDIDIDID'), 'DIDIDIDIDIDIDIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDIIIIIIIDDDIIIIIDDDIIII'), 'DDDDIIIIIIIDDDIIIIIDDDIIII')\n    assert _valid_di_string(candidate(s='IIIDDDDDDD'), 'IIIDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIDDDDD'), 'IIIIIDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDIIII'), 'DDDDDDDDDDIIII')\n    assert _valid_di_string(candidate(s='IDDDDDDDDDDD'), 'IDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDIIIIIIIIIIIIDDDDD'), 'DDDDIIIIIIIIIIIIDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIDDDDDD'), 'IIIIIDDDDDD')\n    assert _valid_di_string(candidate(s='IIDIIIIIDDDD'), 'IIDIIIIIDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDIII'), 'DDDDDDDDIII')\n    assert _valid_di_string(candidate(s='DDIDIDIDIDID'), 'DDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDIDIDID'), 'DDDDDDDDDIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIIII'), 'IIIIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IIDDDIIIDDD'), 'IIDDDIIIDDD')\n    assert _valid_di_string(candidate(s='DIDIDIDIDI'), 'DIDIDIDIDI')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDD'), 'DDDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDIDDDII'), 'DDDDDDIDDDII')\n    assert _valid_di_string(candidate(s='IDIDDDDDDD'), 'IDIDDDDDDD')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDIDIDIDIDIDIDID'), 'IDIDIDIDIDIDIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDIIIIIII'), 'DDDDIIIIIII')\n    assert _valid_di_string(candidate(s='DDDDDDIIID'), 'DDDDDDIIID')\n    assert _valid_di_string(candidate(s='IDIDIDIDIDIDIDIDIDID'), 'IDIDIDIDIDIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDD'), 'DDDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIDDDDDDID'), 'IIDDDDDDID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIII'), 'IIIIIIIIIII')\n    assert _valid_di_string(candidate(s='DDDDDDIIII'), 'DDDDDDIIII')\n    assert _valid_di_string(candidate(s='DDDDIIDDII'), 'DDDDIIDDII')\n    assert _valid_di_string(candidate(s='DIDIDIDIDID'), 'DIDIDIDIDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDID'), 'DDDDDDDDDDDID')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDD'), 'DDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDIIIDDDII'), 'DDIIIDDDII')\n    assert _valid_di_string(candidate(s='DDDDDDDDDIIIIIIIIIIDDDDDDDD'), 'DDDDDDDDDIIIIIIIIIIDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDIIIIII'), 'DDDDDIIIIII')\n    assert _valid_di_string(candidate(s='IIDDDDDIII'), 'IIDDDDDIII')\n    assert _valid_di_string(candidate(s='IDIDDDDDDDDDDD'), 'IDIDDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDIIIIIIIIIIIII'), 'DDDDDDDDDDDDDIIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IIDDDDIIID'), 'IIDDDDIIID')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIID'), 'IIIIIIIIIIIID')\n    assert _valid_di_string(candidate(s='DDIIDDDIID'), 'DDIIDDDIID')\n    assert _valid_di_string(candidate(s='DIDIDIDID'), 'DIDIDIDID')\n    assert _valid_di_string(candidate(s='IIIIIIIDDDDDDD'), 'IIIIIIIDDDDDDD')\n    assert _valid_di_string(candidate(s='IDDDDDDDDD'), 'IDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIIIII'), 'IIIIIIIIIIIIII')\n    assert _valid_di_string(candidate(s='IIIIIIIIIIID'), 'IIIIIIIIIIID')\n    assert _valid_di_string(candidate(s='IDIDIDDDDDD'), 'IDIDIDDDDDD')\n    assert _valid_di_string(candidate(s='IIDDDDDDDD'), 'IIDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIDDDDDDDDID'), 'IIDDDDDDDDID')\n    assert _valid_di_string(candidate(s='IIIIIIIII'), 'IIIIIIIII')\n    assert _valid_di_string(candidate(s='IDDDDDDDDDD'), 'IDDDDDDDDDD')\n    assert _valid_di_string(candidate(s='IIIIIDIDIDIDIDIDIDDD'), 'IIIIIDIDIDIDIDIDIDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDDDDDIDDD'), 'DDDDDDDDDDDDDDDIDDD')\n    assert _valid_di_string(candidate(s='DDDDDDDDDDDIII'), 'DDDDDDDDDDDIII')\n    assert _valid_di_string(candidate(s='DIIIDDDIIIID'), 'DIIIDDDIIIID')\n    assert _valid_di_string(candidate(s='IDDDIDDDID'), 'IDDDIDDDID')\n",
+  "workload_hash": "66539f9a046bd97abc36edb16f99d0adec86c1b3412982b0b670df6092036a64"
+}

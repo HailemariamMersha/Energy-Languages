@@ -1,0 +1,38 @@
+{
+  "code_snippets": {
+    "c": "int maxScore(int* nums, int numsSize) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    int maxScore(vector<int>& nums) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public int MaxScore(int[] nums) {\n        \n    }\n}",
+    "dart": "class Solution {\n  int maxScore(List<int> nums) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec max_score(nums :: [integer]) :: integer\n  def max_score(nums) do\n    \n  end\nend",
+    "erlang": "-spec max_score(Nums :: [integer()]) -> integer().\nmax_score(Nums) ->\n  .",
+    "golang": "func maxScore(nums []int) int {\n    \n}",
+    "java": "class Solution {\n    public int maxScore(int[] nums) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar maxScore = function(nums) {\n    \n};",
+    "kotlin": "class Solution {\n    fun maxScore(nums: IntArray): Int {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param Integer[] $nums\n     * @return Integer\n     */\n    function maxScore($nums) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def maxScore(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def maxScore(self, nums: List[int]) -> int:\n        ",
+    "racket": "(define/contract (max-score nums)\n  (-> (listof exact-integer?) exact-integer?)\n  )",
+    "ruby": "# @param {Integer[]} nums\n# @return {Integer}\ndef max_score(nums)\n    \nend",
+    "rust": "impl Solution {\n    pub fn max_score(nums: Vec<i32>) -> i32 {\n        \n    }\n}",
+    "scala": "object Solution {\n    def maxScore(nums: Array[Int]): Int = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func maxScore(_ nums: [Int]) -> Int {\n        \n    }\n}",
+    "typescript": "function maxScore(nums: number[]): number {\n    \n};"
+  },
+  "content": "You are given `nums`, an array of positive integers of size `2 * n`. You must perform `n` operations on this array.\n\nIn the `ith` operation **(1-indexed)**, you will:\n\n*   Choose two elements, `x` and `y`.\n*   Receive a score of `i * gcd(x, y)`.\n*   Remove `x` and `y` from `nums`.\n\nReturn _the maximum score you can receive after performing_ `n` _operations._\n\nThe function `gcd(x, y)` is the greatest common divisor of `x` and `y`.\n\n**Example 1:**\n\n**Input:** nums = \\[1,2\\]\n**Output:** 1\n**Explanation:** The optimal choice of operations is:\n(1 \\* gcd(1, 2)) = 1\n\n**Example 2:**\n\n**Input:** nums = \\[3,4,6,8\\]\n**Output:** 11\n**Explanation:** The optimal choice of operations is:\n(1 \\* gcd(3, 6)) + (2 \\* gcd(4, 8)) = 3 + 8 = 11\n\n**Example 3:**\n\n**Input:** nums = \\[1,2,3,4,5,6\\]\n**Output:** 14\n**Explanation:** The optimal choice of operations is:\n(1 \\* gcd(1, 5)) + (2 \\* gcd(2, 4)) + (3 \\* gcd(3, 6)) = 1 + 4 + 9 = 14\n\n**Constraints:**\n\n*   `1 <= n <= 7`\n*   `nums.length == 2 * n`\n*   `1 <= nums[i] <= 106`",
+  "hints": "The constraints are small enough for a backtrack solution but not any backtrack solution If we use a naive n^k don't you think it can be optimized",
+  "id": 76,
+  "level": "Hard",
+  "tags": [
+    "Array",
+    "Math",
+    "Dynamic Programming",
+    "Backtracking",
+    "Bit Manipulation",
+    "Number Theory",
+    "Bitmask"
+  ],
+  "title": "Maximize Score After N Operations",
+  "title_slug": "maximize-score-after-n-operations"
+}

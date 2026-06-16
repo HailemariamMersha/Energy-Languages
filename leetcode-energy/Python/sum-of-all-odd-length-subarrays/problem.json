@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def sumOddLengthSubarrays(self, arr: List[int]) -> int:\n        "
+  },
+  "content": "Given an array of positive integers `arr`, return _the sum of all possible **odd-length subarrays** of_ `arr`.\n\nA **subarray** is a contiguous subsequence of the array.\n\n**Example 1:**\n\n**Input:** arr = \\[1,4,2,5,3\\]\n**Output:** 58\n**Explanation:** The odd-length subarrays of arr and their sums are:\n\\[1\\] = 1\n\\[4\\] = 4\n\\[2\\] = 2\n\\[5\\] = 5\n\\[3\\] = 3\n\\[1,4,2\\] = 7\n\\[4,2,5\\] = 11\n\\[2,5,3\\] = 10\n\\[1,4,2,5,3\\] = 15\nIf we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58\n\n**Example 2:**\n\n**Input:** arr = \\[1,2\\]\n**Output:** 3\n**Explanation:** There are only 2 subarrays of odd length, \\[1\\] and \\[2\\]. Their sum is 3.\n\n**Example 3:**\n\n**Input:** arr = \\[10,11,12\\]\n**Output:** 66\n\n**Constraints:**\n\n*   `1 <= arr.length <= 100`\n*   `1 <= arr[i] <= 1000`\n\n**Follow up:**\n\nCould you solve this problem in O(n) time complexity?",
+  "hints": "You can brute force \u2013 try every (i,j) pair, and if the length is odd, go through and add the sum to the answer.",
+  "id": 11,
+  "level": "Easy",
+  "tags": [
+    "Array",
+    "Math",
+    "Prefix Sum"
+  ],
+  "title": "Sum of All Odd Length Subarrays",
+  "title_slug": "sum-of-all-odd-length-subarrays"
+}

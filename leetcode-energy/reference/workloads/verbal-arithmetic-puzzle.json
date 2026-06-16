@@ -1,0 +1,607 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "words = [\"SEND\",\"MORE\"], result = \"MONEY\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"A\",\"A\",\"A\",\"A\"], result = \"AA\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"LEET\",\"CODE\"], result = \"POINT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"HIALL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"AA\",\"BB\"], result = \"CC\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"SIX\",\"SEVEN\",\"SEVEN\"], result = \"TWENTY\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"CAT\",\"DOG\"], result = \"BIRD\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"ABA\",\"B\"], result = \"ABC\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"A\",\"B\"], result = \"C\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"ABC\",\"BCD\"], result = \"DEE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"PEACE\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"LONG\", \"WORDS\", \"HERE\"], result = \"ADDITION\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CASTLE\",\"KNIGHT\"], result = \"BATTLE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MAX\", \"MIN\"], result = \"SUM\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"ALGEBRA\",\"GEOMETRY\"], result = \"MATHEMATICS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"BAT\",\"BALL\",\"BASE\"], result = \"TABLE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"EULER\",\"GAUSS\"], result = \"ARITHMETIC\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"COMPUTER\",\"SCIENCE\"], result = \"DISCOVERY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FAST\", \"CAR\"], result = \"RACING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HEAL\",\"HURT\"], result = \"BALANCE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MATH\",\"ENGLISH\",\"SCIENCE\"], result = \"CURRICULUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"PYTHON\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SAINT\",\"SEER\"], result = \"VISION\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\", \"MOON\", \"STAR\"], result = \"GALAXY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SNOW\",\"ICE\"], result = \"COLD\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"HELLO\", \"WORLD\"], result = \"HAPPY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"A\", \"BB\", \"CCC\", \"DDDD\"], result = \"E\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"DISPATCH\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"KNIGHT\",\"KNIGHT\"], result = \"WARLORD\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZERO\",\"ONE\",\"TWO\",\"THREE\"], result = \"SIX\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FIVE\",\"NINE\",\"ELEVEN\"], result = \"TWENTYFIVE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"TRUE\",\"FALSE\"], result = \"PARADOX\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"STAR\", \"SHIP\"], result = \"GALAXY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"TEN\", \"TEN\", \"TEN\"], result = \"THIRTY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HOUSE\", \"DOG\"], result = \"FAMILY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MATH\",\"ROCKS\"], result = \"LEARNING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SIX\", \"EIGHT\", \"TEN\"], result = \"TWENTYFOUR\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"APPLE\",\"BANANA\"], result = \"GRAPE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ONE\", \"TWO\", \"THREE\", \"FOUR\", \"FIVE\"], result = \"SUMUP\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FOUR\", \"FIVE\", \"SIX\"], result = \"FIFTEEN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"UP\",\"DOWN\"], result = \"ZERO\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"SUN\",\"MOON\"], result = \"STAR\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"BIG\",\"DOG\"], result = \"ANIMAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"PLANETS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MOON\", \"EARTH\"], result = \"UNIVERSE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"APPLE\",\"BANANA\",\"CHERRY\"], result = \"FRUITBOWL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HAPPY\",\"BIRTHDAY\"], result = \"CELEBRATE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ABACAXI\",\"MANGO\",\"KIWI\"], result = \"FRUITS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CAT\", \"DOG\", \"MOUSE\"], result = \"PIG\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"UNIVERSAL\",\"GALAXY\",\"EARTH\"], result = \"COSMOS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"BIRD\", \"FLY\", \"HIGH\"], result = \"FLIGHT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ALICE\",\"BOB\"], result = \"GAME\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"RIGHT\",\"WRONG\"], result = \"FALSE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CAT\",\"DOG\",\"MOUSE\"], result = \"CLAW\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ALICE\",\"BOB\",\"CHARLIE\"], result = \"FRIENDSHIP\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PHOENIX\",\"DRAGON\"], result = \"MYTHICAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PYTHON\",\"ROCKS\"], result = \"PROGRAM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FLY\", \"FLY\", \"HIGH\"], result = \"SKYLINE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SEND\", \"MORE\", \"MONEY\"], result = \"TWICE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"UNO\",\"DOS\",\"TRES\"], result = \"SEIS\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"WIZARD\",\"WAND\"], result = \"MAGIC\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"LUCK\",\"IN\",\"THE\",\"DRAW\"], result = \"SUCCESS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"STAR\",\"NIGHT\"], result = \"TWILIGHT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\",\"MOON\",\"STARS\"], result = \"SKYLINE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"BLACK\",\"WHITE\",\"GRAY\"], result = \"COLORS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"JAVA\",\"PYTHON\",\"CPLUSPLUS\"], result = \"PROGRAMMING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"AARDVARK\",\"ANTELOPE\"], result = \"MAMMALS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"NINE\", \"NINE\"], result = \"EIGHTEEN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ALICE\",\"BOB\",\"CHARLIE\"], result = \"FICTION\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZERO\",\"ONE\",\"TWO\",\"THREE\"], result = \"SUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MAGIC\",\"WAND\"], result = \"WIZARD\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"JAVA\",\"PYTHON\"], result = \"SCRIPT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"KNIGHT\",\"BISHOP\"], result = \"CHECKMATE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"COMPUTER\",\"SCIENCE\",\"PROGRAMMING\"], result = \"DEVELOPMENT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"EARTH\",\"MOON\"], result = \"UNIVERSE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SIXTY\", \"SIXTY\"], result = \"ONETWENTY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SNOW\",\"FALL\"], result = \"SNOWBALL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FALCON\",\"HAWK\"], result = \"BIRD\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"APPLE\", \"BANANA\"], result = \"GRAPES\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZEBRA\", \"ELEPHANT\"], result = \"WILDLIFE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZERO\",\"ONE\"], result = \"SUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"EARTH\",\"WATER\"], result = \"PLANET\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"APPLE\",\"BANANA\",\"CHERRY\"], result = \"FRUIT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ONE\",\"TWO\",\"THREE\",\"FOUR\"], result = \"TEN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ONE\",\"TWO\",\"THREE\",\"FOUR\"], result = \"SUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MATH\",\"IS\",\"FUN\"], result = \"JOKES\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"DOG\", \"CAT\"], result = \"ANIMAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"GREEN\",\"BLUE\",\"YELLOW\"], result = \"COLORS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZERO\",\"ONE\",\"TWO\",\"THREE\"], result = \"FIVE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MAT\",\"ADD\",\"SUB\"], result = \"SUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"KANGAROO\",\"KANGAROO\",\"KANGAROO\"], result = \"JUMPOUTS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"OCEAN\",\"SEA\",\"LAKE\"], result = \"WATERBODY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"WITCH\",\"WAND\"], result = \"MAGIC\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"HAPPY\", \"JOY\"], result = \"BLISS\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"STAR\",\"PLANET\",\"GALAXY\"], result = \"COSMOS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FAST\",\"SLOW\"], result = \"BALANCE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"LEFT\",\"RIGHT\"], result = \"EQUAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"COOL\",\"DRINK\"], result = \"REFRESH\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MAGICAL\",\"REALM\"], result = \"MYSTERY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"LEARN\", \"PYTHON\"], result = \"CODEING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CAR\", \"BIKE\"], result = \"VEHICLE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HEART\", \"SOUL\"], result = \"LOVE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MATH\", \"IS\", \"FUN\"], result = \"GAMES\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PARIS\",\"BERLIN\"], result = \"ROME\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ABCDEFGHIJK\", \"LMNOPQRS\"], result = \"TUVWXYZ\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\", \"MOON\"], result = \"AURA\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"MATH\",\"SCI\",\"ENG\"], result = \"STUDY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"UNICORN\",\"PEGASUS\"], result = \"MYTHOLOGY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\",\"MOON\",\"STAR\"], result = \"SKY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ALPHA\",\"BETA\",\"GAMMA\"], result = \"DELTA\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"PYTHON\",\"JAVA\"], result = \"SCRIPT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CLOCK\", \"BELL\"], result = \"TICKTOCK\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"DAY\", \"NIGHT\"], result = \"TIMELESS\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"TEN\",\"TWO\"], result = \"TWELVE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FAST\",\"RUN\",\"JUMP\"], result = \"ATHLETE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"APPLE\",\"BANANA\"], result = \"CHERRY\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"ALCHEMY\",\"ENCHANT\"], result = \"MAGICAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"PEACEFUL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PYTHON\",\"JAVA\",\"CPLUS\"], result = \"PROGRAMMING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PYTHON\", \"JAVA\"], result = \"SCRIPT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\", \"MOON\", \"STAR\"], result = \"UNIVERSAL\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MOUNTAIN\",\"CLIMBER\"], result = \"ADVENTURE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PYTHON\",\"JAVA\",\"CPLUSPLUS\"], result = \"PROGRAMMING\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"HALLO\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ONE\", \"TWO\", \"THREE\"], result = \"SIX\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ABCDE\",\"FGHIJ\"], result = \"KLMNO\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SKY\",\"TREE\"], result = \"FOREST\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PI\", \"E\"], result = \"CIRCLE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"FOUR\",\"FIVE\",\"SIX\"], result = \"FIFTEEN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"RED\",\"BLUE\"], result = \"COLOR\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"JUMP\", \"HIGH\", \"LONG\"], result = \"JUMPROPE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SUN\",\"MOON\",\"STAR\"], result = \"PLANET\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HIGH\",\"LOW\"], result = \"AMPLITUDE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ALPACA\",\"ANIMAL\",\"ZOO\"], result = \"WILDLIFE\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HAPPY\", \"JOY\"], result = \"HARMONY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"SPY\", \"SPY\"], result = \"QUIZ\"",
+      "output": "True"
+    },
+    {
+      "input": "words = [\"APPLE\",\"BANANA\"], result = \"FRUIT\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HAPPY\",\"SAD\"], result = \"JOY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"CRYPT\",\"GRAPH\",\"DRY\"], result = \"DRYRUN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"GENIE\",\"BOTTLE\"], result = \"WISHES\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"RED\",\"BLUE\"], result = \"GREEN\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"HELLO\",\"WORLD\"], result = \"HELLOWORLD\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"BIRD\", \"FLY\"], result = \"SKY\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"MYTH\",\"HERO\"], result = \"LEGEND\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"Babbage\",\"Difference\",\"Engine\"], result = \"Calculator\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"ZERO\", \"ONE\", \"TWO\", \"THREE\"], result = \"SUM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"PYTHON\",\"JAVA\",\"CPP\"], result = \"PROGRAM\"",
+      "output": "False"
+    },
+    {
+      "input": "words = [\"TREE\", \"FOREST\"], result = \"GREEN\"",
+      "output": "False"
+    }
+  ],
+  "entry_point": "Solution().isSolvable",
+  "language_independent_cases": true,
+  "problem": "verbal-arithmetic-puzzle",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def isSolvable(self, words: List[str], result: str) -> bool:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(words=['SEND', 'MORE'], result='MONEY') == True\n    assert candidate(words=['A', 'A', 'A', 'A'], result='AA') == False\n    assert candidate(words=['LEET', 'CODE'], result='POINT') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='HIALL') == False\n    assert candidate(words=['AA', 'BB'], result='CC') == True\n    assert candidate(words=['SIX', 'SEVEN', 'SEVEN'], result='TWENTY') == True\n    assert candidate(words=['CAT', 'DOG'], result='BIRD') == True\n    assert candidate(words=['ABA', 'B'], result='ABC') == True\n    assert candidate(words=['A', 'B'], result='C') == True\n    assert candidate(words=['ABC', 'BCD'], result='DEE') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='PEACE') == True\n    assert candidate(words=['LONG', 'WORDS', 'HERE'], result='ADDITION') == False\n    assert candidate(words=['CASTLE', 'KNIGHT'], result='BATTLE') == False\n    assert candidate(words=['MAX', 'MIN'], result='SUM') == True\n    assert candidate(words=['ALGEBRA', 'GEOMETRY'], result='MATHEMATICS') == False\n    assert candidate(words=['BAT', 'BALL', 'BASE'], result='TABLE') == False\n    assert candidate(words=['EULER', 'GAUSS'], result='ARITHMETIC') == False\n    assert candidate(words=['COMPUTER', 'SCIENCE'], result='DISCOVERY') == False\n    assert candidate(words=['FAST', 'CAR'], result='RACING') == False\n    assert candidate(words=['HEAL', 'HURT'], result='BALANCE') == False\n    assert candidate(words=['MATH', 'ENGLISH', 'SCIENCE'], result='CURRICULUM') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='PYTHON') == False\n    assert candidate(words=['SAINT', 'SEER'], result='VISION') == False\n    assert candidate(words=['SUN', 'MOON', 'STAR'], result='GALAXY') == False\n    assert candidate(words=['SNOW', 'ICE'], result='COLD') == True\n    assert candidate(words=['HELLO', 'WORLD'], result='HAPPY') == False\n    assert candidate(words=['A', 'BB', 'CCC', 'DDDD'], result='E') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='DISPATCH') == False\n    assert candidate(words=['KNIGHT', 'KNIGHT'], result='WARLORD') == False\n    assert candidate(words=['ZERO', 'ONE', 'TWO', 'THREE'], result='SIX') == False\n    assert candidate(words=['FIVE', 'NINE', 'ELEVEN'], result='TWENTYFIVE') == False\n    assert candidate(words=['True', 'False'], result='PARADOX') == False\n    assert candidate(words=['STAR', 'SHIP'], result='GALAXY') == False\n    assert candidate(words=['TEN', 'TEN', 'TEN'], result='THIRTY') == False\n    assert candidate(words=['HOUSE', 'DOG'], result='FAMILY') == False\n    assert candidate(words=['MATH', 'ROCKS'], result='LEARNING') == False\n    assert candidate(words=['SIX', 'EIGHT', 'TEN'], result='TWENTYFOUR') == False\n    assert candidate(words=['APPLE', 'BANANA'], result='GRAPE') == False\n    assert candidate(words=['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE'], result='SUMUP') == False\n    assert candidate(words=['FOUR', 'FIVE', 'SIX'], result='FIFTEEN') == False\n    assert candidate(words=['UP', 'DOWN'], result='ZERO') == True\n    assert candidate(words=['SUN', 'MOON'], result='STAR') == True\n    assert candidate(words=['BIG', 'DOG'], result='ANIMAL') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='PLANETS') == False\n    assert candidate(words=['MOON', 'EARTH'], result='UNIVERSE') == False\n    assert candidate(words=['APPLE', 'BANANA', 'CHERRY'], result='FRUITBOWL') == False\n    assert candidate(words=['HAPPY', 'BIRTHDAY'], result='CELEBRATE') == False\n    assert candidate(words=['ABACAXI', 'MANGO', 'KIWI'], result='FRUITS') == False\n    assert candidate(words=['CAT', 'DOG', 'MOUSE'], result='PIG') == False\n    assert candidate(words=['UNIVERSAL', 'GALAXY', 'EARTH'], result='COSMOS') == False\n    assert candidate(words=['BIRD', 'FLY', 'HIGH'], result='FLIGHT') == False\n    assert candidate(words=['ALICE', 'BOB'], result='GAME') == False\n    assert candidate(words=['RIGHT', 'WRONG'], result='False') == False\n    assert candidate(words=['CAT', 'DOG', 'MOUSE'], result='CLAW') == False\n    assert candidate(words=['ALICE', 'BOB', 'CHARLIE'], result='FRIENDSHIP') == False\n    assert candidate(words=['PHOENIX', 'DRAGON'], result='MYTHICAL') == False\n    assert candidate(words=['PYTHON', 'ROCKS'], result='PROGRAM') == False\n    assert candidate(words=['FLY', 'FLY', 'HIGH'], result='SKYLINE') == False\n    assert candidate(words=['SEND', 'MORE', 'MONEY'], result='TWICE') == False\n    assert candidate(words=['UNO', 'DOS', 'TRES'], result='SEIS') == True\n    assert candidate(words=['WIZARD', 'WAND'], result='MAGIC') == False\n    assert candidate(words=['LUCK', 'IN', 'THE', 'DRAW'], result='SUCCESS') == False\n    assert candidate(words=['STAR', 'NIGHT'], result='TWILIGHT') == False\n    assert candidate(words=['SUN', 'MOON', 'STARS'], result='SKYLINE') == False\n    assert candidate(words=['BLACK', 'WHITE', 'GRAY'], result='COLORS') == False\n    assert candidate(words=['JAVA', 'PYTHON', 'CPLUSPLUS'], result='PROGRAMMING') == False\n    assert candidate(words=['AARDVARK', 'ANTELOPE'], result='MAMMALS') == False\n    assert candidate(words=['NINE', 'NINE'], result='EIGHTEEN') == False\n    assert candidate(words=['ALICE', 'BOB', 'CHARLIE'], result='FICTION') == False\n    assert candidate(words=['ZERO', 'ONE', 'TWO', 'THREE'], result='SUM') == False\n    assert candidate(words=['MAGIC', 'WAND'], result='WIZARD') == False\n    assert candidate(words=['JAVA', 'PYTHON'], result='SCRIPT') == False\n    assert candidate(words=['KNIGHT', 'BISHOP'], result='CHECKMATE') == False\n    assert candidate(words=['COMPUTER', 'SCIENCE', 'PROGRAMMING'], result='DEVELOPMENT') == False\n    assert candidate(words=['EARTH', 'MOON'], result='UNIVERSE') == False\n    assert candidate(words=['SIXTY', 'SIXTY'], result='ONETWENTY') == False\n    assert candidate(words=['SNOW', 'FALL'], result='SNOWBALL') == False\n    assert candidate(words=['FALCON', 'HAWK'], result='BIRD') == False\n    assert candidate(words=['APPLE', 'BANANA'], result='GRAPES') == False\n    assert candidate(words=['ZEBRA', 'ELEPHANT'], result='WILDLIFE') == False\n    assert candidate(words=['ZERO', 'ONE'], result='SUM') == False\n    assert candidate(words=['EARTH', 'WATER'], result='PLANET') == False\n    assert candidate(words=['APPLE', 'BANANA', 'CHERRY'], result='FRUIT') == False\n    assert candidate(words=['ONE', 'TWO', 'THREE', 'FOUR'], result='TEN') == False\n    assert candidate(words=['ONE', 'TWO', 'THREE', 'FOUR'], result='SUM') == False\n    assert candidate(words=['MATH', 'IS', 'FUN'], result='JOKES') == False\n    assert candidate(words=['DOG', 'CAT'], result='ANIMAL') == False\n    assert candidate(words=['GREEN', 'BLUE', 'YELLOW'], result='COLORS') == False\n    assert candidate(words=['ZERO', 'ONE', 'TWO', 'THREE'], result='FIVE') == False\n    assert candidate(words=['MAT', 'ADD', 'SUB'], result='SUM') == False\n    assert candidate(words=['KANGAROO', 'KANGAROO', 'KANGAROO'], result='JUMPOUTS') == False\n    assert candidate(words=['OCEAN', 'SEA', 'LAKE'], result='WATERBODY') == False\n    assert candidate(words=['WITCH', 'WAND'], result='MAGIC') == True\n    assert candidate(words=['HAPPY', 'JOY'], result='BLISS') == True\n    assert candidate(words=['STAR', 'PLANET', 'GALAXY'], result='COSMOS') == False\n    assert candidate(words=['FAST', 'SLOW'], result='BALANCE') == False\n    assert candidate(words=['LEFT', 'RIGHT'], result='EQUAL') == False\n    assert candidate(words=['COOL', 'DRINK'], result='REFRESH') == False\n    assert candidate(words=['MAGICAL', 'REALM'], result='MYSTERY') == False\n    assert candidate(words=['LEARN', 'PYTHON'], result='CODEING') == False\n    assert candidate(words=['CAR', 'BIKE'], result='VEHICLE') == False\n    assert candidate(words=['HEART', 'SOUL'], result='LOVE') == False\n    assert candidate(words=['MATH', 'IS', 'FUN'], result='GAMES') == False\n    assert candidate(words=['PARIS', 'BERLIN'], result='ROME') == False\n    assert candidate(words=['ABCDEFGHIJK', 'LMNOPQRS'], result='TUVWXYZ') == False\n    assert candidate(words=['SUN', 'MOON'], result='AURA') == True\n    assert candidate(words=['MATH', 'SCI', 'ENG'], result='STUDY') == False\n    assert candidate(words=['UNICORN', 'PEGASUS'], result='MYTHOLOGY') == False\n    assert candidate(words=['SUN', 'MOON', 'STAR'], result='SKY') == False\n    assert candidate(words=['ALPHA', 'BETA', 'GAMMA'], result='DELTA') == True\n    assert candidate(words=['PYTHON', 'JAVA'], result='SCRIPT') == False\n    assert candidate(words=['CLOCK', 'BELL'], result='TICKTOCK') == False\n    assert candidate(words=['DAY', 'NIGHT'], result='TIMELESS') == False\n    assert candidate(words=['TEN', 'TWO'], result='TWELVE') == False\n    assert candidate(words=['FAST', 'RUN', 'JUMP'], result='ATHLETE') == False\n    assert candidate(words=['APPLE', 'BANANA'], result='CHERRY') == True\n    assert candidate(words=['ALCHEMY', 'ENCHANT'], result='MAGICAL') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='PEACEFUL') == False\n    assert candidate(words=['PYTHON', 'JAVA', 'CPLUS'], result='PROGRAMMING') == False\n    assert candidate(words=['PYTHON', 'JAVA'], result='SCRIPT') == False\n    assert candidate(words=['SUN', 'MOON', 'STAR'], result='UNIVERSAL') == False\n    assert candidate(words=['MOUNTAIN', 'CLIMBER'], result='ADVENTURE') == False\n    assert candidate(words=['PYTHON', 'JAVA', 'CPLUSPLUS'], result='PROGRAMMING') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='HALLO') == False\n    assert candidate(words=['ONE', 'TWO', 'THREE'], result='SIX') == False\n    assert candidate(words=['ABCDE', 'FGHIJ'], result='KLMNO') == False\n    assert candidate(words=['SKY', 'TREE'], result='FOREST') == False\n    assert candidate(words=['PI', 'E'], result='CIRCLE') == False\n    assert candidate(words=['FOUR', 'FIVE', 'SIX'], result='FIFTEEN') == False\n    assert candidate(words=['RED', 'BLUE'], result='COLOR') == False\n    assert candidate(words=['JUMP', 'HIGH', 'LONG'], result='JUMPROPE') == False\n    assert candidate(words=['SUN', 'MOON', 'STAR'], result='PLANET') == False\n    assert candidate(words=['HIGH', 'LOW'], result='AMPLITUDE') == False\n    assert candidate(words=['ALPACA', 'ANIMAL', 'ZOO'], result='WILDLIFE') == False\n    assert candidate(words=['HAPPY', 'JOY'], result='HARMONY') == False\n    assert candidate(words=['SPY', 'SPY'], result='QUIZ') == True\n    assert candidate(words=['APPLE', 'BANANA'], result='FRUIT') == False\n    assert candidate(words=['HAPPY', 'SAD'], result='JOY') == False\n    assert candidate(words=['CRYPT', 'GRAPH', 'DRY'], result='DRYRUN') == False\n    assert candidate(words=['GENIE', 'BOTTLE'], result='WISHES') == False\n    assert candidate(words=['RED', 'BLUE'], result='GREEN') == False\n    assert candidate(words=['HELLO', 'WORLD'], result='HELLOWORLD') == False\n    assert candidate(words=['BIRD', 'FLY'], result='SKY') == False\n    assert candidate(words=['MYTH', 'HERO'], result='LEGEND') == False\n    assert candidate(words=['Babbage', 'Difference', 'Engine'], result='Calculator') == False\n    assert candidate(words=['ZERO', 'ONE', 'TWO', 'THREE'], result='SUM') == False\n    assert candidate(words=['PYTHON', 'JAVA', 'CPP'], result='PROGRAM') == False\n    assert candidate(words=['TREE', 'FOREST'], result='GREEN') == False\n",
+  "workload_hash": "3ac689ecaf3ad743f3b4e77a4808c13714dfaf28c082ca282dd5d4bf54b90fbf"
+}

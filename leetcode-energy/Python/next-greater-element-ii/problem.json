@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def nextGreaterElements(self, nums: List[int]) -> List[int]:\n        "
+  },
+  "content": "Given a circular integer array `nums` (i.e., the next element of `nums[nums.length - 1]` is `nums[0]`), return _the **next greater number** for every element in_ `nums`.\n\nThe **next greater number** of a number `x` is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, return `-1` for this number.\n\n**Example 1:**\n\n**Input:** nums = \\[1,2,1\\]\n**Output:** \\[2,-1,2\\]\nExplanation: The first 1's next greater number is 2; \nThe number 2 can't find next greater number. \nThe second 1's next greater number needs to search circularly, which is also 2.\n\n**Example 2:**\n\n**Input:** nums = \\[1,2,3,4,3\\]\n**Output:** \\[2,3,4,-1,4\\]\n\n**Constraints:**\n\n*   `1 <= nums.length <= 104`\n*   `-109 <= nums[i] <= 109`",
+  "hints": null,
+  "id": 59,
+  "level": "Medium",
+  "tags": [
+    "Array",
+    "Stack",
+    "Monotonic Stack"
+  ],
+  "title": "Next Greater Element II",
+  "title_slug": "next-greater-element-ii"
+}

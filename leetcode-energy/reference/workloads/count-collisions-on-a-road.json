@@ -1,0 +1,723 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "directions = \"SSRLSL\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"LRLRLR\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"RRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LRRSLRLR\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"LSRL\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"SSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLSLRL\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"RSLSLSLS\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"SSSRRSLL\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"LRSLSR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RLSL\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"RLLLLLL\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"RRRRRRS\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"LLRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRLR\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"SSLSLS\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RLRRLL\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"RRRSSSLL\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"SSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRSLL\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"LSLR\"",
+      "output": "1"
+    },
+    {
+      "input": "directions = \"LLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSLRS\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"RSLRLRLS\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"RRSLRR\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"LRLR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RRRSSSLLLRRR\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"LSRLSL\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"LRLL\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"SSRLSS\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSLR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"SSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LRRLRRLL\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"RSLRSL\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"LSSRLL\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"RSLRLR\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"SSRSLLS\"",
+      "output": "3"
+    },
+    {
+      "input": "directions = \"RRRRRSSSSSLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSS\"",
+      "output": "43"
+    },
+    {
+      "input": "directions = \"LRLRLRLRLRLR\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"RRLRLRLRLRLRLRLRLRLR\"",
+      "output": "19"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SSRSLRRRLLSLSSS\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"RRRRRSSLLLLLRRRR\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"RLLLLRRRRLLLLRRRRRLLLLRRRR\"",
+      "output": "22"
+    },
+    {
+      "input": "directions = \"RSSSSRRRRRRRRRRSSSLL\"",
+      "output": "13"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRLRLRLRLRLRLRL\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"RRRSSLLLLRRRSSLLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"RRRLRSSRRRLRRRRRSLRRRRRR\"",
+      "output": "15"
+    },
+    {
+      "input": "directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RSLRRSLRRSLR\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"LLLSRSSRRRLRRRRRSLRRRRRR\"",
+      "output": "11"
+    },
+    {
+      "input": "directions = \"RLRSLLRSLLRSLLRSLLRS\"",
+      "output": "15"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSLRSLRSLRSLRSLRSLRSLRSLRL\"",
+      "output": "18"
+    },
+    {
+      "input": "directions = \"LLLLSSSSRRRRRRRRRLLLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"RRRRSSSSLLLLRRRRRRSSSSLLLLRRRRRRSSSSLLLL\"",
+      "output": "28"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SLRLRLRLRLRSLSLSL\"",
+      "output": "13"
+    },
+    {
+      "input": "directions = \"LLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSSSSRRRLLLLRRRSL\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRSSSSSSSSSLLLLLLLL\"",
+      "output": "18"
+    },
+    {
+      "input": "directions = \"LRRRRRLLLLLS\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "44"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRSLSLSSSLLLLRRRS\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"LLLLRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRSRLRSRLRSRLRS\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "52"
+    },
+    {
+      "input": "directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSLRSLSRLRSLSR\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"RRRSLSLRSLRRRRLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SSSSSRRRRRSSSSS\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"RRRRSSSLLLLLRRRR\"",
+      "output": "9"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRR\"",
+      "output": "44"
+    },
+    {
+      "input": "directions = \"SSRRRRLLLLSSRRRRLLLLSS\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"RSLRSLSRLSRLSRLRSLSR\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"RRRRRRRRLLLLLLLL\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "46"
+    },
+    {
+      "input": "directions = \"RRRLLRRRLLLLLSS\"",
+      "output": "13"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRRR\"",
+      "output": "43"
+    },
+    {
+      "input": "directions = \"LLLLLRRRRRLLLLLRRRRRLLLLLRRRRRLLLLLRRRRR\"",
+      "output": "30"
+    },
+    {
+      "input": "directions = \"LLLLRRRRRRSSSSSLLLL\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"RLRLRLRLRLRL\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"RLRSLRSLRSLRSLRS\"",
+      "output": "11"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "48"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRR\"",
+      "output": "44"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRR\"",
+      "output": "44"
+    },
+    {
+      "input": "directions = \"SSSSSSRRRRRSSSSSSSSS\"",
+      "output": "5"
+    },
+    {
+      "input": "directions = \"LRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR\"",
+      "output": "38"
+    },
+    {
+      "input": "directions = \"SSSLRRRLLSSL\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRLRLRLRLRLRLRLRLRLRLRLRLRRRRRRRRRRRR\"",
+      "output": "26"
+    },
+    {
+      "input": "directions = \"SSSSRRRRLLLLRRRRLLLL\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"RRRRRLSLLSLLLL\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRRSSSSLLLLLLLL\"",
+      "output": "13"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "2"
+    },
+    {
+      "input": "directions = \"SSRRRRRSSSSLLLSSSL\"",
+      "output": "9"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRRLLRLRRLLRLRR\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLLLLLLSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRSSSSSSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRL\"",
+      "output": "38"
+    },
+    {
+      "input": "directions = \"LSRSSRSLLRSRLS\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"LLLLLLRRRRRRLLLLRRRRRR\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"LLLLSSSSRRRRSSSSLLLL\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSRRRRRRSSSSSSLLLLLLLLSSSSSSSSSSS\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"RRRSSLRLRLRSLL\"",
+      "output": "11"
+    },
+    {
+      "input": "directions = \"RSLSLRLSLSLRLSLR\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"SSSSSRRRRRSSSSSLLLLL\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"SSSSRRRRSSSSSSSSSSSSSSSSSSS\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"SSSSRRRRRRLLLLSSSSSLLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"SSLRRRSSLLSL\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"RRSSSLRSLSSSRRSSSLRSL\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"LSLSLSLSLSLSLSLSLRRRRRR\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"LLLLSSRRRRSSSSRRRR\"",
+      "output": "4"
+    },
+    {
+      "input": "directions = \"RSLSRSLSRSLSRS\"",
+      "output": "7"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSLRSSLSRSSL\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"LRLRLRLRLRLRLRLRLRLR\"",
+      "output": "18"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRR\"",
+      "output": "43"
+    },
+    {
+      "input": "directions = \"RRRRRSSSLLLLLLLLRRRR\"",
+      "output": "13"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LLLLRRRRSSSSLLRRRR\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"LLLSRLRLRLRLRLL\"",
+      "output": "11"
+    },
+    {
+      "input": "directions = \"RRRRSSSSLLLL\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"RLRLRLRLRLRLRLRLRLRL\"",
+      "output": "20"
+    },
+    {
+      "input": "directions = \"LLLLRRRRSSSSLLLL\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL\"",
+      "output": "46"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRSSSSSSSLLLLLLLLSSSSSSSSSSSSSSSSSS\"",
+      "output": "17"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRLLSSSSSSSSSSSSSSSSSL\"",
+      "output": "22"
+    },
+    {
+      "input": "directions = \"RLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRL\"",
+      "output": "40"
+    },
+    {
+      "input": "directions = \"LRRRSLRRRLSLSLLSLRR\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"LRRRLRRLLRLLRLRRRLLR\"",
+      "output": "18"
+    },
+    {
+      "input": "directions = \"RRRRLLLLRRRRLLLLRRRRLLLLRRRRLLLLRRRRLLLL\"",
+      "output": "40"
+    },
+    {
+      "input": "directions = \"SRLRSRLRSRLRSRLRSRLRSRLRSRLRSRLRSRLRSR\"",
+      "output": "27"
+    },
+    {
+      "input": "directions = \"RRRRRSSLLLLLLLLLL\"",
+      "output": "15"
+    },
+    {
+      "input": "directions = \"SSSSRRRRLLLLSSSS\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SSSSRRRRLLLLSSSSRRRR\"",
+      "output": "8"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"SRRRRRLRRRRLLSRRRRLLL\"",
+      "output": "19"
+    },
+    {
+      "input": "directions = \"RRRLLLLLSSSSRRRLLLLL\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLLLLLRRRRRR\"",
+      "output": "6"
+    },
+    {
+      "input": "directions = \"RSLRRSLSLSLSLSLSL\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"RLRSLRSLRSLRSLRSLRSLRSLRSLRSLRSLR\"",
+      "output": "22"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRLLLLLLLLLL\"",
+      "output": "20"
+    },
+    {
+      "input": "directions = \"RRRRSSSLLLLLLLRRRRRR\"",
+      "output": "11"
+    },
+    {
+      "input": "directions = \"SSSSRRRRLLLLLRRRRLLLLLSSSSRRRRLLLLLRRRRLLLLL\"",
+      "output": "36"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSRRRR\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRRSSSLSSSSSSSSSSSSSSSSSSSSSSSL\"",
+      "output": "16"
+    },
+    {
+      "input": "directions = \"RRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSLLLLLL\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"RRRRLLLLSSSSRRRLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"LLLLLLLLLLLLLLLLLLLL\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RLRRRLRLRLRLRLRLRLRLRLRLRLRR\"",
+      "output": "26"
+    },
+    {
+      "input": "directions = \"RRRRRSSSSSSLLLLSSSSSS\"",
+      "output": "9"
+    },
+    {
+      "input": "directions = \"SSRRRRRLLLLLSS\"",
+      "output": "10"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRRRRLLLLLLLLLLLL\"",
+      "output": "25"
+    },
+    {
+      "input": "directions = \"RRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSLLLL\"",
+      "output": "14"
+    },
+    {
+      "input": "directions = \"RSLSLRSLRRSLRSLRL\"",
+      "output": "12"
+    },
+    {
+      "input": "directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\"",
+      "output": "0"
+    },
+    {
+      "input": "directions = \"RSSSSSSRRRRRRRLLLLLLLLLLLLLRRRRRR\"",
+      "output": "21"
+    },
+    {
+      "input": "directions = \"RLRSLRLRSLRL\"",
+      "output": "10"
+    }
+  ],
+  "entry_point": "Solution().countCollisions",
+  "language_independent_cases": true,
+  "problem": "count-collisions-on-a-road",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def countCollisions(self, directions: str) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(directions = \"SSRLSL\") == 3\n    assert candidate(directions = \"LRLRLR\") == 4\n    assert candidate(directions = \"RRRR\") == 0\n    assert candidate(directions = \"LRRSLRLR\") == 5\n    assert candidate(directions = \"LSRL\") == 2\n    assert candidate(directions = \"SSSS\") == 0\n    assert candidate(directions = \"RLSLRL\") == 5\n    assert candidate(directions = \"RSLSLSLS\") == 4\n    assert candidate(directions = \"SSSRRSLL\") == 4\n    assert candidate(directions = \"LRSLSR\") == 2\n    assert candidate(directions = \"RLSL\") == 3\n    assert candidate(directions = \"RLLLLLL\") == 7\n    assert candidate(directions = \"RRRRRRS\") == 6\n    assert candidate(directions = \"LLRR\") == 0\n    assert candidate(directions = \"RRLR\") == 3\n    assert candidate(directions = \"SSLSLS\") == 2\n    assert candidate(directions = \"RLRRLL\") == 6\n    assert candidate(directions = \"RRRSSSLL\") == 5\n    assert candidate(directions = \"SSSSS\") == 0\n    assert candidate(directions = \"LLLLL\") == 0\n    assert candidate(directions = \"RLRSLL\") == 5\n    assert candidate(directions = \"LSLR\") == 1\n    assert candidate(directions = \"LLLL\") == 0\n    assert candidate(directions = \"RSLRS\") == 3\n    assert candidate(directions = \"RSLRLRLS\") == 6\n    assert candidate(directions = \"RRSLRR\") == 3\n    assert candidate(directions = \"LRLR\") == 2\n    assert candidate(directions = \"RRRSSSLLLRRR\") == 6\n    assert candidate(directions = \"LSRLSL\") == 3\n    assert candidate(directions = \"LRLL\") == 3\n    assert candidate(directions = \"SSRLSS\") == 2\n    assert candidate(directions = \"RRRRR\") == 0\n    assert candidate(directions = \"RSLR\") == 2\n    assert candidate(directions = \"SSS\") == 0\n    assert candidate(directions = \"LRRLRRLL\") == 7\n    assert candidate(directions = \"RSLRSL\") == 4\n    assert candidate(directions = \"LSSRLL\") == 3\n    assert candidate(directions = \"RSLRLR\") == 4\n    assert candidate(directions = \"SSRSLLS\") == 3\n    assert candidate(directions = \"RRRRRSSSSSLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSS\") == 43\n    assert candidate(directions = \"LRLRLRLRLRLR\") == 10\n    assert candidate(directions = \"RRLRLRLRLRLRLRLRLRLR\") == 19\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"SSRSLRRRLLSLSSS\") == 8\n    assert candidate(directions = \"RRRRRSSLLLLLRRRR\") == 10\n    assert candidate(directions = \"RLLLLRRRRLLLLRRRRRLLLLRRRR\") == 22\n    assert candidate(directions = \"RSSSSRRRRRRRRRRSSSLL\") == 13\n    assert candidate(directions = \"RRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 10\n    assert candidate(directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"RLRLRLRLRLRLRLRL\") == 16\n    assert candidate(directions = \"RRRSSLLLLRRRSSLLLL\") == 14\n    assert candidate(directions = \"RRRLRSSRRRLRRRRRSLRRRRRR\") == 15\n    assert candidate(directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 2\n    assert candidate(directions = \"RSLRRSLRRSLR\") == 8\n    assert candidate(directions = \"LLLSRSSRRRLRRRRRSLRRRRRR\") == 11\n    assert candidate(directions = \"RLRSLLRSLLRSLLRSLLRS\") == 15\n    assert candidate(directions = \"LLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RSLRSLRSLRSLRSLRSLRSLRSLRL\") == 18\n    assert candidate(directions = \"LLLLSSSSRRRRRRRRRLLLLL\") == 14\n    assert candidate(directions = \"RRRRSSSSLLLLRRRRRRSSSSLLLLRRRRRRSSSSLLLL\") == 28\n    assert candidate(directions = \"RRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"SLRLRLRLRLRSLSLSL\") == 13\n    assert candidate(directions = \"LLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSRRRRRR\") == 0\n    assert candidate(directions = \"RSSSSRRRLLLLRRRSL\") == 12\n    assert candidate(directions = \"RRRRRRRRRRSSSSSSSSSLLLLLLLL\") == 18\n    assert candidate(directions = \"LRRRRRLLLLLS\") == 10\n    assert candidate(directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 44\n    assert candidate(directions = \"LLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"RRRSLSLSSSLLLLRRRS\") == 12\n    assert candidate(directions = \"LLLLRRRRRRRR\") == 0\n    assert candidate(directions = \"RLRSRLRSRLRSRLRS\") == 12\n    assert candidate(directions = \"SSSSSSSSSSSSSSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLLLLLLLLLLLLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 52\n    assert candidate(directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 2\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"SSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RSLRSLSRLRSLSR\") == 8\n    assert candidate(directions = \"RRRSLSLRSLRRRRLLL\") == 14\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"SSSSSRRRRRSSSSS\") == 5\n    assert candidate(directions = \"RRRRSSSLLLLLRRRR\") == 9\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRR\") == 44\n    assert candidate(directions = \"SSRRRRLLLLSSRRRRLLLLSS\") == 16\n    assert candidate(directions = \"RSLRSLSRLSRLSRLRSLSR\") == 12\n    assert candidate(directions = \"RRRRRRRRLLLLLLLL\") == 16\n    assert candidate(directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 46\n    assert candidate(directions = \"RRRLLRRRLLLLLSS\") == 13\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRRR\") == 43\n    assert candidate(directions = \"LLLLLRRRRRLLLLLRRRRRLLLLLRRRRRLLLLLRRRRR\") == 30\n    assert candidate(directions = \"LLLLRRRRRRSSSSSLLLL\") == 10\n    assert candidate(directions = \"RLRLRLRLRLRL\") == 12\n    assert candidate(directions = \"RLRSLRSLRSLRSLRS\") == 11\n    assert candidate(directions = \"RRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 48\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRR\") == 44\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRR\") == 44\n    assert candidate(directions = \"SSSSSSRRRRRSSSSSSSSS\") == 5\n    assert candidate(directions = \"LRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLR\") == 38\n    assert candidate(directions = \"SSSLRRRLLSSL\") == 7\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RRRLRLRLRLRLRLRLRLRLRLRLRLRRRRRRRRRRRR\") == 26\n    assert candidate(directions = \"SSSSRRRRLLLLRRRRLLLL\") == 16\n    assert candidate(directions = \"RRRRRLSLLSLLLL\") == 12\n    assert candidate(directions = \"SSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RRRRRSSSSLLLLLLLL\") == 13\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"RLRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 2\n    assert candidate(directions = \"SSRRRRRSSSSLLLSSSL\") == 9\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"RLRRLLRLRRLLRLRR\") == 14\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLLLLLLSSSS\") == 0\n    assert candidate(directions = \"RRRRSSSSSSRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRL\") == 38\n    assert candidate(directions = \"LSRSSRSLLRSRLS\") == 7\n    assert candidate(directions = \"LLLLLLRRRRRRLLLLRRRRRR\") == 10\n    assert candidate(directions = \"LLLLSSSSRRRRSSSSLLLL\") == 8\n    assert candidate(directions = \"SSSSSSSSSSSRRRRRRSSSSSSLLLLLLLLSSSSSSSSSSS\") == 14\n    assert candidate(directions = \"RRRSSLRLRLRSLL\") == 11\n    assert candidate(directions = \"RSLSLRLSLSLRLSLR\") == 10\n    assert candidate(directions = \"SSSSSRRRRRSSSSSLLLLL\") == 10\n    assert candidate(directions = \"SSSSRRRRSSSSSSSSSSSSSSSSSSS\") == 4\n    assert candidate(directions = \"SSSSRRRRRRLLLLSSSSSLLLL\") == 14\n    assert candidate(directions = \"SSLRRRSSLLSL\") == 7\n    assert candidate(directions = \"RRSSSLRSLSSSRRSSSLRSL\") == 10\n    assert candidate(directions = \"LSLSLSLSLSLSLSLSLRRRRRR\") == 8\n    assert candidate(directions = \"LLLLSSRRRRSSSSRRRR\") == 4\n    assert candidate(directions = \"RSLSRSLSRSLSRS\") == 7\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RSLRSSLSRSSL\") == 6\n    assert candidate(directions = \"LRLRLRLRLRLRLRLRLRLR\") == 18\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLRRRRRR\") == 43\n    assert candidate(directions = \"RRRRRSSSLLLLLLLLRRRR\") == 13\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"LLLLRRRRSSSSLLRRRR\") == 6\n    assert candidate(directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"LLLSRLRLRLRLRLL\") == 11\n    assert candidate(directions = \"RRRRSSSSLLLL\") == 8\n    assert candidate(directions = \"RLRLRLRLRLRLRLRLRLRL\") == 20\n    assert candidate(directions = \"LLLLRRRRSSSSLLLL\") == 8\n    assert candidate(directions = \"LRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRLL\") == 46\n    assert candidate(directions = \"RRRRRRRRRSSSSSSSLLLLLLLLSSSSSSSSSSSSSSSSSS\") == 17\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRLLSSSSSSSSSSSSSSSSSL\") == 22\n    assert candidate(directions = \"RLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRL\") == 40\n    assert candidate(directions = \"LRRRSLRRRLSLSLLSLRR\") == 12\n    assert candidate(directions = \"LRRRLRRLLRLLRLRRRLLR\") == 18\n    assert candidate(directions = \"RRRRLLLLRRRRLLLLRRRRLLLLRRRRLLLLRRRRLLLL\") == 40\n    assert candidate(directions = \"SRLRSRLRSRLRSRLRSRLRSRLRSRLRSRLRSRLRSR\") == 27\n    assert candidate(directions = \"RRRRRSSLLLLLLLLLL\") == 15\n    assert candidate(directions = \"SSSSRRRRLLLLSSSS\") == 8\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"SSSSRRRRLLLLSSSSRRRR\") == 8\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"SRRRRRLRRRRLLSRRRRLLL\") == 19\n    assert candidate(directions = \"RRRLLLLLSSSSRRRLLLLL\") == 16\n    assert candidate(directions = \"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\") == 0\n    assert candidate(directions = \"RLLLLLRRRRRR\") == 6\n    assert candidate(directions = \"RSLRRSLSLSLSLSLSL\") == 10\n    assert candidate(directions = \"RLRSLRSLRSLRSLRSLRSLRSLRSLRSLRSLR\") == 22\n    assert candidate(directions = \"RRRRRRRRRRLLLLLLLLLL\") == 20\n    assert candidate(directions = \"RRRRSSSLLLLLLLRRRRRR\") == 11\n    assert candidate(directions = \"SSSSRRRRLLLLLRRRRLLLLLSSSSRRRRLLLLLRRRRLLLLL\") == 36\n    assert candidate(directions = \"LLLLLLLLLLSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSRRRR\") == 0\n    assert candidate(directions = \"RRRRRRRRRRRRRRSSSLSSSSSSSSSSSSSSSSSSSSSSSL\") == 16\n    assert candidate(directions = \"RRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSLLLLLL\") == 12\n    assert candidate(directions = \"RRRRLLLLSSSSRRRLLL\") == 14\n    assert candidate(directions = \"LLLLLLLLLLLLLLLLLLLL\") == 0\n    assert candidate(directions = \"RLRRRLRLRLRLRLRLRLRLRLRLRLRR\") == 26\n    assert candidate(directions = \"RRRRRSSSSSSLLLLSSSSSS\") == 9\n    assert candidate(directions = \"SSRRRRRLLLLLSS\") == 10\n    assert candidate(directions = \"RRRRRRRRRRRRRLLLLLLLLLLLL\") == 25\n    assert candidate(directions = \"RRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSLLLL\") == 14\n    assert candidate(directions = \"RSLSLRSLRRSLRSLRL\") == 12\n    assert candidate(directions = \"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\") == 0\n    assert candidate(directions = \"RSSSSSSRRRRRRRLLLLLLLLLLLLLRRRRRR\") == 21\n    assert candidate(directions = \"RLRSLRLRSLRL\") == 10\n",
+  "workload_hash": "a5c2c10ccc4a70bb911facec554a6a546b7a7b09e84f25797e00883d58038f2b"
+}

@@ -1,0 +1,107 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "n = 250",
+      "output": "330"
+    },
+    {
+      "input": "n = 5",
+      "output": "2"
+    },
+    {
+      "input": "n = 15",
+      "output": "8"
+    },
+    {
+      "input": "n = 200",
+      "output": "254"
+    },
+    {
+      "input": "n = 20",
+      "output": "12"
+    },
+    {
+      "input": "n = 100",
+      "output": "104"
+    },
+    {
+      "input": "n = 50",
+      "output": "40"
+    },
+    {
+      "input": "n = 1",
+      "output": "0"
+    },
+    {
+      "input": "n = 10",
+      "output": "4"
+    },
+    {
+      "input": "n = 25",
+      "output": "16"
+    },
+    {
+      "input": "n = 150",
+      "output": "178"
+    },
+    {
+      "input": "n = 80",
+      "output": "78"
+    },
+    {
+      "input": "n = 230",
+      "output": "302"
+    },
+    {
+      "input": "n = 125",
+      "output": "142"
+    },
+    {
+      "input": "n = 75",
+      "output": "74"
+    },
+    {
+      "input": "n = 240",
+      "output": "314"
+    },
+    {
+      "input": "n = 199",
+      "output": "250"
+    },
+    {
+      "input": "n = 120",
+      "output": "132"
+    },
+    {
+      "input": "n = 225",
+      "output": "296"
+    },
+    {
+      "input": "n = 249",
+      "output": "324"
+    },
+    {
+      "input": "n = 190",
+      "output": "236"
+    },
+    {
+      "input": "n = 175",
+      "output": "214"
+    },
+    {
+      "input": "n = 180",
+      "output": "218"
+    }
+  ],
+  "entry_point": "Solution().countTriples",
+  "language_independent_cases": true,
+  "problem": "count-square-sum-triples",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def countTriples(self, n: int) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(n = 250) == 330\n    assert candidate(n = 5) == 2\n    assert candidate(n = 15) == 8\n    assert candidate(n = 200) == 254\n    assert candidate(n = 20) == 12\n    assert candidate(n = 100) == 104\n    assert candidate(n = 50) == 40\n    assert candidate(n = 1) == 0\n    assert candidate(n = 10) == 4\n    assert candidate(n = 25) == 16\n    assert candidate(n = 150) == 178\n    assert candidate(n = 80) == 78\n    assert candidate(n = 230) == 302\n    assert candidate(n = 125) == 142\n    assert candidate(n = 75) == 74\n    assert candidate(n = 240) == 314\n    assert candidate(n = 199) == 250\n    assert candidate(n = 120) == 132\n    assert candidate(n = 225) == 296\n    assert candidate(n = 249) == 324\n    assert candidate(n = 190) == 236\n    assert candidate(n = 175) == 214\n    assert candidate(n = 180) == 218\n",
+  "workload_hash": "5fad6063121f1815be87b7623f4c383f378baefdc807695258365014d84802b4"
+}

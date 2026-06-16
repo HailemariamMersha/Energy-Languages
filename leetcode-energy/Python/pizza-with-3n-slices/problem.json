@@ -1,0 +1,17 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def maxSizeSlices(self, slices: List[int]) -> int:\n        "
+  },
+  "content": "There is a pizza with `3n` slices of varying size, you and your friends will take slices of pizza as follows:\n\n*   You will pick **any** pizza slice.\n*   Your friend Alice will pick the next slice in the anti-clockwise direction of your pick.\n*   Your friend Bob will pick the next slice in the clockwise direction of your pick.\n*   Repeat until there are no more slices of pizzas.\n\nGiven an integer array `slices` that represent the sizes of the pizza slices in a clockwise direction, return _the maximum possible sum of slice sizes that you can pick_.\n\n**Example 1:**\n\n**Input:** slices = \\[1,2,3,4,5,6\\]\n**Output:** 10\n**Explanation:** Pick pizza slice of size 4, Alice and Bob will pick slices with size 3 and 5 respectively. Then Pick slices with size 6, finally Alice and Bob will pick slice of size 2 and 1 respectively. Total = 4 + 6.\n\n**Example 2:**\n\n**Input:** slices = \\[8,9,8,6,1,1\\]\n**Output:** 16\n**Explanation:** Pick pizza slice of size 8 in each turn. If you pick slice with size 9 your partners will pick slices of size 8.\n\n**Constraints:**\n\n*   `3 * n == slices.length`\n*   `1 <= slices.length <= 500`\n*   `1 <= slices[i] <= 1000`",
+  "hints": "By studying the pattern of the operations, we can find out that the problem is equivalent to: Given an integer array with size 3N, select N integers with maximum sum and any selected integers are not next to each other in the array. The first one in the array is considered next to the last one in the array. Use Dynamic Programming to solve it.",
+  "id": 89,
+  "level": "Hard",
+  "tags": [
+    "Array",
+    "Dynamic Programming",
+    "Greedy",
+    "Heap (Priority Queue)"
+  ],
+  "title": "Pizza With 3n Slices",
+  "title_slug": "pizza-with-3n-slices"
+}

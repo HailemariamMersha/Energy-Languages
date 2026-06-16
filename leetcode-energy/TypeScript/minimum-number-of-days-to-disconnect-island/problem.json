@@ -1,0 +1,36 @@
+{
+  "code_snippets": {
+    "c": "int minDays(int** grid, int gridSize, int* gridColSize) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    int minDays(vector<vector<int>>& grid) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public int MinDays(int[][] grid) {\n        \n    }\n}",
+    "dart": "class Solution {\n  int minDays(List<List<int>> grid) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec min_days(grid :: [[integer]]) :: integer\n  def min_days(grid) do\n    \n  end\nend",
+    "erlang": "-spec min_days(Grid :: [[integer()]]) -> integer().\nmin_days(Grid) ->\n  .",
+    "golang": "func minDays(grid [][]int) int {\n    \n}",
+    "java": "class Solution {\n    public int minDays(int[][] grid) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {number[][]} grid\n * @return {number}\n */\nvar minDays = function(grid) {\n    \n};",
+    "kotlin": "class Solution {\n    fun minDays(grid: Array<IntArray>): Int {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param Integer[][] $grid\n     * @return Integer\n     */\n    function minDays($grid) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def minDays(self, grid):\n        \"\"\"\n        :type grid: List[List[int]]\n        :rtype: int\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def minDays(self, grid: List[List[int]]) -> int:\n        ",
+    "racket": "(define/contract (min-days grid)\n  (-> (listof (listof exact-integer?)) exact-integer?)\n  )",
+    "ruby": "# @param {Integer[][]} grid\n# @return {Integer}\ndef min_days(grid)\n    \nend",
+    "rust": "impl Solution {\n    pub fn min_days(grid: Vec<Vec<i32>>) -> i32 {\n        \n    }\n}",
+    "scala": "object Solution {\n    def minDays(grid: Array[Array[Int]]): Int = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func minDays(_ grid: [[Int]]) -> Int {\n        \n    }\n}",
+    "typescript": "function minDays(grid: number[][]): number {\n    \n};"
+  },
+  "content": "You are given an `m x n` binary grid `grid` where `1` represents land and `0` represents water. An **island** is a maximal **4-directionally** (horizontal or vertical) connected group of `1`'s.\n\nThe grid is said to be **connected** if we have **exactly one island**, otherwise is said **disconnected**.\n\nIn one day, we are allowed to change **any** single land cell `(1)` into a water cell `(0)`.\n\nReturn _the minimum number of days to disconnect the grid_.\n\n**Example 1:**\n\n**Input:** grid = \\[\\[0,1,1,0\\],\\[0,1,1,0\\],\\[0,0,0,0\\]\\]\n\n**Output:** 2\n**Explanation:** We need at least 2 days to get a disconnected grid.\nChange land grid\\[1\\]\\[1\\] and grid\\[0\\]\\[2\\] to water and get 2 disconnected island.\n\n**Example 2:**\n\n**Input:** grid = \\[\\[1,1\\]\\]\n**Output:** 2\n**Explanation:** Grid of full water is also disconnected (\\[\\[1,1\\]\\] -> \\[\\[0,0\\]\\]), 0 islands.\n\n**Constraints:**\n\n*   `m == grid.length`\n*   `n == grid[i].length`\n*   `1 <= m, n <= 30`\n*   `grid[i][j]` is either `0` or `1`.",
+  "hints": "Return 0 if the grid is already disconnected. Return 1 if changing a single land to water disconnect the island. Otherwise return 2. We can disconnect the grid within at most 2 days.",
+  "id": 77,
+  "level": "Hard",
+  "tags": [
+    "Array",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Matrix",
+    "Strongly Connected Component"
+  ],
+  "title": "Minimum Number of Days to Disconnect Island",
+  "title_slug": "minimum-number-of-days-to-disconnect-island"
+}

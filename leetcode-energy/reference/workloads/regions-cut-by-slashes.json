@@ -1,0 +1,371 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "grid = [\"\\\\/\",\"\\\\/\",\"\\\\/\"]",
+      "output": "14"
+    },
+    {
+      "input": "grid = [\"///\",\"///\",\"///\"]",
+      "output": "6"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"\\\\\\\\\",\"\\\\\\\\\"]",
+      "output": "14"
+    },
+    {
+      "input": "grid = [\"/\",\"/\",\"/\"]",
+      "output": "25"
+    },
+    {
+      "input": "grid = [\"/\\\\\",\"/\\\\\",\"/\\\\\"]",
+      "output": "14"
+    },
+    {
+      "input": "grid = [\"\\\\/\",\"/\\\\\",\"\\\\/\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\" /\",\"/ \"]",
+      "output": "2"
+    },
+    {
+      "input": "grid = [\"/\\\\\",\"\\\\/\"]",
+      "output": "5"
+    },
+    {
+      "input": "grid = [\"\\\\\",\"/\"]",
+      "output": "9"
+    },
+    {
+      "input": "grid = [\" /\",\"  \"]",
+      "output": "1"
+    },
+    {
+      "input": "grid = [\"   \",\"   \",\"   \"]",
+      "output": "1"
+    },
+    {
+      "input": "grid = [\"//\",\"\\\\\"]",
+      "output": "6"
+    },
+    {
+      "input": "grid = [\" / \",\"/ \\/\",\" \\\\ \",\"\\ / \"]",
+      "output": "10"
+    },
+    {
+      "input": "grid = [\"  \",\"\\\\/\",\"/\\\\\",\"  \"]",
+      "output": "32"
+    },
+    {
+      "input": "grid = [\"/\\\\/\", \"\\\\/\\\\\", \"/\\\\/\", \"\\\\/\\\\\"]",
+      "output": "22"
+    },
+    {
+      "input": "grid = [\"/\\\\/\\\\\",\"\\\\/\\\\/\",\"/\\\\/\\\\\",\"\\\\/\\\\/\"]",
+      "output": "13"
+    },
+    {
+      "input": "grid = [\"\\\\/\",\" \\/\",\"\\\\/\",\"\\\\/\",\"/\\\\\",\"/\\\\\",\"/\\\\\",\"\\\\/\"]",
+      "output": "191"
+    },
+    {
+      "input": "grid = [\"\\\\ \",\"\\\\ \",\"\\\\ \",\"\\\\ \"]",
+      "output": "30"
+    },
+    {
+      "input": "grid = [\"/\\\\\",\"\\\\/\",\"/\\\\\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"\\\\\",\"\\\\\",\"\\\\\"]",
+      "output": "25"
+    },
+    {
+      "input": "grid = [\"/\\\\ \",\"\\\\/ \",\"/\\\\ \",\"\\\\/ \"]",
+      "output": "18"
+    },
+    {
+      "input": "grid = [\"/ \",\"\\\\ \",\"/ \",\"\\\\ \"]",
+      "output": "32"
+    },
+    {
+      "input": "grid = [\"\\\\ \",\" / \",\"\\\\ \"]",
+      "output": "7"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\",\"\\\\/\\\\\",\"\\\\/\\\\\"]",
+      "output": "6"
+    },
+    {
+      "input": "grid = [\"/\\\\/\", \"\\\\/\\\\\", \"/\\\\/\"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"\\\\/\",\" / \",\"/\\\\\"]",
+      "output": "9"
+    },
+    {
+      "input": "grid = [\"/\\\\\", \"\\\\/\", \"/\\\\\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"\\\\/\",\"/\\\\\",\" / \",\"\\\\/\"]",
+      "output": "29"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\",\"/\\\\/\",\"\\\\/\\\\\"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"/\\\\/\",\"\\\\/\\\\\",\"/\\\\\\\\\"]",
+      "output": "24"
+    },
+    {
+      "input": "grid = [\"  \",\"  \",\"  \",\"  \"]",
+      "output": "29"
+    },
+    {
+      "input": "grid = [\"     \",\"     \",\"     \",\"     \",\"     \"]",
+      "output": "1"
+    },
+    {
+      "input": "grid = [\"/\\\\\", \"\\\\/\", \" / \", \"/\\\\\", \"\\\\/\"]",
+      "output": "58"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"\\\\\\\\\",\"/\\\\/\",\"////\"]",
+      "output": "21"
+    },
+    {
+      "input": "grid = [\"    \",\"    \",\"    \",\"    \"]",
+      "output": "1"
+    },
+    {
+      "input": "grid = [\" / \",\"/\\\\/\",\" / \"]",
+      "output": "4"
+    },
+    {
+      "input": "grid = [\"\\\\ \",\"/ \",\"\\\\ \",\"/ \"]",
+      "output": "31"
+    },
+    {
+      "input": "grid = [\"/\\\\/\", \"/\\\\/\", \"/\\\\/\"]",
+      "output": "6"
+    },
+    {
+      "input": "grid = [\"   \",\"\\\\/\",\"   \"]",
+      "output": "4"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\",\"/\\\\/\\\\\",\"\\\\/\\\\\",\"/\\\\/\\\\\"]",
+      "output": "17"
+    },
+    {
+      "input": "grid = [\"\\\\ \", \" / \", \" / \", \"\\\\ \"]",
+      "output": "21"
+    },
+    {
+      "input": "grid = [\"   \", \"   \", \"   \"]",
+      "output": "1"
+    },
+    {
+      "input": "grid = [\"\\\\/\",\"/\\\\\",\"\\\\/\",\"/\\\\\"]",
+      "output": "35"
+    },
+    {
+      "input": "grid = [\" /\\\\\",\"/\\\\ \",\"\\\\/ \",\" \\\\ /\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"///\",\"   \",\"\\\\\\\\\",\"///\"]",
+      "output": "20"
+    },
+    {
+      "input": "grid = [\"////\",\"////\",\"////\",\"////\"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"/\\\\ \",\" \\\\ \",\"/\\\\ \",\" \\\\ \"]",
+      "output": "14"
+    },
+    {
+      "input": "grid = [\"\\ \\/\",\"/ \\/\",\"\\\\ /\",\"/\\\\ \"]",
+      "output": "11"
+    },
+    {
+      "input": "grid = [\"/ /\",\" \\ \",\"/ /\",\" \\ \"]",
+      "output": "14"
+    },
+    {
+      "input": "grid = [\"/\\\\/\\\\\", \"\\\\/\\\\/\\\\\", \"/\\\\/\\\\/\", \"\\\\/\\\\/\\\\\", \"/\\\\/\\\\\"]",
+      "output": "22"
+    },
+    {
+      "input": "grid = [\"\\\\/\", \"/\\\\\", \"\\\\/\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"  /\",\" //\",\"///\",\"/\\\\\"]",
+      "output": "20"
+    },
+    {
+      "input": "grid = [\"\\\\\", \"\\\\\", \"\\\\\"]",
+      "output": "25"
+    },
+    {
+      "input": "grid = [\"/// \",\"\\\\\\\\\",\"\\\\\\\\\"]",
+      "output": "10"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\",\"\\\\/\\\\\",\"\\\\/\\\\\",\"\\\\/\\\\\"]",
+      "output": "19"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\", \"\\\\/\\\\\", \"\\\\/\\\\\"]",
+      "output": "6"
+    },
+    {
+      "input": "grid = [\" /\",\"\\\\\",\" \"]",
+      "output": "19"
+    },
+    {
+      "input": "grid = [\"\\\\ \",\"/ \",\" \\/\",\"/\\\\\"]",
+      "output": "27"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\", \"\\\\\\\\\", \"\\\\\\\\\", \"\\\\\\\\\"]",
+      "output": "34"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\", \"/\\\\/\\\\\", \"\\\\/\\\\\", \"/\\\\/\\\\\"]",
+      "output": "17"
+    },
+    {
+      "input": "grid = [\"///\", \"///\", \"   \"]",
+      "output": "3"
+    },
+    {
+      "input": "grid = [\"/\\\\\\\\\",\"\\\\/\\\\\\\\\",\"/\\\\\\\\\",\"\\\\/\\\\\\\\\"]",
+      "output": "16"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"\\\\/\\\\\",\"/\\\\/\",\"\\\\/\\\\\"]",
+      "output": "22"
+    },
+    {
+      "input": "grid = [\"/\\\\ \",\" /\\\\ \",\" \\/\\\\\",\" \\/ \"]",
+      "output": "7"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\ \", \"\\\\\\\\ \", \"\\\\\\\\ \", \"\\\\\\\\ \", \"\\\\\\\\ \"]",
+      "output": "38"
+    },
+    {
+      "input": "grid = [\"\\\\/\", \"/\\\\\", \"\\\\/\", \"/\\\\\"]",
+      "output": "35"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"////\",\"\\\\\\\\\",\"////\"]",
+      "output": "22"
+    },
+    {
+      "input": "grid = [\" //\",\"\\\\/\",\"  \"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"\\\\///\",\"/\\\\/\",\"\\\\///\"]",
+      "output": "16"
+    },
+    {
+      "input": "grid = [\" /\\\\\", \"\\\\/ \", \" /\\\\\", \"\\\\/ \"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"\\\\ \",\"/\\\\\",\" / \"]",
+      "output": "10"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"\\\\\\\\\",\"\\\\\\\\\",\"\\\\\\\\\"]",
+      "output": "34"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"\\\\/\\\\\",\"\\\\/\\\\\",\"/\\\\/\"]",
+      "output": "21"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"/\\\\/\",\"/\\\\/\",\"/\\\\/\"]",
+      "output": "19"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"/\\\\/\",\"\\\\/\\\\\",\"/\\\\/\"]",
+      "output": "25"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"\\\\\\\\\",\"\\\\\\\\\",\"    \"]",
+      "output": "25"
+    },
+    {
+      "input": "grid = [\" \\/ \", \"/\\\\/\", \" \\/ \", \"\\\\/ \"]",
+      "output": "9"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\", \"\\\\ \", \" / \", \"\\\\\\\\\"]",
+      "output": "27"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\\\\\",\"\\\\\\\\\\\\\",\"\\\\\\\\\\\\\",\"\\\\\\\\\\\\\"]",
+      "output": "19"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\" / \",\"\\\\/\\\\\"]",
+      "output": "5"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\", \" / \", \"\\\\/\\\\\", \" / \", \"\\\\/\\\\\"]",
+      "output": "41"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"///\",\"\\\\\\\\\",\"///\"]",
+      "output": "27"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\/\",\"\\\\/\\\\/\",\"\\\\/\\\\/\",\"\\\\/\\\\/\"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"/\\\\\", \"\\\\/\", \"/\\\\\", \"\\\\/\"]",
+      "output": "36"
+    },
+    {
+      "input": "grid = [\"/\\\\/\",\"\\\\/\\\\\",\"/\\\\/\"]",
+      "output": "8"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\", \"\\\\\\\\\", \"\\\\\\\\\", \"\\\\\\\\\", \"\\\\\\\\\"]",
+      "output": "62"
+    },
+    {
+      "input": "grid = [\"\\\\\\\\\",\"    \",\"    \",\"\\\\\\\\\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"/ /\",\" / \",\" / \",\"/ /\"]",
+      "output": "15"
+    },
+    {
+      "input": "grid = [\"\\\\/\\\\\", \"/\\\\/\", \"\\\\/\\\\\", \"/\\\\/\", \"\\\\/\\\\\"]",
+      "output": "47"
+    }
+  ],
+  "entry_point": "Solution().regionsBySlashes",
+  "language_independent_cases": true,
+  "problem": "regions-cut-by-slashes",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def regionsBySlashes(self, grid: List[str]) -> int:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(grid=['\\\\/', '\\\\/', '\\\\/']) == 14\n    assert candidate(grid=['///', '///', '///']) == 6\n    assert candidate(grid=['\\\\\\\\', '\\\\\\\\', '\\\\\\\\']) == 14\n    assert candidate(grid=['/', '/', '/']) == 25\n    assert candidate(grid=['/\\\\', '/\\\\', '/\\\\']) == 14\n    assert candidate(grid=['\\\\/', '/\\\\', '\\\\/']) == 15\n    assert candidate(grid=[' /', '/ ']) == 2\n    assert candidate(grid=['/\\\\', '\\\\/']) == 5\n    assert candidate(grid=['\\\\', '/']) == 9\n    assert candidate(grid=[' /', '  ']) == 1\n    assert candidate(grid=['   ', '   ', '   ']) == 1\n    assert candidate(grid=['//', '\\\\']) == 6\n    assert candidate(grid=[' / ', '/ \\\\/', ' \\\\ ', '\\\\ / ']) == 10\n    assert candidate(grid=['  ', '\\\\/', '/\\\\', '  ']) == 32\n    assert candidate(grid=['/\\\\/', '\\\\/\\\\', '/\\\\/', '\\\\/\\\\']) == 22\n    assert candidate(grid=['/\\\\/\\\\', '\\\\/\\\\/', '/\\\\/\\\\', '\\\\/\\\\/']) == 13\n    assert candidate(grid=['\\\\/', ' \\\\/', '\\\\/', '\\\\/', '/\\\\', '/\\\\', '/\\\\', '\\\\/']) == 191\n    assert candidate(grid=['\\\\ ', '\\\\ ', '\\\\ ', '\\\\ ']) == 30\n    assert candidate(grid=['/\\\\', '\\\\/', '/\\\\']) == 15\n    assert candidate(grid=['\\\\', '\\\\', '\\\\']) == 25\n    assert candidate(grid=['/\\\\ ', '\\\\/ ', '/\\\\ ', '\\\\/ ']) == 18\n    assert candidate(grid=['/ ', '\\\\ ', '/ ', '\\\\ ']) == 32\n    assert candidate(grid=['\\\\ ', ' / ', '\\\\ ']) == 7\n    assert candidate(grid=['\\\\/\\\\', '\\\\/\\\\', '\\\\/\\\\']) == 6\n    assert candidate(grid=['/\\\\/', '\\\\/\\\\', '/\\\\/']) == 8\n    assert candidate(grid=['\\\\/', ' / ', '/\\\\']) == 9\n    assert candidate(grid=['/\\\\', '\\\\/', '/\\\\']) == 15\n    assert candidate(grid=['\\\\/', '/\\\\', ' / ', '\\\\/']) == 29\n    assert candidate(grid=['\\\\/\\\\', '/\\\\/', '\\\\/\\\\']) == 8\n    assert candidate(grid=['\\\\\\\\', '/\\\\/', '\\\\/\\\\', '/\\\\\\\\']) == 24\n    assert candidate(grid=['  ', '  ', '  ', '  ']) == 29\n    assert candidate(grid=['     ', '     ', '     ', '     ', '     ']) == 1\n    assert candidate(grid=['/\\\\', '\\\\/', ' / ', '/\\\\', '\\\\/']) == 58\n    assert candidate(grid=['/\\\\/', '\\\\\\\\', '/\\\\/', '////']) == 21\n    assert candidate(grid=['    ', '    ', '    ', '    ']) == 1\n    assert candidate(grid=[' / ', '/\\\\/', ' / ']) == 4\n    assert candidate(grid=['\\\\ ', '/ ', '\\\\ ', '/ ']) == 31\n    assert candidate(grid=['/\\\\/', '/\\\\/', '/\\\\/']) == 6\n    assert candidate(grid=['   ', '\\\\/', '   ']) == 4\n    assert candidate(grid=['\\\\/\\\\', '/\\\\/\\\\', '\\\\/\\\\', '/\\\\/\\\\']) == 17\n    assert candidate(grid=['\\\\ ', ' / ', ' / ', '\\\\ ']) == 21\n    assert candidate(grid=['   ', '   ', '   ']) == 1\n    assert candidate(grid=['\\\\/', '/\\\\', '\\\\/', '/\\\\']) == 35\n    assert candidate(grid=[' /\\\\', '/\\\\ ', '\\\\/ ', ' \\\\ /']) == 15\n    assert candidate(grid=['///', '   ', '\\\\\\\\', '///']) == 20\n    assert candidate(grid=['////', '////', '////', '////']) == 8\n    assert candidate(grid=['/\\\\ ', ' \\\\ ', '/\\\\ ', ' \\\\ ']) == 14\n    assert candidate(grid=['\\\\ \\\\/', '/ \\\\/', '\\\\ /', '/\\\\ ']) == 11\n    assert candidate(grid=['/ /', ' \\\\ ', '/ /', ' \\\\ ']) == 14\n    assert candidate(grid=['/\\\\/\\\\', '\\\\/\\\\/\\\\', '/\\\\/\\\\/', '\\\\/\\\\/\\\\', '/\\\\/\\\\']) == 22\n    assert candidate(grid=['\\\\/', '/\\\\', '\\\\/']) == 15\n    assert candidate(grid=['  /', ' //', '///', '/\\\\']) == 20\n    assert candidate(grid=['\\\\', '\\\\', '\\\\']) == 25\n    assert candidate(grid=['/// ', '\\\\\\\\', '\\\\\\\\']) == 10\n    assert candidate(grid=['\\\\/\\\\', '\\\\/\\\\', '\\\\/\\\\', '\\\\/\\\\']) == 19\n    assert candidate(grid=['\\\\/\\\\', '\\\\/\\\\', '\\\\/\\\\']) == 6\n    assert candidate(grid=[' /', '\\\\', ' ']) == 19\n    assert candidate(grid=['\\\\ ', '/ ', ' \\\\/', '/\\\\']) == 27\n    assert candidate(grid=['\\\\\\\\', '\\\\\\\\', '\\\\\\\\', '\\\\\\\\']) == 34\n    assert candidate(grid=['\\\\/\\\\', '/\\\\/\\\\', '\\\\/\\\\', '/\\\\/\\\\']) == 17\n    assert candidate(grid=['///', '///', '   ']) == 3\n    assert candidate(grid=['/\\\\\\\\', '\\\\/\\\\\\\\', '/\\\\\\\\', '\\\\/\\\\\\\\']) == 16\n    assert candidate(grid=['/\\\\/', '\\\\/\\\\', '/\\\\/', '\\\\/\\\\']) == 22\n    assert candidate(grid=['/\\\\ ', ' /\\\\ ', ' \\\\/\\\\', ' \\\\/ ']) == 7\n    assert candidate(grid=['\\\\\\\\ ', '\\\\\\\\ ', '\\\\\\\\ ', '\\\\\\\\ ', '\\\\\\\\ ']) == 38\n    assert candidate(grid=['\\\\/', '/\\\\', '\\\\/', '/\\\\']) == 35\n    assert candidate(grid=['\\\\\\\\', '////', '\\\\\\\\', '////']) == 22\n    assert candidate(grid=[' //', '\\\\/', '  ']) == 8\n    assert candidate(grid=['/\\\\/', '\\\\///', '/\\\\/', '\\\\///']) == 16\n    assert candidate(grid=[' /\\\\', '\\\\/ ', ' /\\\\', '\\\\/ ']) == 15\n    assert candidate(grid=['\\\\ ', '/\\\\', ' / ']) == 10\n    assert candidate(grid=['\\\\\\\\', '\\\\\\\\', '\\\\\\\\', '\\\\\\\\']) == 34\n    assert candidate(grid=['/\\\\/', '\\\\/\\\\', '\\\\/\\\\', '/\\\\/']) == 21\n    assert candidate(grid=['/\\\\/', '/\\\\/', '/\\\\/', '/\\\\/']) == 19\n    assert candidate(grid=['\\\\\\\\', '/\\\\/', '\\\\/\\\\', '/\\\\/']) == 25\n    assert candidate(grid=['\\\\\\\\', '\\\\\\\\', '\\\\\\\\', '    ']) == 25\n    assert candidate(grid=[' \\\\/ ', '/\\\\/', ' \\\\/ ', '\\\\/ ']) == 9\n    assert candidate(grid=['\\\\\\\\', '\\\\ ', ' / ', '\\\\\\\\']) == 27\n    assert candidate(grid=['\\\\\\\\\\\\', '\\\\\\\\\\\\', '\\\\\\\\\\\\', '\\\\\\\\\\\\']) == 19\n    assert candidate(grid=['/\\\\/', ' / ', '\\\\/\\\\']) == 5\n    assert candidate(grid=['\\\\/\\\\', ' / ', '\\\\/\\\\', ' / ', '\\\\/\\\\']) == 41\n    assert candidate(grid=['\\\\\\\\', '///', '\\\\\\\\', '///']) == 27\n    assert candidate(grid=['\\\\/\\\\/', '\\\\/\\\\/', '\\\\/\\\\/', '\\\\/\\\\/']) == 8\n    assert candidate(grid=['/\\\\', '\\\\/', '/\\\\', '\\\\/']) == 36\n    assert candidate(grid=['/\\\\/', '\\\\/\\\\', '/\\\\/']) == 8\n    assert candidate(grid=['\\\\\\\\', '\\\\\\\\', '\\\\\\\\', '\\\\\\\\', '\\\\\\\\']) == 62\n    assert candidate(grid=['\\\\\\\\', '    ', '    ', '\\\\\\\\']) == 15\n    assert candidate(grid=['/ /', ' / ', ' / ', '/ /']) == 15\n    assert candidate(grid=['\\\\/\\\\', '/\\\\/', '\\\\/\\\\', '/\\\\/', '\\\\/\\\\']) == 47\n",
+  "workload_hash": "e212a9336b958f8e3558978c9aa607723cb448c904594759c3a3cde8ea606d25"
+}

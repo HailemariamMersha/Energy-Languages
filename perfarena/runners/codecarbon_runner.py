@@ -42,7 +42,7 @@ DEFAULT_IDLE_S = 5
 
 def _kwh_to_uj(kwh: float) -> int:
     """Convert kilowatt-hours to microjoules."""
-    return int(kwh * 3_600_000_000)
+    return int(kwh * 3_600_000_000_000)
 
 
 def _write_row(

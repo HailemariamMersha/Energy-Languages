@@ -1,0 +1,14 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def minOperations(self, s: str) -> int:\n        "
+  },
+  "content": "You are given a string `s` consisting only of the characters `'0'` and `'1'`. In one operation, you can change any `'0'` to `'1'` or vice versa.\n\nThe string is called alternating if no two adjacent characters are equal. For example, the string `\"010 \"` is alternating, while the string `\"0100 \"` is not.\n\nReturn _the **minimum** number of operations needed to make_ `s` _alternating_.\n\n**Example 1:**\n\n**Input:** s =  \"0100 \"\n**Output:** 1\n**Explanation:** If you change the last character to '1', s will be  \"0101 \", which is alternating.\n\n**Example 2:**\n\n**Input:** s =  \"10 \"\n**Output:** 0\n**Explanation:** s is already alternating.\n\n**Example 3:**\n\n**Input:** s =  \"1111 \"\n**Output:** 2\n**Explanation:** You need two operations to reach  \"0101 \" or  \"1010 \".\n\n**Constraints:**\n\n*   `1 <= s.length <= 104`\n*   `s[i]` is either `'0'` or `'1'`.",
+  "hints": "Count the frequencies of each number. For example, if nums = [4,4,5,5,5], frequencies = [2,3]. Each customer wants all of their numbers to be the same. This means that each customer will be assigned to one number. Use dynamic programming. Iterate through the numbers' frequencies, and choose some subset of customers to be assigned to this number.",
+  "id": 6,
+  "level": "Easy",
+  "tags": [
+    "String"
+  ],
+  "title": "Minimum Changes To Make Alternating Binary String",
+  "title_slug": "minimum-changes-to-make-alternating-binary-string"
+}

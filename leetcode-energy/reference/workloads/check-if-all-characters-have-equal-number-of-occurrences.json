@@ -1,0 +1,379 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"aabbccc\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abacbc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"qqqq\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbcc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"zzzzzzzzzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbc\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"a\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabb\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeff\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"zzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaabb\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"hello\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"thisisnotagoodstring\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aaaabbbbccccdddd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextrab\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mnopqrstuvwxyzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"uniquecharactersabcdefghijklmnopqrstuvwxyz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"qwertyuioplkjhgfdsazxcvbnm\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"kjhgfdsazxcvbnmlpoiuytrewq\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"llllkkkkjjjjiiiihhhhggggffffeeeeeeee\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"repeatedcharsrepeatedcharsrepeatedchars\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aaabbbcccdddeeefffggghhhiiiijjjkkklllmmmnnnooopppqqqrrrssstttuuuvvvwwwxxxyyyzzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"samefrequencyforallcharacters\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"lmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmno\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mnopqrsmnopqrsmnopqrsmnopqrsmnopqrs\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefabcdefabcdef\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abacadaeafagahaibiciidieifigihiiijijikikililimimioinioipoipiqiririsititiuiujujukukululumiumiujujukvkvkwlwlxmxmylynzozp\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzqqqq\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abracadabra\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mnopqrstuvwxymnopqrstuvwxymnopqrstuvwxymnopqrstuvwxyn\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefabcdef\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"zzzzzzzzzzzzzzzzzzzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextraa\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnop\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"jjjjkkkkllllmmmmnnnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxxyyyyzzzzaaaaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zzzzzyyyyxxxwwvvuuttssrrqqlloommnnppekkaaiioouuyy\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"racecar\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextrac\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"xyzxyzxyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"qwerqwerqwer\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abababababababab\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghijabcdefghijabcdefghij\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"ppppppqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwooooo\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"ababababc\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mmnnnmmmnnnmmmnnnmmmnnnmmmnnnmmmnnnmmmnnnmm\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"pqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrs\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mmnnooppqqrrssttuuvvwwxxyyzzqqwweerrttyyuuiihhggffeeddccba\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxy\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"ppppqqqqrrrrssssttttuuuuvvvvwwwwxxxxyyyyzzzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mnopmnopmnopmnopmnopmnopmnopmnop\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzzzzzyzx\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abacabadabacabad\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopqrstuvwxzyabcdefghijklmnopqrstuvwxzy\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghijklmnop\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzzxyzzxyzzxyzzxyzzxyzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zzzyyyxxxwwwwvvvvuuuuuuuuutttttttsssssssrrrrrrqqqqpppooooonnnnmmmmllllkkkkjjjjiiiihhhhhgggggfffffeeeeeeeee\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mnopqrmpqrno\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"qqwweerrttyyuuuiooppppllkkiijjhgffeeddccba\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"qrstuvwxyzabcdefghijklmnopqrstuvwxyz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mississippi\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"xyzzxyzzxyzzxyzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"oneonetwoonetwothree\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnm\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzxyzxyzxyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"zzzzyyyyxxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"qqqqwweerrrrtttyyyy\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdabcdabcdabcd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextrad\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextrae\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"programming\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"equalfrequenciesequalfrequencies\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabc\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"almostgoodbutoneextraf\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghij\"",
+      "output": "False"
+    }
+  ],
+  "entry_point": "Solution().areOccurrencesEqual",
+  "language_independent_cases": true,
+  "problem": "check-if-all-characters-have-equal-number-of-occurrences",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def areOccurrencesEqual(self, s: str) -> bool:\n        ",
+  "test": "def check(candidate):\n    assert candidate(s = \"aabbccc\") == False\n    assert candidate(s = \"abacbc\") == True\n    assert candidate(s = \"abcabcabc\") == True\n    assert candidate(s = \"qqqq\") == True\n    assert candidate(s = \"aabbcc\") == True\n    assert candidate(s = \"zzzzzzzzzz\") == True\n    assert candidate(s = \"aabbc\") == False\n    assert candidate(s = \"a\") == True\n    assert candidate(s = \"abc\") == True\n    assert candidate(s = \"\") == False\n    assert candidate(s = \"aabb\") == True\n    assert candidate(s = \"aabbccddeeff\") == True\n    assert candidate(s = \"abcdabcd\") == True\n    assert candidate(s = \"zzz\") == True\n    assert candidate(s = \"xyz\") == True\n    assert candidate(s = \"aaabb\") == False\n    assert candidate(s = \"hello\") == False\n    assert candidate(s = \"thisisnotagoodstring\") == False\n    assert candidate(s = \"aaaabbbbccccdddd\") == True\n    assert candidate(s = \"almostgoodbutoneextrab\") == False\n    assert candidate(s = \"mnopqrstuvwxyzz\") == False\n    assert candidate(s = \"uniquecharactersabcdefghijklmnopqrstuvwxyz\") == False\n    assert candidate(s = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\") == True\n    assert candidate(s = \"qwertyuioplkjhgfdsazxcvbnm\") == True\n    assert candidate(s = \"kjhgfdsazxcvbnmlpoiuytrewq\") == True\n    assert candidate(s = \"abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\") == True\n    assert candidate(s = \"llllkkkkjjjjiiiihhhhggggffffeeeeeeee\") == False\n    assert candidate(s = \"repeatedcharsrepeatedcharsrepeatedchars\") == False\n    assert candidate(s = \"aaabbbcccdddeeefffggghhhiiiijjjkkklllmmmnnnooopppqqqrrrssstttuuuvvvwwwxxxyyyzzz\") == False\n    assert candidate(s = \"samefrequencyforallcharacters\") == False\n    assert candidate(s = \"lmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmnolmno\") == True\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\") == False\n    assert candidate(s = \"mnopqrsmnopqrsmnopqrsmnopqrsmnopqrs\") == True\n    assert candidate(s = \"abcdefabcdefabcdef\") == True\n    assert candidate(s = \"abacadaeafagahaibiciidieifigihiiijijikikililimimioinioipoipiqiririsititiuiujujukukululumiumiujujukvkvkwlwlxmxmylynzozp\") == False\n    assert candidate(s = \"mnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza\") == False\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzqqqq\") == False\n    assert candidate(s = \"abracadabra\") == False\n    assert candidate(s = \"mnopqrstuvwxymnopqrstuvwxymnopqrstuvwxymnopqrstuvwxyn\") == False\n    assert candidate(s = \"abcdefghijabcdefghijabcdefghijabcdefghijabcdefghij\") == True\n    assert candidate(s = \"qwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiopqwertyuiop\") == True\n    assert candidate(s = \"abcdefabcdef\") == True\n    assert candidate(s = \"zzzzzzzzzzzzzzzzzzzz\") == True\n    assert candidate(s = \"aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd\") == True\n    assert candidate(s = \"almostgoodbutoneextraa\") == False\n    assert candidate(s = \"abcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnopabcdefghijklmnop\") == True\n    assert candidate(s = \"jjjjkkkkllllmmmmnnnnooooppppqqqqrrrrssssttttuuuuvvvvwwwwxxxxyyyyzzzzaaaaaa\") == False\n    assert candidate(s = \"zzzzzyyyyxxxwwvvuuttssrrqqlloommnnppekkaaiioouuyy\") == False\n    assert candidate(s = \"racecar\") == False\n    assert candidate(s = \"almostgoodbutoneextrac\") == False\n    assert candidate(s = \"xyzxyzxyz\") == True\n    assert candidate(s = \"qwerqwerqwer\") == True\n    assert candidate(s = \"abababababababab\") == True\n    assert candidate(s = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\") == True\n    assert candidate(s = \"abcdefghijabcdefghijabcdefghij\") == True\n    assert candidate(s = \"ppppppqqqqqrrrrrssssstttttuuuuuvvvvvwwwwwooooo\") == False\n    assert candidate(s = \"ababababc\") == False\n    assert candidate(s = \"mmnnnmmmnnnmmmnnnmmmnnnmmmnnnmmmnnnmmmnnnmm\") == False\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzzz\") == False\n    assert candidate(s = \"pqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrspqrs\") == True\n    assert candidate(s = \"mmnnooppqqrrssttuuvvwwxxyyzzqqwweerrttyyuuiihhggffeeddccba\") == False\n    assert candidate(s = \"abcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxy\") == True\n    assert candidate(s = \"ppppqqqqrrrrssssttttuuuuvvvvwwwwxxxxyyyyzzzz\") == True\n    assert candidate(s = \"mnopmnopmnopmnopmnopmnopmnopmnop\") == True\n    assert candidate(s = \"xyzzzzzyzx\") == False\n    assert candidate(s = \"abacabadabacabad\") == False\n    assert candidate(s = \"abcdefghijklmnopqrstuvwxzyabcdefghijklmnopqrstuvwxzy\") == True\n    assert candidate(s = \"abcdefghijklmnop\") == True\n    assert candidate(s = \"xyzzxyzzxyzzxyzzxyzzxyzz\") == False\n    assert candidate(s = \"zzzyyyxxxwwwwvvvvuuuuuuuuutttttttsssssssrrrrrrqqqqpppooooonnnnmmmmllllkkkkjjjjiiiihhhhhgggggfffffeeeeeeeee\") == False\n    assert candidate(s = \"mnopqrmpqrno\") == True\n    assert candidate(s = \"qqwweerrttyyuuuiooppppllkkiijjhgffeeddccba\") == False\n    assert candidate(s = \"qrstuvwxyzabcdefghijklmnopqrstuvwxyz\") == False\n    assert candidate(s = \"mississippi\") == False\n    assert candidate(s = \"xyzzxyzzxyzzxyzz\") == False\n    assert candidate(s = \"oneonetwoonetwothree\") == False\n    assert candidate(s = \"zxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnmzxcvbnm\") == True\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\") == True\n    assert candidate(s = \"xyzxyzxyzxyz\") == True\n    assert candidate(s = \"zzzzyyyyxxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaa\") == False\n    assert candidate(s = \"qqqqwweerrrrtttyyyy\") == False\n    assert candidate(s = \"abcdabcdabcdabcd\") == True\n    assert candidate(s = \"abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba\") == False\n    assert candidate(s = \"almostgoodbutoneextrad\") == False\n    assert candidate(s = \"almostgoodbutoneextrae\") == False\n    assert candidate(s = \"programming\") == False\n    assert candidate(s = \"equalfrequenciesequalfrequencies\") == False\n    assert candidate(s = \"xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\") == False\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabc\") == False\n    assert candidate(s = \"almostgoodbutoneextraf\") == False\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzabcdefghij\") == False\n",
+  "workload_hash": "0c421687d8924e08a231a8494166e4be9f560a25cfb56d904634278d4420d566"
+}

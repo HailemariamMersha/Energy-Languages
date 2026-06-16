@@ -1,0 +1,17 @@
+{
+  "code_snippets": {
+    "python3": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def minDepth(self, root: Optional[TreeNode]) -> int:\n        "
+  },
+  "content": "Given a binary tree, find its minimum depth.\n\nThe minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.\n\n**Note:** A leaf is a node with no children.\n\n**Example 1:**\n\n**Input:** root = \\[3,9,20,null,null,15,7\\]\n**Output:** 2\n\n**Example 2:**\n\n**Input:** root = \\[2,null,3,null,4,null,5,null,6\\]\n**Output:** 5\n\n**Constraints:**\n\n*   The number of nodes in the tree is in the range `[0, 105]`.\n*   `-1000 <= Node.val <= 1000`",
+  "hints": null,
+  "id": 10,
+  "level": "Easy",
+  "tags": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "title": "Minimum Depth of Binary Tree",
+  "title_slug": "minimum-depth-of-binary-tree"
+}

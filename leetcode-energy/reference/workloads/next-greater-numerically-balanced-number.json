@@ -1,0 +1,247 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "n = 0",
+      "output": "1"
+    },
+    {
+      "input": "n = 122333",
+      "output": "123233"
+    },
+    {
+      "input": "n = 3000",
+      "output": "3133"
+    },
+    {
+      "input": "n = 1222",
+      "output": "1333"
+    },
+    {
+      "input": "n = 55555",
+      "output": "122333"
+    },
+    {
+      "input": "n = 1234",
+      "output": "1333"
+    },
+    {
+      "input": "n = 112233",
+      "output": "122333"
+    },
+    {
+      "input": "n = 122133",
+      "output": "122333"
+    },
+    {
+      "input": "n = 1234567",
+      "output": "1242444"
+    },
+    {
+      "input": "n = 999999",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 123456",
+      "output": "132233"
+    },
+    {
+      "input": "n = 1",
+      "output": "22"
+    },
+    {
+      "input": "n = 1000",
+      "output": "1333"
+    },
+    {
+      "input": "n = 1224444",
+      "output": "1242444"
+    },
+    {
+      "input": "n = 987654",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 122",
+      "output": "212"
+    },
+    {
+      "input": "n = 122333444",
+      "output": "122666666"
+    },
+    {
+      "input": "n = 2233445566",
+      "output": "2233535555"
+    },
+    {
+      "input": "n = 122444",
+      "output": "123233"
+    },
+    {
+      "input": "n = 3333333",
+      "output": "3334444"
+    },
+    {
+      "input": "n = 666666",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 11222233",
+      "output": "12255555"
+    },
+    {
+      "input": "n = 444444",
+      "output": "515555"
+    },
+    {
+      "input": "n = 1223334444",
+      "output": "1223343444"
+    },
+    {
+      "input": "n = 2222222",
+      "output": "2241444"
+    },
+    {
+      "input": "n = 44445555",
+      "output": "51225555"
+    },
+    {
+      "input": "n = 6665554443332211",
+      "output": "6665554444155666"
+    },
+    {
+      "input": "n = 1233333",
+      "output": "1242444"
+    },
+    {
+      "input": "n = 122111333",
+      "output": "122666666"
+    },
+    {
+      "input": "n = 22333444",
+      "output": "22515555"
+    },
+    {
+      "input": "n = 123321",
+      "output": "123323"
+    },
+    {
+      "input": "n = 98765",
+      "output": "122333"
+    },
+    {
+      "input": "n = 665544332211",
+      "output": "665551556666"
+    },
+    {
+      "input": "n = 400000",
+      "output": "422444"
+    },
+    {
+      "input": "n = 123456789",
+      "output": "126266666"
+    },
+    {
+      "input": "n = 1223334",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 5555555",
+      "output": "6166666"
+    },
+    {
+      "input": "n = 223334444555",
+      "output": "223336166666"
+    },
+    {
+      "input": "n = 111",
+      "output": "122"
+    },
+    {
+      "input": "n = 7777777",
+      "output": "12255555"
+    },
+    {
+      "input": "n = 1112233",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 122333444555555",
+      "output": "122333445445555"
+    },
+    {
+      "input": "n = 2233444",
+      "output": "2241444"
+    },
+    {
+      "input": "n = 1222333",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 2121212121",
+      "output": "2123334444"
+    },
+    {
+      "input": "n = 122444455555",
+      "output": "122444545555"
+    },
+    {
+      "input": "n = 12233344",
+      "output": "12255555"
+    },
+    {
+      "input": "n = 666666555444333222111",
+      "output": "666666555444333224155"
+    },
+    {
+      "input": "n = 1000000",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 22222222",
+      "output": "22515555"
+    },
+    {
+      "input": "n = 122333444555666",
+      "output": "122333445445555"
+    },
+    {
+      "input": "n = 1221221",
+      "output": "1224444"
+    },
+    {
+      "input": "n = 5555544332211",
+      "output": "5555544333144"
+    },
+    {
+      "input": "n = 1233322",
+      "output": "1242444"
+    },
+    {
+      "input": "n = 4444",
+      "output": "14444"
+    },
+    {
+      "input": "n = 122334444",
+      "output": "122666666"
+    },
+    {
+      "input": "n = 1222233333",
+      "output": "1223334444"
+    },
+    {
+      "input": "n = 1333331",
+      "output": "1422444"
+    }
+  ],
+  "entry_point": "Solution().nextBeautifulNumber",
+  "language_independent_cases": true,
+  "problem": "next-greater-numerically-balanced-number",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def nextBeautifulNumber(self, n: int) -> int:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(n=0) == 1\n    assert candidate(n=122333) == 123233\n    assert candidate(n=3000) == 3133\n    assert candidate(n=1222) == 1333\n    assert candidate(n=55555) == 122333\n    assert candidate(n=1234) == 1333\n    assert candidate(n=112233) == 122333\n    assert candidate(n=122133) == 122333\n    assert candidate(n=1234567) == 1242444\n    assert candidate(n=999999) == 1224444\n    assert candidate(n=123456) == 132233\n    assert candidate(n=1) == 22\n    assert candidate(n=1000) == 1333\n    assert candidate(n=1224444) == 1242444\n    assert candidate(n=987654) == 1224444\n    assert candidate(n=122) == 212\n    assert candidate(n=122333444) == 122666666\n    assert candidate(n=2233445566) == 2233535555\n    assert candidate(n=122444) == 123233\n    assert candidate(n=3333333) == 3334444\n    assert candidate(n=666666) == 1224444\n    assert candidate(n=11222233) == 12255555\n    assert candidate(n=444444) == 515555\n    assert candidate(n=1223334444) == 1223343444\n    assert candidate(n=2222222) == 2241444\n    assert candidate(n=44445555) == 51225555\n    assert candidate(n=6665554443332211) == 6665554444155666\n    assert candidate(n=1233333) == 1242444\n    assert candidate(n=122111333) == 122666666\n    assert candidate(n=22333444) == 22515555\n    assert candidate(n=123321) == 123323\n    assert candidate(n=98765) == 122333\n    assert candidate(n=665544332211) == 665551556666\n    assert candidate(n=400000) == 422444\n    assert candidate(n=123456789) == 126266666\n    assert candidate(n=1223334) == 1224444\n    assert candidate(n=5555555) == 6166666\n    assert candidate(n=223334444555) == 223336166666\n    assert candidate(n=111) == 122\n    assert candidate(n=7777777) == 12255555\n    assert candidate(n=1112233) == 1224444\n    assert candidate(n=122333444555555) == 122333445445555\n    assert candidate(n=2233444) == 2241444\n    assert candidate(n=1222333) == 1224444\n    assert candidate(n=2121212121) == 2123334444\n    assert candidate(n=122444455555) == 122444545555\n    assert candidate(n=12233344) == 12255555\n    assert candidate(n=666666555444333222111) == 666666555444333224155\n    assert candidate(n=1000000) == 1224444\n    assert candidate(n=22222222) == 22515555\n    assert candidate(n=122333444555666) == 122333445445555\n    assert candidate(n=1221221) == 1224444\n    assert candidate(n=5555544332211) == 5555544333144\n    assert candidate(n=1233322) == 1242444\n    assert candidate(n=4444) == 14444\n    assert candidate(n=122334444) == 122666666\n    assert candidate(n=1222233333) == 1223334444\n    assert candidate(n=1333331) == 1422444\n",
+  "workload_hash": "3d490937fd0b585658441af7c84251f1118ffc84fd0396ae6c5c6232388441e3"
+}

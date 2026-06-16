@@ -1,0 +1,15 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def countTriples(self, n: int) -> int:\n        "
+  },
+  "content": "A **square triple** `(a,b,c)` is a triple where `a`, `b`, and `c` are **integers** and `a2 + b2 = c2`.\n\nGiven an integer `n`, return _the number of **square triples** such that_ `1 <= a, b, c <= n`.\n\n**Example 1:**\n\n**Input:** n = 5\n**Output:** 2\n**Explanation**: The square triples are (3,4,5) and (4,3,5).\n\n**Example 2:**\n\n**Input:** n = 10\n**Output:** 4\n**Explanation**: The square triples are (3,4,5), (4,3,5), (6,8,10), and (8,6,10).\n\n**Constraints:**\n\n*   `1 <= n <= 250`",
+  "hints": "Iterate over all possible pairs (a,b) and check that the square root of a * a + b * b is an integers less than or equal n You can check that the square root of an integer is an integer using binary seach or a builtin function like sqrt",
+  "id": 9,
+  "level": "Easy",
+  "tags": [
+    "Math",
+    "Enumeration"
+  ],
+  "title": "Count Square Sum Triples",
+  "title_slug": "count-square-sum-triples"
+}

@@ -1,0 +1,451 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "products = [\"keyboard\",\"keypad\",\"keys\",\"kick\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keypad', 'keys'], ['keyboard', 'keypad', 'keys'], ['keyboard', 'keypad', 'keys']]"
+    },
+    {
+      "input": "products = [\"keyboard\",\"keypad\",\"mousepad\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keypad'], ['keyboard', 'keypad'], ['keyboard', 'keypad']]"
+    },
+    {
+      "input": "products = [\"apple\",\"banana\",\"grape\",\"orange\"], searchWord = \"or\"",
+      "output": "[['orange'], ['orange']]"
+    },
+    {
+      "input": "products = [\"aaa\",\"aaab\",\"aaac\",\"aab\"], searchWord = \"aa\"",
+      "output": "[['aaa', 'aaab', 'aaac'], ['aaa', 'aaab', 'aaac']]"
+    },
+    {
+      "input": "products = [\"charger\",\"cable\",\"case\"], searchWord = \"ca\"",
+      "output": "[['cable', 'case', 'charger'], ['cable', 'case']]"
+    },
+    {
+      "input": "products = [\"bag\",\"bags\",\"banner\",\"box\",\"car\"], searchWord = \"ba\"",
+      "output": "[['bag', 'bags', 'banner'], ['bag', 'bags', 'banner']]"
+    },
+    {
+      "input": "products = [\"aaa\",\"aab\",\"aac\",\"aad\",\"aae\"], searchWord = \"aa\"",
+      "output": "[['aaa', 'aab', 'aac'], ['aaa', 'aab', 'aac']]"
+    },
+    {
+      "input": "products = [\"aaa\",\"aab\",\"aac\",\"aad\"], searchWord = \"aa\"",
+      "output": "[['aaa', 'aab', 'aac'], ['aaa', 'aab', 'aac']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apples\",\"application\"], searchWord = \"app\"",
+      "output": "[['apple', 'apples', 'application'], ['apple', 'apples', 'application'], ['apple', 'apples', 'application']]"
+    },
+    {
+      "input": "products = [\"apple\",\"banana\",\"grape\",\"orange\"], searchWord = \"ba\"",
+      "output": "[['banana'], ['banana']]"
+    },
+    {
+      "input": "products = [\"keyboard\",\"keypad\",\"keyboard\",\"keychain\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keyboard', 'keychain'], ['keyboard', 'keyboard', 'keychain'], ['keyboard', 'keyboard', 'keychain']]"
+    },
+    {
+      "input": "products = [\"havana\"], searchWord = \"havana\"",
+      "output": "[['havana'], ['havana'], ['havana'], ['havana'], ['havana'], ['havana']]"
+    },
+    {
+      "input": "products = [\"keyboard\",\"keypad\",\"kiosk\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keypad', 'kiosk'], ['keyboard', 'keypad'], ['keyboard', 'keypad']]"
+    },
+    {
+      "input": "products = [\"apple\",\"banana\",\"grape\",\"orange\",\"peach\"], searchWord = \"app\"",
+      "output": "[['apple'], ['apple'], ['apple']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"banana\",\"bat\",\"berry\"], searchWord = \"ba\"",
+      "output": "[['banana', 'bat', 'berry'], ['banana', 'bat']]"
+    },
+    {
+      "input": "products = [\"keyboard\",\"keypad\",\"keyboardpad\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keyboardpad', 'keypad'], ['keyboard', 'keyboardpad', 'keypad'], ['keyboard', 'keyboardpad', 'keypad']]"
+    },
+    {
+      "input": "products = [\"mobile\",\"mouse\",\"moneypot\",\"monitor\",\"mousepad\"], searchWord = \"mouse\"",
+      "output": "[['mobile', 'moneypot', 'monitor'], ['mobile', 'moneypot', 'monitor'], ['mouse', 'mousepad'], ['mouse', 'mousepad'], ['mouse', 'mousepad']]"
+    },
+    {
+      "input": "products = [\"aardvark\",\"aardwolf\",\"albatross\",\"alligator\",\"alpaca\",\"antelope\",\"anteater\"], searchWord = \"aa\"",
+      "output": "[['aardvark', 'aardwolf', 'albatross'], ['aardvark', 'aardwolf']]"
+    },
+    {
+      "input": "products = [\"xylophone\",\"xylography\",\"xylem\",\"xenon\",\"xerox\",\"xerophyte\",\"xenodochial\"], searchWord = \"xero\"",
+      "output": "[['xenodochial', 'xenon', 'xerophyte'], ['xenodochial', 'xenon', 'xerophyte'], ['xerophyte', 'xerox'], ['xerophyte', 'xerox']]"
+    },
+    {
+      "input": "products = [\"jacket\",\"jaguar\",\"jar\",\"jasmine\",\"jeep\"], searchWord = \"ja\"",
+      "output": "[['jacket', 'jaguar', 'jar'], ['jacket', 'jaguar', 'jar']]"
+    },
+    {
+      "input": "products = [\"ant\",\"anteater\",\"antelope\",\"antenna\",\"antique\",\"antfarm\",\"antler\"], searchWord = \"ant\"",
+      "output": "[['ant', 'anteater', 'antelope'], ['ant', 'anteater', 'antelope'], ['ant', 'anteater', 'antelope']]"
+    },
+    {
+      "input": "products = [\"television\",\"telescope\",\"temperature\",\"tennis\",\"tense\"], searchWord = \"te\"",
+      "output": "[['telescope', 'television', 'temperature'], ['telescope', 'television', 'temperature']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"banana\",\"bat\",\"berry\",\"blackberry\",\"blueberry\"], searchWord = \"b\"",
+      "output": "[['banana', 'bat', 'berry']]"
+    },
+    {
+      "input": "products = [\"grape\",\"grapefruit\",\"grapevine\",\"graph\",\"grapejuice\"], searchWord = \"gr\"",
+      "output": "[['grape', 'grapefruit', 'grapejuice'], ['grape', 'grapefruit', 'grapejuice']]"
+    },
+    {
+      "input": "products = [\"dog\",\"dolphin\",\"dome\",\"domestic\",\"domino\"], searchWord = \"dom\"",
+      "output": "[['dog', 'dolphin', 'dome'], ['dog', 'dolphin', 'dome'], ['dome', 'domestic', 'domino']]"
+    },
+    {
+      "input": "products = [\"magnifier\",\"magnificent\",\"magnet\",\"magnolia\",\"magnitude\"], searchWord = \"magn\"",
+      "output": "[['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier']]"
+    },
+    {
+      "input": "products = [\"apple\",\"application\",\"appliance\",\"appropriate\",\"appetizer\"], searchWord = \"appl\"",
+      "output": "[['appetizer', 'apple', 'appliance'], ['appetizer', 'apple', 'appliance'], ['appetizer', 'apple', 'appliance'], ['apple', 'appliance', 'application']]"
+    },
+    {
+      "input": "products = [\"grape\",\"grapefruit\",\"grapejuice\",\"graphite\",\"grapevine\",\"grapefruitjuice\"], searchWord = \"grape\"",
+      "output": "[['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice']]"
+    },
+    {
+      "input": "products = [\"algorithm\",\"array\",\"binary\",\"bit\",\"bitset\",\"bucket\",\"class\",\"collection\",\"datatype\",\"enumerate\",\"file\",\"float\",\"function\",\"garbage\",\"graph\",\"hash\",\"id\",\"implementation\",\"integer\",\"java\",\"keyword\",\"list\",\"map\",\"namespace\",\"null\",\"object\",\"operator\",\"pair\",\"pointer\",\"queue\",\"range\",\"reference\",\"set\",\"stack\",\"string\",\"struct\",\"template\",\"typedef\",\"union\",\"variable\",\"while\",\"xor\"], searchWord = \"algo\"",
+      "output": "[['algorithm', 'array'], ['algorithm'], ['algorithm'], ['algorithm']]"
+    },
+    {
+      "input": "products = [\"hamburger\",\"hammock\",\"hammer\",\"hammerhead\",\"handheld\"], searchWord = \"ham\"",
+      "output": "[['hamburger', 'hammer', 'hammerhead'], ['hamburger', 'hammer', 'hammerhead'], ['hamburger', 'hammer', 'hammerhead']]"
+    },
+    {
+      "input": "products = [\"watermelon\",\"water\",\"wave\",\"wonder\",\"wonderland\"], searchWord = \"wat\"",
+      "output": "[['water', 'watermelon', 'wave'], ['water', 'watermelon', 'wave'], ['water', 'watermelon']]"
+    },
+    {
+      "input": "products = [\"amazon\",\"amazing\",\"ambassador\",\"ambient\",\"amplifier\"], searchWord = \"ambi\"",
+      "output": "[['amazing', 'amazon', 'ambassador'], ['amazing', 'amazon', 'ambassador'], ['ambassador', 'ambient'], ['ambient']]"
+    },
+    {
+      "input": "products = [\"xylophone\",\"xylography\",\"xylophone\",\"xylophone\",\"xylophone\"], searchWord = \"xylo\"",
+      "output": "[['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone']]"
+    },
+    {
+      "input": "products = [\"car\",\"card\",\"cardboard\",\"cargo\",\"cartoon\"], searchWord = \"car\"",
+      "output": "[['car', 'card', 'cardboard'], ['car', 'card', 'cardboard'], ['car', 'card', 'cardboard']]"
+    },
+    {
+      "input": "products = [\"abcd\",\"abce\",\"abcf\",\"abcg\",\"abch\",\"abci\",\"abcj\",\"abck\",\"abcl\",\"abcm\"], searchWord = \"abc\"",
+      "output": "[['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zinc\",\"zoo\",\"zesty\",\"zoning\",\"zest\",\"zookeeper\"], searchWord = \"ze\"",
+      "output": "[['zebra', 'zest', 'zesty'], ['zebra', 'zest', 'zesty']]"
+    },
+    {
+      "input": "products = [\"aardvark\",\"aardwolf\",\"aardvark\",\"aardvark\",\"aardvark\"], searchWord = \"aard\"",
+      "output": "[['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark']]"
+    },
+    {
+      "input": "products = [\"umbrella\",\"umber\",\"umbilical\",\"umbrella\",\"umbrella\"], searchWord = \"umb\"",
+      "output": "[['umber', 'umbilical', 'umbrella'], ['umber', 'umbilical', 'umbrella'], ['umber', 'umbilical', 'umbrella']]"
+    },
+    {
+      "input": "products = [\"a\",\"ab\",\"abc\",\"abcd\",\"abcde\",\"abcdef\",\"abcdefg\",\"abcdefgh\",\"abcdefghi\",\"abcdefghij\"], searchWord = \"abcdefghijk\"",
+      "output": "[['a', 'ab', 'abc'], ['ab', 'abc', 'abcd'], ['abc', 'abcd', 'abcde'], ['abcd', 'abcde', 'abcdef'], ['abcde', 'abcdef', 'abcdefg'], ['abcdef', 'abcdefg', 'abcdefgh'], ['abcdefg', 'abcdefgh', 'abcdefghi'], ['abcdefgh', 'abcdefghi', 'abcdefghij'], ['abcdefghi', 'abcdefghij'], ['abcdefghij'], []]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"banana\",\"bat\",\"berry\",\"blueberry\",\"blackberry\"], searchWord = \"ba\"",
+      "output": "[['banana', 'bat', 'berry'], ['banana', 'bat']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zebrafish\",\"zebrafly\",\"zebratail\",\"zebralight\",\"zebrashoe\",\"zebragram\",\"zebratic\",\"zebrastriped\"], searchWord = \"zebra\"",
+      "output": "[['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly']]"
+    },
+    {
+      "input": "products = [\"infinite\",\"infinity\",\"infinitesimal\",\"infinity\",\"infinitary\"], searchWord = \"inf\"",
+      "output": "[['infinitary', 'infinite', 'infinitesimal'], ['infinitary', 'infinite', 'infinitesimal'], ['infinitary', 'infinite', 'infinitesimal']]"
+    },
+    {
+      "input": "products = [\"orange\",\"oregano\",\"organ\",\"organize\",\"organism\"], searchWord = \"org\"",
+      "output": "[['orange', 'oregano', 'organ'], ['orange', 'oregano', 'organ'], ['organ', 'organism', 'organize']]"
+    },
+    {
+      "input": "products = [\"xenon\",\"xerox\",\"xenophobe\",\"xenial\",\"xenolith\",\"xenoliths\",\"xenonarc\",\"xenonarcosis\",\"xenolithologist\"], searchWord = \"xen\"",
+      "output": "[['xenial', 'xenolith', 'xenolithologist'], ['xenial', 'xenolith', 'xenolithologist'], ['xenial', 'xenolith', 'xenolithologist']]"
+    },
+    {
+      "input": "products = [\"a\",\"aa\",\"aaa\",\"aaaa\",\"aaaaa\",\"aab\",\"aac\",\"aad\",\"aaf\",\"aag\"], searchWord = \"aa\"",
+      "output": "[['a', 'aa', 'aaa'], ['aa', 'aaa', 'aaaa']]"
+    },
+    {
+      "input": "products = [\"laptop\",\"laptopbag\",\"laser\",\"lateral\",\"latitude\"], searchWord = \"lap\"",
+      "output": "[['laptop', 'laptopbag', 'laser'], ['laptop', 'laptopbag', 'laser'], ['laptop', 'laptopbag']]"
+    },
+    {
+      "input": "products = [\"cherry\",\"cranberry\",\"cantaloupe\",\"carrot\",\"corn\",\"cucumber\"], searchWord = \"car\"",
+      "output": "[['cantaloupe', 'carrot', 'cherry'], ['cantaloupe', 'carrot'], ['carrot']]"
+    },
+    {
+      "input": "products = [\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\",\"umbrella\"], searchWord = \"umbrella\"",
+      "output": "[['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella']]"
+    },
+    {
+      "input": "products = [\"aardvark\",\"aardwolf\",\"albatross\",\"albino\",\"alligator\",\"alpaca\",\"almighty\"], searchWord = \"al\"",
+      "output": "[['aardvark', 'aardwolf', 'albatross'], ['albatross', 'albino', 'alligator']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zealot\",\"zealous\",\"zebrafish\",\"zebra\",\"zebrahead\"], searchWord = \"ze\"",
+      "output": "[['zealot', 'zealous', 'zebra'], ['zealot', 'zealous', 'zebra']]"
+    },
+    {
+      "input": "products = [\"navigate\",\"navigation\",\"navigator\",\"navy\",\"navel\"], searchWord = \"nav\"",
+      "output": "[['navel', 'navigate', 'navigation'], ['navel', 'navigate', 'navigation'], ['navel', 'navigate', 'navigation']]"
+    },
+    {
+      "input": "products = [\"electronics\",\"electric\",\"elephant\",\"elbow\",\"eleven\"], searchWord = \"ele\"",
+      "output": "[['elbow', 'electric', 'electronics'], ['elbow', 'electric', 'electronics'], ['electric', 'electronics', 'elephant']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"banana\",\"bat\",\"berry\",\"blackberry\",\"blueberry\",\"bluebird\",\"bluetooth\"], searchWord = \"bl\"",
+      "output": "[['banana', 'bat', 'berry'], ['blackberry', 'blueberry', 'bluebird']]"
+    },
+    {
+      "input": "products = [\"abacaxi\",\"abalone\",\"abana\",\"abanga\",\"abaperture\",\"abara\",\"abaraxas\",\"abarth\",\"abart\",\"abat\",\"abate\",\"abati\",\"abatis\",\"abator\",\"abatt\",\"abature\",\"abavure\",\"abaya\",\"abaze\",\"abba\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\",\"abbe\"], searchWord = \"ab\"",
+      "output": "[['abacaxi', 'abalone', 'abana'], ['abacaxi', 'abalone', 'abana']]"
+    },
+    {
+      "input": "products = [\"applepie\",\"applesauce\",\"appleskin\",\"apple\",\"applejack\"], searchWord = \"appl\"",
+      "output": "[['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie']]"
+    },
+    {
+      "input": "products = [\"camera\",\"camcorder\",\"cameralens\",\"cameraman\",\"cameraobscura\",\"camouflage\",\"camcorder\",\"camera\",\"camcorder\"], searchWord = \"cam\"",
+      "output": "[['camcorder', 'camcorder', 'camcorder'], ['camcorder', 'camcorder', 'camcorder'], ['camcorder', 'camcorder', 'camcorder']]"
+    },
+    {
+      "input": "products = [\"chocolate\",\"chocolatebar\",\"chocolatechip\",\"chocolate\",\"chocolatefudge\"], searchWord = \"chocolate\"",
+      "output": "[['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar']]"
+    },
+    {
+      "input": "products = [\"queen\",\"queens\",\"queenship\",\"queer\",\"queue\"], searchWord = \"quee\"",
+      "output": "[['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"avocado\",\"banana\",\"bat\",\"berry\",\"blackberry\",\"blueberry\",\"cherry\",\"cantaloupe\",\"cranberry\"], searchWord = \"ap\"",
+      "output": "[['apple', 'apricot', 'avocado'], ['apple', 'apricot']]"
+    },
+    {
+      "input": "products = [\"applepie\",\"applesauce\",\"apple\",\"appletart\",\"apples\",\"apricot\"], searchWord = \"apple\"",
+      "output": "[['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples']]"
+    },
+    {
+      "input": "products = [\"guitar\",\"guitarcase\",\"guitarhero\",\"guitarpick\",\"guitarstand\",\"guitartuner\",\"guitarstring\"], searchWord = \"gu\"",
+      "output": "[['guitar', 'guitarcase', 'guitarhero'], ['guitar', 'guitarcase', 'guitarhero']]"
+    },
+    {
+      "input": "products = [\"ocean\",\"ocelot\",\"octopus\",\"octagon\",\"octagonal\"], searchWord = \"oct\"",
+      "output": "[['ocean', 'ocelot', 'octagon'], ['ocean', 'ocelot', 'octagon'], ['octagon', 'octagonal', 'octopus']]"
+    },
+    {
+      "input": "products = [\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\",\"elephant\"], searchWord = \"elephant\"",
+      "output": "[['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant']]"
+    },
+    {
+      "input": "products = [\"chocolate\",\"chips\",\"chipmunk\",\"cheese\",\"cherry\",\"chili\"], searchWord = \"ch\"",
+      "output": "[['cheese', 'cherry', 'chili'], ['cheese', 'cherry', 'chili']]"
+    },
+    {
+      "input": "products = [\"abcd\",\"abce\",\"abcf\",\"abcg\",\"abch\"], searchWord = \"abc\"",
+      "output": "[['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zulu\",\"zymurgy\",\"zestful\",\"zestfully\",\"zestless\",\"zippy\",\"zoo\",\"zoology\",\"zucchini\"], searchWord = \"zoo\"",
+      "output": "[['zebra', 'zestful', 'zestfully'], ['zoo', 'zoology'], ['zoo', 'zoology']]"
+    },
+    {
+      "input": "products = [\"fishing\",\"fishtank\",\"fish\",\"fishmonger\",\"fisherman\",\"fishhook\",\"fishnet\"], searchWord = \"fish\"",
+      "output": "[['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook']]"
+    },
+    {
+      "input": "products = [\"watermelon\",\"water\",\"waterproof\",\"watering\",\"waterfall\",\"watermelon\",\"watercolor\",\"watergun\",\"watermelon\",\"watermark\"], searchWord = \"waterm\"",
+      "output": "[['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['watermark', 'watermelon', 'watermelon']]"
+    },
+    {
+      "input": "products = [\"banana\",\"band\",\"bangalore\",\"bank\",\"banner\"], searchWord = \"ban\"",
+      "output": "[['banana', 'band', 'bangalore'], ['banana', 'band', 'bangalore'], ['banana', 'band', 'bangalore']]"
+    },
+    {
+      "input": "products = [\"paint\",\"painter\",\"painting\",\"paintball\",\"paintbrush\"], searchWord = \"pain\"",
+      "output": "[['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush']]"
+    },
+    {
+      "input": "products = [\"xyz\",\"xylophone\",\"xylography\",\"xylograph\",\"xylography\",\"xylographer\",\"xylographs\",\"xylography\",\"xylography\"], searchWord = \"xylo\"",
+      "output": "[['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs']]"
+    },
+    {
+      "input": "products = [\"microphone\",\"microwave\",\"microscope\",\"microphone\",\"micronutrient\"], searchWord = \"micr\"",
+      "output": "[['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone']]"
+    },
+    {
+      "input": "products = [\"flower\",\"flour\",\"flow\",\"flourish\",\"flourmill\"], searchWord = \"flow\"",
+      "output": "[['flour', 'flourish', 'flourmill'], ['flour', 'flourish', 'flourmill'], ['flour', 'flourish', 'flourmill'], ['flow', 'flower']]"
+    },
+    {
+      "input": "products = [\"car\",\"card\",\"care\",\"careful\",\"careless\"], searchWord = \"ca\"",
+      "output": "[['car', 'card', 'care'], ['car', 'card', 'care']]"
+    },
+    {
+      "input": "products = [\"football\",\"footwear\",\"footbridge\",\"footnote\",\"footrest\",\"footlocker\",\"footrace\",\"footlight\"], searchWord = \"foot\"",
+      "output": "[['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight']]"
+    },
+    {
+      "input": "products = [\"bicycle\",\"bicycling\",\"bicycle\",\"bicycle\",\"bicycle\"], searchWord = \"bicy\"",
+      "output": "[['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle']]"
+    },
+    {
+      "input": "products = [\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\",\"giraffe\"], searchWord = \"giraff\"",
+      "output": "[['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe']]"
+    },
+    {
+      "input": "products = [\"strawberry\",\"straw\",\"stratosphere\",\"stranger\",\"strategy\"], searchWord = \"stra\"",
+      "output": "[['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere']]"
+    },
+    {
+      "input": "products = [\"apple\",\"apricot\",\"banana\",\"bat\",\"berry\",\"blackberry\",\"blueberry\"], searchWord = \"ba\"",
+      "output": "[['banana', 'bat', 'berry'], ['banana', 'bat']]"
+    },
+    {
+      "input": "products = [\"watermelon\",\"water\",\"waterfall\",\"watershed\",\"watercolor\"], searchWord = \"water\"",
+      "output": "[['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall']]"
+    },
+    {
+      "input": "products = [\"computer\",\"computational\",\"compute\",\"computing\",\"computerized\"], searchWord = \"compute\"",
+      "output": "[['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['compute', 'computer', 'computerized']]"
+    },
+    {
+      "input": "products = [\"photography\",\"photoalbum\",\"photobook\",\"photoframe\",\"photograph\",\"photokino\",\"photocopy\",\"photography\"], searchWord = \"phot\"",
+      "output": "[['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy']]"
+    },
+    {
+      "input": "products = [\"strawberry\",\"straw\",\"strange\",\"strategy\",\"stranger\"], searchWord = \"stra\"",
+      "output": "[['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy']]"
+    },
+    {
+      "input": "products = [\"elephant\",\"elephantine\",\"elegant\",\"elevate\",\"elementary\"], searchWord = \"ele\"",
+      "output": "[['elegant', 'elementary', 'elephant'], ['elegant', 'elementary', 'elephant'], ['elegant', 'elementary', 'elephant']]"
+    },
+    {
+      "input": "products = [\"orange\",\"ornament\",\"organ\",\"orchid\",\"orchard\",\"organize\"], searchWord = \"or\"",
+      "output": "[['orange', 'orchard', 'orchid'], ['orange', 'orchard', 'orchid']]"
+    },
+    {
+      "input": "products = [\"aaab\",\"aaac\",\"aaad\",\"aaae\",\"aaaf\",\"aaag\",\"aaah\",\"aaai\",\"aaaj\",\"aaak\",\"aaal\",\"aaam\",\"aaan\",\"aaao\",\"aaap\",\"aaaq\",\"aaar\",\"aaas\",\"aaat\",\"aaau\",\"aaav\",\"aaaw\",\"aaax\",\"aaay\",\"aaaz\"], searchWord = \"aaa\"",
+      "output": "[['aaab', 'aaac', 'aaad'], ['aaab', 'aaac', 'aaad'], ['aaab', 'aaac', 'aaad']]"
+    },
+    {
+      "input": "products = [\"piano\",\"piano\",\"piano\",\"piano\",\"piano\",\"piano\",\"piano\",\"piano\",\"piano\",\"piano\"], searchWord = \"piano\"",
+      "output": "[['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano']]"
+    },
+    {
+      "input": "products = [\"firefly\",\"fireworks\",\"firefly\",\"firearm\",\"firetruck\",\"firewall\",\"firefly\",\"firefly\",\"firefly\",\"firefly\"], searchWord = \"fire\"",
+      "output": "[['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly']]"
+    },
+    {
+      "input": "products = [\"internet\",\"interact\",\"interest\",\"interior\",\"interfere\"], searchWord = \"inte\"",
+      "output": "[['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere']]"
+    },
+    {
+      "input": "products = [\"computer\",\"compute\",\"computation\",\"compositor\",\"composite\",\"compress\",\"compression\",\"compressor\",\"compressed\"], searchWord = \"compre\"",
+      "output": "[['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['compress', 'compressed', 'compression'], ['compress', 'compressed', 'compression']]"
+    },
+    {
+      "input": "products = [\"apple\",\"banana\",\"cherry\",\"date\",\"elderberry\",\"fig\",\"grape\",\"honeydew\",\"kiwi\",\"lemon\",\"mango\",\"nectarine\",\"orange\",\"papaya\",\"quince\",\"raspberry\",\"strawberry\",\"tangerine\",\"ugli\",\"vanilla\",\"watermelon\",\"xigua\",\"yellow\",\"zucchini\"], searchWord = \"a\"",
+      "output": "[['apple']]"
+    },
+    {
+      "input": "products = [\"dog\",\"doghouse\",\"dogwood\",\"dog\",\"doghouse\"], searchWord = \"dog\"",
+      "output": "[['dog', 'dog', 'doghouse'], ['dog', 'dog', 'doghouse'], ['dog', 'dog', 'doghouse']]"
+    },
+    {
+      "input": "products = [\"abcd\",\"abce\",\"abcg\",\"abch\",\"abci\",\"abcj\",\"abck\",\"abcl\",\"abcm\",\"abcn\",\"abcd\",\"abce\",\"abcg\",\"abch\",\"abci\",\"abcj\",\"abck\",\"abcl\",\"abcm\",\"abcn\"], searchWord = \"abc\"",
+      "output": "[['abcd', 'abcd', 'abce'], ['abcd', 'abcd', 'abce'], ['abcd', 'abcd', 'abce']]"
+    },
+    {
+      "input": "products = [\"radio\",\"radiance\",\"radiant\",\"radioactive\",\"radioactivity\"], searchWord = \"radi\"",
+      "output": "[['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio']]"
+    },
+    {
+      "input": "products = [\"keyboard\",\"keychain\",\"keyhole\",\"keylogger\",\"keynote\"], searchWord = \"key\"",
+      "output": "[['keyboard', 'keychain', 'keyhole'], ['keyboard', 'keychain', 'keyhole'], ['keyboard', 'keychain', 'keyhole']]"
+    },
+    {
+      "input": "products = [\"starship\",\"stars\",\"start\",\"star\",\"startrek\",\"starfish\"], searchWord = \"star\"",
+      "output": "[['star', 'starfish', 'stars'], ['star', 'starfish', 'stars'], ['star', 'starfish', 'stars'], ['star', 'starfish', 'stars']]"
+    },
+    {
+      "input": "products = [\"ant\",\"antelope\",\"antibody\",\"antacid\",\"antaeus\",\"antarctica\",\"anteater\",\"antelope\",\"antelope\",\"antler\"], searchWord = \"ante\"",
+      "output": "[['ant', 'antacid', 'antaeus'], ['ant', 'antacid', 'antaeus'], ['ant', 'antacid', 'antaeus'], ['anteater', 'antelope', 'antelope']]"
+    },
+    {
+      "input": "products = [\"dog\",\"dove\",\"donkey\",\"dragon\",\"drone\",\"drill\",\"door\"], searchWord = \"dr\"",
+      "output": "[['dog', 'donkey', 'door'], ['dragon', 'drill', 'drone']]"
+    },
+    {
+      "input": "products = [\"guitar\",\"guitarist\",\"guilt\",\"guilty\",\"gully\"], searchWord = \"guil\"",
+      "output": "[['guilt', 'guilty', 'guitar'], ['guilt', 'guilty', 'guitar'], ['guilt', 'guilty', 'guitar'], ['guilt', 'guilty']]"
+    },
+    {
+      "input": "products = [\"algorithm\",\"algebra\",\"alabama\",\"alaska\",\"alligator\"], searchWord = \"al\"",
+      "output": "[['alabama', 'alaska', 'algebra'], ['alabama', 'alaska', 'algebra']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zebrafish\",\"zebra\",\"zebrahead\",\"zebra\"], searchWord = \"zebra\"",
+      "output": "[['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra']]"
+    },
+    {
+      "input": "products = [\"abcd\",\"abce\",\"abcf\",\"abcg\",\"abch\",\"abci\",\"abcj\",\"abck\",\"abcl\",\"abcm\",\"abcn\"], searchWord = \"abcd\"",
+      "output": "[['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zeal\",\"zero\",\"zone\",\"zoo\",\"zap\",\"zest\"], searchWord = \"ze\"",
+      "output": "[['zap', 'zeal', 'zebra'], ['zeal', 'zebra', 'zero']]"
+    },
+    {
+      "input": "products = [\"zebra\",\"zoo\",\"zoom\",\"zoning\",\"zone\",\"zany\",\"zap\",\"zest\",\"zigzag\",\"zither\"], searchWord = \"z\"",
+      "output": "[['zany', 'zap', 'zebra']]"
+    },
+    {
+      "input": "products = [\"piano\",\"piccolo\",\"pipe\",\"pipeorgan\",\"pitchfork\"], searchWord = \"pi\"",
+      "output": "[['piano', 'piccolo', 'pipe'], ['piano', 'piccolo', 'pipe']]"
+    },
+    {
+      "input": "products = [\"umbrella\",\"underwear\",\"universe\",\"unique\",\"unit\",\"unity\",\"university\",\"unicycle\",\"unicorn\",\"unzip\"], searchWord = \"uni\"",
+      "output": "[['umbrella', 'underwear', 'unicorn'], ['underwear', 'unicorn', 'unicycle'], ['unicorn', 'unicycle', 'unique']]"
+    },
+    {
+      "input": "products = [\"product\",\"produces\",\"productivity\",\"productive\",\"productize\",\"production\",\"productivity\",\"productize\",\"productivity\",\"productize\"], searchWord = \"product\"",
+      "output": "[['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['product', 'production', 'productive']]"
+    },
+    {
+      "input": "products = [\"umbrella\",\"umbilical\",\"umbrella\",\"umbrella\",\"umbrella\"], searchWord = \"umb\"",
+      "output": "[['umbilical', 'umbrella', 'umbrella'], ['umbilical', 'umbrella', 'umbrella'], ['umbilical', 'umbrella', 'umbrella']]"
+    },
+    {
+      "input": "products = [\"banana\",\"bandanna\",\"bandage\",\"band\",\"bandwidth\"], searchWord = \"band\"",
+      "output": "[['banana', 'band', 'bandage'], ['banana', 'band', 'bandage'], ['banana', 'band', 'bandage'], ['band', 'bandage', 'bandanna']]"
+    }
+  ],
+  "entry_point": "Solution().suggestedProducts",
+  "language_independent_cases": true,
+  "problem": "search-suggestions-system",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(products=['keyboard', 'keypad', 'keys', 'kick'], searchWord='key') == [['keyboard', 'keypad', 'keys'], ['keyboard', 'keypad', 'keys'], ['keyboard', 'keypad', 'keys']]\n    assert candidate(products=['keyboard', 'keypad', 'mousepad'], searchWord='key') == [['keyboard', 'keypad'], ['keyboard', 'keypad'], ['keyboard', 'keypad']]\n    assert candidate(products=['apple', 'banana', 'grape', 'orange'], searchWord='or') == [['orange'], ['orange']]\n    assert candidate(products=['aaa', 'aaab', 'aaac', 'aab'], searchWord='aa') == [['aaa', 'aaab', 'aaac'], ['aaa', 'aaab', 'aaac']]\n    assert candidate(products=['charger', 'cable', 'case'], searchWord='ca') == [['cable', 'case', 'charger'], ['cable', 'case']]\n    assert candidate(products=['bag', 'bags', 'banner', 'box', 'car'], searchWord='ba') == [['bag', 'bags', 'banner'], ['bag', 'bags', 'banner']]\n    assert candidate(products=['aaa', 'aab', 'aac', 'aad', 'aae'], searchWord='aa') == [['aaa', 'aab', 'aac'], ['aaa', 'aab', 'aac']]\n    assert candidate(products=['aaa', 'aab', 'aac', 'aad'], searchWord='aa') == [['aaa', 'aab', 'aac'], ['aaa', 'aab', 'aac']]\n    assert candidate(products=['apple', 'apples', 'application'], searchWord='app') == [['apple', 'apples', 'application'], ['apple', 'apples', 'application'], ['apple', 'apples', 'application']]\n    assert candidate(products=['apple', 'banana', 'grape', 'orange'], searchWord='ba') == [['banana'], ['banana']]\n    assert candidate(products=['keyboard', 'keypad', 'keyboard', 'keychain'], searchWord='key') == [['keyboard', 'keyboard', 'keychain'], ['keyboard', 'keyboard', 'keychain'], ['keyboard', 'keyboard', 'keychain']]\n    assert candidate(products=['havana'], searchWord='havana') == [['havana'], ['havana'], ['havana'], ['havana'], ['havana'], ['havana']]\n    assert candidate(products=['keyboard', 'keypad', 'kiosk'], searchWord='key') == [['keyboard', 'keypad', 'kiosk'], ['keyboard', 'keypad'], ['keyboard', 'keypad']]\n    assert candidate(products=['apple', 'banana', 'grape', 'orange', 'peach'], searchWord='app') == [['apple'], ['apple'], ['apple']]\n    assert candidate(products=['apple', 'apricot', 'banana', 'bat', 'berry'], searchWord='ba') == [['banana', 'bat', 'berry'], ['banana', 'bat']]\n    assert candidate(products=['keyboard', 'keypad', 'keyboardpad'], searchWord='key') == [['keyboard', 'keyboardpad', 'keypad'], ['keyboard', 'keyboardpad', 'keypad'], ['keyboard', 'keyboardpad', 'keypad']]\n    assert candidate(products=['mobile', 'mouse', 'moneypot', 'monitor', 'mousepad'], searchWord='mouse') == [['mobile', 'moneypot', 'monitor'], ['mobile', 'moneypot', 'monitor'], ['mouse', 'mousepad'], ['mouse', 'mousepad'], ['mouse', 'mousepad']]\n    assert candidate(products=['aardvark', 'aardwolf', 'albatross', 'alligator', 'alpaca', 'antelope', 'anteater'], searchWord='aa') == [['aardvark', 'aardwolf', 'albatross'], ['aardvark', 'aardwolf']]\n    assert candidate(products=['xylophone', 'xylography', 'xylem', 'xenon', 'xerox', 'xerophyte', 'xenodochial'], searchWord='xero') == [['xenodochial', 'xenon', 'xerophyte'], ['xenodochial', 'xenon', 'xerophyte'], ['xerophyte', 'xerox'], ['xerophyte', 'xerox']]\n    assert candidate(products=['jacket', 'jaguar', 'jar', 'jasmine', 'jeep'], searchWord='ja') == [['jacket', 'jaguar', 'jar'], ['jacket', 'jaguar', 'jar']]\n    assert candidate(products=['ant', 'anteater', 'antelope', 'antenna', 'antique', 'antfarm', 'antler'], searchWord='ant') == [['ant', 'anteater', 'antelope'], ['ant', 'anteater', 'antelope'], ['ant', 'anteater', 'antelope']]\n    assert candidate(products=['television', 'telescope', 'temperature', 'tennis', 'tense'], searchWord='te') == [['telescope', 'television', 'temperature'], ['telescope', 'television', 'temperature']]\n    assert candidate(products=['apple', 'apricot', 'banana', 'bat', 'berry', 'blackberry', 'blueberry'], searchWord='b') == [['banana', 'bat', 'berry']]\n    assert candidate(products=['grape', 'grapefruit', 'grapevine', 'graph', 'grapejuice'], searchWord='gr') == [['grape', 'grapefruit', 'grapejuice'], ['grape', 'grapefruit', 'grapejuice']]\n    assert candidate(products=['dog', 'dolphin', 'dome', 'domestic', 'domino'], searchWord='dom') == [['dog', 'dolphin', 'dome'], ['dog', 'dolphin', 'dome'], ['dome', 'domestic', 'domino']]\n    assert candidate(products=['magnifier', 'magnificent', 'magnet', 'magnolia', 'magnitude'], searchWord='magn') == [['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier'], ['magnet', 'magnificent', 'magnifier']]\n    assert candidate(products=['apple', 'application', 'appliance', 'appropriate', 'appetizer'], searchWord='appl') == [['appetizer', 'apple', 'appliance'], ['appetizer', 'apple', 'appliance'], ['appetizer', 'apple', 'appliance'], ['apple', 'appliance', 'application']]\n    assert candidate(products=['grape', 'grapefruit', 'grapejuice', 'graphite', 'grapevine', 'grapefruitjuice'], searchWord='grape') == [['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice'], ['grape', 'grapefruit', 'grapefruitjuice']]\n    assert candidate(products=['algorithm', 'array', 'binary', 'bit', 'bitset', 'bucket', 'class', 'collection', 'datatype', 'enumerate', 'file', 'float', 'function', 'garbage', 'graph', 'hash', 'id', 'implementation', 'integer', 'java', 'keyword', 'list', 'map', 'namespace', 'None', 'object', 'operator', 'pair', 'pointer', 'queue', 'range', 'reference', 'set', 'stack', 'string', 'struct', 'template', 'typedef', 'union', 'variable', 'while', 'xor'], searchWord='algo') == [['algorithm', 'array'], ['algorithm'], ['algorithm'], ['algorithm']]\n    assert candidate(products=['hamburger', 'hammock', 'hammer', 'hammerhead', 'handheld'], searchWord='ham') == [['hamburger', 'hammer', 'hammerhead'], ['hamburger', 'hammer', 'hammerhead'], ['hamburger', 'hammer', 'hammerhead']]\n    assert candidate(products=['watermelon', 'water', 'wave', 'wonder', 'wonderland'], searchWord='wat') == [['water', 'watermelon', 'wave'], ['water', 'watermelon', 'wave'], ['water', 'watermelon']]\n    assert candidate(products=['amazon', 'amazing', 'ambassador', 'ambient', 'amplifier'], searchWord='ambi') == [['amazing', 'amazon', 'ambassador'], ['amazing', 'amazon', 'ambassador'], ['ambassador', 'ambient'], ['ambient']]\n    assert candidate(products=['xylophone', 'xylography', 'xylophone', 'xylophone', 'xylophone'], searchWord='xylo') == [['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone'], ['xylography', 'xylophone', 'xylophone']]\n    assert candidate(products=['car', 'card', 'cardboard', 'cargo', 'cartoon'], searchWord='car') == [['car', 'card', 'cardboard'], ['car', 'card', 'cardboard'], ['car', 'card', 'cardboard']]\n    assert candidate(products=['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm'], searchWord='abc') == [['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf']]\n    assert candidate(products=['zebra', 'zinc', 'zoo', 'zesty', 'zoning', 'zest', 'zookeeper'], searchWord='ze') == [['zebra', 'zest', 'zesty'], ['zebra', 'zest', 'zesty']]\n    assert candidate(products=['aardvark', 'aardwolf', 'aardvark', 'aardvark', 'aardvark'], searchWord='aard') == [['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark'], ['aardvark', 'aardvark', 'aardvark']]\n    assert candidate(products=['umbrella', 'umber', 'umbilical', 'umbrella', 'umbrella'], searchWord='umb') == [['umber', 'umbilical', 'umbrella'], ['umber', 'umbilical', 'umbrella'], ['umber', 'umbilical', 'umbrella']]\n    assert candidate(products=['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij'], searchWord='abcdefghijk') == [['a', 'ab', 'abc'], ['ab', 'abc', 'abcd'], ['abc', 'abcd', 'abcde'], ['abcd', 'abcde', 'abcdef'], ['abcde', 'abcdef', 'abcdefg'], ['abcdef', 'abcdefg', 'abcdefgh'], ['abcdefg', 'abcdefgh', 'abcdefghi'], ['abcdefgh', 'abcdefghi', 'abcdefghij'], ['abcdefghi', 'abcdefghij'], ['abcdefghij'], []]\n    assert candidate(products=['apple', 'apricot', 'banana', 'bat', 'berry', 'blueberry', 'blackberry'], searchWord='ba') == [['banana', 'bat', 'berry'], ['banana', 'bat']]\n    assert candidate(products=['zebra', 'zebrafish', 'zebrafly', 'zebratail', 'zebralight', 'zebrashoe', 'zebragram', 'zebratic', 'zebrastriped'], searchWord='zebra') == [['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly'], ['zebra', 'zebrafish', 'zebrafly']]\n    assert candidate(products=['infinite', 'infinity', 'infinitesimal', 'infinity', 'infinitary'], searchWord='inf') == [['infinitary', 'infinite', 'infinitesimal'], ['infinitary', 'infinite', 'infinitesimal'], ['infinitary', 'infinite', 'infinitesimal']]\n    assert candidate(products=['orange', 'oregano', 'organ', 'organize', 'organism'], searchWord='org') == [['orange', 'oregano', 'organ'], ['orange', 'oregano', 'organ'], ['organ', 'organism', 'organize']]\n    assert candidate(products=['xenon', 'xerox', 'xenophobe', 'xenial', 'xenolith', 'xenoliths', 'xenonarc', 'xenonarcosis', 'xenolithologist'], searchWord='xen') == [['xenial', 'xenolith', 'xenolithologist'], ['xenial', 'xenolith', 'xenolithologist'], ['xenial', 'xenolith', 'xenolithologist']]\n    assert candidate(products=['a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aab', 'aac', 'aad', 'aaf', 'aag'], searchWord='aa') == [['a', 'aa', 'aaa'], ['aa', 'aaa', 'aaaa']]\n    assert candidate(products=['laptop', 'laptopbag', 'laser', 'lateral', 'latitude'], searchWord='lap') == [['laptop', 'laptopbag', 'laser'], ['laptop', 'laptopbag', 'laser'], ['laptop', 'laptopbag']]\n    assert candidate(products=['cherry', 'cranberry', 'cantaloupe', 'carrot', 'corn', 'cucumber'], searchWord='car') == [['cantaloupe', 'carrot', 'cherry'], ['cantaloupe', 'carrot'], ['carrot']]\n    assert candidate(products=['umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella', 'umbrella'], searchWord='umbrella') == [['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella'], ['umbrella', 'umbrella', 'umbrella']]\n    assert candidate(products=['aardvark', 'aardwolf', 'albatross', 'albino', 'alligator', 'alpaca', 'almighty'], searchWord='al') == [['aardvark', 'aardwolf', 'albatross'], ['albatross', 'albino', 'alligator']]\n    assert candidate(products=['zebra', 'zealot', 'zealous', 'zebrafish', 'zebra', 'zebrahead'], searchWord='ze') == [['zealot', 'zealous', 'zebra'], ['zealot', 'zealous', 'zebra']]\n    assert candidate(products=['navigate', 'navigation', 'navigator', 'navy', 'navel'], searchWord='nav') == [['navel', 'navigate', 'navigation'], ['navel', 'navigate', 'navigation'], ['navel', 'navigate', 'navigation']]\n    assert candidate(products=['electronics', 'electric', 'elephant', 'elbow', 'eleven'], searchWord='ele') == [['elbow', 'electric', 'electronics'], ['elbow', 'electric', 'electronics'], ['electric', 'electronics', 'elephant']]\n    assert candidate(products=['apple', 'apricot', 'banana', 'bat', 'berry', 'blackberry', 'blueberry', 'bluebird', 'bluetooth'], searchWord='bl') == [['banana', 'bat', 'berry'], ['blackberry', 'blueberry', 'bluebird']]\n    assert candidate(products=['abacaxi', 'abalone', 'abana', 'abanga', 'abaperture', 'abara', 'abaraxas', 'abarth', 'abart', 'abat', 'abate', 'abati', 'abatis', 'abator', 'abatt', 'abature', 'abavure', 'abaya', 'abaze', 'abba', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe', 'abbe'], searchWord='ab') == [['abacaxi', 'abalone', 'abana'], ['abacaxi', 'abalone', 'abana']]\n    assert candidate(products=['applepie', 'applesauce', 'appleskin', 'apple', 'applejack'], searchWord='appl') == [['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie'], ['apple', 'applejack', 'applepie']]\n    assert candidate(products=['camera', 'camcorder', 'cameralens', 'cameraman', 'cameraobscura', 'camouflage', 'camcorder', 'camera', 'camcorder'], searchWord='cam') == [['camcorder', 'camcorder', 'camcorder'], ['camcorder', 'camcorder', 'camcorder'], ['camcorder', 'camcorder', 'camcorder']]\n    assert candidate(products=['chocolate', 'chocolatebar', 'chocolatechip', 'chocolate', 'chocolatefudge'], searchWord='chocolate') == [['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar'], ['chocolate', 'chocolate', 'chocolatebar']]\n    assert candidate(products=['queen', 'queens', 'queenship', 'queer', 'queue'], searchWord='quee') == [['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship'], ['queen', 'queens', 'queenship']]\n    assert candidate(products=['apple', 'apricot', 'avocado', 'banana', 'bat', 'berry', 'blackberry', 'blueberry', 'cherry', 'cantaloupe', 'cranberry'], searchWord='ap') == [['apple', 'apricot', 'avocado'], ['apple', 'apricot']]\n    assert candidate(products=['applepie', 'applesauce', 'apple', 'appletart', 'apples', 'apricot'], searchWord='apple') == [['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples'], ['apple', 'applepie', 'apples']]\n    assert candidate(products=['guitar', 'guitarcase', 'guitarhero', 'guitarpick', 'guitarstand', 'guitartuner', 'guitarstring'], searchWord='gu') == [['guitar', 'guitarcase', 'guitarhero'], ['guitar', 'guitarcase', 'guitarhero']]\n    assert candidate(products=['ocean', 'ocelot', 'octopus', 'octagon', 'octagonal'], searchWord='oct') == [['ocean', 'ocelot', 'octagon'], ['ocean', 'ocelot', 'octagon'], ['octagon', 'octagonal', 'octopus']]\n    assert candidate(products=['elephant', 'elephant', 'elephant', 'elephant', 'elephant', 'elephant', 'elephant', 'elephant', 'elephant', 'elephant'], searchWord='elephant') == [['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant'], ['elephant', 'elephant', 'elephant']]\n    assert candidate(products=['chocolate', 'chips', 'chipmunk', 'cheese', 'cherry', 'chili'], searchWord='ch') == [['cheese', 'cherry', 'chili'], ['cheese', 'cherry', 'chili']]\n    assert candidate(products=['abcd', 'abce', 'abcf', 'abcg', 'abch'], searchWord='abc') == [['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf']]\n    assert candidate(products=['zebra', 'zulu', 'zymurgy', 'zestful', 'zestfully', 'zestless', 'zippy', 'zoo', 'zoology', 'zucchini'], searchWord='zoo') == [['zebra', 'zestful', 'zestfully'], ['zoo', 'zoology'], ['zoo', 'zoology']]\n    assert candidate(products=['fishing', 'fishtank', 'fish', 'fishmonger', 'fisherman', 'fishhook', 'fishnet'], searchWord='fish') == [['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook'], ['fish', 'fisherman', 'fishhook']]\n    assert candidate(products=['watermelon', 'water', 'waterproof', 'watering', 'waterfall', 'watermelon', 'watercolor', 'watergun', 'watermelon', 'watermark'], searchWord='waterm') == [['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['watermark', 'watermelon', 'watermelon']]\n    assert candidate(products=['banana', 'band', 'bangalore', 'bank', 'banner'], searchWord='ban') == [['banana', 'band', 'bangalore'], ['banana', 'band', 'bangalore'], ['banana', 'band', 'bangalore']]\n    assert candidate(products=['paint', 'painter', 'painting', 'paintball', 'paintbrush'], searchWord='pain') == [['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush'], ['paint', 'paintball', 'paintbrush']]\n    assert candidate(products=['xyz', 'xylophone', 'xylography', 'xylograph', 'xylography', 'xylographer', 'xylographs', 'xylography', 'xylography'], searchWord='xylo') == [['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs'], ['xylograph', 'xylographer', 'xylographs']]\n    assert candidate(products=['microphone', 'microwave', 'microscope', 'microphone', 'micronutrient'], searchWord='micr') == [['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone'], ['micronutrient', 'microphone', 'microphone']]\n    assert candidate(products=['flower', 'flour', 'flow', 'flourish', 'flourmill'], searchWord='flow') == [['flour', 'flourish', 'flourmill'], ['flour', 'flourish', 'flourmill'], ['flour', 'flourish', 'flourmill'], ['flow', 'flower']]\n    assert candidate(products=['car', 'card', 'care', 'careful', 'careless'], searchWord='ca') == [['car', 'card', 'care'], ['car', 'card', 'care']]\n    assert candidate(products=['football', 'footwear', 'footbridge', 'footnote', 'footrest', 'footlocker', 'footrace', 'footlight'], searchWord='foot') == [['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight'], ['football', 'footbridge', 'footlight']]\n    assert candidate(products=['bicycle', 'bicycling', 'bicycle', 'bicycle', 'bicycle'], searchWord='bicy') == [['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle'], ['bicycle', 'bicycle', 'bicycle']]\n    assert candidate(products=['giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe', 'giraffe'], searchWord='giraff') == [['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe'], ['giraffe', 'giraffe', 'giraffe']]\n    assert candidate(products=['strawberry', 'straw', 'stratosphere', 'stranger', 'strategy'], searchWord='stra') == [['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere'], ['stranger', 'strategy', 'stratosphere']]\n    assert candidate(products=['apple', 'apricot', 'banana', 'bat', 'berry', 'blackberry', 'blueberry'], searchWord='ba') == [['banana', 'bat', 'berry'], ['banana', 'bat']]\n    assert candidate(products=['watermelon', 'water', 'waterfall', 'watershed', 'watercolor'], searchWord='water') == [['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall'], ['water', 'watercolor', 'waterfall']]\n    assert candidate(products=['computer', 'computational', 'compute', 'computing', 'computerized'], searchWord='compute') == [['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['computational', 'compute', 'computer'], ['compute', 'computer', 'computerized']]\n    assert candidate(products=['photography', 'photoalbum', 'photobook', 'photoframe', 'photograph', 'photokino', 'photocopy', 'photography'], searchWord='phot') == [['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy'], ['photoalbum', 'photobook', 'photocopy']]\n    assert candidate(products=['strawberry', 'straw', 'strange', 'strategy', 'stranger'], searchWord='stra') == [['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy'], ['strange', 'stranger', 'strategy']]\n    assert candidate(products=['elephant', 'elephantine', 'elegant', 'elevate', 'elementary'], searchWord='ele') == [['elegant', 'elementary', 'elephant'], ['elegant', 'elementary', 'elephant'], ['elegant', 'elementary', 'elephant']]\n    assert candidate(products=['orange', 'ornament', 'organ', 'orchid', 'orchard', 'organize'], searchWord='or') == [['orange', 'orchard', 'orchid'], ['orange', 'orchard', 'orchid']]\n    assert candidate(products=['aaab', 'aaac', 'aaad', 'aaae', 'aaaf', 'aaag', 'aaah', 'aaai', 'aaaj', 'aaak', 'aaal', 'aaam', 'aaan', 'aaao', 'aaap', 'aaaq', 'aaar', 'aaas', 'aaat', 'aaau', 'aaav', 'aaaw', 'aaax', 'aaay', 'aaaz'], searchWord='aaa') == [['aaab', 'aaac', 'aaad'], ['aaab', 'aaac', 'aaad'], ['aaab', 'aaac', 'aaad']]\n    assert candidate(products=['piano', 'piano', 'piano', 'piano', 'piano', 'piano', 'piano', 'piano', 'piano', 'piano'], searchWord='piano') == [['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano'], ['piano', 'piano', 'piano']]\n    assert candidate(products=['firefly', 'fireworks', 'firefly', 'firearm', 'firetruck', 'firewall', 'firefly', 'firefly', 'firefly', 'firefly'], searchWord='fire') == [['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly'], ['firearm', 'firefly', 'firefly']]\n    assert candidate(products=['internet', 'interact', 'interest', 'interior', 'interfere'], searchWord='inte') == [['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere'], ['interact', 'interest', 'interfere']]\n    assert candidate(products=['computer', 'compute', 'computation', 'compositor', 'composite', 'compress', 'compression', 'compressor', 'compressed'], searchWord='compre') == [['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['composite', 'compositor', 'compress'], ['compress', 'compressed', 'compression'], ['compress', 'compressed', 'compression']]\n    assert candidate(products=['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli', 'vanilla', 'watermelon', 'xigua', 'yellow', 'zucchini'], searchWord='a') == [['apple']]\n    assert candidate(products=['dog', 'doghouse', 'dogwood', 'dog', 'doghouse'], searchWord='dog') == [['dog', 'dog', 'doghouse'], ['dog', 'dog', 'doghouse'], ['dog', 'dog', 'doghouse']]\n    assert candidate(products=['abcd', 'abce', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm', 'abcn', 'abcd', 'abce', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm', 'abcn'], searchWord='abc') == [['abcd', 'abcd', 'abce'], ['abcd', 'abcd', 'abce'], ['abcd', 'abcd', 'abce']]\n    assert candidate(products=['radio', 'radiance', 'radiant', 'radioactive', 'radioactivity'], searchWord='radi') == [['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio'], ['radiance', 'radiant', 'radio']]\n    assert candidate(products=['keyboard', 'keychain', 'keyhole', 'keylogger', 'keynote'], searchWord='key') == [['keyboard', 'keychain', 'keyhole'], ['keyboard', 'keychain', 'keyhole'], ['keyboard', 'keychain', 'keyhole']]\n    assert candidate(products=['starship', 'stars', 'start', 'star', 'startrek', 'starfish'], searchWord='star') == [['star', 'starfish', 'stars'], ['star', 'starfish', 'stars'], ['star', 'starfish', 'stars'], ['star', 'starfish', 'stars']]\n    assert candidate(products=['ant', 'antelope', 'antibody', 'antacid', 'antaeus', 'antarctica', 'anteater', 'antelope', 'antelope', 'antler'], searchWord='ante') == [['ant', 'antacid', 'antaeus'], ['ant', 'antacid', 'antaeus'], ['ant', 'antacid', 'antaeus'], ['anteater', 'antelope', 'antelope']]\n    assert candidate(products=['dog', 'dove', 'donkey', 'dragon', 'drone', 'drill', 'door'], searchWord='dr') == [['dog', 'donkey', 'door'], ['dragon', 'drill', 'drone']]\n    assert candidate(products=['guitar', 'guitarist', 'guilt', 'guilty', 'gully'], searchWord='guil') == [['guilt', 'guilty', 'guitar'], ['guilt', 'guilty', 'guitar'], ['guilt', 'guilty', 'guitar'], ['guilt', 'guilty']]\n    assert candidate(products=['algorithm', 'algebra', 'alabama', 'alaska', 'alligator'], searchWord='al') == [['alabama', 'alaska', 'algebra'], ['alabama', 'alaska', 'algebra']]\n    assert candidate(products=['zebra', 'zebrafish', 'zebra', 'zebrahead', 'zebra'], searchWord='zebra') == [['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra'], ['zebra', 'zebra', 'zebra']]\n    assert candidate(products=['abcd', 'abce', 'abcf', 'abcg', 'abch', 'abci', 'abcj', 'abck', 'abcl', 'abcm', 'abcn'], searchWord='abcd') == [['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd', 'abce', 'abcf'], ['abcd']]\n    assert candidate(products=['zebra', 'zeal', 'zero', 'zone', 'zoo', 'zap', 'zest'], searchWord='ze') == [['zap', 'zeal', 'zebra'], ['zeal', 'zebra', 'zero']]\n    assert candidate(products=['zebra', 'zoo', 'zoom', 'zoning', 'zone', 'zany', 'zap', 'zest', 'zigzag', 'zither'], searchWord='z') == [['zany', 'zap', 'zebra']]\n    assert candidate(products=['piano', 'piccolo', 'pipe', 'pipeorgan', 'pitchfork'], searchWord='pi') == [['piano', 'piccolo', 'pipe'], ['piano', 'piccolo', 'pipe']]\n    assert candidate(products=['umbrella', 'underwear', 'universe', 'unique', 'unit', 'unity', 'university', 'unicycle', 'unicorn', 'unzip'], searchWord='uni') == [['umbrella', 'underwear', 'unicorn'], ['underwear', 'unicorn', 'unicycle'], ['unicorn', 'unicycle', 'unique']]\n    assert candidate(products=['product', 'produces', 'productivity', 'productive', 'productize', 'production', 'productivity', 'productize', 'productivity', 'productize'], searchWord='product') == [['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['produces', 'product', 'production'], ['product', 'production', 'productive']]\n    assert candidate(products=['umbrella', 'umbilical', 'umbrella', 'umbrella', 'umbrella'], searchWord='umb') == [['umbilical', 'umbrella', 'umbrella'], ['umbilical', 'umbrella', 'umbrella'], ['umbilical', 'umbrella', 'umbrella']]\n    assert candidate(products=['banana', 'bandanna', 'bandage', 'band', 'bandwidth'], searchWord='band') == [['banana', 'band', 'bandage'], ['banana', 'band', 'bandage'], ['banana', 'band', 'bandage'], ['band', 'bandage', 'bandanna']]\n",
+  "workload_hash": "8a66566dc8082d255a5f287eb382e173b830b5e467e5737650b2b8d48b703be0"
+}

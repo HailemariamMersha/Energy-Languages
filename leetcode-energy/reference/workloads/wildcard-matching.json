@@ -1,0 +1,851 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"abcde\", p = \"ab*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*?i*pi\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aa\", p = \"a\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"?bcde\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"cb\", p = \"?a\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabczzzde\", p = \"*abc***de*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abc?de\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"\", p = \"\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"b*c*d*e*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a?c*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abefcdgiescdfimde\", p = \"*a*b*ef*cd*ei*de*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*****e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aa\", p = \"*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*de\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"adceb\", p = \"*a*b\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*****\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*****\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"acdcb\", p = \"a*c?b\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"a\", p = \"?\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m*iss*iss*pp*i*pi\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a?c?e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*e?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b?e\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*b*c*d*e*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*a*bc*e*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*b*c*d*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b*c*d*e*f\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abefcdgiescdfimde\", p = \"ab*ef*cd*ei*de\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abc*def\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*bcde\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abcd*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"hoop\", p = \"hoop*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*?si*pp*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aaaa\", p = \"***a\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abc??\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b*c*d*e*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"bba\", p = \"?*a**\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b*c*d*e?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"\", p = \"*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abcd?\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*a*b*c*d*e*f\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"a\", p = \"*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"\", p = \"?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abc*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*a*b*c*d*e*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abefcdgiescdfimde\", p = \"ab*ef*cd*de\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abefcdgiescdfimde\", p = \"ab*cd?i*de\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*b*c*d*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abcde\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaa\", p = \"a*a*a*a*a\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdef\", p = \"a*b*c*d*e*f\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcd\", p = \"a*d\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyxzyxytxzyxy\", p = \"x*y*z*x*y*z*x*y*z\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"xyxxyxyxyx\", p = \"x*yx*yx*yx*yx\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcxyz\", p = \"*xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"a*bc*a*bc*a*bc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*c*e*g*i*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*bc*de*fgh*i*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"ababababab\", p = \"a*b*a*b*a*b*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyz\", p = \"*x*y*z*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"zxyxzy\", p = \"z*xy*z*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"hellohellohello\", p = \"he*lo*he*lo*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyz\", p = \"*z\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyxzyzyx\", p = \"x*y*x*y*x\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"ababababa\", p = \"a*b*a*b*a\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*?*c*?*e*?*g*?*i*?*j\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abefcdgiescdfimdeeeiad\", p = \"ab*cd?i*de\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"ababababab\", p = \"a*b*a*b*a*b*a*b*a*b\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccdd\", p = \"aab?cc?d*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abc\", p = \"*?*?*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"?????????\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"abc*abc*abc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*b*d*f*h*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzxyzxyz\", p = \"xyz*xyz*xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaaa\", p = \"?*?*?*?*?*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcd\", p = \"?b*d\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xxyyzz\", p = \"x*y*z\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabcabcabcabc\", p = \"abcabc*abcabc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdabcd\", p = \"ab*cd*ab*cd*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*?\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abababab\", p = \"a?b?*b?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m*is*p*i*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*d*f?j\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", p = \"a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*z*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*?*?*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcdabcd\", p = \"*a*b*c*d*a*b*c*d*a*b*c*d*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"abc*abc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"patternmatching\", p = \"pa*?t*?n*?m*?a*?t*?c*?h*?i*?n*?g\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*?*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*k*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*k?*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"*abc*abc*abc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcdabcd\", p = \"a*d*d*bc*bc*bc\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"a*bc*bc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j*?*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*?*?*?*?*?*?*?*?\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k*?*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"a*d?e?*g\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"abc*def*ghi\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"a?c*f?g\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j????\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*a*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*?i*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"a*b*c*a*b*c*a*b*c\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaabbbbbcccc\", p = \"a*b*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabbccddeeff\", p = \"a*b*c*d*e*f*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", p = \"a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*z*z*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*bcd*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j*k\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcde\", p = \"a*?c*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*ip*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzxyzxyz\", p = \"*xyzxyzxyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"hello\", p = \"h?ll*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdexyz\", p = \"*d*xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaabbbbb\", p = \"a*b*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"hello\", p = \"he*o\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcd\", p = \"a*b*c*d*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"a?c*e?g\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abxyzz\", p = \"ab*zz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzabc\", p = \"*abc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"a*?*?*b*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzzxyzzxyzz\", p = \"*z*z*z\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcxyz\", p = \"abc*xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a????b????c????d????e????f????g????h????i????j*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*k*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j?*k?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zazbzczdz\", p = \"z*a*z*b*z*c*z*d*z\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"mi*is*ip*pi\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaaaa\", p = \"a?a?a?a?a?a\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j*k*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*k\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"xyzzaz\", p = \"*x?z*a*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*abc?e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdabcd\", p = \"a*a*a*a*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abc\", p = \"a*c\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyz\", p = \"?yz*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"hello_world\", p = \"he*o?wo*rld\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"a*c*e*g\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*d*g*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdexyz\", p = \"a*?d*x*yz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeffgg\", p = \"*b*c*d*e*f*g*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*e*i*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyxxyxyxyx\", p = \"x*y*x*y*x*y*x\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcd\", p = \"*d\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdexyz\", p = \"abcd*xyz\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m*iss*ss*ip*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*iss*ippi\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*b*d*f*h*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abc\", p = \"***\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccdd\", p = \"a*bb*cc*dd\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"*abcde\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaabbbccc\", p = \"a*bbb*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcde\", p = \"abcde*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyzabc\", p = \"x*y?*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbaabb\", p = \"a*bb*a*bb\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdedef\", p = \"ab*?de*?\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"pattern_matching\", p = \"p*a*t*t*e*r_*m*a*t*c*h*i*n*g\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"worldwide\", p = \"wo*d*i*e\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbcc\", p = \"a*bb*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefg\", p = \"*cde*fg\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbcc\", p = \"a*b*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"xyyxxyyxxyy\", p = \"x*y*x*y*x*y*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"abc*abc*abc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbababab\", p = \"a*b*a*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdexyz\", p = \"a*b?c*?d*x?y*z*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefgh\", p = \"a*gh\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*?*k*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"zzzzzzzzzz\", p = \"z*z*z*z*z*z*z*z*z*z\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabcabc\", p = \"a*b*c*a*b*c*a*b*c\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*d*f*h*j\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*b*c*d*e*f*g*h*i*j*?*?\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"????a*b*c*d*e*f*g*h*i*j\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"ababab\", p = \"a*b*a*b*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"abc*a*bc*a*bc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*a*b*c*d*e*f*g*h*i*j*j*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabcabcabc\", p = \"abc*abc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"*ef*gh*ij\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbccddeeff\", p = \"a*bb*c*dd*ee*f*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*d*f*h*j*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdef\", p = \"*?*?*?*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"abcabcabc\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcd\", p = \"*?c*d*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcdefghij\", p = \"a*d?g*j\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"*b*a*b*c*a*b*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"mississippi\", p = \"m??*ss*?si*pp*i*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"aabb\", p = \"*b\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabcabc\", p = \"*abcabc*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"examplepattern\", p = \"e*ample?attern\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"nested_matching\", p = \"n*es*t*e*d_*m*a*t*c*h*i*n*g\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"abcabcabc\", p = \"*a*b*c*a*b*c*a*b*c*\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"teststring\", p = \"t*st*ng\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aabbcc\", p = \"a*a*a*c*c*\"",
+      "output": "False"
+    },
+    {
+      "input": "s = \"abcdef\", p = \"*abc?ef\"",
+      "output": "True"
+    },
+    {
+      "input": "s = \"aaaabaaaab\", p = \"a*a*ba*a*b\"",
+      "output": "True"
+    }
+  ],
+  "entry_point": "Solution().isMatch",
+  "language_independent_cases": true,
+  "problem": "wildcard-matching",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def isMatch(self, s: str, p: str) -> bool:\n        ",
+  "test": "def check(candidate):\n    assert candidate(s = \"abcde\",p = \"ab*e\") == True\n    assert candidate(s = \"abcde\",p = \"*\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*ss*?i*pi\") == False\n    assert candidate(s = \"aa\",p = \"a\") == False\n    assert candidate(s = \"abcde\",p = \"?bcde\") == True\n    assert candidate(s = \"abcde\",p = \"a*b*e\") == True\n    assert candidate(s = \"cb\",p = \"?a\") == False\n    assert candidate(s = \"abcabczzzde\",p = \"*abc***de*\") == True\n    assert candidate(s = \"abcde\",p = \"abc?de\") == False\n    assert candidate(s = \"\",p = \"\") == True\n    assert candidate(s = \"abcde\",p = \"b*c*d*e*\") == False\n    assert candidate(s = \"abcde\",p = \"a?c*e\") == True\n    assert candidate(s = \"abefcdgiescdfimde\",p = \"*a*b*ef*cd*ei*de*\") == False\n    assert candidate(s = \"abcde\",p = \"*****e\") == True\n    assert candidate(s = \"aa\",p = \"*\") == True\n    assert candidate(s = \"abcde\",p = \"a*de\") == True\n    assert candidate(s = \"adceb\",p = \"*a*b\") == True\n    assert candidate(s = \"abcde\",p = \"*****\") == True\n    assert candidate(s = \"abcde\",p = \"a*****\") == True\n    assert candidate(s = \"acdcb\",p = \"a*c?b\") == False\n    assert candidate(s = \"a\",p = \"?\") == True\n    assert candidate(s = \"mississippi\",p = \"m*iss*iss*pp*i*pi\") == False\n    assert candidate(s = \"abcde\",p = \"a?c?e\") == True\n    assert candidate(s = \"abcde\",p = \"a*e?\") == False\n    assert candidate(s = \"abcde\",p = \"a*b?e\") == False\n    assert candidate(s = \"abcde\",p = \"*b*c*d*e*\") == True\n    assert candidate(s = \"abcde\",p = \"a*e\") == True\n    assert candidate(s = \"abcde\",p = \"*a*bc*e*\") == True\n    assert candidate(s = \"abcde\",p = \"*b*c*d*e\") == True\n    assert candidate(s = \"abcde\",p = \"a*b*c*d*e*f\") == False\n    assert candidate(s = \"abefcdgiescdfimde\",p = \"ab*ef*cd*ei*de\") == False\n    assert candidate(s = \"abcde\",p = \"abc*def\") == False\n    assert candidate(s = \"abcde\",p = \"*bcde\") == True\n    assert candidate(s = \"abcde\",p = \"abcd*\") == True\n    assert candidate(s = \"hoop\",p = \"hoop*\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*ss*?si*pp*\") == False\n    assert candidate(s = \"aaaa\",p = \"***a\") == True\n    assert candidate(s = \"abcde\",p = \"abc??\") == True\n    assert candidate(s = \"abcde\",p = \"a*b*c*d*e*\") == True\n    assert candidate(s = \"bba\",p = \"?*a**\") == True\n    assert candidate(s = \"abcde\",p = \"a*b*c*d*e?\") == False\n    assert candidate(s = \"\",p = \"*\") == True\n    assert candidate(s = \"abcde\",p = \"abcd?\") == True\n    assert candidate(s = \"abcde\",p = \"*a*b*c*d*e*f\") == False\n    assert candidate(s = \"a\",p = \"*\") == True\n    assert candidate(s = \"\",p = \"?\") == False\n    assert candidate(s = \"abcde\",p = \"abc*e\") == True\n    assert candidate(s = \"abcde\",p = \"*a*b*c*d*e*\") == True\n    assert candidate(s = \"abefcdgiescdfimde\",p = \"ab*ef*cd*de\") == True\n    assert candidate(s = \"abefcdgiescdfimde\",p = \"ab*cd?i*de\") == True\n    assert candidate(s = \"abcde\",p = \"a*b*c*d*e\") == True\n    assert candidate(s = \"abcde\",p = \"abcde\") == True\n    assert candidate(s = \"aaaaa\",p = \"a*a*a*a*a\") == True\n    assert candidate(s = \"abcdef\",p = \"a*b*c*d*e*f\") == True\n    assert candidate(s = \"abcd\",p = \"a*d\") == True\n    assert candidate(s = \"xyxzyxytxzyxy\",p = \"x*y*z*x*y*z*x*y*z\") == False\n    assert candidate(s = \"xyxxyxyxyx\",p = \"x*yx*yx*yx*yx\") == True\n    assert candidate(s = \"abcxyz\",p = \"*xyz\") == True\n    assert candidate(s = \"abcabcabc\",p = \"a*bc*a*bc*a*bc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*c*e*g*i*j\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*bc*de*fgh*i*j\") == True\n    assert candidate(s = \"ababababab\",p = \"a*b*a*b*a*b*\") == True\n    assert candidate(s = \"xyz\",p = \"*x*y*z*\") == True\n    assert candidate(s = \"zxyxzy\",p = \"z*xy*z*\") == True\n    assert candidate(s = \"hellohellohello\",p = \"he*lo*he*lo*\") == True\n    assert candidate(s = \"xyz\",p = \"*z\") == True\n    assert candidate(s = \"xyxzyzyx\",p = \"x*y*x*y*x\") == True\n    assert candidate(s = \"ababababa\",p = \"a*b*a*b*a\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*?*c*?*e*?*g*?*i*?*j\") == False\n    assert candidate(s = \"abefcdgiescdfimdeeeiad\",p = \"ab*cd?i*de\") == False\n    assert candidate(s = \"ababababab\",p = \"a*b*a*b*a*b*a*b*a*b\") == True\n    assert candidate(s = \"aabbccdd\",p = \"aab?cc?d*\") == True\n    assert candidate(s = \"abc\",p = \"*?*?*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"?????????\") == False\n    assert candidate(s = \"abcabcabc\",p = \"abc*abc*abc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*b*d*f*h*\") == True\n    assert candidate(s = \"xyzxyzxyz\",p = \"xyz*xyz*xyz\") == True\n    assert candidate(s = \"aaaaaa\",p = \"?*?*?*?*?*\") == True\n    assert candidate(s = \"abcd\",p = \"?b*d\") == True\n    assert candidate(s = \"xxyyzz\",p = \"x*y*z\") == True\n    assert candidate(s = \"abcabcabcabcabcabc\",p = \"abcabc*abcabc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?\") == False\n    assert candidate(s = \"abcdabcd\",p = \"ab*cd*ab*cd*\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*ss*?\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l*?\") == False\n    assert candidate(s = \"abababab\",p = \"a?b?*b?\") == False\n    assert candidate(s = \"mississippi\",p = \"m*is*p*i*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*d*f?j\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l*\") == False\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",p = \"a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*z*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*?*?*\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*\") == True\n    assert candidate(s = \"abcdabcdabcd\",p = \"*a*b*c*d*a*b*c*d*a*b*c*d*\") == True\n    assert candidate(s = \"abcabcabc\",p = \"abc*abc*\") == True\n    assert candidate(s = \"patternmatching\",p = \"pa*?t*?n*?m*?a*?t*?c*?h*?i*?n*?g\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*?*\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*k*?\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*k?*\") == False\n    assert candidate(s = \"abcabcabc\",p = \"*abc*abc*abc*\") == True\n    assert candidate(s = \"abcdabcdabcd\",p = \"a*d*d*bc*bc*bc\") == False\n    assert candidate(s = \"abcabcabc\",p = \"a*bc*bc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j*?*\") == False\n    assert candidate(s = \"abcdefghij\",p = \"*?*?*?*?*?*?*?*?\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k*?*\") == False\n    assert candidate(s = \"abcdefg\",p = \"a*d?e?*g\") == False\n    assert candidate(s = \"abcdefg\",p = \"abc*def*ghi\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k*?\") == False\n    assert candidate(s = \"abcdefg\",p = \"a?c*f?g\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j????\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*a*\") == False\n    assert candidate(s = \"mississippi\",p = \"m??*ss*?i*\") == True\n    assert candidate(s = \"abcabcabc\",p = \"a*b*c*a*b*c*a*b*c\") == True\n    assert candidate(s = \"aaaaabbbbbcccc\",p = \"a*b*c*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k*?*l\") == False\n    assert candidate(s = \"aabbccddeeff\",p = \"a*b*c*d*e*f*\") == True\n    assert candidate(s = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",p = \"a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*z*z*\") == False\n    assert candidate(s = \"abcde\",p = \"a*bcd*e\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j*k\") == False\n    assert candidate(s = \"abcde\",p = \"a*?c*e\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*ss*ip*\") == True\n    assert candidate(s = \"xyzxyzxyz\",p = \"*xyzxyzxyz\") == True\n    assert candidate(s = \"hello\",p = \"h?ll*\") == True\n    assert candidate(s = \"abcdexyz\",p = \"*d*xyz\") == True\n    assert candidate(s = \"aaaaabbbbb\",p = \"a*b*\") == True\n    assert candidate(s = \"hello\",p = \"he*o\") == True\n    assert candidate(s = \"abcdabcd\",p = \"a*b*c*d*\") == True\n    assert candidate(s = \"abcdefg\",p = \"a?c*e?g\") == True\n    assert candidate(s = \"abxyzz\",p = \"ab*zz\") == True\n    assert candidate(s = \"xyzabc\",p = \"*abc\") == True\n    assert candidate(s = \"abcabcabc\",p = \"a*?*?*b*c*\") == True\n    assert candidate(s = \"xyzzxyzzxyzz\",p = \"*z*z*z\") == True\n    assert candidate(s = \"abcxyz\",p = \"abc*xyz\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a????b????c????d????e????f????g????h????i????j*\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*k*\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j?*k?\") == False\n    assert candidate(s = \"zazbzczdz\",p = \"z*a*z*b*z*c*z*d*z\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j\") == True\n    assert candidate(s = \"mississippi\",p = \"mi*is*ip*pi\") == True\n    assert candidate(s = \"aaaaaa\",p = \"a?a?a?a?a?a\") == False\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j*k*?\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*k\") == False\n    assert candidate(s = \"xyzzaz\",p = \"*x?z*a*\") == True\n    assert candidate(s = \"abcde\",p = \"*abc?e\") == True\n    assert candidate(s = \"abcdabcd\",p = \"a*a*a*a*\") == False\n    assert candidate(s = \"abc\",p = \"a*c\") == True\n    assert candidate(s = \"xyz\",p = \"?yz*\") == True\n    assert candidate(s = \"hello_world\",p = \"he*o?wo*rld\") == True\n    assert candidate(s = \"abcdefg\",p = \"a*c*e*g\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*d*g*j\") == True\n    assert candidate(s = \"abcdexyz\",p = \"a*?d*x*yz\") == True\n    assert candidate(s = \"aabbccddeeffgg\",p = \"*b*c*d*e*f*g*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*e*i*\") == True\n    assert candidate(s = \"xyxxyxyxyx\",p = \"x*y*x*y*x*y*x\") == True\n    assert candidate(s = \"abcd\",p = \"*d\") == True\n    assert candidate(s = \"abcdexyz\",p = \"abcd*xyz\") == True\n    assert candidate(s = \"mississippi\",p = \"m*iss*ss*ip*\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*iss*ippi\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*b*d*f*h*j\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j\") == True\n    assert candidate(s = \"abc\",p = \"***\") == True\n    assert candidate(s = \"aabbccdd\",p = \"a*bb*cc*dd\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*\") == True\n    assert candidate(s = \"abcde\",p = \"*abcde\") == True\n    assert candidate(s = \"aaabbbccc\",p = \"a*bbb*c*\") == True\n    assert candidate(s = \"abcde\",p = \"abcde*\") == True\n    assert candidate(s = \"xyzabc\",p = \"x*y?*\") == True\n    assert candidate(s = \"aabbaabb\",p = \"a*bb*a*bb\") == True\n    assert candidate(s = \"abcdedef\",p = \"ab*?de*?\") == True\n    assert candidate(s = \"pattern_matching\",p = \"p*a*t*t*e*r_*m*a*t*c*h*i*n*g\") == False\n    assert candidate(s = \"worldwide\",p = \"wo*d*i*e\") == True\n    assert candidate(s = \"aabbcc\",p = \"a*bb*c*\") == True\n    assert candidate(s = \"abcdefg\",p = \"*cde*fg\") == True\n    assert candidate(s = \"aabbcc\",p = \"a*b*c*\") == True\n    assert candidate(s = \"xyyxxyyxxyy\",p = \"x*y*x*y*x*y*\") == True\n    assert candidate(s = \"abcabcabc\",p = \"abc*abc*abc\") == True\n    assert candidate(s = \"aabbababab\",p = \"a*b*a*\") == True\n    assert candidate(s = \"abcdexyz\",p = \"a*b?c*?d*x?y*z*\") == False\n    assert candidate(s = \"abcdefgh\",p = \"a*gh\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*?*k*\") == False\n    assert candidate(s = \"zzzzzzzzzz\",p = \"z*z*z*z*z*z*z*z*z*z\") == True\n    assert candidate(s = \"abcabcabcabc\",p = \"a*b*c*a*b*c*a*b*c\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*d*f*h*j\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*?\") == False\n    assert candidate(s = \"abcdefghij\",p = \"a*b*c*d*e*f*g*h*i*j*?*?\") == False\n    assert candidate(s = \"abcdefghij\",p = \"????a*b*c*d*e*f*g*h*i*j\") == False\n    assert candidate(s = \"ababab\",p = \"a*b*a*b*\") == True\n    assert candidate(s = \"abcabcabc\",p = \"abc*a*bc*a*bc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*a*b*c*d*e*f*g*h*i*j*j*\") == False\n    assert candidate(s = \"abcabcabcabc\",p = \"abc*abc*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"*ef*gh*ij\") == True\n    assert candidate(s = \"aabbccddeeff\",p = \"a*bb*c*dd*ee*f*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*d*f*h*j*\") == True\n    assert candidate(s = \"abcdef\",p = \"*?*?*?*\") == True\n    assert candidate(s = \"abcabcabc\",p = \"abcabcabc\") == True\n    assert candidate(s = \"abcd\",p = \"*?c*d*\") == True\n    assert candidate(s = \"abcdefghij\",p = \"a*d?g*j\") == False\n    assert candidate(s = \"abcabcabc\",p = \"*b*a*b*c*a*b*c*\") == True\n    assert candidate(s = \"mississippi\",p = \"m??*ss*?si*pp*i*\") == False\n    assert candidate(s = \"aabb\",p = \"*b\") == True\n    assert candidate(s = \"abcabcabcabc\",p = \"*abcabc*\") == True\n    assert candidate(s = \"examplepattern\",p = \"e*ample?attern\") == True\n    assert candidate(s = \"nested_matching\",p = \"n*es*t*e*d_*m*a*t*c*h*i*n*g\") == True\n    assert candidate(s = \"abcabcabc\",p = \"*a*b*c*a*b*c*a*b*c*\") == True\n    assert candidate(s = \"teststring\",p = \"t*st*ng\") == True\n    assert candidate(s = \"aabbcc\",p = \"a*a*a*c*c*\") == False\n    assert candidate(s = \"abcdef\",p = \"*abc?ef\") == True\n    assert candidate(s = \"aaaabaaaab\",p = \"a*a*ba*a*b\") == True\n",
+  "workload_hash": "1ec0673e8f6a2db65bb1ddecdc291c7d3940faf36b4b21450814106f95affaa8"
+}

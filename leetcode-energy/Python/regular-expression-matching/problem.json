@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def isMatch(self, s: str, p: str) -> bool:\n        "
+  },
+  "content": "Given an input string `s` and a pattern `p`, implement regular expression matching with support for `'.'` and `'*'` where:\n\n*   `'.'` Matches any single character.\u200b\u200b\u200b\u200b\n*   `'*'` Matches zero or more of the preceding element.\n\nThe matching should cover the **entire** input string (not partial).\n\n**Example 1:**\n\n**Input:** s =  \"aa \", p =  \"a \"\n**Output:** false\n**Explanation:**  \"a \" does not match the entire string  \"aa \".\n\n**Example 2:**\n\n**Input:** s =  \"aa \", p =  \"a\\* \"\n**Output:** true\n**Explanation:** '\\*' means zero or more of the preceding element, 'a'. Therefore, by repeating 'a' once, it becomes  \"aa \".\n\n**Example 3:**\n\n**Input:** s =  \"ab \", p =  \".\\* \"\n**Output:** true\n**Explanation:**  \".\\* \" means  \"zero or more (\\*) of any character (.) \".\n\n**Constraints:**\n\n*   `1 <= s.length <= 20`\n*   `1 <= p.length <= 20`\n*   `s` contains only lowercase English letters.\n*   `p` contains only lowercase English letters, `'.'`, and `'*'`.\n*   It is guaranteed for each appearance of the character `'*'`, there will be a previous valid character to match.",
+  "hints": null,
+  "id": 69,
+  "level": "Hard",
+  "tags": [
+    "String",
+    "Dynamic Programming",
+    "Recursion"
+  ],
+  "title": "Regular Expression Matching",
+  "title_slug": "regular-expression-matching"
+}

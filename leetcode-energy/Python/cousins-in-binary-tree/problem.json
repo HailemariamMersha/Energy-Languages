@@ -1,0 +1,17 @@
+{
+  "code_snippets": {
+    "python3": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:\n        "
+  },
+  "content": "Given the `root` of a binary tree with unique values and the values of two different nodes of the tree `x` and `y`, return `true` _if the nodes corresponding to the values_ `x` _and_ `y` _in the tree are **cousins**, or_ `false` _otherwise._\n\nTwo nodes of a binary tree are **cousins** if they have the same depth with different parents.\n\nNote that in a binary tree, the root node is at the depth `0`, and children of each depth `k` node are at the depth `k + 1`.\n\n**Example 1:**\n\n**Input:** root = \\[1,2,3,4\\], x = 4, y = 3\n**Output:** false\n\n**Example 2:**\n\n**Input:** root = \\[1,2,3,null,4,null,5\\], x = 5, y = 4\n**Output:** true\n\n**Example 3:**\n\n**Input:** root = \\[1,2,3,null,4\\], x = 2, y = 3\n**Output:** false\n\n**Constraints:**\n\n*   The number of nodes in the tree is in the range `[2, 100]`.\n*   `1 <= Node.val <= 100`\n*   Each node has a **unique** value.\n*   `x != y`\n*   `x` and `y` are exist in the tree.",
+  "hints": null,
+  "id": 29,
+  "level": "Easy",
+  "tags": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "title": "Cousins in Binary Tree",
+  "title_slug": "cousins-in-binary-tree"
+}

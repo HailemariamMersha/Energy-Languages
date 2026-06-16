@@ -1,0 +1,555 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "text = \"jumped over the lazy dog\", brokenLetters = \"zg\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"nopqrstuvwxyz\", brokenLetters = \"xyz\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"xyzzzz\", brokenLetters = \"x\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"leet code\", brokenLetters = \"lt\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"programming is fun\", brokenLetters = \"fn\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"this is a test\", brokenLetters = \"xyz\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"mississippi\", brokenLetters = \"sip\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"python java cplusplus\", brokenLetters = \"ypx\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"same same same\", brokenLetters = \"aem\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"a b c d e\", brokenLetters = \"\"",
+      "output": "5"
+    },
+    {
+      "input": "text = \"aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv ww xx yy zz\", brokenLetters = \"xyz\"",
+      "output": "23"
+    },
+    {
+      "input": "text = \"abcdefghijk\", brokenLetters = \"abcde\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"leet code\", brokenLetters = \"e\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"single\", brokenLetters = \"s\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"unique words\", brokenLetters = \"\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"single\", brokenLetters = \"\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"abc def ghi\", brokenLetters = \"xyz\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"python programming\", brokenLetters = \"p\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\", brokenLetters = \"\"",
+      "output": "26"
+    },
+    {
+      "input": "text = \"a quick brown fox\", brokenLetters = \"\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"abcd efgh ijkl mnop qrst uvwx yz\", brokenLetters = \"aeiou\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"python programming\", brokenLetters = \"th\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"abcdefghij\", brokenLetters = \"\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"hello hello hello\", brokenLetters = \"lo\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"hello world\", brokenLetters = \"ad\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"every good boy does fine\", brokenLetters = \"f\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"hello world abcdefghijklmnopqrstuvwxyz\", brokenLetters = \"\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"a b c d e f g\", brokenLetters = \"xyz\"",
+      "output": "7"
+    },
+    {
+      "input": "text = \"extreme example with all letters\", brokenLetters = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"this is a simple test\", brokenLetters = \"sti\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"singleword\", brokenLetters = \"w\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdefghij klmnopqrstuvwxyz\", brokenLetters = \"xyz\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"university of california berkeley\", brokenLetters = \"bcdfg\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"congratulations on your success\", brokenLetters = \"cns\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"every good boy does fine\", brokenLetters = \"bd\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"hello world from the other side\", brokenLetters = \"dfr\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"complexity arises from multiple factors\", brokenLetters = \"ae\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"all the letters of the alphabet\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"keyboard malfunctioning example\", brokenLetters = \"kmb\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"short long longer longestword\", brokenLetters = \"nlg\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"repeated letters letters letters\", brokenLetters = \"r\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"quick brown fox jumps over the lazy dog\", brokenLetters = \"xyz\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"data structures and algorithms\", brokenLetters = \"dts\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdef ghijklm nopqrst uvwxyz\", brokenLetters = \"mnop\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"multiple broken letters test\", brokenLetters = \"mlpt\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"abcdefghij klmnopqrstuvwxyz\", brokenLetters = \"jkl\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"mississippi river\", brokenLetters = \"is\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"no broken letters here\", brokenLetters = \"qwxz\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"programming is fun\", brokenLetters = \"funs\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"all unique characters\", brokenLetters = \"\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"quick brown fox jumps over the lazy dog\", brokenLetters = \"\"",
+      "output": "8"
+    },
+    {
+      "input": "text = \"hello world hello universe\", brokenLetters = \"d\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"supercalifragilisticexpialidocious\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"special symbols are not included !@#$%^&*()\", brokenLetters = \"\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"brokenkeyboard faultydevice\", brokenLetters = \"bdf\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"sequential typing test\", brokenLetters = \"qseq\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"unique letters in words\", brokenLetters = \"aeiouy\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"python code implementation\", brokenLetters = \"py\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\", brokenLetters = \"qz\"",
+      "output": "24"
+    },
+    {
+      "input": "text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\", brokenLetters = \"abcdefghijkl\"",
+      "output": "14"
+    },
+    {
+      "input": "text = \"complex words like supercalifragilisticexpialidocious\", brokenLetters = \"xyz\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"this is a simple test case\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"one two three four five six seven eight nine ten\", brokenLetters = \"on\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"lets write some code\", brokenLetters = \"wrs\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"multiple broken letters scenario\", brokenLetters = \"aeiouy\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"complex problem solving required\", brokenLetters = \"abc\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"this is a simple test\", brokenLetters = \"s\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"all characters must be checked\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"quick brown fox jumps over lazy dog\", brokenLetters = \"qz\"",
+      "output": "5"
+    },
+    {
+      "input": "text = \"various broken keys test\", brokenLetters = \"var\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"quick brown fox jumps over the lazy dog\", brokenLetters = \"qz\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"a quick brown fox jumps over the lazy dog\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"beautiful scenery on the mountain top\", brokenLetters = \"mnt\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"vowels are often omitted\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"mississippi river flows smoothly\", brokenLetters = \"m\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"hello world from another dimension\", brokenLetters = \"ad\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"singlewordwithoutspaces\", brokenLetters = \"s\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdefghijklmnopqrstuvwxyz\", brokenLetters = \"xyz\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"fuzzy wuzzy was a bear\", brokenLetters = \"f\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"algorithms and data structures\", brokenLetters = \"da\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"make america great again\", brokenLetters = \"mag\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"hello hello hello world\", brokenLetters = \"d\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"a aa aaa aaaa aaaaa\", brokenLetters = \"a\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"mississippi river\", brokenLetters = \"m\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"many many words with many repeated letters\", brokenLetters = \"mny\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz\", brokenLetters = \"\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"special characters are not considered\", brokenLetters = \"!@#$%^&*()\"",
+      "output": "5"
+    },
+    {
+      "input": "text = \"alibaba cloud is amazing\", brokenLetters = \"aim\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"boundary conditions and edge cases\", brokenLetters = \"bace\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"the quick brown fox jumps over the lazy dog\", brokenLetters = \"\"",
+      "output": "9"
+    },
+    {
+      "input": "text = \"algorithm data structures\", brokenLetters = \"abcde\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"xylophone xylophone xylophone\", brokenLetters = \"xy\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"complex problem solving\", brokenLetters = \"cps\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"longer words with various letters\", brokenLetters = \"wv\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"every good boy does fine\", brokenLetters = \"boyd\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"the quick brown fox jumps over the lazy dog\", brokenLetters = \"qxyz\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"programming in python is fun\", brokenLetters = \"pqf\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"this is a test case with many words\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"repeated letters in words\", brokenLetters = \"r\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"mississippi river\", brokenLetters = \"r\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"edge cases require attention\", brokenLetters = \"ecr\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"short words\", brokenLetters = \"aef\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"all characters are broken here\", brokenLetters = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"this is a simple test\", brokenLetters = \"st\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"multiple words with repeated letters\", brokenLetters = \"w\"",
+      "output": "3"
+    },
+    {
+      "input": "text = \"python is a versatile programming language\", brokenLetters = \"p\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"this is a simple test case\", brokenLetters = \"\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"short words\", brokenLetters = \"ow\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"distinct distinct letters letters\", brokenLetters = \"distnl\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"the quick brown fox jumps over the lazy dog\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"let us escape from this\u56f0\u5883\", brokenLetters = \"et\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"broken keyboards are annoying sometimes\", brokenLetters = \"bks\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"various combinations\", brokenLetters = \"vbc\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"every good boy does fine and gets chocolate\", brokenLetters = \"xyz\"",
+      "output": "6"
+    },
+    {
+      "input": "text = \"hello world from mars\", brokenLetters = \"mr\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"various punctuations are missing\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"quick brown fox jumps over the lazy dog\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"unique words in this sentence\", brokenLetters = \"uie\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"multiple words with repeated letters\", brokenLetters = \"r\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"one two three four five\", brokenLetters = \"one\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"computer science\", brokenLetters = \"xyz\"",
+      "output": "2"
+    },
+    {
+      "input": "text = \"this is a simple test case\", brokenLetters = \"s\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"multiple spaces between words   are not allowed\", brokenLetters = \"\"",
+      "output": "7"
+    },
+    {
+      "input": "text = \"special characters !@#$%^&*()\", brokenLetters = \"s\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"banana apple orange\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdefghijklmnopqrstuvwxyz\", brokenLetters = \"nopqrstuvwxyz\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdef ghijklm nopqrstuvwxyz\", brokenLetters = \"aeiou\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"spaceship traveling fast\", brokenLetters = \"spfc\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"unique characters only\", brokenLetters = \"uqnc\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"every good boy does fine\", brokenLetters = \"egbf\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"repeated repeated words words\", brokenLetters = \"dpw\"",
+      "output": "0"
+    },
+    {
+      "input": "text = \"abcdefghijklmnopqrstuvwxy z\", brokenLetters = \"z\"",
+      "output": "1"
+    },
+    {
+      "input": "text = \"complex problems require careful thought\", brokenLetters = \"th\"",
+      "output": "4"
+    },
+    {
+      "input": "text = \"all words can be typed\", brokenLetters = \"\"",
+      "output": "5"
+    },
+    {
+      "input": "text = \"abcdefg hijklm nopqrstuvwxyz\", brokenLetters = \"xyz\"",
+      "output": "2"
+    }
+  ],
+  "entry_point": "Solution().canBeTypedWords",
+  "language_independent_cases": true,
+  "problem": "maximum-number-of-words-you-can-type",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(text = \"jumped over the lazy dog\",brokenLetters = \"zg\") == 3\n    assert candidate(text = \"nopqrstuvwxyz\",brokenLetters = \"xyz\") == 0\n    assert candidate(text = \"xyzzzz\",brokenLetters = \"x\") == 0\n    assert candidate(text = \"leet code\",brokenLetters = \"lt\") == 1\n    assert candidate(text = \"programming is fun\",brokenLetters = \"fn\") == 1\n    assert candidate(text = \"this is a test\",brokenLetters = \"xyz\") == 4\n    assert candidate(text = \"mississippi\",brokenLetters = \"sip\") == 0\n    assert candidate(text = \"python java cplusplus\",brokenLetters = \"ypx\") == 1\n    assert candidate(text = \"same same same\",brokenLetters = \"aem\") == 0\n    assert candidate(text = \"a b c d e\",brokenLetters = \"\") == 5\n    assert candidate(text = \"aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv ww xx yy zz\",brokenLetters = \"xyz\") == 23\n    assert candidate(text = \"abcdefghijk\",brokenLetters = \"abcde\") == 0\n    assert candidate(text = \"leet code\",brokenLetters = \"e\") == 0\n    assert candidate(text = \"single\",brokenLetters = \"s\") == 0\n    assert candidate(text = \"unique words\",brokenLetters = \"\") == 2\n    assert candidate(text = \"single\",brokenLetters = \"\") == 1\n    assert candidate(text = \"abc def ghi\",brokenLetters = \"xyz\") == 3\n    assert candidate(text = \"python programming\",brokenLetters = \"p\") == 0\n    assert candidate(text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\",brokenLetters = \"\") == 26\n    assert candidate(text = \"a quick brown fox\",brokenLetters = \"\") == 4\n    assert candidate(text = \"abcd efgh ijkl mnop qrst uvwx yz\",brokenLetters = \"aeiou\") == 2\n    assert candidate(text = \"python programming\",brokenLetters = \"th\") == 1\n    assert candidate(text = \"abcdefghij\",brokenLetters = \"\") == 1\n    assert candidate(text = \"hello hello hello\",brokenLetters = \"lo\") == 0\n    assert candidate(text = \"hello world\",brokenLetters = \"ad\") == 1\n    assert candidate(text = \"every good boy does fine\",brokenLetters = \"f\") == 4\n    assert candidate(text = \"hello world abcdefghijklmnopqrstuvwxyz\",brokenLetters = \"\") == 3\n    assert candidate(text = \"a b c d e f g\",brokenLetters = \"xyz\") == 7\n    assert candidate(text = \"extreme example with all letters\",brokenLetters = \"abcdefghijklmnopqrstuvwxyz\") == 0\n    assert candidate(text = \"this is a simple test\",brokenLetters = \"sti\") == 1\n    assert candidate(text = \"singleword\",brokenLetters = \"w\") == 0\n    assert candidate(text = \"abcdefghij klmnopqrstuvwxyz\",brokenLetters = \"xyz\") == 1\n    assert candidate(text = \"university of california berkeley\",brokenLetters = \"bcdfg\") == 1\n    assert candidate(text = \"congratulations on your success\",brokenLetters = \"cns\") == 1\n    assert candidate(text = \"every good boy does fine\",brokenLetters = \"bd\") == 2\n    assert candidate(text = \"hello world from the other side\",brokenLetters = \"dfr\") == 2\n    assert candidate(text = \"complexity arises from multiple factors\",brokenLetters = \"ae\") == 1\n    assert candidate(text = \"all the letters of the alphabet\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"keyboard malfunctioning example\",brokenLetters = \"kmb\") == 0\n    assert candidate(text = \"short long longer longestword\",brokenLetters = \"nlg\") == 1\n    assert candidate(text = \"repeated letters letters letters\",brokenLetters = \"r\") == 0\n    assert candidate(text = \"quick brown fox jumps over the lazy dog\",brokenLetters = \"xyz\") == 6\n    assert candidate(text = \"data structures and algorithms\",brokenLetters = \"dts\") == 0\n    assert candidate(text = \"abcdef ghijklm nopqrst uvwxyz\",brokenLetters = \"mnop\") == 2\n    assert candidate(text = \"multiple broken letters test\",brokenLetters = \"mlpt\") == 1\n    assert candidate(text = \"abcdefghij klmnopqrstuvwxyz\",brokenLetters = \"jkl\") == 0\n    assert candidate(text = \"mississippi river\",brokenLetters = \"is\") == 0\n    assert candidate(text = \"no broken letters here\",brokenLetters = \"qwxz\") == 4\n    assert candidate(text = \"programming is fun\",brokenLetters = \"funs\") == 0\n    assert candidate(text = \"all unique characters\",brokenLetters = \"\") == 3\n    assert candidate(text = \"quick brown fox jumps over the lazy dog\",brokenLetters = \"\") == 8\n    assert candidate(text = \"hello world hello universe\",brokenLetters = \"d\") == 3\n    assert candidate(text = \"supercalifragilisticexpialidocious\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"special symbols are not included !@#$%^&*()\",brokenLetters = \"\") == 6\n    assert candidate(text = \"brokenkeyboard faultydevice\",brokenLetters = \"bdf\") == 0\n    assert candidate(text = \"sequential typing test\",brokenLetters = \"qseq\") == 1\n    assert candidate(text = \"unique letters in words\",brokenLetters = \"aeiouy\") == 0\n    assert candidate(text = \"python code implementation\",brokenLetters = \"py\") == 1\n    assert candidate(text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\",brokenLetters = \"qz\") == 24\n    assert candidate(text = \"a b c d e f g h i j k l m n o p q r s t u v w x y z\",brokenLetters = \"abcdefghijkl\") == 14\n    assert candidate(text = \"complex words like supercalifragilisticexpialidocious\",brokenLetters = \"xyz\") == 2\n    assert candidate(text = \"this is a simple test case\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"one two three four five six seven eight nine ten\",brokenLetters = \"on\") == 4\n    assert candidate(text = \"lets write some code\",brokenLetters = \"wrs\") == 1\n    assert candidate(text = \"multiple broken letters scenario\",brokenLetters = \"aeiouy\") == 0\n    assert candidate(text = \"complex problem solving required\",brokenLetters = \"abc\") == 2\n    assert candidate(text = \"this is a simple test\",brokenLetters = \"s\") == 1\n    assert candidate(text = \"all characters must be checked\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"quick brown fox jumps over lazy dog\",brokenLetters = \"qz\") == 5\n    assert candidate(text = \"various broken keys test\",brokenLetters = \"var\") == 2\n    assert candidate(text = \"quick brown fox jumps over the lazy dog\",brokenLetters = \"qz\") == 6\n    assert candidate(text = \"a quick brown fox jumps over the lazy dog\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"beautiful scenery on the mountain top\",brokenLetters = \"mnt\") == 0\n    assert candidate(text = \"vowels are often omitted\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"mississippi river flows smoothly\",brokenLetters = \"m\") == 2\n    assert candidate(text = \"hello world from another dimension\",brokenLetters = \"ad\") == 2\n    assert candidate(text = \"singlewordwithoutspaces\",brokenLetters = \"s\") == 0\n    assert candidate(text = \"abcdefghijklmnopqrstuvwxyz\",brokenLetters = \"xyz\") == 0\n    assert candidate(text = \"fuzzy wuzzy was a bear\",brokenLetters = \"f\") == 4\n    assert candidate(text = \"algorithms and data structures\",brokenLetters = \"da\") == 1\n    assert candidate(text = \"make america great again\",brokenLetters = \"mag\") == 0\n    assert candidate(text = \"hello hello hello world\",brokenLetters = \"d\") == 3\n    assert candidate(text = \"a aa aaa aaaa aaaaa\",brokenLetters = \"a\") == 0\n    assert candidate(text = \"mississippi river\",brokenLetters = \"m\") == 1\n    assert candidate(text = \"many many words with many repeated letters\",brokenLetters = \"mny\") == 4\n    assert candidate(text = \"abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz\",brokenLetters = \"\") == 2\n    assert candidate(text = \"special characters are not considered\",brokenLetters = \"!@#$%^&*()\") == 5\n    assert candidate(text = \"alibaba cloud is amazing\",brokenLetters = \"aim\") == 1\n    assert candidate(text = \"boundary conditions and edge cases\",brokenLetters = \"bace\") == 0\n    assert candidate(text = \"the quick brown fox jumps over the lazy dog\",brokenLetters = \"\") == 9\n    assert candidate(text = \"algorithm data structures\",brokenLetters = \"abcde\") == 0\n    assert candidate(text = \"xylophone xylophone xylophone\",brokenLetters = \"xy\") == 0\n    assert candidate(text = \"complex problem solving\",brokenLetters = \"cps\") == 0\n    assert candidate(text = \"longer words with various letters\",brokenLetters = \"wv\") == 2\n    assert candidate(text = \"every good boy does fine\",brokenLetters = \"boyd\") == 1\n    assert candidate(text = \"the quick brown fox jumps over the lazy dog\",brokenLetters = \"qxyz\") == 6\n    assert candidate(text = \"programming in python is fun\",brokenLetters = \"pqf\") == 2\n    assert candidate(text = \"this is a test case with many words\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"repeated letters in words\",brokenLetters = \"r\") == 1\n    assert candidate(text = \"mississippi river\",brokenLetters = \"r\") == 1\n    assert candidate(text = \"edge cases require attention\",brokenLetters = \"ecr\") == 0\n    assert candidate(text = \"short words\",brokenLetters = \"aef\") == 2\n    assert candidate(text = \"all characters are broken here\",brokenLetters = \"abcdefghijklmnopqrstuvwxyz\") == 0\n    assert candidate(text = \"this is a simple test\",brokenLetters = \"st\") == 1\n    assert candidate(text = \"multiple words with repeated letters\",brokenLetters = \"w\") == 3\n    assert candidate(text = \"python is a versatile programming language\",brokenLetters = \"p\") == 4\n    assert candidate(text = \"this is a simple test case\",brokenLetters = \"\") == 6\n    assert candidate(text = \"short words\",brokenLetters = \"ow\") == 0\n    assert candidate(text = \"distinct distinct letters letters\",brokenLetters = \"distnl\") == 0\n    assert candidate(text = \"the quick brown fox jumps over the lazy dog\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"let us escape from this\u56f0\u5883\",brokenLetters = \"et\") == 2\n    assert candidate(text = \"broken keyboards are annoying sometimes\",brokenLetters = \"bks\") == 2\n    assert candidate(text = \"various combinations\",brokenLetters = \"vbc\") == 0\n    assert candidate(text = \"every good boy does fine and gets chocolate\",brokenLetters = \"xyz\") == 6\n    assert candidate(text = \"hello world from mars\",brokenLetters = \"mr\") == 1\n    assert candidate(text = \"various punctuations are missing\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"quick brown fox jumps over the lazy dog\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"unique words in this sentence\",brokenLetters = \"uie\") == 1\n    assert candidate(text = \"multiple words with repeated letters\",brokenLetters = \"r\") == 2\n    assert candidate(text = \"one two three four five\",brokenLetters = \"one\") == 0\n    assert candidate(text = \"computer science\",brokenLetters = \"xyz\") == 2\n    assert candidate(text = \"this is a simple test case\",brokenLetters = \"s\") == 1\n    assert candidate(text = \"multiple spaces between words   are not allowed\",brokenLetters = \"\") == 7\n    assert candidate(text = \"special characters !@#$%^&*()\",brokenLetters = \"s\") == 1\n    assert candidate(text = \"banana apple orange\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"abcdefghijklmnopqrstuvwxyz\",brokenLetters = \"nopqrstuvwxyz\") == 0\n    assert candidate(text = \"abcdef ghijklm nopqrstuvwxyz\",brokenLetters = \"aeiou\") == 0\n    assert candidate(text = \"spaceship traveling fast\",brokenLetters = \"spfc\") == 1\n    assert candidate(text = \"unique characters only\",brokenLetters = \"uqnc\") == 0\n    assert candidate(text = \"every good boy does fine\",brokenLetters = \"egbf\") == 0\n    assert candidate(text = \"repeated repeated words words\",brokenLetters = \"dpw\") == 0\n    assert candidate(text = \"abcdefghijklmnopqrstuvwxy z\",brokenLetters = \"z\") == 1\n    assert candidate(text = \"complex problems require careful thought\",brokenLetters = \"th\") == 4\n    assert candidate(text = \"all words can be typed\",brokenLetters = \"\") == 5\n    assert candidate(text = \"abcdefg hijklm nopqrstuvwxyz\",brokenLetters = \"xyz\") == 2\n",
+  "workload_hash": "a0fef0d9e541eb52869e2e0107100c76e210667d7025e67d3624c32e7f2f7404"
+}

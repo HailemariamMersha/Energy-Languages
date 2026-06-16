@@ -1,0 +1,699 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"b\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aababb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"a\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"ababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbaabaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbbbbbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babbabbbaba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bababababababababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbababb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baaabaaaaaabbaaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"baaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abaababaababaababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaabbaabbaabbaabba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabaaaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaaabbaaabbaaabbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbabbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaabbaaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaabbbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbbbbaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbabbbabbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaababbababbab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbabbaabbaabbabbaabbabbaabbaabbabbaabbabbaabbaabbabbaabbaabbabbaabbaabbabbaabbaabbabbaabbaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaabbbaaba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbaaaaaaaaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaabbbaabbaabbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaabbbabaabbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaabbbbaaaaabbbbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbbaaabbbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbbbaaabbbbbaaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbaabbaabbaabbaabbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbbbbbbbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbaabbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbabbbabbbbaba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babbabbabbabbabbab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abaaabbaaabbbaaaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbbaabbaabbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbbaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbbbbbbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abbaaabaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"ababbbababbbabaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaabbaabbaabba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbbbaaabaaaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbabbbabbbabbbabbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babababababababab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abbaabbbaabbaabbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabaaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bababababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaabbbaaabbbbaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbbbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaaabbbaaabbaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"baaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabaaabbaaaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababbabababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baaaabbbaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaaaaaaaaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbababaabbabababb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbabbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaabbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaaabbbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbbbba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbbbbbbbbbbbbbbbbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"babbbbabbbbabbbbab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababababababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbbaaaabbbbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abaabaabaabaabaaba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbaabbbaaabbbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabababababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaabbbaabbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaabbaabbaab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"ababbababbab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abaabaabaabaabaabaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbaaabbbbabab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bababababababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babababab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbabbbabaabbabbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbbbbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbbaaaabbbbbaaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbaabbaabbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbbabaabab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababababababababababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbaabbbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babababababababababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbabbabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbaaaabaaaabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbbbbbaaaaaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababbababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbbaba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababaabbabababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbbbbbbbbbbbbbb\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbaabbaabbaabbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aaaaabbbbbaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aaaaaaaaaabbbbbbbbbbbaaaaaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbabbaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaabbaabbaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bababbbabababbbaba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaabbaabba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbabba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbbbaababbbbaabab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaaabaaabaaaaabbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bababababab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bababababababab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbaaaabbbbaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbaabbbbabbbabbbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaabbaabba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"bbaabbaabbaabbaabbaabbaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abaababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbbababbbababbbab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbababbabab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baaaaab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aababbabaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aabbaaabbaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababababababababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aaaaaaaaabbbbbbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbaaabbbbaaaabbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaaaaabbbbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbbaaaaabbba\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbaabba\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aaaaaaaaaaaaaaaaaaa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"aabbaaaabbbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbbaaaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abbbbabbbbabbbbabbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababa\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"abababbabaabbababbab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babbbbbbbabbbbbbb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbaaaaaabbbaaaaaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"abababababababababababababababababababababababababababababababababababababababababababababababababab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"bbbbbaaaaabbbbbaaaaa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababbababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"babababa\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"aababbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabb\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"baabbaabbaab\"",
+      "output": "1"
+    },
+    {
+      "input": "s = \"ababbbababbbabaab\"",
+      "output": "2"
+    },
+    {
+      "input": "s = \"ababababababababababababababababababababababababababababababababababababababababababababababababababababababababab\"",
+      "output": "2"
+    }
+  ],
+  "entry_point": "Solution().removePalindromeSub",
+  "language_independent_cases": true,
+  "problem": "remove-palindromic-subsequences",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def removePalindromeSub(self, s: str) -> int:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(s='b') == 1\n    assert candidate(s='aabbab') == 2\n    assert candidate(s='baba') == 2\n    assert candidate(s='aababb') == 2\n    assert candidate(s='abbaab') == 2\n    assert candidate(s='ab') == 2\n    assert candidate(s='a') == 1\n    assert candidate(s='ababa') == 1\n    assert candidate(s='bbaabaaa') == 2\n    assert candidate(s='aabbaa') == 1\n    assert candidate(s='abb') == 2\n    assert candidate(s='baabb') == 2\n    assert candidate(s='aaaa') == 1\n    assert candidate(s='bbbb') == 1\n    assert candidate(s='abab') == 2\n    assert candidate(s='baaaabb') == 2\n    assert candidate(s='aaaaaaaaaabbbbbbbbbb') == 2\n    assert candidate(s='babbabbbaba') == 2\n    assert candidate(s='baabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabba') == 2\n    assert candidate(s='bababababababababa') == 2\n    assert candidate(s='bbaabbababb') == 2\n    assert candidate(s='baaabaaaaaabbaaab') == 2\n    assert candidate(s='aabbaabbaabb') == 2\n    assert candidate(s='baabbaab') == 1\n    assert candidate(s='baaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababbabaababb') == 2\n    assert candidate(s='abaababaababaababa') == 2\n    assert candidate(s='aaabbaabbaabbaabba') == 2\n    assert candidate(s='aabaaaab') == 2\n    assert candidate(s='bbaaabbaaabbaaabbaa') == 2\n    assert candidate(s='aabbabbaa') == 1\n    assert candidate(s='bababa') == 2\n    assert candidate(s='aaaaaaaabbaaaaaaa') == 2\n    assert candidate(s='aaabbbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbbabbaabbbb') == 2\n    assert candidate(s='aabbbbbaaa') == 2\n    assert candidate(s='abbbabbbabbb') == 2\n    assert candidate(s='abbaababbababbab') == 2\n    assert candidate(s='aabbaabbabbaabbaabbabbaabbabbaabbaabbabbaabbabbaabbaabbabbaabbaabbabbaabbaabbabbaabbaabbabbaabbaabb') == 2\n    assert candidate(s='baabbaabbbaaba') == 2\n    assert candidate(s='bbbbbaaaaaaaaabbbb') == 2\n    assert candidate(s='abbaabbbaabbaabbba') == 2\n    assert candidate(s='aaabbbabaabbaa') == 2\n    assert candidate(s='aaabbbbaaaaabbbbaa') == 2\n    assert candidate(s='bbbbbaaaaa') == 2\n    assert candidate(s='aabbbaaabbbaa') == 1\n    assert candidate(s='bbbbbaaabbbbbaaabbbb') == 2\n    assert candidate(s='baababababababababab') == 2\n    assert candidate(s='bbbaabbaabbaabbaabbb') == 1\n    assert candidate(s='bbbbbbbbbba') == 2\n    assert candidate(s='bbaabbaabbaabbaab') == 2\n    assert candidate(s='abbbabbbabbbbaba') == 2\n    assert candidate(s='babbabbabbabbabbab') == 1\n    assert candidate(s='abaaabbaaabbbaaaab') == 2\n    assert candidate(s='aabbaabbaab') == 2\n    assert candidate(s='aabbaabbbaabbaabbba') == 2\n    assert candidate(s='bbaabbaab') == 2\n    assert candidate(s='bbaabbbaaabb') == 2\n    assert candidate(s='bbbbbbbbbbb') == 1\n    assert candidate(s='abbaaabaaa') == 2\n    assert candidate(s='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') == 1\n    assert candidate(s='ababbbababbbabaabb') == 2\n    assert candidate(s='abbaabbaabbaabba') == 1\n    assert candidate(s='aabbbbaaabaaaabbbb') == 2\n    assert candidate(s='abbbabbbabbbabbbabbb') == 2\n    assert candidate(s='babababababababab') == 1\n    assert candidate(s='abbaabbbaabbaabbaa') == 2\n    assert candidate(s='bbaabaaaabb') == 2\n    assert candidate(s='bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb') == 1\n    assert candidate(s='bababababa') == 2\n    assert candidate(s='aaabbbaaabbbbaaa') == 2\n    assert candidate(s='aaaaaaaaaabbbbbbbb') == 2\n    assert candidate(s='aabbaaabbbaaabbaaa') == 2\n    assert candidate(s='ababababababab') == 2\n    assert candidate(s='aaaaaa') == 1\n    assert candidate(s='abababababa') == 1\n    assert candidate(s='abababababababab') == 2\n    assert candidate(s='aaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaaabbbbbbbbbbaaaaaaaaaa') == 1\n    assert candidate(s='baaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaa') == 2\n    assert candidate(s='abababababab') == 2\n    assert candidate(s='ababababababababab') == 2\n    assert candidate(s='aabaaabbaaaab') == 2\n    assert candidate(s='abababbabababababab') == 2\n    assert candidate(s='baaaabbbaabb') == 2\n    assert candidate(s='bbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaabbbbbbbbaaaaaa') == 2\n    assert candidate(s='aaaaaaaaaaaaaaaaaa') == 1\n    assert candidate(s='bbbababaabbabababb') == 2\n    assert candidate(s='bbbbabbbbb') == 2\n    assert candidate(s='aaaaaaabbbbb') == 2\n    assert candidate(s='bbaabbbaa') == 2\n    assert candidate(s='baabbaaabbbaabbaab') == 2\n    assert candidate(s='abbbbbba') == 1\n    assert candidate(s='bbbbbbbbbbbbbbbbbbb') == 1\n    assert candidate(s='babbbbabbbbabbbbab') == 1\n    assert candidate(s='abababababababababababababab') == 2\n    assert candidate(s='aabbbaaaabbbbaa') == 2\n    assert candidate(s='abaabaabaabaabaaba') == 1\n    assert candidate(s='aabbaabbbaaabbbaab') == 2\n    assert candidate(s='aabababababa') == 2\n    assert candidate(s='aaaabbbb') == 2\n    assert candidate(s='abbaabbbaabbaa') == 2\n    assert candidate(s='ababababababababababab') == 2\n    assert candidate(s='baabbaabbaabbaab') == 1\n    assert candidate(s='ababbababbab') == 2\n    assert candidate(s='abababababababababab') == 2\n    assert candidate(s='abaabaabaabaabaabaa') == 2\n    assert candidate(s='abababab') == 2\n    assert candidate(s='bbbbbaaabbbbabab') == 2\n    assert candidate(s='bababababababa') == 2\n    assert candidate(s='babababab') == 1\n    assert candidate(s='aabbabbbabaabbabbb') == 2\n    assert candidate(s='abababa') == 1\n    assert candidate(s='aabbbbbaa') == 1\n    assert candidate(s='bbbaaaabbbbbaaaabb') == 2\n    assert candidate(s='aabbaabbaabbaabbaabbaab') == 2\n    assert candidate(s='ababbbabaabab') == 2\n    assert candidate(s='aaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaabbbaaaaaaaaaaa') == 2\n    assert candidate(s='babab') == 1\n    assert candidate(s='abababababababababababa') == 1\n    assert candidate(s='aabbaabbbaa') == 2\n    assert candidate(s='babababababababababa') == 2\n    assert candidate(s='abbabbabb') == 2\n    assert candidate(s='bbbbbaaaabaaaabbbb') == 2\n    assert candidate(s='bbbbbbbbbaaaaaaaaaa') == 2\n    assert candidate(s='ababababbababa') == 2\n    assert candidate(s='ababbbaba') == 1\n    assert candidate(s='abababaabbabababab') == 2\n    assert candidate(s='bbbbbbbbbbbbbbbbbb') == 1\n    assert candidate(s='aabbaabbaabbaabbaa') == 1\n    assert candidate(s='aaaaabbbbbaaaa') == 2\n    assert candidate(s='aaaaaaaaaabbbbbbbbbbbaaaaaaaaa') == 2\n    assert candidate(s='aabbaabbabbaaabb') == 2\n    assert candidate(s='bbaabbaabbaa') == 2\n    assert candidate(s='aabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabb') == 2\n    assert candidate(s='bababbbabababbbaba') == 2\n    assert candidate(s='baabbaabbaabba') == 2\n    assert candidate(s='ababab') == 2\n    assert candidate(s='aabbabba') == 2\n    assert candidate(s='ababbbbaababbbbaabab') == 2\n    assert candidate(s='bbaaabaaabaaaaabbb') == 2\n    assert candidate(s='bababababab') == 1\n    assert candidate(s='bababababababab') == 1\n    assert candidate(s='bbaaaabbbbaaa') == 2\n    assert candidate(s='bbbaabbbbabbbabbbba') == 2\n    assert candidate(s='abbaabbaabba') == 1\n    assert candidate(s='bbaabbaabbaabbaabbaabbaab') == 2\n    assert candidate(s='abaababa') == 2\n    assert candidate(s='ababbbababbbababbbab') == 2\n    assert candidate(s='ababbababbabab') == 2\n    assert candidate(s='baaaaab') == 1\n    assert candidate(s='aababbabaab') == 2\n    assert candidate(s='aabbaaabbaa') == 1\n    assert candidate(s='abababababababababa') == 1\n    assert candidate(s='aaaaaaaaabbbbbbbbb') == 2\n    assert candidate(s='bbbaaabbbbaaaabbba') == 2\n    assert candidate(s='bbaaaaabbbbba') == 2\n    assert candidate(s='abbbbaaaaabbba') == 2\n    assert candidate(s='abbaabba') == 1\n    assert candidate(s='aaaaaaaaaaaaaaaaaaa') == 1\n    assert candidate(s='aabbaaaabbbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbaaabbbbaaaabbbbaaaabb') == 2\n    assert candidate(s='abbbbabbbbabbbbabbbb') == 2\n    assert candidate(s='ababababa') == 1\n    assert candidate(s='abababbabaabbababbab') == 2\n    assert candidate(s='babbbbbbbabbbbbbb') == 2\n    assert candidate(s='bbaaaaaabbbaaaaaab') == 2\n    assert candidate(s='abababababababababababababababababababababababababababababababababababababababababababababababababab') == 2\n    assert candidate(s='bbbbbaaaaabbbbbaaaaa') == 2\n    assert candidate(s='ababbababa') == 2\n    assert candidate(s='babababa') == 2\n    assert candidate(s='aababbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabbabbaabb') == 2\n    assert candidate(s='baabbaabbaab') == 1\n    assert candidate(s='ababbbababbbabaab') == 2\n    assert candidate(s='ababababababababababababababababababababababababababababababababababababababababababababababababababababababababab') == 2\n",
+  "workload_hash": "149b02ba61fcf3a609243cecd806707a63c7e9dd5dc683f9999bd03c2e2e049a"
+}

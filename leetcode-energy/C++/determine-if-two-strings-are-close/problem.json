@@ -1,0 +1,35 @@
+{
+  "code_snippets": {
+    "c": "bool closeStrings(char* word1, char* word2) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    bool closeStrings(string word1, string word2) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public bool CloseStrings(string word1, string word2) {\n        \n    }\n}",
+    "dart": "class Solution {\n  bool closeStrings(String word1, String word2) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec close_strings(word1 :: String.t, word2 :: String.t) :: boolean\n  def close_strings(word1, word2) do\n    \n  end\nend",
+    "erlang": "-spec close_strings(Word1 :: unicode:unicode_binary(), Word2 :: unicode:unicode_binary()) -> boolean().\nclose_strings(Word1, Word2) ->\n  .",
+    "golang": "func closeStrings(word1 string, word2 string) bool {\n    \n}",
+    "java": "class Solution {\n    public boolean closeStrings(String word1, String word2) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {string} word1\n * @param {string} word2\n * @return {boolean}\n */\nvar closeStrings = function(word1, word2) {\n    \n};",
+    "kotlin": "class Solution {\n    fun closeStrings(word1: String, word2: String): Boolean {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param String $word1\n     * @param String $word2\n     * @return Boolean\n     */\n    function closeStrings($word1, $word2) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def closeStrings(self, word1, word2):\n        \"\"\"\n        :type word1: str\n        :type word2: str\n        :rtype: bool\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def closeStrings(self, word1: str, word2: str) -> bool:\n        ",
+    "racket": "(define/contract (close-strings word1 word2)\n  (-> string? string? boolean?)\n  )",
+    "ruby": "# @param {String} word1\n# @param {String} word2\n# @return {Boolean}\ndef close_strings(word1, word2)\n    \nend",
+    "rust": "impl Solution {\n    pub fn close_strings(word1: String, word2: String) -> bool {\n        \n    }\n}",
+    "scala": "object Solution {\n    def closeStrings(word1: String, word2: String): Boolean = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func closeStrings(_ word1: String, _ word2: String) -> Bool {\n        \n    }\n}",
+    "typescript": "function closeStrings(word1: string, word2: string): boolean {\n    \n};"
+  },
+  "content": "Two strings are considered **close** if you can attain one from the other using the following operations:\n\n*   Operation 1: Swap any two **existing** characters.\n    *   For example, `abcde -> aecdb`\n*   Operation 2: Transform **every** occurrence of one **existing** character into another **existing** character, and do the same with the other character.\n    *   For example, `aacabb -> bbcbaa` (all `a`'s turn into `b`'s, and all `b`'s turn into `a`'s)\n\nYou can use the operations on either string as many times as necessary.\n\nGiven two strings, `word1` and `word2`, return `true` _if_ `word1` _and_ `word2` _are **close**, and_ `false` _otherwise._\n\n**Example 1:**\n\n**Input:** word1 =  \"abc \", word2 =  \"bca \"\n**Output:** true\n**Explanation:** You can attain word2 from word1 in 2 operations.\nApply Operation 1:  \"abc \" ->  \"acb \"\nApply Operation 1:  \"acb \" ->  \"bca \"\n\n**Example 2:**\n\n**Input:** word1 =  \"a \", word2 =  \"aa \"\n**Output:** false\n**Explanation:** It is impossible to attain word2 from word1, or vice versa, in any number of operations.\n\n**Example 3:**\n\n**Input:** word1 =  \"cabbba \", word2 =  \"abbccc \"\n**Output:** true\n**Explanation:** You can attain word2 from word1 in 3 operations.\nApply Operation 1:  \"cabbba \" ->  \"caabbb \"\n`Apply Operation 2:  \"`caabbb \" ->  \"baaccc \"\nApply Operation 2:  \"baaccc \" ->  \"abbccc \"\n\n**Constraints:**\n\n*   `1 <= word1.length, word2.length <= 105`\n*   `word1` and `word2` contain only lowercase English letters.",
+  "hints": "Operation 1 allows you to freely reorder the string. Operation 2 allows you to freely reassign the letters' frequencies.",
+  "id": 37,
+  "level": "Medium",
+  "tags": [
+    "Hash Table",
+    "String",
+    "Sorting",
+    "Counting"
+  ],
+  "title": "Determine if Two Strings Are Close",
+  "title_slug": "determine-if-two-strings-are-close"
+}

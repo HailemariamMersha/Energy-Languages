@@ -1,0 +1,275 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "n = 3",
+      "output": "3"
+    },
+    {
+      "input": "n = 12",
+      "output": "7"
+    },
+    {
+      "input": "n = 100",
+      "output": "14"
+    },
+    {
+      "input": "n = 10",
+      "output": "7"
+    },
+    {
+      "input": "n = 1000",
+      "output": "21"
+    },
+    {
+      "input": "n = 5",
+      "output": "5"
+    },
+    {
+      "input": "n = 4",
+      "output": "4"
+    },
+    {
+      "input": "n = 16",
+      "output": "8"
+    },
+    {
+      "input": "n = 17",
+      "output": "17"
+    },
+    {
+      "input": "n = 2",
+      "output": "2"
+    },
+    {
+      "input": "n = 8",
+      "output": "6"
+    },
+    {
+      "input": "n = 27",
+      "output": "9"
+    },
+    {
+      "input": "n = 18",
+      "output": "8"
+    },
+    {
+      "input": "n = 20",
+      "output": "9"
+    },
+    {
+      "input": "n = 19",
+      "output": "19"
+    },
+    {
+      "input": "n = 11",
+      "output": "11"
+    },
+    {
+      "input": "n = 15",
+      "output": "8"
+    },
+    {
+      "input": "n = 14",
+      "output": "9"
+    },
+    {
+      "input": "n = 9",
+      "output": "6"
+    },
+    {
+      "input": "n = 6",
+      "output": "5"
+    },
+    {
+      "input": "n = 1",
+      "output": "0"
+    },
+    {
+      "input": "n = 7",
+      "output": "7"
+    },
+    {
+      "input": "n = 13",
+      "output": "13"
+    },
+    {
+      "input": "n = 625",
+      "output": "20"
+    },
+    {
+      "input": "n = 97",
+      "output": "97"
+    },
+    {
+      "input": "n = 729",
+      "output": "18"
+    },
+    {
+      "input": "n = 144",
+      "output": "14"
+    },
+    {
+      "input": "n = 49",
+      "output": "14"
+    },
+    {
+      "input": "n = 125",
+      "output": "15"
+    },
+    {
+      "input": "n = 4096",
+      "output": "24"
+    },
+    {
+      "input": "n = 300",
+      "output": "17"
+    },
+    {
+      "input": "n = 841",
+      "output": "58"
+    },
+    {
+      "input": "n = 60",
+      "output": "12"
+    },
+    {
+      "input": "n = 30",
+      "output": "10"
+    },
+    {
+      "input": "n = 600",
+      "output": "19"
+    },
+    {
+      "input": "n = 64",
+      "output": "12"
+    },
+    {
+      "input": "n = 72",
+      "output": "12"
+    },
+    {
+      "input": "n = 99",
+      "output": "17"
+    },
+    {
+      "input": "n = 343",
+      "output": "21"
+    },
+    {
+      "input": "n = 225",
+      "output": "16"
+    },
+    {
+      "input": "n = 819",
+      "output": "26"
+    },
+    {
+      "input": "n = 1024",
+      "output": "20"
+    },
+    {
+      "input": "n = 128",
+      "output": "14"
+    },
+    {
+      "input": "n = 999",
+      "output": "46"
+    },
+    {
+      "input": "n = 96",
+      "output": "13"
+    },
+    {
+      "input": "n = 256",
+      "output": "16"
+    },
+    {
+      "input": "n = 997",
+      "output": "997"
+    },
+    {
+      "input": "n = 36",
+      "output": "10"
+    },
+    {
+      "input": "n = 529",
+      "output": "46"
+    },
+    {
+      "input": "n = 91",
+      "output": "20"
+    },
+    {
+      "input": "n = 77",
+      "output": "18"
+    },
+    {
+      "input": "n = 81",
+      "output": "12"
+    },
+    {
+      "input": "n = 48",
+      "output": "11"
+    },
+    {
+      "input": "n = 961",
+      "output": "62"
+    },
+    {
+      "input": "n = 200",
+      "output": "16"
+    },
+    {
+      "input": "n = 400",
+      "output": "18"
+    },
+    {
+      "input": "n = 512",
+      "output": "18"
+    },
+    {
+      "input": "n = 196",
+      "output": "18"
+    },
+    {
+      "input": "n = 750",
+      "output": "20"
+    },
+    {
+      "input": "n = 121",
+      "output": "22"
+    },
+    {
+      "input": "n = 361",
+      "output": "38"
+    },
+    {
+      "input": "n = 441",
+      "output": "20"
+    },
+    {
+      "input": "n = 500",
+      "output": "19"
+    },
+    {
+      "input": "n = 55",
+      "output": "16"
+    },
+    {
+      "input": "n = 25",
+      "output": "10"
+    }
+  ],
+  "entry_point": "Solution().minSteps",
+  "language_independent_cases": true,
+  "problem": "2-keys-keyboard",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def minSteps(self, n: int) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(n = 3) == 3\n    assert candidate(n = 12) == 7\n    assert candidate(n = 100) == 14\n    assert candidate(n = 10) == 7\n    assert candidate(n = 1000) == 21\n    assert candidate(n = 5) == 5\n    assert candidate(n = 4) == 4\n    assert candidate(n = 16) == 8\n    assert candidate(n = 17) == 17\n    assert candidate(n = 2) == 2\n    assert candidate(n = 8) == 6\n    assert candidate(n = 27) == 9\n    assert candidate(n = 18) == 8\n    assert candidate(n = 20) == 9\n    assert candidate(n = 19) == 19\n    assert candidate(n = 11) == 11\n    assert candidate(n = 15) == 8\n    assert candidate(n = 14) == 9\n    assert candidate(n = 9) == 6\n    assert candidate(n = 6) == 5\n    assert candidate(n = 1) == 0\n    assert candidate(n = 7) == 7\n    assert candidate(n = 13) == 13\n    assert candidate(n = 625) == 20\n    assert candidate(n = 97) == 97\n    assert candidate(n = 729) == 18\n    assert candidate(n = 144) == 14\n    assert candidate(n = 49) == 14\n    assert candidate(n = 125) == 15\n    assert candidate(n = 4096) == 24\n    assert candidate(n = 300) == 17\n    assert candidate(n = 841) == 58\n    assert candidate(n = 60) == 12\n    assert candidate(n = 30) == 10\n    assert candidate(n = 600) == 19\n    assert candidate(n = 64) == 12\n    assert candidate(n = 72) == 12\n    assert candidate(n = 99) == 17\n    assert candidate(n = 343) == 21\n    assert candidate(n = 225) == 16\n    assert candidate(n = 819) == 26\n    assert candidate(n = 1024) == 20\n    assert candidate(n = 128) == 14\n    assert candidate(n = 999) == 46\n    assert candidate(n = 96) == 13\n    assert candidate(n = 256) == 16\n    assert candidate(n = 997) == 997\n    assert candidate(n = 36) == 10\n    assert candidate(n = 529) == 46\n    assert candidate(n = 91) == 20\n    assert candidate(n = 77) == 18\n    assert candidate(n = 81) == 12\n    assert candidate(n = 48) == 11\n    assert candidate(n = 961) == 62\n    assert candidate(n = 200) == 16\n    assert candidate(n = 400) == 18\n    assert candidate(n = 512) == 18\n    assert candidate(n = 196) == 18\n    assert candidate(n = 750) == 20\n    assert candidate(n = 121) == 22\n    assert candidate(n = 361) == 38\n    assert candidate(n = 441) == 20\n    assert candidate(n = 500) == 19\n    assert candidate(n = 55) == 16\n    assert candidate(n = 25) == 10\n",
+  "workload_hash": "3a3c7a1dc4e502f153bb633f1fe9bb447d531a80c272030cbdb6b11bdc9f4c9a"
+}

@@ -1,0 +1,67 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "beginWord = \"leet\", endWord = \"code\", wordList = [\"lest\",\"leet\",\"lose\",\"code\",\"lode\",\"robe\",\"home\",\"dote\",\"cake\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"talk\", endWord = \"tell\", wordList = [\"talk\",\"tell\",\"tall\",\"toll\",\"toll\"]",
+      "output": "3"
+    },
+    {
+      "input": "beginWord = \"talk\", endWord = \"walk\", wordList = [\"talk\",\"walk\",\"tall\",\"tale\",\"tali\",\"wali\",\"wali\",\"wale\",\"wall\",\"walk\"]",
+      "output": "2"
+    },
+    {
+      "input": "beginWord = \"leet\", endWord = \"code\", wordList = [\"lest\",\"leet\",\"lose\",\"code\",\"lode\",\"robe\",\"lost\"]",
+      "output": "6"
+    },
+    {
+      "input": "beginWord = \"red\", endWord = \"tax\", wordList = [\"ted\",\"tex\",\"red\",\"tax\",\"tad\",\"den\",\"rex\",\"pee\"]",
+      "output": "4"
+    },
+    {
+      "input": "beginWord = \"cat\", endWord = \"dog\", wordList = [\"bat\",\"rat\",\"hat\",\"hot\",\"dot\",\"dog\"]",
+      "output": "5"
+    },
+    {
+      "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+      "output": "5"
+    },
+    {
+      "input": "beginWord = \"abcf\", endWord = \"aefh\", wordList = [\"abcf\",\"aefg\",\"aefh\",\"aegh\",\"cefh\",\"cefh\",\"aegh\",\"cefg\",\"abcf\",\"abef\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"machine\", endWord = \"natural\", wordList = [\"machene\",\"machenr\",\"machrne\",\"machren\",\"machenl\",\"machenm\",\"machene\",\"machrne\",\"machren\",\"machenl\",\"machenm\",\"machane\",\"machrne\",\"machren\",\"machenl\",\"machenm\",\"machenl\",\"machene\",\"machrne\",\"machren\",\"machenl\",\"machenm\",\"nachenl\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"nachene\",\"nachrne\",\"nachren\",\"nachenl\",\"nachenm\",\"natural\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"listen\", endWord = \"silent\", wordList = [\"lisen\",\"litesn\",\"litens\",\"listne\",\"listen\",\"siltne\",\"silent\",\"linset\",\"lintes\",\"sleint\",\"ltsine\",\"lintse\",\"lisnet\",\"lsitne\",\"lnties\",\"lintes\",\"lintes\",\"linsat\",\"slient\",\"lsinte\",\"linset\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"algorithm\", endWord = \"rhythm\", wordList = [\"alorhythm\",\"alohrhythm\",\"alohrhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"alorhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\",\"rhythm\"]",
+      "output": "0"
+    },
+    {
+      "input": "beginWord = \"physics\", endWord = \"chemist\", wordList = [\"phyiscs\",\"phyisic\",\"phyisct\",\"phyisci\",\"phyicsi\",\"physics\",\"physisi\",\"physcii\",\"physici\",\"phyiscs\",\"phyiscs\",\"phyiscs\",\"phyiscs\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"physcis\",\"chemics\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\",\"chemist\"]",
+      "output": "0"
+    }
+  ],
+  "entry_point": "Solution().ladderLength",
+  "language_independent_cases": true,
+  "problem": "word-ladder",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(beginWord = \"leet\",endWord = \"code\",wordList = ['lest', 'leet', 'lose', 'code', 'lode', 'robe', 'home', 'dote', 'cake']) == 0\n    assert candidate(beginWord = \"talk\",endWord = \"tell\",wordList = ['talk', 'tell', 'tall', 'toll', 'toll']) == 3\n    assert candidate(beginWord = \"talk\",endWord = \"walk\",wordList = ['talk', 'walk', 'tall', 'tale', 'tali', 'wali', 'wali', 'wale', 'wall', 'walk']) == 2\n    assert candidate(beginWord = \"leet\",endWord = \"code\",wordList = ['lest', 'leet', 'lose', 'code', 'lode', 'robe', 'lost']) == 6\n    assert candidate(beginWord = \"red\",endWord = \"tax\",wordList = ['ted', 'tex', 'red', 'tax', 'tad', 'den', 'rex', 'pee']) == 4\n    assert candidate(beginWord = \"cat\",endWord = \"dog\",wordList = ['bat', 'rat', 'hat', 'hot', 'dot', 'dog']) == 5\n    assert candidate(beginWord = \"hit\",endWord = \"cog\",wordList = ['hot', 'dot', 'dog', 'lot', 'log']) == 0\n    assert candidate(beginWord = \"hit\",endWord = \"cog\",wordList = ['hot', 'dot', 'dog', 'lot', 'log', 'cog']) == 5\n    assert candidate(beginWord = \"abcf\",endWord = \"aefh\",wordList = ['abcf', 'aefg', 'aefh', 'aegh', 'cefh', 'cefh', 'aegh', 'cefg', 'abcf', 'abef']) == 0\n    assert candidate(beginWord = \"machine\",endWord = \"natural\",wordList = ['machene', 'machenr', 'machrne', 'machren', 'machenl', 'machenm', 'machene', 'machrne', 'machren', 'machenl', 'machenm', 'machane', 'machrne', 'machren', 'machenl', 'machenm', 'machenl', 'machene', 'machrne', 'machren', 'machenl', 'machenm', 'nachenl', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'nachene', 'nachrne', 'nachren', 'nachenl', 'nachenm', 'natural']) == 0\n    assert candidate(beginWord = \"listen\",endWord = \"silent\",wordList = ['lisen', 'litesn', 'litens', 'listne', 'listen', 'siltne', 'silent', 'linset', 'lintes', 'sleint', 'ltsine', 'lintse', 'lisnet', 'lsitne', 'lnties', 'lintes', 'lintes', 'linsat', 'slient', 'lsinte', 'linset']) == 0\n    assert candidate(beginWord = \"algorithm\",endWord = \"rhythm\",wordList = ['alorhythm', 'alohrhythm', 'alohrhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'alorhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm', 'rhythm']) == 0\n    assert candidate(beginWord = \"physics\",endWord = \"chemist\",wordList = ['phyiscs', 'phyisic', 'phyisct', 'phyisci', 'phyicsi', 'physics', 'physisi', 'physcii', 'physici', 'phyiscs', 'phyiscs', 'phyiscs', 'phyiscs', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'physcis', 'chemics', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist', 'chemist']) == 0\n",
+  "workload_hash": "bf747b066025f7d9400125e2273d83a0dad9bdd9e7ff562b2409963cc082e879"
+}

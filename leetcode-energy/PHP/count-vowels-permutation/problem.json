@@ -1,0 +1,32 @@
+{
+  "code_snippets": {
+    "c": "int countVowelPermutation(int n) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    int countVowelPermutation(int n) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public int CountVowelPermutation(int n) {\n        \n    }\n}",
+    "dart": "class Solution {\n  int countVowelPermutation(int n) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec count_vowel_permutation(n :: integer) :: integer\n  def count_vowel_permutation(n) do\n    \n  end\nend",
+    "erlang": "-spec count_vowel_permutation(N :: integer()) -> integer().\ncount_vowel_permutation(N) ->\n  .",
+    "golang": "func countVowelPermutation(n int) int {\n    \n}",
+    "java": "class Solution {\n    public int countVowelPermutation(int n) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {number} n\n * @return {number}\n */\nvar countVowelPermutation = function(n) {\n    \n};",
+    "kotlin": "class Solution {\n    fun countVowelPermutation(n: Int): Int {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param Integer $n\n     * @return Integer\n     */\n    function countVowelPermutation($n) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def countVowelPermutation(self, n):\n        \"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def countVowelPermutation(self, n: int) -> int:\n        ",
+    "racket": "(define/contract (count-vowel-permutation n)\n  (-> exact-integer? exact-integer?)\n  )",
+    "ruby": "# @param {Integer} n\n# @return {Integer}\ndef count_vowel_permutation(n)\n    \nend",
+    "rust": "impl Solution {\n    pub fn count_vowel_permutation(n: i32) -> i32 {\n        \n    }\n}",
+    "scala": "object Solution {\n    def countVowelPermutation(n: Int): Int = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func countVowelPermutation(_ n: Int) -> Int {\n        \n    }\n}",
+    "typescript": "function countVowelPermutation(n: number): number {\n    \n};"
+  },
+  "content": "Given an integer `n`, your task is to count how many strings of length `n` can be formed under the following rules:\n\n*   Each character is a lower case vowel (`'a'`, `'e'`, `'i'`, `'o'`, `'u'`)\n*   Each vowel `'a'` may only be followed by an `'e'`.\n*   Each vowel `'e'` may only be followed by an `'a'` or an `'i'`.\n*   Each vowel `'i'` **may not** be followed by another `'i'`.\n*   Each vowel `'o'` may only be followed by an `'i'` or a `'u'`.\n*   Each vowel `'u'` may only be followed by an `'a'.`\n\nSince the answer may be too large, return it modulo `10^9 + 7.`\n\n**Example 1:**\n\n**Input:** n = 1\n**Output:** 5\n**Explanation:** All possible strings are:  \"a \",  \"e \",  \"i \" ,  \"o \" and  \"u \".\n\n**Example 2:**\n\n**Input:** n = 2\n**Output:** 10\n**Explanation:** All possible strings are:  \"ae \",  \"ea \",  \"ei \",  \"ia \",  \"ie \",  \"io \",  \"iu \",  \"oi \",  \"ou \" and  \"ua \".\n\n**Example 3:**\n\n**Input:** n = 5\n**Output:** 68\n\n**Constraints:**\n\n*   `1 <= n <= 2 * 10^4`",
+  "hints": "Do a bitmask DP. For each person, for each set of skills, we can update our understanding of a minimum set of people needed to perform this set of skills.",
+  "id": 94,
+  "level": "Hard",
+  "tags": [
+    "Dynamic Programming"
+  ],
+  "title": "Count Vowels Permutation",
+  "title_slug": "count-vowels-permutation"
+}

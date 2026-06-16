@@ -83,7 +83,10 @@ def build_chat_model(
         )
 
     if provider == "ollama":
-        from langchain_community.chat_models import ChatOllama
+        try:
+            from langchain_ollama import ChatOllama
+        except ImportError:  # pragma: no cover - compatibility with older envs
+            from langchain_community.chat_models import ChatOllama
 
         extras = {}
         if top_p is not None:

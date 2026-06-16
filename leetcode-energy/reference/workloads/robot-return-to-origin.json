@@ -1,0 +1,463 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "moves = \"LULLDDRRUURRDDLL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUDDDDDDDDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDRRLL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LUDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RLUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRDDLLUURR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LRLRLRLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"ULDRULDRULDR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LDRU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLRUDLRUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUUUUUDDDDDDDDDDDDDDLLLLLLLLRRRRRRRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LDRRLU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RLUDRLUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RULD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUDDDDDDDDDDLLLLLLLLRRRRRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUUUUUUUDDDDDDDDDDDDDDDDLLLLLLLLLLLLRRRRRRRRRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRDDLLUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUDDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LRUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDLLRRUUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUDDDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUUUDDDDDDDDDDDDLLLLRRRRRRRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRRLLLDDDUUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUUUUUUUUUDDDDDDDDDDDDDDDDDDLLLLLLLLLLLLLLLLRRRRRRRRRRRRRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LDDRUURLDDRUURLDDRUURLDDRUURLDDR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LLLLLRRRRRRLLLLRRRRRRLLL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDDDUUUUUUUUUUDDDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UDUDUDUDUDUDUDUDUDUDUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDUDUDUDUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLRRRRUUUUDDDDLRRRLLLLUUUUDDDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRDDLLUURRDDLLUURRDDLLUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LRLRLRLRLRLRLRLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLRRLLRRLLRRLLRRLLRRLLRRLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LDRULDRULDRU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLRRRRLLLLRRRRLLLLRRRRLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLRRDDUULLRRDDUULLRRDDUULLRRDDUULL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RULLDDRRULLDDRRULLDDRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LLLLUUUUUURRRRRRRRDDDDDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RULLDRLDURDURLDLURDURLDLURDURLDL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UDLRUDLRUDLRUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUUDDUUDDUUDDLLLLRRRRLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RLRLRLRLRLRLRLRL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUUDDUUDDUUDDUUDDUUDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLLRRUUDDLLRRUUDDLLRRUUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUDDDLLLRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUUDDUUDDUUDDUUDDUUDDUUDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDLLLLRRRRUUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RLRLRLRLUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"URDLURDLURDLURDL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"ULDRULDRLDURDLURDLURDLURDLURDL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRDDLLUURRDDLLUURRDDLLUURRDDLLUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LUDRLUDRLUDRLUDRLUDRLUDR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LRRLRLRLUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUUDDUUDDUUDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRDDUULLRRDDUULL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LRUDLRUDLRUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LURDLURDLURDLURD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLRRRRUUDDUUDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDUDLRRLRLUDUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLRUDLRUDLRUDLRUDLRUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDDDUUDDDDUUDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LLLLRRRRLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"ULLDRRDUULLDRRDU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRRRRRRRRRLLLLLLLLLLDDDDDDDDDDUUUUUUUUUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RLRLRLRLRL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLDDDDUUUURRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDLLRRUUDDDDLLRRUUDDLLRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LLRRUUDDUUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LRRLRLRLUDUDUDUDLRRLRLRLUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RLRLRLRLRLRLRLRLRLRL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDUURRDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUDDUULLRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRRRDDDDLLLLUUUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LLLLRRRRUUUDDDUUUDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUDDDDDDDDLLLLLLLLRRRRRRRRRRLLRRUUDDLL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"DDUUUUDDLLRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUDDLLUURRDDDDLLRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RURURURURURURULULULULULULULU\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUUUDDDDDDLLLLRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUDDDDLLLLRRRRUUDDDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"LLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDDLLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRRDDDLLLUUUUUDDDD\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUUUUUUUDDDDDDDDDDLLLLLLLLRRRRRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RUDLRUDLRUDLRUDL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDLLRRUUDDLLRRUUDDLLRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RUDLRULDRLUDLRULDRLUDLRULDRL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UDUDUDUDUDUDUDUDUDUDUDUD\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"URDLURDLURDL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUDDDDDDDLLLLRRRRUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUDDDDDDDLLLLRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRDDLLUURRDDLLUU\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UUUUUUUUDDDDDDDDLLLLRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"RRRLLLLDDDUUUUUDDDLLLLURRRDDDDUUU\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"DDDDLLLLUUUUUUUUDDDDLLLLRRRRRRRR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"UDUDUDUDLRRLRLRL\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"LURDLURDLURDLURDLURDLURDLURDLURDL\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"UUUUUUUUDDDDDDDDLLLLRRRRRRRR\"",
+      "output": "False"
+    },
+    {
+      "input": "moves = \"RRUUDDLLDDUURLLR\"",
+      "output": "True"
+    },
+    {
+      "input": "moves = \"ULURDLDRULURDLDRULURDLDRULURDLDR\"",
+      "output": "True"
+    }
+  ],
+  "entry_point": "Solution().judgeCircle",
+  "language_independent_cases": true,
+  "problem": "robot-return-to-origin",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def judgeCircle(self, moves: str) -> bool:\n        ",
+  "test": "def check(candidate):\n    assert candidate(moves = \"LULLDDRRUURRDDLL\") == False\n    assert candidate(moves = \"UUUUUUUUUUDDDDDDDDDDLLLLRRRR\") == True\n    assert candidate(moves = \"UDLR\") == True\n    assert candidate(moves = \"UUDDRRLL\") == True\n    assert candidate(moves = \"LUDD\") == False\n    assert candidate(moves = \"RLUD\") == True\n    assert candidate(moves = \"RRDDLLUURR\") == False\n    assert candidate(moves = \"LRLRLRLR\") == True\n    assert candidate(moves = \"ULDRULDRULDR\") == True\n    assert candidate(moves = \"LDRU\") == True\n    assert candidate(moves = \"UDLRUDLRUDLR\") == True\n    assert candidate(moves = \"UUUUUUUUUUUUUUDDDDDDDDDDDDDDLLLLLLLLRRRRRRRRRRRR\") == False\n    assert candidate(moves = \"LDRRLU\") == True\n    assert candidate(moves = \"UUDDLLRR\") == True\n    assert candidate(moves = \"RLUDRLUD\") == True\n    assert candidate(moves = \"LLLLRRRR\") == True\n    assert candidate(moves = \"RULD\") == True\n    assert candidate(moves = \"UUUUUUUUUUDDDDDDDDDDLLLLLLLLRRRRRRRR\") == True\n    assert candidate(moves = \"UDUDUDUD\") == True\n    assert candidate(moves = \"UUUUUUUUUUUUUUUUDDDDDDDDDDDDDDDDLLLLLLLLLLLLRRRRRRRRRRRRRR\") == False\n    assert candidate(moves = \"RRDDLLUU\") == True\n    assert candidate(moves = \"LL\") == False\n    assert candidate(moves = \"UUUUDDDDLLLLRRRR\") == True\n    assert candidate(moves = \"LRUD\") == True\n    assert candidate(moves = \"UUDDLLRRUUDDLLRR\") == True\n    assert candidate(moves = \"UUUUDDDD\") == True\n    assert candidate(moves = \"RRDD\") == False\n    assert candidate(moves = \"UUUUUUUUUUUUDDDDDDDDDDDDLLLLRRRRRRRRRRRR\") == False\n    assert candidate(moves = \"RRRLLLDDDUUU\") == True\n    assert candidate(moves = \"UD\") == True\n    assert candidate(moves = \"UUUUUUUUUUUUUUUUUUDDDDDDDDDDDDDDDDDDLLLLLLLLLLLLLLLLRRRRRRRRRRRRRRRR\") == True\n    assert candidate(moves = \"UDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLR\") == True\n    assert candidate(moves = \"LDDRUURLDDRUURLDDRUURLDDRUURLDDR\") == False\n    assert candidate(moves = \"LLLLLRRRRRRLLLLRRRRRRLLL\") == True\n    assert candidate(moves = \"UUDDDDUUUUUUUUUUDDDD\") == False\n    assert candidate(moves = \"UDUDUDUDUDUDUDUDUDUDUDUDUDUD\") == True\n    assert candidate(moves = \"UDUDUDUDUDUDUDUD\") == True\n    assert candidate(moves = \"LLLLRRRRUUUUDDDDLRRRLLLLUUUUDDDD\") == False\n    assert candidate(moves = \"RRDDLLUURRDDLLUURRDDLLUU\") == True\n    assert candidate(moves = \"LRLRLRLRLRLRLRLR\") == True\n    assert candidate(moves = \"LLRRLLRRLLRRLLRRLLRRLLRRLLRR\") == True\n    assert candidate(moves = \"LDRULDRULDRU\") == True\n    assert candidate(moves = \"LLLLRRRRLLLLRRRRLLLLRRRRLLLLRRRR\") == True\n    assert candidate(moves = \"LLRRDDUULLRRDDUULLRRDDUULLRRDDUULL\") == False\n    assert candidate(moves = \"RULLDDRRULLDDRRULLDDRR\") == False\n    assert candidate(moves = \"LLLLUUUUUURRRRRRRRDDDDDD\") == False\n    assert candidate(moves = \"RULLDRLDURDURLDLURDURLDLURDURLDL\") == False\n    assert candidate(moves = \"UDLRUDLRUDLRUDLR\") == True\n    assert candidate(moves = \"UUDDUUDDUUDDUUDDLLLLRRRRLLLLRRRR\") == True\n    assert candidate(moves = \"RLRLRLRLRLRLRLRL\") == True\n    assert candidate(moves = \"UUDDUUDDUUDDUUDDUUDDUUDD\") == True\n    assert candidate(moves = \"UDLLRRUUDDLLRRUUDDLLRRUUDDLLRR\") == True\n    assert candidate(moves = \"UUUDDDLLLRRR\") == True\n    assert candidate(moves = \"UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR\") == True\n    assert candidate(moves = \"UUDDUUDDUUDDUUDDUUDDUUDDUUDD\") == True\n    assert candidate(moves = \"UUUUDDDDLLLLRRRRUUUUDDDDLLLLRRRR\") == True\n    assert candidate(moves = \"UUDDLLLLRRRRUUDDLLRR\") == True\n    assert candidate(moves = \"UDUDUDUDUD\") == True\n    assert candidate(moves = \"RLRLRLRLUDUDUDUD\") == True\n    assert candidate(moves = \"URDLURDLURDLURDL\") == True\n    assert candidate(moves = \"ULDRULDRLDURDLURDLURDLURDLURDL\") == False\n    assert candidate(moves = \"RRDDLLUURRDDLLUURRDDLLUURRDDLLUU\") == True\n    assert candidate(moves = \"LUDRLUDRLUDRLUDRLUDRLUDR\") == True\n    assert candidate(moves = \"LRRLRLRLUDUDUDUD\") == True\n    assert candidate(moves = \"UUDDUUDDUUDDUUDD\") == True\n    assert candidate(moves = \"RRDDUULLRRDDUULL\") == True\n    assert candidate(moves = \"LRUDLRUDLRUD\") == True\n    assert candidate(moves = \"LURDLURDLURDLURD\") == True\n    assert candidate(moves = \"LLLLRRRRUUDDUUDD\") == True\n    assert candidate(moves = \"UDUDLRRLRLUDUDLR\") == True\n    assert candidate(moves = \"LLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDD\") == True\n    assert candidate(moves = \"UDLRUDLRUDLRUDLRUDLRUDLR\") == True\n    assert candidate(moves = \"UUDDDDUUDDDDUUDD\") == False\n    assert candidate(moves = \"LLLLRRRRLLLLRRRR\") == True\n    assert candidate(moves = \"ULLDRRDUULLDRRDU\") == True\n    assert candidate(moves = \"UUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDDUUDD\") == True\n    assert candidate(moves = \"RRRRRRRRRRLLLLLLLLLLDDDDDDDDDDUUUUUUUUUU\") == True\n    assert candidate(moves = \"RLRLRLRLRL\") == True\n    assert candidate(moves = \"LLLLDDDDUUUURRRR\") == True\n    assert candidate(moves = \"UUDDLLRRUUDDDDLLRRUUDDLLRR\") == False\n    assert candidate(moves = \"LLRRUUDDUUDDLLRR\") == True\n    assert candidate(moves = \"LRRLRLRLUDUDUDUDLRRLRLRLUDUDUDUD\") == True\n    assert candidate(moves = \"RLRLRLRLRLRLRLRLRLRL\") == True\n    assert candidate(moves = \"UUDDUURRDD\") == False\n    assert candidate(moves = \"UUDDUULLRR\") == False\n    assert candidate(moves = \"RRRRDDDDLLLLUUUU\") == True\n    assert candidate(moves = \"UDLRUDLRUDLRUDLRUDLRUDLRUDLRUDLR\") == True\n    assert candidate(moves = \"LLLLRRRRUUUDDDUUUDDDLLLLRRRR\") == True\n    assert candidate(moves = \"UUUUUUUUDDDDDDDDLLLLLLLLRRRRRRRRRRLLRRUUDDLL\") == True\n    assert candidate(moves = \"DDUUUUDDLLRRRR\") == False\n    assert candidate(moves = \"UUDDLLUURRDDDDLLRR\") == False\n    assert candidate(moves = \"RURURURURURURULULULULULULULU\") == False\n    assert candidate(moves = \"UUUUUUDDDDDDLLLLRRRRRR\") == False\n    assert candidate(moves = \"UUDDDDLLLLRRRRUUDDDD\") == False\n    assert candidate(moves = \"LLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDDLLLLLLLLRRRRRRRRUUUUUUUUDDDDDDDD\") == True\n    assert candidate(moves = \"RRRDDDLLLUUUUUDDDD\") == False\n    assert candidate(moves = \"UUUUUUUUUUDDDDDDDDDDLLLLLLLLRRRRRRRRRR\") == False\n    assert candidate(moves = \"RUDLRUDLRUDLRUDL\") == True\n    assert candidate(moves = \"UUDDLLRRUUDDLLRRUUDDLLRR\") == True\n    assert candidate(moves = \"RUDLRULDRLUDLRULDRLUDLRULDRL\") == False\n    assert candidate(moves = \"UDUDUDUDUDUDUDUDUDUDUDUD\") == True\n    assert candidate(moves = \"URDLURDLURDL\") == True\n    assert candidate(moves = \"UUDDDDDDDLLLLRRRRUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUDDDDDDDLLLLRRRR\") == False\n    assert candidate(moves = \"RRDDLLUURRDDLLUU\") == True\n    assert candidate(moves = \"UUUUUUUUDDDDDDDDLLLLRRRR\") == True\n    assert candidate(moves = \"RRRLLLLDDDUUUUUDDDLLLLURRRDDDDUUU\") == False\n    assert candidate(moves = \"DDDDLLLLUUUUUUUUDDDDLLLLRRRRRRRR\") == True\n    assert candidate(moves = \"UDUDUDUDLRRLRLRL\") == True\n    assert candidate(moves = \"LURDLURDLURDLURDLURDLURDLURDLURDL\") == False\n    assert candidate(moves = \"UUUUUUUUDDDDDDDDLLLLRRRRRRRR\") == False\n    assert candidate(moves = \"RRUUDDLLDDUURLLR\") == True\n    assert candidate(moves = \"ULURDLDRULURDLDRULURDLDRULURDLDR\") == True\n",
+  "workload_hash": "8bcccaf751690da3f56730977e8a21c6955bf86474248d8e5fe6fde639130fd2"
+}

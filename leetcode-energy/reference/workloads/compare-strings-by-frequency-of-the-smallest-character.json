@@ -1,0 +1,415 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "queries = [\"ccc\"], words = [\"a\",\"bb\",\"ccc\",\"dddd\"]",
+      "output": "[1]"
+    },
+    {
+      "input": "queries = [\"a\", \"b\", \"c\"], words = [\"d\", \"e\", \"f\", \"g\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abc\", \"def\"], words = [\"ghi\", \"jkl\"]",
+      "output": "[0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\"], words = [\"aaa\",\"bbb\",\"ccc\"]",
+      "output": "[0]"
+    },
+    {
+      "input": "queries = [\"abc\", \"bcd\"], words = [\"def\", \"ghi\"]",
+      "output": "[0, 0]"
+    },
+    {
+      "input": "queries = [\"aaa\", \"bbb\", \"ccc\"], words = [\"ddd\", \"eee\", \"fff\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"a\",\"aa\",\"aaa\"], words = [\"b\",\"bb\",\"bbb\",\"bbbb\"]",
+      "output": "[3, 2, 1]"
+    },
+    {
+      "input": "queries = [\"cbd\"], words = [\"zaaaz\"]",
+      "output": "[1]"
+    },
+    {
+      "input": "queries = [\"bbb\",\"cc\"], words = [\"a\",\"aa\",\"aaa\",\"aaaa\"]",
+      "output": "[1, 2]"
+    },
+    {
+      "input": "queries = [\"a\"], words = [\"b\",\"c\",\"d\"]",
+      "output": "[0]"
+    },
+    {
+      "input": "queries = [\"abc\",\"bcd\"], words = [\"cde\",\"def\",\"efg\"]",
+      "output": "[0, 0]"
+    },
+    {
+      "input": "queries = [\"xyz\"], words = [\"aaa\",\"bbb\",\"ccc\",\"ddd\",\"eee\"]",
+      "output": "[5]"
+    },
+    {
+      "input": "queries = [\"a\", \"aa\"], words = [\"b\", \"bb\", \"bbb\"]",
+      "output": "[2, 1]"
+    },
+    {
+      "input": "queries = [\"xyz\"], words = [\"abc\", \"def\", \"ghi\"]",
+      "output": "[0]"
+    },
+    {
+      "input": "queries = [\"a\",\"b\",\"c\",\"d\",\"e\",\"f\",\"g\",\"h\",\"i\",\"j\"], words = [\"k\",\"l\",\"m\",\"n\",\"o\",\"p\",\"q\",\"r\",\"s\",\"t\"]",
+      "output": "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zz\",\"zaz\",\"zzz\"], words = [\"aaa\",\"aa\",\"a\",\"aaaaa\",\"aaaa\",\"aaaab\"]",
+      "output": "[4, 5, 3]"
+    },
+    {
+      "input": "queries = [\"aabbcc\", \"ddeeff\", \"gghhii\"], words = [\"jjkkll\", \"mmnnoo\", \"ppqqrr\", \"ssttuu\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aaa\", \"aab\", \"aac\"], words = [\"bbb\", \"bbc\", \"bba\", \"abb\", \"aba\", \"aab\"]",
+      "output": "[0, 1, 1]"
+    },
+    {
+      "input": "queries = [\"ab\",\"bc\",\"cd\"], words = [\"a\",\"b\",\"c\",\"d\",\"e\",\"f\",\"g\",\"h\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcd\",\"dcba\",\"abcd\",\"dcba\"], words = [\"abcd\",\"dcba\",\"abcd\",\"dcba\",\"abcd\",\"dcba\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcd\", \"abdc\", \"acdb\"], words = [\"bcde\", \"cdef\", \"defg\", \"efgh\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aaaa\", \"bbb\", \"cc\"], words = [\"zzzz\", \"zzz\", \"zz\", \"z\"]",
+      "output": "[0, 1, 2]"
+    },
+    {
+      "input": "queries = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], words = [\"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\"]",
+      "output": "[0, 0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdabcd\", \"bcdbcd\", \"cdcdcd\"], words = [\"ddd\", \"dddd\", \"ddddd\"]",
+      "output": "[3, 3, 2]"
+    },
+    {
+      "input": "queries = [\"a\", \"a\", \"a\", \"a\"], words = [\"b\", \"b\", \"b\", \"b\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcde\", \"bcdef\", \"cdefg\"], words = [\"defgh\", \"efghi\", \"fghij\", \"ghijk\", \"hijkl\", \"ijklm\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzzzzz\", \"zzzzzz\", \"zzzzz\", \"zzzz\", \"zzz\"], words = [\"zzzz\", \"zzz\", \"zz\", \"z\", \"a\"]",
+      "output": "[0, 0, 0, 0, 1]"
+    },
+    {
+      "input": "queries = [\"hello\", \"world\"], words = [\"python\", \"java\", \"csharp\", \"ruby\", \"swift\"]",
+      "output": "[1, 1]"
+    },
+    {
+      "input": "queries = [\"abcd\", \"ab\", \"abc\"], words = [\"abcd\", \"abc\", \"ab\", \"a\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"x\", \"xx\", \"xxx\", \"xxxx\", \"xxxxx\"], words = [\"y\", \"yy\", \"yyy\", \"yyyy\", \"yyyyy\", \"yyyyyy\"]",
+      "output": "[5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "queries = [\"xyxzyz\", \"yzyzyx\", \"zxzyxz\"], words = [\"zxyzxy\", \"xyzxyz\", \"yzxyzx\", \"zyxzyz\"]",
+      "output": "[0, 3, 0]"
+    },
+    {
+      "input": "queries = [\"abcdefghij\", \"bcdefghijk\", \"cdefghijkl\"], words = [\"defghijklm\", \"efghijklmn\", \"fghijklmno\", \"ghijklmnop\", \"hijklmnopq\", \"ijklmnopqr\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"xyz\", \"xyzz\", \"xyzzz\"], words = [\"wxyz\", \"wwxyz\", \"wwwxyz\", \"wwwwxyz\"]",
+      "output": "[3, 3, 3]"
+    },
+    {
+      "input": "queries = [\"abcdefghijklmnopqrstuvwxyz\",\"zyxwvutsrqponmlkjihgfedcba\"], words = [\"qwertyuiopasdfghjklzxcvbnm\",\"mnbvcxzasdfghjklpoiuytrewq\"]",
+      "output": "[0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzzzz\",\"yyyyyy\",\"xxxxxx\"], words = [\"wwwwww\",\"vvvvvv\",\"uuuuuu\",\"tttttt\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aabbcc\", \"bbccdd\", \"ccddee\", \"ddeeff\", \"eeffgg\"], words = [\"ffgghh\", \"gghhiijj\", \"hhiijjkk\", \"iijjkkll\", \"jjkkllmm\"]",
+      "output": "[0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdef\", \"bcdefg\", \"cdefgh\"], words = [\"defghi\", \"efghij\", \"fghijk\", \"ghijkl\", \"hijklm\", \"ijklmn\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"zzzz\"], words = [\"aaaaa\", \"aaa\", \"aa\", \"a\"]",
+      "output": "[1, 1]"
+    },
+    {
+      "input": "queries = [\"a\", \"aa\", \"aaa\", \"aaaa\", \"aaaaa\"], words = [\"z\", \"zz\", \"zzz\", \"zzzz\", \"zzzzz\", \"zzzzzz\"]",
+      "output": "[5, 4, 3, 2, 1]"
+    },
+    {
+      "input": "queries = [\"zzzzz\", \"zzzz\", \"zzz\", \"zz\", \"z\"], words = [\"zzzzzz\", \"zzzzz\", \"zzzz\", \"zzz\", \"zz\", \"z\", \"a\"]",
+      "output": "[1, 2, 3, 4, 5]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"zz\", \"z\"], words = [\"aaa\", \"aa\", \"a\", \"aaaa\"]",
+      "output": "[1, 2, 3]"
+    },
+    {
+      "input": "queries = [\"aabbcc\",\"bbaacc\",\"ccaabb\"], words = [\"aabbb\",\"bbccc\",\"ccaaa\",\"abcabc\",\"aabbccaa\"]",
+      "output": "[2, 2, 2]"
+    },
+    {
+      "input": "queries = [\"aab\",\"abb\",\"abc\"], words = [\"aab\",\"abb\",\"abc\",\"acc\",\"bac\",\"bca\",\"cab\",\"cba\",\"cca\"]",
+      "output": "[0, 1, 1]"
+    },
+    {
+      "input": "queries = [\"aaaaab\", \"aaaabb\", \"aaabbb\", \"aabbbb\", \"abbbbb\"], words = [\"bbbbb\", \"bbbb\", \"bbb\", \"bb\", \"b\"]",
+      "output": "[0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "queries = [\"apple\",\"banana\",\"cherry\"], words = [\"date\",\"elderberry\",\"fig\",\"grape\",\"kiwi\",\"lemon\",\"mango\",\"nectarine\",\"orange\",\"papaya\"]",
+      "output": "[2, 0, 2]"
+    },
+    {
+      "input": "queries = [\"apple\", \"banana\", \"cherry\"], words = [\"date\", \"fig\", \"grape\", \"kiwi\"]",
+      "output": "[1, 0, 1]"
+    },
+    {
+      "input": "queries = [\"aabbcc\", \"bbaacc\", \"ccaabb\"], words = [\"aabbc\", \"bbccc\", \"ccaab\", \"aaabb\", \"bbcca\", \"ccaab\"]",
+      "output": "[1, 1, 1]"
+    },
+    {
+      "input": "queries = [\"apple\", \"banana\", \"cherry\"], words = [\"date\", \"elderberry\", \"fig\", \"grape\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzzz\", \"zzzz\", \"zzz\", \"zz\", \"z\"], words = [\"aaaaa\", \"aaaa\", \"aaa\", \"aa\", \"a\"]",
+      "output": "[0, 1, 2, 3, 4]"
+    },
+    {
+      "input": "queries = [\"mnopqr\", \"nopqrs\", \"opqrst\"], words = [\"pqrsqt\", \"qrstuv\", \"rstuvw\", \"stuvwx\", \"tuvwxy\", \"uvwxyx\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"yyy\", \"xxx\"], words = [\"www\", \"vvv\", \"uuu\", \"ttt\", \"ss\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aabbcc\",\"bbccdd\",\"ccddeeff\"], words = [\"abc\",\"bcd\",\"cde\",\"def\",\"efg\",\"fgh\",\"ghi\",\"hij\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcd\", \"abc\", \"ab\"], words = [\"zzzz\", \"zzz\", \"zz\", \"z\"]",
+      "output": "[3, 3, 3]"
+    },
+    {
+      "input": "queries = [\"aabbcc\", \"bbccdd\", \"ccddaa\"], words = [\"ddeeff\", \"eeffgg\", \"ffgghh\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aab\", \"aabbb\", \"aabbbb\"], words = [\"b\", \"bb\", \"bbb\", \"bbbb\", \"bbbbb\", \"bbbbbb\", \"bbbbbbb\"]",
+      "output": "[5, 5, 5]"
+    },
+    {
+      "input": "queries = [\"leetcode\",\"challenge\",\"python\"], words = [\"programming\",\"interview\",\"solution\",\"difficulty\",\"easy\",\"hard\",\"medium\"]",
+      "output": "[1, 1, 1]"
+    },
+    {
+      "input": "queries = [\"abcd\", \"abcde\", \"abcdef\"], words = [\"bcdefg\", \"cdefgh\", \"defghi\", \"efghij\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcd\",\"abdc\",\"adcb\"], words = [\"bcde\",\"dcbe\",\"debc\",\"edcb\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"mississippi\",\"delaware\",\"kentucky\"], words = [\"alabama\",\"missouri\",\"georgia\",\"texas\",\"california\",\"arizona\",\"wyoming\"]",
+      "output": "[0, 1, 4]"
+    },
+    {
+      "input": "queries = [\"abcdefg\", \"hijklmn\", \"opqrstu\", \"vwxyzab\"], words = [\"cdefghi\", \"defghij\", \"efghijk\", \"fghijkl\", \"ghijklm\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdef\", \"ghijkl\", \"mnopqr\"], words = [\"stuvwx\", \"yzabcd\", \"efghij\", \"klmnop\", \"qrstuv\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"apple\", \"banana\", \"cherry\"], words = [\"date\", \"fig\", \"grape\", \"kiwi\", \"lemon\", \"mango\"]",
+      "output": "[1, 0, 1]"
+    },
+    {
+      "input": "queries = [\"hello\", \"world\"], words = [\"python\", \"java\", \"c++\", \"ruby\"]",
+      "output": "[1, 1]"
+    },
+    {
+      "input": "queries = [\"abcd\",\"abdc\",\"aabc\"], words = [\"aaa\",\"aaab\",\"baaab\",\"baaabbb\"]",
+      "output": "[4, 4, 4]"
+    },
+    {
+      "input": "queries = [\"a\"], words = [\"aaaaaaaaaab\",\"aaaaaaaaaa\",\"aaaaaaaaa\",\"aaaaaaaa\",\"aaaaaaa\",\"aaaaaa\",\"aaaaa\",\"aaaa\",\"aaa\",\"aa\",\"a\"]",
+      "output": "[10]"
+    },
+    {
+      "input": "queries = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], words = [\"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\"]",
+      "output": "[0, 0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\",\"zzzz\",\"zzzzz\"], words = [\"zzzzzz\",\"zzzzzzz\",\"zzzzzzzz\",\"zzzzzzzzz\"]",
+      "output": "[4, 4, 4]"
+    },
+    {
+      "input": "queries = [\"zzzzzz\", \"zzzzz\", \"zzzz\", \"zzz\", \"zz\", \"z\"], words = [\"aaaaaa\", \"aaaaa\", \"aaaa\", \"aaa\", \"aa\", \"a\"]",
+      "output": "[0, 1, 2, 3, 4, 5]"
+    },
+    {
+      "input": "queries = [\"abcdef\", \"bcdefg\", \"cdefgh\"], words = [\"defghi\", \"efghij\", \"fghijk\", \"ghijkl\", \"hijklm\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"xylophone\",\"guitar\",\"piano\"], words = [\"flute\",\"harmonica\",\"trumpet\",\"violin\",\"cello\",\"saxophone\",\"trombone\",\"tuba\"]",
+      "output": "[2, 2, 2]"
+    },
+    {
+      "input": "queries = [\"zz\", \"yy\", \"xx\"], words = [\"ww\", \"vv\", \"uu\", \"tt\", \"ss\", \"rr\", \"qq\", \"pp\", \"oo\", \"nn\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcxyz\",\"zzzz\",\"uvw\"], words = [\"mnop\",\"qrst\",\"xyz\",\"aabbcc\"]",
+      "output": "[1, 0, 1]"
+    },
+    {
+      "input": "queries = [\"mnop\", \"qrst\", \"uvwx\", \"yzab\", \"cdef\"], words = [\"efgh\", \"ghij\", \"ijkl\", \"klmn\", \"lmno\"]",
+      "output": "[0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"yyy\", \"xxx\"], words = [\"www\", \"vvv\", \"uuu\", \"ttt\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"xyzz\",\"zzyx\",\"zzyy\"], words = [\"zzzz\",\"zzyz\",\"zyzz\",\"zzzy\",\"zyyz\",\"zyzy\",\"zyzz\",\"zzzyz\"]",
+      "output": "[3, 3, 1]"
+    },
+    {
+      "input": "queries = [\"a\", \"b\", \"c\", \"d\", \"e\"], words = [\"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\"]",
+      "output": "[0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"zzzz\", \"zzzzz\"], words = [\"zzzzzz\", \"zzzzzzz\", \"zzzzzzzz\", \"zzzzzzzzz\", \"zzzzzzzzzz\"]",
+      "output": "[5, 5, 5]"
+    },
+    {
+      "input": "queries = [\"aaaaa\",\"bbb\",\"cccc\"], words = [\"ddd\",\"eee\",\"ffff\",\"ggggg\"]",
+      "output": "[0, 2, 1]"
+    },
+    {
+      "input": "queries = [\"mnop\",\"qrst\",\"uvwx\",\"yzab\"], words = [\"abcd\",\"efgh\",\"ijkl\",\"mnop\",\"qrst\",\"uvwx\",\"yzab\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdabcd\", \"abcdeabcde\", \"abcdefabcdef\"], words = [\"bcdefgbcdefg\", \"cdefghcdefgh\", \"defghidefghi\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzz\", \"yyyy\", \"xxxx\", \"wwww\"], words = [\"vvvv\", \"uuuu\", \"tttt\", \"ssss\", \"rrrr\", \"qqqq\", \"pppp\", \"oooo\", \"nnnn\", \"mmmm\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"applepie\", \"bananabread\", \"cherrypie\"], words = [\"strawberry\", \"blueberry\", \"raspberry\"]",
+      "output": "[1, 0, 1]"
+    },
+    {
+      "input": "queries = [\"abcd\", \"abcde\", \"abcdef\"], words = [\"bcde\", \"bcdef\", \"bcdefg\", \"bcdefgh\", \"bcdefghi\", \"bcdefghij\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzz\", \"yyy\", \"xxx\"], words = [\"www\", \"vvv\", \"uuu\", \"ttt\", \"sss\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abc\", \"abcd\", \"abcde\", \"abcdef\"], words = [\"bcde\", \"cdef\", \"defg\", \"efgh\", \"fghi\", \"ghij\", \"hijk\", \"ijkl\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"xyz\", \"xyzz\", \"xyzzz\"], words = [\"uvw\", \"uvwv\", \"uvwvv\", \"uvwvvv\", \"uvwvvvv\", \"uvwvvvvv\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aabbcc\", \"bbccdd\", \"ccddee\"], words = [\"ddeeff\", \"eeffgg\", \"ffgghh\", \"gghhii\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzzz\", \"yyyyy\", \"xxxxx\"], words = [\"wwwww\", \"vvvvv\", \"uuuuu\", \"ttttt\", \"sssss\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdefgh\", \"hgfedcba\", \"fedcbahg\"], words = [\"ghfedcba\", \"ahgfedcb\", \"bahgfedc\", \"cbahgfed\", \"dcbahegf\", \"efgdcba\", \"gfedcba\", \"hgfedcb\", \"abcdefgh\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdabcd\",\"bcdbcd\",\"cdab\"], words = [\"ababcdabcd\",\"bcdbcdabcd\",\"cdababcd\",\"abcdabcdabcd\",\"bcdabcd\",\"cdabcd\",\"abcd\"]",
+      "output": "[2, 2, 3]"
+    },
+    {
+      "input": "queries = [\"ab\", \"abc\", \"abcd\"], words = [\"bc\", \"bcd\", \"bcde\", \"bcdef\", \"bcdefg\", \"bcdefgh\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"zzzzzzzzzz\", \"zzzzzzzzz\", \"zzzzzzzz\", \"zzzzzzz\", \"zzzzzz\", \"zzzzz\", \"zzzz\", \"zzz\", \"zz\", \"z\"], words = [\"aaaaaaaaaa\", \"aaaaaaaaa\", \"aaaaaaaa\", \"aaaaaaa\", \"aaaaaa\", \"aaaaa\", \"aaaa\", \"aaa\", \"aa\", \"a\"]",
+      "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    },
+    {
+      "input": "queries = [\"zz\", \"yy\", \"xx\", \"ww\", \"vv\"], words = [\"uu\", \"tt\", \"ss\", \"rr\", \"qq\", \"pp\", \"oo\", \"nn\", \"mm\", \"ll\"]",
+      "output": "[0, 0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"abcdef\", \"ghijkl\", \"mnopqr\"], words = [\"stuvwx\", \"yzabcd\", \"efghij\", \"klmnop\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"mmmmmm\", \"nnnnnn\", \"oooooo\", \"pppppp\"], words = [\"qqqqqq\", \"rrrrrr\", \"ssssss\", \"tttttt\"]",
+      "output": "[0, 0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"qwerty\", \"asdfgh\", \"zxcvbn\"], words = [\"poiuyt\", \"lkjhgf\", \"mnbvcx\", \"tyuiop\", \"ghjkl\" \"cvbnm\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"xyz\", \"zyx\", \"yxz\"], words = [\"qrs\", \"rsq\", \"srq\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"aaaaaaaa\", \"bbbbbbbb\", \"cccccccc\"], words = [\"dddddddd\", \"eeeeeeee\", \"ffffffff\", \"gggggggg\", \"hhhhhhhh\", \"iiiiiiii\", \"jjjjjjjj\", \"kkkkkkkk\", \"llllllll\"]",
+      "output": "[0, 0, 0]"
+    },
+    {
+      "input": "queries = [\"ab\",\"bc\",\"cd\",\"de\",\"ef\"], words = [\"zz\",\"zy\",\"yx\",\"xw\",\"vw\",\"uv\",\"tu\",\"ts\",\"sr\",\"rq\",\"qp\",\"po\",\"on\",\"nm\",\"ml\",\"lk\",\"kj\",\"ji\",\"ih\",\"hg\",\"gf\",\"fe\",\"ed\",\"dc\",\"cb\",\"ba\"]",
+      "output": "[1, 1, 1, 1, 1]"
+    },
+    {
+      "input": "queries = [\"apple\", \"banana\", \"cherry\"], words = [\"date\", \"elderberry\", \"fig\", \"grape\", \"honeydew\"]",
+      "output": "[0, 0, 0]"
+    }
+  ],
+  "entry_point": "Solution().numSmallerByFrequency",
+  "language_independent_cases": true,
+  "problem": "compare-strings-by-frequency-of-the-smallest-character",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(queries=['ccc'], words=['a', 'bb', 'ccc', 'dddd']) == [1]\n    assert candidate(queries=['a', 'b', 'c'], words=['d', 'e', 'f', 'g']) == [0, 0, 0]\n    assert candidate(queries=['abc', 'def'], words=['ghi', 'jkl']) == [0, 0]\n    assert candidate(queries=['zzz'], words=['aaa', 'bbb', 'ccc']) == [0]\n    assert candidate(queries=['abc', 'bcd'], words=['def', 'ghi']) == [0, 0]\n    assert candidate(queries=['aaa', 'bbb', 'ccc'], words=['ddd', 'eee', 'fff']) == [0, 0, 0]\n    assert candidate(queries=['a', 'aa', 'aaa'], words=['b', 'bb', 'bbb', 'bbbb']) == [3, 2, 1]\n    assert candidate(queries=['cbd'], words=['zaaaz']) == [1]\n    assert candidate(queries=['bbb', 'cc'], words=['a', 'aa', 'aaa', 'aaaa']) == [1, 2]\n    assert candidate(queries=['a'], words=['b', 'c', 'd']) == [0]\n    assert candidate(queries=['abc', 'bcd'], words=['cde', 'def', 'efg']) == [0, 0]\n    assert candidate(queries=['xyz'], words=['aaa', 'bbb', 'ccc', 'ddd', 'eee']) == [5]\n    assert candidate(queries=['a', 'aa'], words=['b', 'bb', 'bbb']) == [2, 1]\n    assert candidate(queries=['xyz'], words=['abc', 'def', 'ghi']) == [0]\n    assert candidate(queries=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], words=['k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't']) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n    assert candidate(queries=['zz', 'zaz', 'zzz'], words=['aaa', 'aa', 'a', 'aaaaa', 'aaaa', 'aaaab']) == [4, 5, 3]\n    assert candidate(queries=['aabbcc', 'ddeeff', 'gghhii'], words=['jjkkll', 'mmnnoo', 'ppqqrr', 'ssttuu']) == [0, 0, 0]\n    assert candidate(queries=['aaa', 'aab', 'aac'], words=['bbb', 'bbc', 'bba', 'abb', 'aba', 'aab']) == [0, 1, 1]\n    assert candidate(queries=['ab', 'bc', 'cd'], words=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']) == [0, 0, 0]\n    assert candidate(queries=['abcd', 'dcba', 'abcd', 'dcba'], words=['abcd', 'dcba', 'abcd', 'dcba', 'abcd', 'dcba']) == [0, 0, 0, 0]\n    assert candidate(queries=['abcd', 'abdc', 'acdb'], words=['bcde', 'cdef', 'defg', 'efgh']) == [0, 0, 0]\n    assert candidate(queries=['aaaa', 'bbb', 'cc'], words=['zzzz', 'zzz', 'zz', 'z']) == [0, 1, 2]\n    assert candidate(queries=['a', 'b', 'c', 'd', 'e', 'f'], words=['g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']) == [0, 0, 0, 0, 0, 0]\n    assert candidate(queries=['abcdabcd', 'bcdbcd', 'cdcdcd'], words=['ddd', 'dddd', 'ddddd']) == [3, 3, 2]\n    assert candidate(queries=['a', 'a', 'a', 'a'], words=['b', 'b', 'b', 'b']) == [0, 0, 0, 0]\n    assert candidate(queries=['abcde', 'bcdef', 'cdefg'], words=['defgh', 'efghi', 'fghij', 'ghijk', 'hijkl', 'ijklm']) == [0, 0, 0]\n    assert candidate(queries=['zzzzzzz', 'zzzzzz', 'zzzzz', 'zzzz', 'zzz'], words=['zzzz', 'zzz', 'zz', 'z', 'a']) == [0, 0, 0, 0, 1]\n    assert candidate(queries=['hello', 'world'], words=['python', 'java', 'csharp', 'ruby', 'swift']) == [1, 1]\n    assert candidate(queries=['abcd', 'ab', 'abc'], words=['abcd', 'abc', 'ab', 'a']) == [0, 0, 0]\n    assert candidate(queries=['x', 'xx', 'xxx', 'xxxx', 'xxxxx'], words=['y', 'yy', 'yyy', 'yyyy', 'yyyyy', 'yyyyyy']) == [5, 4, 3, 2, 1]\n    assert candidate(queries=['xyxzyz', 'yzyzyx', 'zxzyxz'], words=['zxyzxy', 'xyzxyz', 'yzxyzx', 'zyxzyz']) == [0, 3, 0]\n    assert candidate(queries=['abcdefghij', 'bcdefghijk', 'cdefghijkl'], words=['defghijklm', 'efghijklmn', 'fghijklmno', 'ghijklmnop', 'hijklmnopq', 'ijklmnopqr']) == [0, 0, 0]\n    assert candidate(queries=['xyz', 'xyzz', 'xyzzz'], words=['wxyz', 'wwxyz', 'wwwxyz', 'wwwwxyz']) == [3, 3, 3]\n    assert candidate(queries=['abcdefghijklmnopqrstuvwxyz', 'zyxwvutsrqponmlkjihgfedcba'], words=['qwertyuiopasdfghjklzxcvbnm', 'mnbvcxzasdfghjklpoiuytrewq']) == [0, 0]\n    assert candidate(queries=['zzzzzz', 'yyyyyy', 'xxxxxx'], words=['wwwwww', 'vvvvvv', 'uuuuuu', 'tttttt']) == [0, 0, 0]\n    assert candidate(queries=['aabbcc', 'bbccdd', 'ccddee', 'ddeeff', 'eeffgg'], words=['ffgghh', 'gghhiijj', 'hhiijjkk', 'iijjkkll', 'jjkkllmm']) == [0, 0, 0, 0, 0]\n    assert candidate(queries=['abcdef', 'bcdefg', 'cdefgh'], words=['defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm', 'ijklmn']) == [0, 0, 0]\n    assert candidate(queries=['zzz', 'zzzz'], words=['aaaaa', 'aaa', 'aa', 'a']) == [1, 1]\n    assert candidate(queries=['a', 'aa', 'aaa', 'aaaa', 'aaaaa'], words=['z', 'zz', 'zzz', 'zzzz', 'zzzzz', 'zzzzzz']) == [5, 4, 3, 2, 1]\n    assert candidate(queries=['zzzzz', 'zzzz', 'zzz', 'zz', 'z'], words=['zzzzzz', 'zzzzz', 'zzzz', 'zzz', 'zz', 'z', 'a']) == [1, 2, 3, 4, 5]\n    assert candidate(queries=['zzz', 'zz', 'z'], words=['aaa', 'aa', 'a', 'aaaa']) == [1, 2, 3]\n    assert candidate(queries=['aabbcc', 'bbaacc', 'ccaabb'], words=['aabbb', 'bbccc', 'ccaaa', 'abcabc', 'aabbccaa']) == [2, 2, 2]\n    assert candidate(queries=['aab', 'abb', 'abc'], words=['aab', 'abb', 'abc', 'acc', 'bac', 'bca', 'cab', 'cba', 'cca']) == [0, 1, 1]\n    assert candidate(queries=['aaaaab', 'aaaabb', 'aaabbb', 'aabbbb', 'abbbbb'], words=['bbbbb', 'bbbb', 'bbb', 'bb', 'b']) == [0, 1, 2, 3, 4]\n    assert candidate(queries=['apple', 'banana', 'cherry'], words=['date', 'elderberry', 'fig', 'grape', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya']) == [2, 0, 2]\n    assert candidate(queries=['apple', 'banana', 'cherry'], words=['date', 'fig', 'grape', 'kiwi']) == [1, 0, 1]\n    assert candidate(queries=['aabbcc', 'bbaacc', 'ccaabb'], words=['aabbc', 'bbccc', 'ccaab', 'aaabb', 'bbcca', 'ccaab']) == [1, 1, 1]\n    assert candidate(queries=['apple', 'banana', 'cherry'], words=['date', 'elderberry', 'fig', 'grape']) == [0, 0, 0]\n    assert candidate(queries=['zzzzz', 'zzzz', 'zzz', 'zz', 'z'], words=['aaaaa', 'aaaa', 'aaa', 'aa', 'a']) == [0, 1, 2, 3, 4]\n    assert candidate(queries=['mnopqr', 'nopqrs', 'opqrst'], words=['pqrsqt', 'qrstuv', 'rstuvw', 'stuvwx', 'tuvwxy', 'uvwxyx']) == [0, 0, 0]\n    assert candidate(queries=['zzz', 'yyy', 'xxx'], words=['www', 'vvv', 'uuu', 'ttt', 'ss']) == [0, 0, 0]\n    assert candidate(queries=['aabbcc', 'bbccdd', 'ccddeeff'], words=['abc', 'bcd', 'cde', 'def', 'efg', 'fgh', 'ghi', 'hij']) == [0, 0, 0]\n    assert candidate(queries=['abcd', 'abc', 'ab'], words=['zzzz', 'zzz', 'zz', 'z']) == [3, 3, 3]\n    assert candidate(queries=['aabbcc', 'bbccdd', 'ccddaa'], words=['ddeeff', 'eeffgg', 'ffgghh']) == [0, 0, 0]\n    assert candidate(queries=['aab', 'aabbb', 'aabbbb'], words=['b', 'bb', 'bbb', 'bbbb', 'bbbbb', 'bbbbbb', 'bbbbbbb']) == [5, 5, 5]\n    assert candidate(queries=['leetcode', 'challenge', 'python'], words=['programming', 'interview', 'solution', 'difficulty', 'easy', 'hard', 'medium']) == [1, 1, 1]\n    assert candidate(queries=['abcd', 'abcde', 'abcdef'], words=['bcdefg', 'cdefgh', 'defghi', 'efghij']) == [0, 0, 0]\n    assert candidate(queries=['abcd', 'abdc', 'adcb'], words=['bcde', 'dcbe', 'debc', 'edcb']) == [0, 0, 0]\n    assert candidate(queries=['mississippi', 'delaware', 'kentucky'], words=['alabama', 'missouri', 'georgia', 'texas', 'california', 'arizona', 'wyoming']) == [0, 1, 4]\n    assert candidate(queries=['abcdefg', 'hijklmn', 'opqrstu', 'vwxyzab'], words=['cdefghi', 'defghij', 'efghijk', 'fghijkl', 'ghijklm']) == [0, 0, 0, 0]\n    assert candidate(queries=['abcdef', 'ghijkl', 'mnopqr'], words=['stuvwx', 'yzabcd', 'efghij', 'klmnop', 'qrstuv']) == [0, 0, 0]\n    assert candidate(queries=['apple', 'banana', 'cherry'], words=['date', 'fig', 'grape', 'kiwi', 'lemon', 'mango']) == [1, 0, 1]\n    assert candidate(queries=['hello', 'world'], words=['python', 'java', 'c++', 'ruby']) == [1, 1]\n    assert candidate(queries=['abcd', 'abdc', 'aabc'], words=['aaa', 'aaab', 'baaab', 'baaabbb']) == [4, 4, 4]\n    assert candidate(queries=['a'], words=['aaaaaaaaaab', 'aaaaaaaaaa', 'aaaaaaaaa', 'aaaaaaaa', 'aaaaaaa', 'aaaaaa', 'aaaaa', 'aaaa', 'aaa', 'aa', 'a']) == [10]\n    assert candidate(queries=['a', 'b', 'c', 'd', 'e', 'f'], words=['g', 'h', 'i', 'j', 'k', 'l', 'm']) == [0, 0, 0, 0, 0, 0]\n    assert candidate(queries=['zzz', 'zzzz', 'zzzzz'], words=['zzzzzz', 'zzzzzzz', 'zzzzzzzz', 'zzzzzzzzz']) == [4, 4, 4]\n    assert candidate(queries=['zzzzzz', 'zzzzz', 'zzzz', 'zzz', 'zz', 'z'], words=['aaaaaa', 'aaaaa', 'aaaa', 'aaa', 'aa', 'a']) == [0, 1, 2, 3, 4, 5]\n    assert candidate(queries=['abcdef', 'bcdefg', 'cdefgh'], words=['defghi', 'efghij', 'fghijk', 'ghijkl', 'hijklm']) == [0, 0, 0]\n    assert candidate(queries=['xylophone', 'guitar', 'piano'], words=['flute', 'harmonica', 'trumpet', 'violin', 'cello', 'saxophone', 'trombone', 'tuba']) == [2, 2, 2]\n    assert candidate(queries=['zz', 'yy', 'xx'], words=['ww', 'vv', 'uu', 'tt', 'ss', 'rr', 'qq', 'pp', 'oo', 'nn']) == [0, 0, 0]\n    assert candidate(queries=['abcxyz', 'zzzz', 'uvw'], words=['mnop', 'qrst', 'xyz', 'aabbcc']) == [1, 0, 1]\n    assert candidate(queries=['mnop', 'qrst', 'uvwx', 'yzab', 'cdef'], words=['efgh', 'ghij', 'ijkl', 'klmn', 'lmno']) == [0, 0, 0, 0, 0]\n    assert candidate(queries=['zzz', 'yyy', 'xxx'], words=['www', 'vvv', 'uuu', 'ttt']) == [0, 0, 0]\n    assert candidate(queries=['xyzz', 'zzyx', 'zzyy'], words=['zzzz', 'zzyz', 'zyzz', 'zzzy', 'zyyz', 'zyzy', 'zyzz', 'zzzyz']) == [3, 3, 1]\n    assert candidate(queries=['a', 'b', 'c', 'd', 'e'], words=['f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o']) == [0, 0, 0, 0, 0]\n    assert candidate(queries=['zzz', 'zzzz', 'zzzzz'], words=['zzzzzz', 'zzzzzzz', 'zzzzzzzz', 'zzzzzzzzz', 'zzzzzzzzzz']) == [5, 5, 5]\n    assert candidate(queries=['aaaaa', 'bbb', 'cccc'], words=['ddd', 'eee', 'ffff', 'ggggg']) == [0, 2, 1]\n    assert candidate(queries=['mnop', 'qrst', 'uvwx', 'yzab'], words=['abcd', 'efgh', 'ijkl', 'mnop', 'qrst', 'uvwx', 'yzab']) == [0, 0, 0, 0]\n    assert candidate(queries=['abcdabcd', 'abcdeabcde', 'abcdefabcdef'], words=['bcdefgbcdefg', 'cdefghcdefgh', 'defghidefghi']) == [0, 0, 0]\n    assert candidate(queries=['zzzz', 'yyyy', 'xxxx', 'wwww'], words=['vvvv', 'uuuu', 'tttt', 'ssss', 'rrrr', 'qqqq', 'pppp', 'oooo', 'nnnn', 'mmmm']) == [0, 0, 0, 0]\n    assert candidate(queries=['applepie', 'bananabread', 'cherrypie'], words=['strawberry', 'blueberry', 'raspberry']) == [1, 0, 1]\n    assert candidate(queries=['abcd', 'abcde', 'abcdef'], words=['bcde', 'bcdef', 'bcdefg', 'bcdefgh', 'bcdefghi', 'bcdefghij']) == [0, 0, 0]\n    assert candidate(queries=['zzz', 'yyy', 'xxx'], words=['www', 'vvv', 'uuu', 'ttt', 'sss']) == [0, 0, 0]\n    assert candidate(queries=['abc', 'abcd', 'abcde', 'abcdef'], words=['bcde', 'cdef', 'defg', 'efgh', 'fghi', 'ghij', 'hijk', 'ijkl']) == [0, 0, 0, 0]\n    assert candidate(queries=['xyz', 'xyzz', 'xyzzz'], words=['uvw', 'uvwv', 'uvwvv', 'uvwvvv', 'uvwvvvv', 'uvwvvvvv']) == [0, 0, 0]\n    assert candidate(queries=['aabbcc', 'bbccdd', 'ccddee'], words=['ddeeff', 'eeffgg', 'ffgghh', 'gghhii']) == [0, 0, 0]\n    assert candidate(queries=['zzzzz', 'yyyyy', 'xxxxx'], words=['wwwww', 'vvvvv', 'uuuuu', 'ttttt', 'sssss']) == [0, 0, 0]\n    assert candidate(queries=['abcdefgh', 'hgfedcba', 'fedcbahg'], words=['ghfedcba', 'ahgfedcb', 'bahgfedc', 'cbahgfed', 'dcbahegf', 'efgdcba', 'gfedcba', 'hgfedcb', 'abcdefgh']) == [0, 0, 0]\n    assert candidate(queries=['abcdabcd', 'bcdbcd', 'cdab'], words=['ababcdabcd', 'bcdbcdabcd', 'cdababcd', 'abcdabcdabcd', 'bcdabcd', 'cdabcd', 'abcd']) == [2, 2, 3]\n    assert candidate(queries=['ab', 'abc', 'abcd'], words=['bc', 'bcd', 'bcde', 'bcdef', 'bcdefg', 'bcdefgh']) == [0, 0, 0]\n    assert candidate(queries=['zzzzzzzzzz', 'zzzzzzzzz', 'zzzzzzzz', 'zzzzzzz', 'zzzzzz', 'zzzzz', 'zzzz', 'zzz', 'zz', 'z'], words=['aaaaaaaaaa', 'aaaaaaaaa', 'aaaaaaaa', 'aaaaaaa', 'aaaaaa', 'aaaaa', 'aaaa', 'aaa', 'aa', 'a']) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n    assert candidate(queries=['zz', 'yy', 'xx', 'ww', 'vv'], words=['uu', 'tt', 'ss', 'rr', 'qq', 'pp', 'oo', 'nn', 'mm', 'll']) == [0, 0, 0, 0, 0]\n    assert candidate(queries=['abcdef', 'ghijkl', 'mnopqr'], words=['stuvwx', 'yzabcd', 'efghij', 'klmnop']) == [0, 0, 0]\n    assert candidate(queries=['mmmmmm', 'nnnnnn', 'oooooo', 'pppppp'], words=['qqqqqq', 'rrrrrr', 'ssssss', 'tttttt']) == [0, 0, 0, 0]\n    assert candidate(queries=['qwerty', 'asdfgh', 'zxcvbn'], words=['poiuyt', 'lkjhgf', 'mnbvcx', 'tyuiop', 'ghjklcvbnm']) == [0, 0, 0]\n    assert candidate(queries=['xyz', 'zyx', 'yxz'], words=['qrs', 'rsq', 'srq']) == [0, 0, 0]\n    assert candidate(queries=['aaaaaaaa', 'bbbbbbbb', 'cccccccc'], words=['dddddddd', 'eeeeeeee', 'ffffffff', 'gggggggg', 'hhhhhhhh', 'iiiiiiii', 'jjjjjjjj', 'kkkkkkkk', 'llllllll']) == [0, 0, 0]\n    assert candidate(queries=['ab', 'bc', 'cd', 'de', 'ef'], words=['zz', 'zy', 'yx', 'xw', 'vw', 'uv', 'tu', 'ts', 'sr', 'rq', 'qp', 'po', 'on', 'nm', 'ml', 'lk', 'kj', 'ji', 'ih', 'hg', 'gf', 'fe', 'ed', 'dc', 'cb', 'ba']) == [1, 1, 1, 1, 1]\n    assert candidate(queries=['apple', 'banana', 'cherry'], words=['date', 'elderberry', 'fig', 'grape', 'honeydew']) == [0, 0, 0]\n",
+  "workload_hash": "33ed4f708fc7eb1a8bcb0100981daf90d11fe5bad385609ab266b57c31d1c82e"
+}

@@ -1,0 +1,467 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "s = \"(a)(a)(a)aaa\", knowledge = [[\"a\",\"yes\"]] ",
+      "output": "yesyesyesaaa"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)\", knowledge = [[\"a\",\"1\"],[\"b\",\"2\"],[\"c\",\"3\"]]",
+      "output": "123?"
+    },
+    {
+      "input": "s = \"hi(name)\", knowledge = [[\"a\",\"b\"]] ",
+      "output": "hi?"
+    },
+    {
+      "input": "s = \"(a)(a)(a)aaa\", knowledge = [[\"a\",\"yes\"]]",
+      "output": "yesyesyesaaa"
+    },
+    {
+      "input": "s = \"\", knowledge = []",
+      "output": ""
+    },
+    {
+      "input": "s = \"noknowledgehere\", knowledge = []",
+      "output": "noknowledgehere"
+    },
+    {
+      "input": "s = \"no(brackets)here\", knowledge = []",
+      "output": "no?here"
+    },
+    {
+      "input": "s = \"hi(name)\", knowledge = [[\"a\",\"b\"]]",
+      "output": "hi?"
+    },
+    {
+      "input": "s = \"(nested)but(not)really\", knowledge = [[\"nested\",\"nested\"],[\"not\",\"not\"]]",
+      "output": "nestedbutnotreally"
+    },
+    {
+      "input": "s = \"(key1)(key2)(key3)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"]]",
+      "output": "value1value2?"
+    },
+    {
+      "input": "s = \"this(is)a(test)\", knowledge = [[\"is\",\"was\"],[\"test\",\"trial\"]]",
+      "output": "thiswasatrial"
+    },
+    {
+      "input": "s = \"(name)is(age)yearsold\", knowledge = [[\"name\",\"bob\"],[\"age\",\"two\"]]",
+      "output": "bobistwoyearsold"
+    },
+    {
+      "input": "s = \"(key1)(key2)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"]]",
+      "output": "value1value2"
+    },
+    {
+      "input": "s = \"(single)\", knowledge = [[\"single\",\"one\"]]",
+      "output": "one"
+    },
+    {
+      "input": "s = \"(last)one\", knowledge = [[\"last\",\"final\"]]",
+      "output": "finalone"
+    },
+    {
+      "input": "s = \"single\", knowledge = [[\"single\",\"word\"]]",
+      "output": "single"
+    },
+    {
+      "input": "s = \"hello\", knowledge = []",
+      "output": "hello"
+    },
+    {
+      "input": "s = \"(unknown)key\", knowledge = [[\"known\",\"value\"]]",
+      "output": "?key"
+    },
+    {
+      "input": "s = \"(name)is(age)yearsold\", knowledge = [[\"name\",\"bob\"],[\"age\",\"two\"]] ",
+      "output": "bobistwoyearsold"
+    },
+    {
+      "input": "s = \"(key1)(key2)(key3)\", knowledge = [[\"key1\",\"val1\"],[\"key2\",\"val2\"],[\"key3\",\"val3\"]]",
+      "output": "val1val2val3"
+    },
+    {
+      "input": "s = \"(book)written(by)(author)\", knowledge = [[\"book\",\"1984\"],[\"author\",\"George\"]]",
+      "output": "1984written?George"
+    },
+    {
+      "input": "s = \"(city)(in)(country)\", knowledge = [[\"city\",\"Tokyo\"],[\"country\",\"Japan\"]]",
+      "output": "Tokyo?Japan"
+    },
+    {
+      "input": "s = \"(nested)(key)(nested)\", knowledge = [[\"key\",\"value\"],[\"nested\",\"deep\"]]",
+      "output": "deepvaluedeep"
+    },
+    {
+      "input": "s = \"(ingredient)requiresto(cooktime)mins\", knowledge = [[\"ingredient\",\"Cookies\"],[\"cooktime\",\"15\"]]",
+      "output": "Cookiesrequiresto15mins"
+    },
+    {
+      "input": "s = \"(one)(two)(three)(four)(five)\", knowledge = [[\"one\",\"1\"],[\"two\",\"2\"],[\"three\",\"3\"],[\"four\",\"4\"]]",
+      "output": "1234?"
+    },
+    {
+      "input": "s = \"(customer)(order)at(store)\", knowledge = [[\"customer\",\"Alice\"],[\"order\",\"Order123\"]]",
+      "output": "AliceOrder123at?"
+    },
+    {
+      "input": "s = \"(keyA)and(keyB)and(keyC)and(keyD)\", knowledge = [[\"keyA\",\"valA\"],[\"keyB\",\"valB\"]]",
+      "output": "valAandvalBand?and?"
+    },
+    {
+      "input": "s = \"(key)with(missing)knowledge\", knowledge = [[\"key\",\"value1\"],[\"missing\",\"value2\"],[\"knowledge\",\"value3\"]]",
+      "output": "value1withvalue2knowledge"
+    },
+    {
+      "input": "s = \"(greeting)(world)(planet)\", knowledge = [[\"greeting\",\"hello\"],[\"world\",\"earth\"],[\"planet\",\"mars\"]] ",
+      "output": "helloearthmars"
+    },
+    {
+      "input": "s = \"(this)(is)(a)(test)(string)(with)(multiple)(keys)\", knowledge = [[\"this\",\"it\"],[\"is\",\"be\"],[\"a\",\"an\"],[\"test\",\"example\"],[\"string\",\"sequence\"],[\"with\",\"having\"],[\"multiple\",\"several\"],[\"keys\",\"identifiers\"]] ",
+      "output": "itbeanexamplesequencehavingseveralidentifiers"
+    },
+    {
+      "input": "s = \"(language)programmingis(fun)\", knowledge = [[\"language\",\"python\"],[\"fun\",\"awesome\"]]",
+      "output": "pythonprogrammingisawesome"
+    },
+    {
+      "input": "s = \"(fruit)(vegetable)\", knowledge = [[\"fruit\",\"apple\"],[\"vegetable\",\"carrot\"]]",
+      "output": "applecarrot"
+    },
+    {
+      "input": "s = \"(animal)lives(in)(habitat)\", knowledge = [[\"animal\",\"tiger\"],[\"habitat\",\"jungle\"]]",
+      "output": "tigerlives?jungle"
+    },
+    {
+      "input": "s = \"(name)has(age)yearsand(occupation)\", knowledge = [[\"name\",\"Alice\"],[\"age\",\"30\"]]",
+      "output": "Alicehas30yearsand?"
+    },
+    {
+      "input": "s = \"(longkey)(anotherkey)(yetanotherkey)\", knowledge = [[\"longkey\",\"averylongvalue\"],[\"anotherkey\",\"shortval\"],[\"yetanotherkey\",\"value\"]]",
+      "output": "averylongvalueshortvalvalue"
+    },
+    {
+      "input": "s = \"(language)is(cool)\", knowledge = [[\"language\",\"Python\"],[\"cool\",\"awesome\"]]",
+      "output": "Pythonisawesome"
+    },
+    {
+      "input": "s = \"(first)and(last)name\", knowledge = [[\"first\",\"john\"],[\"last\",\"doe\"]]",
+      "output": "johnanddoename"
+    },
+    {
+      "input": "s = \"(name)is(living)(in)(city)\", knowledge = [[\"name\",\"bob\"],[\"in\",\"at\"],[\"city\",\"london\"]] ",
+      "output": "bobis?atlondon"
+    },
+    {
+      "input": "s = \"(animal)(eats)(food)\", knowledge = [[\"animal\",\"lion\"],[\"food\",\"meat\"]]",
+      "output": "lion?meat"
+    },
+    {
+      "input": "s = \"(user)likes(to)(eat)(food)\", knowledge = [[\"user\",\"alice\"],[\"eat\",\"enjoy\"],[\"food\",\"pizza\"]] ",
+      "output": "alicelikes?enjoypizza"
+    },
+    {
+      "input": "s = \"(prefix)middle(suffix)\", knowledge = [[\"prefix\",\"start\"],[\"suffix\",\"end\"]]",
+      "output": "startmiddleend"
+    },
+    {
+      "input": "s = \"(flower)grows(in)(soil)\", knowledge = [[\"flower\",\"rose\"],[\"soil\",\"dirt\"]]",
+      "output": "rosegrows?dirt"
+    },
+    {
+      "input": "s = \"(first)nameis(last)name\", knowledge = [[\"first\",\"john\"],[\"last\",\"doe\"]]",
+      "output": "johnnameisdoename"
+    },
+    {
+      "input": "s = \"(longkey1)and(longkey2)and(longkey3)and(longkey4)\", knowledge = [[\"longkey1\",\"value1\"],[\"longkey2\",\"value2\"],[\"longkey3\",\"value3\"],[\"longkey4\",\"value4\"]] ",
+      "output": "value1andvalue2andvalue3andvalue4"
+    },
+    {
+      "input": "s = \"(department)islocatedat(address)\", knowledge = [[\"department\",\"Sales\"],[\"address\",\"123BusinessSt\"]] ",
+      "output": "Salesislocatedat123BusinessSt"
+    },
+    {
+      "input": "s = \"(name)has(a)(pet)\", knowledge = [[\"name\",\"Mary\"],[\"pet\",\"dog\"]]",
+      "output": "Maryhas?dog"
+    },
+    {
+      "input": "s = \"(drink)is(served)in(glass)\", knowledge = [[\"drink\",\"water\"],[\"glass\",\"big\"]]",
+      "output": "wateris?inbig"
+    },
+    {
+      "input": "s = \"prefix(key1)middle(key2)suffix\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"]] ",
+      "output": "prefixvalue1middlevalue2suffix"
+    },
+    {
+      "input": "s = \"(key1)(key2)(key1)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"]]",
+      "output": "value1value2value1"
+    },
+    {
+      "input": "s = \"(item1)(item2)(item3)(item4)\", knowledge = [[\"item1\",\"itemA\"],[\"item2\",\"itemB\"],[\"item4\",\"itemD\"]]",
+      "output": "itemAitemB?itemD"
+    },
+    {
+      "input": "s = \"(greeting)world\", knowledge = [[\"greeting\",\"hello\"],[\"farewell\",\"bye\"]]",
+      "output": "helloworld"
+    },
+    {
+      "input": "s = \"(user)(name)livesin(city)with(zip)\", knowledge = [[\"user\",\"John\"],[\"city\",\"San Francisco\"],[\"zip\",\"94111\"]]",
+      "output": "John?livesinSan Franciscowith94111"
+    },
+    {
+      "input": "s = \"(person)(from)(place)isvisiting(placeofinterest)\", knowledge = [[\"person\",\"Bob\"],[\"from\",\"LosAngeles\"],[\"place\",\"SanFrancisco\"],[\"placeofinterest\",\"Alcatraz\"]] ",
+      "output": "BobLosAngelesSanFranciscoisvisitingAlcatraz"
+    },
+    {
+      "input": "s = \"(longkeyname)is(longervaluename)\", knowledge = [[\"longkeyname\",\"longervaluename\"]]",
+      "output": "longervaluenameis?"
+    },
+    {
+      "input": "s = \"(name)has(a)(pet)(dog)\", knowledge = [[\"name\",\"john\"],[\"pet\",\"dog\"],[\"dog\",\"buddy\"]] ",
+      "output": "johnhas?dogbuddy"
+    },
+    {
+      "input": "s = \"(key1)and(key2)and(key3)and(key4)and(key5)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"],[\"key3\",\"value3\"],[\"key4\",\"value4\"]] ",
+      "output": "value1andvalue2andvalue3andvalue4and?"
+    },
+    {
+      "input": "s = \"(prefix)_(suffix)\", knowledge = [[\"prefix\",\"start\"],[\"suffix\",\"end\"]]",
+      "output": "start_end"
+    },
+    {
+      "input": "s = \"(number)plus(number)equals(twice_number)\", knowledge = [[\"number\",\"10\"],[\"twice_number\",\"20\"]] ",
+      "output": "10plus10equals20"
+    },
+    {
+      "input": "s = \"(name)livesat(address)andworksat(company)\", knowledge = [[\"name\",\"Alice\"],[\"address\",\"Wonderland\"],[\"company\",\"TechCorp\"]]",
+      "output": "AlicelivesatWonderlandandworksatTechCorp"
+    },
+    {
+      "input": "s = \"(repeated)(key)(repeated)(key)\", knowledge = [[\"key\",\"value\"]]",
+      "output": "?value?value"
+    },
+    {
+      "input": "s = \"(planet)(orbits)around(star)\", knowledge = [[\"planet\",\"Earth\"],[\"star\",\"Sun\"]]",
+      "output": "Earth?aroundSun"
+    },
+    {
+      "input": "s = \"(item)isavaliablefrom(date)\", knowledge = [[\"item\",\"Smartphone\"],[\"date\",\"2023-12-15\"]] ",
+      "output": "Smartphoneisavaliablefrom2023-12-15"
+    },
+    {
+      "input": "s = \"(conference)heldon(date)\", knowledge = [[\"conference\",\"GDC\"],[\"date\",\"2024-03-19\"]]",
+      "output": "GDCheldon2024-03-19"
+    },
+    {
+      "input": "s = \"(first)(second)(third)(fourth)\", knowledge = [[\"first\",\"one\"],[\"second\",\"two\"],[\"third\",\"three\"]]",
+      "output": "onetwothree?"
+    },
+    {
+      "input": "s = \"(color)(animal)\", knowledge = [[\"color\",\"blue\"],[\"animal\",\"dog\"],[\"bird\",\"sparrow\"]]",
+      "output": "bluedog"
+    },
+    {
+      "input": "s = \"(firstName)(lastName)isfrom(city)in(country)\", knowledge = [[\"firstName\",\"Alice\"],[\"lastName\",\"Wonderland\"],[\"city\",\"Wonderland\"],[\"country\",\"Fantasia\"]] ",
+      "output": "AliceWonderlandisfromWonderlandinFantasia"
+    },
+    {
+      "input": "s = \"(product)costs(dollars)and(euros)\", knowledge = [[\"product\",\"Laptop\"],[\"dollars\",\"1200\"],[\"euros\",\"1020\"]] ",
+      "output": "Laptopcosts1200and1020"
+    },
+    {
+      "input": "s = \"(nested)but(notreally)nested\", knowledge = [[\"nested\",\"deep\"],[\"notreally\",\"shallow\"]]",
+      "output": "deepbutshallownested"
+    },
+    {
+      "input": "s = \"(first)(last)(age)\", knowledge = [[\"first\",\"john\"],[\"last\",\"doe\"],[\"age\",\"thirty\"]]",
+      "output": "johndoethirty"
+    },
+    {
+      "input": "s = \"(city)(has)(many)(buildings)\", knowledge = [[\"city\",\"newyork\"],[\"many\",\"lots\"]]",
+      "output": "newyork?lots?"
+    },
+    {
+      "input": "s = \"(language)(framework)\", knowledge = [[\"language\",\"Python\"],[\"framework\",\"Django\"],[\"version\",\"3.9\"]]",
+      "output": "PythonDjango"
+    },
+    {
+      "input": "s = \"(model)releasedon(year)\", knowledge = [[\"model\",\"iPhone15\"],[\"year\",\"2023\"]] ",
+      "output": "iPhone15releasedon2023"
+    },
+    {
+      "input": "s = \"(multiple)(keys)(here)\", knowledge = [[\"multiple\",\"many\"],[\"keys\",\"some\"],[\"here\",\"there\"]]",
+      "output": "manysomethere"
+    },
+    {
+      "input": "s = \"(username)lastloggedin(on)\", knowledge = [[\"username\",\"Alice\"],[\"on\",\"2023-10-01\"]]",
+      "output": "Alicelastloggedin2023-10-01"
+    },
+    {
+      "input": "s = \"(planet)is(almost)full\", knowledge = [[\"planet\",\"Earth\"],[\"almost\",\"not\"],[\"full\",\"occupied\"]]",
+      "output": "Earthisnotfull"
+    },
+    {
+      "input": "s = \"(person)loves(to)(eat)\", knowledge = [[\"person\",\"John\"],[\"eat\",\"pizza\"]]",
+      "output": "Johnloves?pizza"
+    },
+    {
+      "input": "s = \"(car)is(fast)and(economical)\", knowledge = [[\"car\",\"Ferrari\"],[\"fast\",\"very\"],[\"economical\",\"not\"]]",
+      "output": "Ferrariisveryandnot"
+    },
+    {
+      "input": "s = \"(key1)and(key2)and(key3)and(key4)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"],[\"key4\",\"value4\"]] ",
+      "output": "value1andvalue2and?andvalue4"
+    },
+    {
+      "input": "s = \"(part1)(part2)(part3)\", knowledge = [[\"part1\",\"first\"],[\"part2\",\"second\"],[\"part3\",\"third\"]]",
+      "output": "firstsecondthird"
+    },
+    {
+      "input": "s = \"(color)(is)(used)in(art)\", knowledge = [[\"color\",\"red\"],[\"used\",\"frequently\"]]",
+      "output": "red?frequentlyin?"
+    },
+    {
+      "input": "s = \"(key1)is(key2)and(key3)is(key4)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"],[\"key3\",\"value3\"]] ",
+      "output": "value1isvalue2andvalue3is?"
+    },
+    {
+      "input": "s = \"(name)from(country)is(visitor)\", knowledge = [[\"name\",\"Bob\"],[\"country\",\"USA\"]]",
+      "output": "BobfromUSAis?"
+    },
+    {
+      "input": "s = \"(prefix)example(suffix)\", knowledge = [[\"prefix\",\"pre\"],[\"suffix\",\"post\"]]",
+      "output": "preexamplepost"
+    },
+    {
+      "input": "s = \"(unknown)(key)(not)(present)\", knowledge = [[\"present\",\"available\"]] ",
+      "output": "???available"
+    },
+    {
+      "input": "s = \"(unknown)(key1)(unknown)(key2)(unknown)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"]] ",
+      "output": "?value1?value2?"
+    },
+    {
+      "input": "s = \"(book)writtenby(author)publishedby(publisher)\", knowledge = [[\"book\",\"GreatExpectations\"],[\"author\",\"CharlesDickens\"],[\"publisher\",\"ChapmanandHall\"]] ",
+      "output": "GreatExpectationswrittenbyCharlesDickenspublishedbyChapmanandHall"
+    },
+    {
+      "input": "s = \"(instrument)plays(music)\", knowledge = [[\"instrument\",\"guitar\"],[\"music\",\"beautiful\"]]",
+      "output": "guitarplaysbeautiful"
+    },
+    {
+      "input": "s = \"(prefix)(middle)(suffix)\", knowledge = [[\"prefix\",\"pre\"],[\"middle\",\"mid\"],[\"suffix\",\"suf\"]]",
+      "output": "premidsuf"
+    },
+    {
+      "input": "s = \"(fruit)are(sweet)and(healthy)\", knowledge = [[\"fruit\",\"apples\"],[\"sweet\",\"very\"],[\"healthy\",\"indeed\"]]",
+      "output": "applesareveryandindeed"
+    },
+    {
+      "input": "s = \"(repeated)repeated(repeated)\", knowledge = [[\"repeated\",\"again\"]]",
+      "output": "againrepeatedagain"
+    },
+    {
+      "input": "s = \"(planet)(moon)orbiting(planet)\", knowledge = [[\"planet\",\"Earth\"],[\"moon\",\"Moon\"]]",
+      "output": "EarthMoonorbitingEarth"
+    },
+    {
+      "input": "s = \"(key1)(key1)(key1)(key1)(key1)\", knowledge = [[\"key1\",\"repeat\"]] ",
+      "output": "repeatrepeatrepeatrepeatrepeat"
+    },
+    {
+      "input": "s = \"(key1)is(key2)yearsold(key3)\", knowledge = [[\"key1\",\"bob\"],[\"key2\",\"two\"]]",
+      "output": "bobistwoyearsold?"
+    },
+    {
+      "input": "s = \"(greeting)everyone(my)name(is)(unknown)\", knowledge = [[\"greeting\",\"hi\"],[\"my\",\"my\"]]",
+      "output": "hieveryonemyname??"
+    },
+    {
+      "input": "s = \"(bird)can(fly)high\", knowledge = [[\"bird\",\"eagle\"],[\"fly\",\"soar\"]]",
+      "output": "eaglecansoarhigh"
+    },
+    {
+      "input": "s = \"(country)has(a)(capital)\", knowledge = [[\"country\",\"India\"],[\"capital\",\"Delhi\"]]",
+      "output": "Indiahas?Delhi"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)\", knowledge = [[\"a\",\"one\"],[\"b\",\"two\"],[\"c\",\"three\"],[\"d\",\"four\"],[\"e\",\"five\"],[\"f\",\"six\"]] ",
+      "output": "onetwothreefourfivesix"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(t)(u)(v)(w)(x)(y)(z)\", knowledge = [[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"],[\"d\",\"D\"],[\"e\",\"E\"],[\"f\",\"F\"],[\"g\",\"G\"],[\"h\",\"H\"],[\"i\",\"I\"],[\"j\",\"J\"],[\"k\",\"K\"],[\"l\",\"L\"],[\"m\",\"M\"],[\"n\",\"N\"],[\"o\",\"O\"],[\"p\",\"P\"],[\"q\",\"Q\"],[\"r\",\"R\"],[\"s\",\"S\"],[\"t\",\"T\"],[\"u\",\"U\"],[\"v\",\"V\"],[\"w\",\"W\"],[\"x\",\"X\"],[\"y\",\"Y\"],[\"z\",\"Z\"]]",
+      "output": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+      "input": "s = \"(color)(of)the(sky)\", knowledge = [[\"color\",\"blue\"],[\"sky\",\"beautiful\"]]",
+      "output": "blue?thebeautiful"
+    },
+    {
+      "input": "s = \"(name)is(unknown)but(age)yearsold\", knowledge = [[\"name\",\"alice\"],[\"age\",\"30\"]]",
+      "output": "aliceis?but30yearsold"
+    },
+    {
+      "input": "s = \"(product)priceis(price)and(quantity)itemsareavailable\", knowledge = [[\"product\",\"laptop\"],[\"price\",\"1000\"],[\"quantity\",\"5\"]]",
+      "output": "laptoppriceis1000and5itemsareavailable"
+    },
+    {
+      "input": "s = \"(item)costs(amount)currency\", knowledge = [[\"item\",\"book\"],[\"amount\",\"10\"],[\"currency\",\"dollars\"]] ",
+      "output": "bookcosts10currency"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)\", knowledge = [[\"a\",\"alpha\"],[\"b\",\"beta\"],[\"c\",\"gamma\"],[\"d\",\"delta\"],[\"e\",\"epsilon\"]] ",
+      "output": "alphabetagammadeltaepsilon"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(t)(u)(v)(w)(x)(y)(z)\", knowledge = [[\"a\",\"a\"],[\"b\",\"b\"],[\"c\",\"c\"],[\"d\",\"d\"],[\"e\",\"e\"],[\"f\",\"f\"],[\"g\",\"g\"],[\"h\",\"h\"],[\"i\",\"i\"],[\"j\",\"j\"],[\"k\",\"k\"],[\"l\",\"l\"],[\"m\",\"m\"],[\"n\",\"n\"],[\"o\",\"o\"],[\"p\",\"p\"],[\"q\",\"q\"],[\"r\",\"r\"],[\"s\",\"s\"],[\"t\",\"t\"],[\"u\",\"u\"],[\"v\",\"v\"],[\"w\",\"w\"],[\"x\",\"x\"],[\"y\",\"y\"],[\"z\",\"z\"]]",
+      "output": "abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "input": "s = \"(repeated)(repeated)(repeated)\", knowledge = [[\"repeated\",\"rep\"]]",
+      "output": "repreprep"
+    },
+    {
+      "input": "s = \"(key1)and(key2)and(key3)and(key4)and(key5)and(key6)and(key7)\", knowledge = [[\"key1\",\"value1\"],[\"key2\",\"value2\"],[\"key3\",\"value3\"],[\"key4\",\"value4\"],[\"key5\",\"value5\"],[\"key6\",\"value6\"],[\"key7\",\"value7\"]] ",
+      "output": "value1andvalue2andvalue3andvalue4andvalue5andvalue6andvalue7"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)\", knowledge = [[\"a\",\"one\"],[\"b\",\"two\"],[\"c\",\"three\"],[\"d\",\"four\"],[\"e\",\"five\"],[\"f\",\"six\"],[\"g\",\"seven\"],[\"h\",\"eight\"],[\"i\",\"nine\"],[\"j\",\"ten\"]]",
+      "output": "onetwothreefourfivesixseveneightnineten"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)\", knowledge = [[\"a\",\"yes\"],[\"b\",\"no\"],[\"c\",\"maybe\"],[\"d\",\"sure\"],[\"e\",\"never\"],[\"f\",\"always\"],[\"g\",\"often\"],[\"h\",\"rarely\"],[\"i\",\"sometimes\"],[\"j\",\"usually\"]] ",
+      "output": "yesnomaybesureneveralwaysoftenrarelysometimesusually"
+    },
+    {
+      "input": "s = \"(user)hasposted(numberofposts)times\", knowledge = [[\"user\",\"Charlie\"],[\"numberofposts\",\"250\"]] ",
+      "output": "Charliehasposted250times"
+    },
+    {
+      "input": "s = \"(complex)(string)(with)(multiple)(keys)\", knowledge = [[\"complex\",\"com\"],[\"string\",\"str\"],[\"with\",\"wi\"],[\"multiple\",\"mul\"],[\"keys\",\"ke\"]]",
+      "output": "comstrwimulke"
+    },
+    {
+      "input": "s = \"(key1)is(key2)yearsold(key3)and(key4)livesin(key5)\", knowledge = [[\"key1\",\"bob\"],[\"key2\",\"two\"],[\"key5\",\"NYC\"]] ",
+      "output": "bobistwoyearsold?and?livesinNYC"
+    },
+    {
+      "input": "s = \"(a)(b)(c)(d)(e)(f)\", knowledge = [[\"a\",\"alpha\"],[\"b\",\"beta\"],[\"c\",\"gamma\"],[\"d\",\"delta\"],[\"e\",\"epsilon\"]]",
+      "output": "alphabetagammadeltaepsilon?"
+    },
+    {
+      "input": "s = \"(nested)brackets(are)not(allowed)\", knowledge = [[\"nested\",\"nested\"],[\"brackets\",\"brackets\"],[\"not\",\"not\"]]",
+      "output": "nestedbrackets?not?"
+    }
+  ],
+  "entry_point": "Solution().evaluate",
+  "language_independent_cases": true,
+  "problem": "evaluate-the-bracket-pairs-of-a-string",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def evaluate(self, s: str, knowledge: List[List[str]]) -> str:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(s='(a)(a)(a)aaa', knowledge=[['a', 'yes']]) == 'yesyesyesaaa'\n    assert candidate(s='(a)(b)(c)(d)', knowledge=[['a', '1'], ['b', '2'], ['c', '3']]) == '123?'\n    assert candidate(s='hi(name)', knowledge=[['a', 'b']]) == 'hi?'\n    assert candidate(s='(a)(a)(a)aaa', knowledge=[['a', 'yes']]) == 'yesyesyesaaa'\n    assert candidate(s='', knowledge=[]) == ''\n    assert candidate(s='noknowledgehere', knowledge=[]) == 'noknowledgehere'\n    assert candidate(s='no(brackets)here', knowledge=[]) == 'no?here'\n    assert candidate(s='hi(name)', knowledge=[['a', 'b']]) == 'hi?'\n    assert candidate(s='(nested)but(not)really', knowledge=[['nested', 'nested'], ['not', 'not']]) == 'nestedbutnotreally'\n    assert candidate(s='(key1)(key2)(key3)', knowledge=[['key1', 'value1'], ['key2', 'value2']]) == 'value1value2?'\n    assert candidate(s='this(is)a(test)', knowledge=[['is', 'was'], ['test', 'trial']]) == 'thiswasatrial'\n    assert candidate(s='(name)is(age)yearsold', knowledge=[['name', 'bob'], ['age', 'two']]) == 'bobistwoyearsold'\n    assert candidate(s='(key1)(key2)', knowledge=[['key1', 'value1'], ['key2', 'value2']]) == 'value1value2'\n    assert candidate(s='(single)', knowledge=[['single', 'one']]) == 'one'\n    assert candidate(s='(last)one', knowledge=[['last', 'final']]) == 'finalone'\n    assert candidate(s='single', knowledge=[['single', 'word']]) == 'single'\n    assert candidate(s='hello', knowledge=[]) == 'hello'\n    assert candidate(s='(unknown)key', knowledge=[['known', 'value']]) == '?key'\n    assert candidate(s='(name)is(age)yearsold', knowledge=[['name', 'bob'], ['age', 'two']]) == 'bobistwoyearsold'\n    assert candidate(s='(key1)(key2)(key3)', knowledge=[['key1', 'val1'], ['key2', 'val2'], ['key3', 'val3']]) == 'val1val2val3'\n    assert candidate(s='(book)written(by)(author)', knowledge=[['book', '1984'], ['author', 'George']]) == '1984written?George'\n    assert candidate(s='(city)(in)(country)', knowledge=[['city', 'Tokyo'], ['country', 'Japan']]) == 'Tokyo?Japan'\n    assert candidate(s='(nested)(key)(nested)', knowledge=[['key', 'value'], ['nested', 'deep']]) == 'deepvaluedeep'\n    assert candidate(s='(ingredient)requiresto(cooktime)mins', knowledge=[['ingredient', 'Cookies'], ['cooktime', '15']]) == 'Cookiesrequiresto15mins'\n    assert candidate(s='(one)(two)(three)(four)(five)', knowledge=[['one', '1'], ['two', '2'], ['three', '3'], ['four', '4']]) == '1234?'\n    assert candidate(s='(customer)(order)at(store)', knowledge=[['customer', 'Alice'], ['order', 'Order123']]) == 'AliceOrder123at?'\n    assert candidate(s='(keyA)and(keyB)and(keyC)and(keyD)', knowledge=[['keyA', 'valA'], ['keyB', 'valB']]) == 'valAandvalBand?and?'\n    assert candidate(s='(key)with(missing)knowledge', knowledge=[['key', 'value1'], ['missing', 'value2'], ['knowledge', 'value3']]) == 'value1withvalue2knowledge'\n    assert candidate(s='(greeting)(world)(planet)', knowledge=[['greeting', 'hello'], ['world', 'earth'], ['planet', 'mars']]) == 'helloearthmars'\n    assert candidate(s='(this)(is)(a)(test)(string)(with)(multiple)(keys)', knowledge=[['this', 'it'], ['is', 'be'], ['a', 'an'], ['test', 'example'], ['string', 'sequence'], ['with', 'having'], ['multiple', 'several'], ['keys', 'identifiers']]) == 'itbeanexamplesequencehavingseveralidentifiers'\n    assert candidate(s='(language)programmingis(fun)', knowledge=[['language', 'python'], ['fun', 'awesome']]) == 'pythonprogrammingisawesome'\n    assert candidate(s='(fruit)(vegetable)', knowledge=[['fruit', 'apple'], ['vegetable', 'carrot']]) == 'applecarrot'\n    assert candidate(s='(animal)lives(in)(habitat)', knowledge=[['animal', 'tiger'], ['habitat', 'jungle']]) == 'tigerlives?jungle'\n    assert candidate(s='(name)has(age)yearsand(occupation)', knowledge=[['name', 'Alice'], ['age', '30']]) == 'Alicehas30yearsand?'\n    assert candidate(s='(longkey)(anotherkey)(yetanotherkey)', knowledge=[['longkey', 'averylongvalue'], ['anotherkey', 'shortval'], ['yetanotherkey', 'value']]) == 'averylongvalueshortvalvalue'\n    assert candidate(s='(language)is(cool)', knowledge=[['language', 'Python'], ['cool', 'awesome']]) == 'Pythonisawesome'\n    assert candidate(s='(first)and(last)name', knowledge=[['first', 'john'], ['last', 'doe']]) == 'johnanddoename'\n    assert candidate(s='(name)is(living)(in)(city)', knowledge=[['name', 'bob'], ['in', 'at'], ['city', 'london']]) == 'bobis?atlondon'\n    assert candidate(s='(animal)(eats)(food)', knowledge=[['animal', 'lion'], ['food', 'meat']]) == 'lion?meat'\n    assert candidate(s='(user)likes(to)(eat)(food)', knowledge=[['user', 'alice'], ['eat', 'enjoy'], ['food', 'pizza']]) == 'alicelikes?enjoypizza'\n    assert candidate(s='(prefix)middle(suffix)', knowledge=[['prefix', 'start'], ['suffix', 'end']]) == 'startmiddleend'\n    assert candidate(s='(flower)grows(in)(soil)', knowledge=[['flower', 'rose'], ['soil', 'dirt']]) == 'rosegrows?dirt'\n    assert candidate(s='(first)nameis(last)name', knowledge=[['first', 'john'], ['last', 'doe']]) == 'johnnameisdoename'\n    assert candidate(s='(longkey1)and(longkey2)and(longkey3)and(longkey4)', knowledge=[['longkey1', 'value1'], ['longkey2', 'value2'], ['longkey3', 'value3'], ['longkey4', 'value4']]) == 'value1andvalue2andvalue3andvalue4'\n    assert candidate(s='(department)islocatedat(address)', knowledge=[['department', 'Sales'], ['address', '123BusinessSt']]) == 'Salesislocatedat123BusinessSt'\n    assert candidate(s='(name)has(a)(pet)', knowledge=[['name', 'Mary'], ['pet', 'dog']]) == 'Maryhas?dog'\n    assert candidate(s='(drink)is(served)in(glass)', knowledge=[['drink', 'water'], ['glass', 'big']]) == 'wateris?inbig'\n    assert candidate(s='prefix(key1)middle(key2)suffix', knowledge=[['key1', 'value1'], ['key2', 'value2']]) == 'prefixvalue1middlevalue2suffix'\n    assert candidate(s='(key1)(key2)(key1)', knowledge=[['key1', 'value1'], ['key2', 'value2']]) == 'value1value2value1'\n    assert candidate(s='(item1)(item2)(item3)(item4)', knowledge=[['item1', 'itemA'], ['item2', 'itemB'], ['item4', 'itemD']]) == 'itemAitemB?itemD'\n    assert candidate(s='(greeting)world', knowledge=[['greeting', 'hello'], ['farewell', 'bye']]) == 'helloworld'\n    assert candidate(s='(user)(name)livesin(city)with(zip)', knowledge=[['user', 'John'], ['city', 'San Francisco'], ['zip', '94111']]) == 'John?livesinSan Franciscowith94111'\n    assert candidate(s='(person)(from)(place)isvisiting(placeofinterest)', knowledge=[['person', 'Bob'], ['from', 'LosAngeles'], ['place', 'SanFrancisco'], ['placeofinterest', 'Alcatraz']]) == 'BobLosAngelesSanFranciscoisvisitingAlcatraz'\n    assert candidate(s='(longkeyname)is(longervaluename)', knowledge=[['longkeyname', 'longervaluename']]) == 'longervaluenameis?'\n    assert candidate(s='(name)has(a)(pet)(dog)', knowledge=[['name', 'john'], ['pet', 'dog'], ['dog', 'buddy']]) == 'johnhas?dogbuddy'\n    assert candidate(s='(key1)and(key2)and(key3)and(key4)and(key5)', knowledge=[['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3'], ['key4', 'value4']]) == 'value1andvalue2andvalue3andvalue4and?'\n    assert candidate(s='(prefix)_(suffix)', knowledge=[['prefix', 'start'], ['suffix', 'end']]) == 'start_end'\n    assert candidate(s='(number)plus(number)equals(twice_number)', knowledge=[['number', '10'], ['twice_number', '20']]) == '10plus10equals20'\n    assert candidate(s='(name)livesat(address)andworksat(company)', knowledge=[['name', 'Alice'], ['address', 'Wonderland'], ['company', 'TechCorp']]) == 'AlicelivesatWonderlandandworksatTechCorp'\n    assert candidate(s='(repeated)(key)(repeated)(key)', knowledge=[['key', 'value']]) == '?value?value'\n    assert candidate(s='(planet)(orbits)around(star)', knowledge=[['planet', 'Earth'], ['star', 'Sun']]) == 'Earth?aroundSun'\n    assert candidate(s='(item)isavaliablefrom(date)', knowledge=[['item', 'Smartphone'], ['date', '2023-12-15']]) == 'Smartphoneisavaliablefrom2023-12-15'\n    assert candidate(s='(conference)heldon(date)', knowledge=[['conference', 'GDC'], ['date', '2024-03-19']]) == 'GDCheldon2024-03-19'\n    assert candidate(s='(first)(second)(third)(fourth)', knowledge=[['first', 'one'], ['second', 'two'], ['third', 'three']]) == 'onetwothree?'\n    assert candidate(s='(color)(animal)', knowledge=[['color', 'blue'], ['animal', 'dog'], ['bird', 'sparrow']]) == 'bluedog'\n    assert candidate(s='(firstName)(lastName)isfrom(city)in(country)', knowledge=[['firstName', 'Alice'], ['lastName', 'Wonderland'], ['city', 'Wonderland'], ['country', 'Fantasia']]) == 'AliceWonderlandisfromWonderlandinFantasia'\n    assert candidate(s='(product)costs(dollars)and(euros)', knowledge=[['product', 'Laptop'], ['dollars', '1200'], ['euros', '1020']]) == 'Laptopcosts1200and1020'\n    assert candidate(s='(nested)but(notreally)nested', knowledge=[['nested', 'deep'], ['notreally', 'shallow']]) == 'deepbutshallownested'\n    assert candidate(s='(first)(last)(age)', knowledge=[['first', 'john'], ['last', 'doe'], ['age', 'thirty']]) == 'johndoethirty'\n    assert candidate(s='(city)(has)(many)(buildings)', knowledge=[['city', 'newyork'], ['many', 'lots']]) == 'newyork?lots?'\n    assert candidate(s='(language)(framework)', knowledge=[['language', 'Python'], ['framework', 'Django'], ['version', '3.9']]) == 'PythonDjango'\n    assert candidate(s='(model)releasedon(year)', knowledge=[['model', 'iPhone15'], ['year', '2023']]) == 'iPhone15releasedon2023'\n    assert candidate(s='(multiple)(keys)(here)', knowledge=[['multiple', 'many'], ['keys', 'some'], ['here', 'there']]) == 'manysomethere'\n    assert candidate(s='(username)lastloggedin(on)', knowledge=[['username', 'Alice'], ['on', '2023-10-01']]) == 'Alicelastloggedin2023-10-01'\n    assert candidate(s='(planet)is(almost)full', knowledge=[['planet', 'Earth'], ['almost', 'not'], ['full', 'occupied']]) == 'Earthisnotfull'\n    assert candidate(s='(person)loves(to)(eat)', knowledge=[['person', 'John'], ['eat', 'pizza']]) == 'Johnloves?pizza'\n    assert candidate(s='(car)is(fast)and(economical)', knowledge=[['car', 'Ferrari'], ['fast', 'very'], ['economical', 'not']]) == 'Ferrariisveryandnot'\n    assert candidate(s='(key1)and(key2)and(key3)and(key4)', knowledge=[['key1', 'value1'], ['key2', 'value2'], ['key4', 'value4']]) == 'value1andvalue2and?andvalue4'\n    assert candidate(s='(part1)(part2)(part3)', knowledge=[['part1', 'first'], ['part2', 'second'], ['part3', 'third']]) == 'firstsecondthird'\n    assert candidate(s='(color)(is)(used)in(art)', knowledge=[['color', 'red'], ['used', 'frequently']]) == 'red?frequentlyin?'\n    assert candidate(s='(key1)is(key2)and(key3)is(key4)', knowledge=[['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]) == 'value1isvalue2andvalue3is?'\n    assert candidate(s='(name)from(country)is(visitor)', knowledge=[['name', 'Bob'], ['country', 'USA']]) == 'BobfromUSAis?'\n    assert candidate(s='(prefix)example(suffix)', knowledge=[['prefix', 'pre'], ['suffix', 'post']]) == 'preexamplepost'\n    assert candidate(s='(unknown)(key)(not)(present)', knowledge=[['present', 'available']]) == '???available'\n    assert candidate(s='(unknown)(key1)(unknown)(key2)(unknown)', knowledge=[['key1', 'value1'], ['key2', 'value2']]) == '?value1?value2?'\n    assert candidate(s='(book)writtenby(author)publishedby(publisher)', knowledge=[['book', 'GreatExpectations'], ['author', 'CharlesDickens'], ['publisher', 'ChapmanandHall']]) == 'GreatExpectationswrittenbyCharlesDickenspublishedbyChapmanandHall'\n    assert candidate(s='(instrument)plays(music)', knowledge=[['instrument', 'guitar'], ['music', 'beautiful']]) == 'guitarplaysbeautiful'\n    assert candidate(s='(prefix)(middle)(suffix)', knowledge=[['prefix', 'pre'], ['middle', 'mid'], ['suffix', 'suf']]) == 'premidsuf'\n    assert candidate(s='(fruit)are(sweet)and(healthy)', knowledge=[['fruit', 'apples'], ['sweet', 'very'], ['healthy', 'indeed']]) == 'applesareveryandindeed'\n    assert candidate(s='(repeated)repeated(repeated)', knowledge=[['repeated', 'again']]) == 'againrepeatedagain'\n    assert candidate(s='(planet)(moon)orbiting(planet)', knowledge=[['planet', 'Earth'], ['moon', 'Moon']]) == 'EarthMoonorbitingEarth'\n    assert candidate(s='(key1)(key1)(key1)(key1)(key1)', knowledge=[['key1', 'repeat']]) == 'repeatrepeatrepeatrepeatrepeat'\n    assert candidate(s='(key1)is(key2)yearsold(key3)', knowledge=[['key1', 'bob'], ['key2', 'two']]) == 'bobistwoyearsold?'\n    assert candidate(s='(greeting)everyone(my)name(is)(unknown)', knowledge=[['greeting', 'hi'], ['my', 'my']]) == 'hieveryonemyname??'\n    assert candidate(s='(bird)can(fly)high', knowledge=[['bird', 'eagle'], ['fly', 'soar']]) == 'eaglecansoarhigh'\n    assert candidate(s='(country)has(a)(capital)', knowledge=[['country', 'India'], ['capital', 'Delhi']]) == 'Indiahas?Delhi'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)', knowledge=[['a', 'one'], ['b', 'two'], ['c', 'three'], ['d', 'four'], ['e', 'five'], ['f', 'six']]) == 'onetwothreefourfivesix'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(t)(u)(v)(w)(x)(y)(z)', knowledge=[['a', 'A'], ['b', 'B'], ['c', 'C'], ['d', 'D'], ['e', 'E'], ['f', 'F'], ['g', 'G'], ['h', 'H'], ['i', 'I'], ['j', 'J'], ['k', 'K'], ['l', 'L'], ['m', 'M'], ['n', 'N'], ['o', 'O'], ['p', 'P'], ['q', 'Q'], ['r', 'R'], ['s', 'S'], ['t', 'T'], ['u', 'U'], ['v', 'V'], ['w', 'W'], ['x', 'X'], ['y', 'Y'], ['z', 'Z']]) == 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\n    assert candidate(s='(color)(of)the(sky)', knowledge=[['color', 'blue'], ['sky', 'beautiful']]) == 'blue?thebeautiful'\n    assert candidate(s='(name)is(unknown)but(age)yearsold', knowledge=[['name', 'alice'], ['age', '30']]) == 'aliceis?but30yearsold'\n    assert candidate(s='(product)priceis(price)and(quantity)itemsareavailable', knowledge=[['product', 'laptop'], ['price', '1000'], ['quantity', '5']]) == 'laptoppriceis1000and5itemsareavailable'\n    assert candidate(s='(item)costs(amount)currency', knowledge=[['item', 'book'], ['amount', '10'], ['currency', 'dollars']]) == 'bookcosts10currency'\n    assert candidate(s='(a)(b)(c)(d)(e)', knowledge=[['a', 'alpha'], ['b', 'beta'], ['c', 'gamma'], ['d', 'delta'], ['e', 'epsilon']]) == 'alphabetagammadeltaepsilon'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)(m)(n)(o)(p)(q)(r)(s)(t)(u)(v)(w)(x)(y)(z)', knowledge=[['a', 'a'], ['b', 'b'], ['c', 'c'], ['d', 'd'], ['e', 'e'], ['f', 'f'], ['g', 'g'], ['h', 'h'], ['i', 'i'], ['j', 'j'], ['k', 'k'], ['l', 'l'], ['m', 'm'], ['n', 'n'], ['o', 'o'], ['p', 'p'], ['q', 'q'], ['r', 'r'], ['s', 's'], ['t', 't'], ['u', 'u'], ['v', 'v'], ['w', 'w'], ['x', 'x'], ['y', 'y'], ['z', 'z']]) == 'abcdefghijklmnopqrstuvwxyz'\n    assert candidate(s='(repeated)(repeated)(repeated)', knowledge=[['repeated', 'rep']]) == 'repreprep'\n    assert candidate(s='(key1)and(key2)and(key3)and(key4)and(key5)and(key6)and(key7)', knowledge=[['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3'], ['key4', 'value4'], ['key5', 'value5'], ['key6', 'value6'], ['key7', 'value7']]) == 'value1andvalue2andvalue3andvalue4andvalue5andvalue6andvalue7'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)', knowledge=[['a', 'one'], ['b', 'two'], ['c', 'three'], ['d', 'four'], ['e', 'five'], ['f', 'six'], ['g', 'seven'], ['h', 'eight'], ['i', 'nine'], ['j', 'ten']]) == 'onetwothreefourfivesixseveneightnineten'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)', knowledge=[['a', 'yes'], ['b', 'no'], ['c', 'maybe'], ['d', 'sure'], ['e', 'never'], ['f', 'always'], ['g', 'often'], ['h', 'rarely'], ['i', 'sometimes'], ['j', 'usually']]) == 'yesnomaybesureneveralwaysoftenrarelysometimesusually'\n    assert candidate(s='(user)hasposted(numberofposts)times', knowledge=[['user', 'Charlie'], ['numberofposts', '250']]) == 'Charliehasposted250times'\n    assert candidate(s='(complex)(string)(with)(multiple)(keys)', knowledge=[['complex', 'com'], ['string', 'str'], ['with', 'wi'], ['multiple', 'mul'], ['keys', 'ke']]) == 'comstrwimulke'\n    assert candidate(s='(key1)is(key2)yearsold(key3)and(key4)livesin(key5)', knowledge=[['key1', 'bob'], ['key2', 'two'], ['key5', 'NYC']]) == 'bobistwoyearsold?and?livesinNYC'\n    assert candidate(s='(a)(b)(c)(d)(e)(f)', knowledge=[['a', 'alpha'], ['b', 'beta'], ['c', 'gamma'], ['d', 'delta'], ['e', 'epsilon']]) == 'alphabetagammadeltaepsilon?'\n    assert candidate(s='(nested)brackets(are)not(allowed)', knowledge=[['nested', 'nested'], ['brackets', 'brackets'], ['not', 'not']]) == 'nestedbrackets?not?'\n",
+  "workload_hash": "13b6375d7dbd4e7566f55be2f94552653dd0437b5e2e7d80797bfeee37a9dc90"
+}

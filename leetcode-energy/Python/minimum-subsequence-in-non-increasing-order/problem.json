@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def minSubsequence(self, nums: List[int]) -> List[int]:\n        "
+  },
+  "content": "Given the array `nums`, obtain a subsequence of the array whose sum of elements is **strictly greater** than the sum of the non included elements in such subsequence.\n\nIf there are multiple solutions, return the subsequence with **minimum size** and if there still exist multiple solutions, return the subsequence with the **maximum total sum** of all its elements. A subsequence of an array can be obtained by erasing some (possibly zero) elements from the array.\n\nNote that the solution with the given constraints is guaranteed to be **unique**. Also return the answer sorted in **non-increasing** order.\n\n**Example 1:**\n\n**Input:** nums = \\[4,3,10,9,8\\]\n**Output:** \\[10,9\\] \n**Explanation:** The subsequences \\[10,9\\] and \\[10,8\\] are minimal such that the sum of their elements is strictly greater than the sum of elements not included. However, the subsequence \\[10,9\\] has the maximum total sum of its elements. \n\n**Example 2:**\n\n**Input:** nums = \\[4,4,7,6,7\\]\n**Output:** \\[7,7,6\\] \n**Explanation:** The subsequence \\[7,7\\] has the sum of its elements equal to 14 which is not strictly greater than the sum of elements not included (14 = 4 + 4 + 6). Therefore, the subsequence \\[7,6,7\\] is the minimal satisfying the conditions. Note the subsequence has to be returned in non-decreasing order.  \n\n**Constraints:**\n\n*   `1 <= nums.length <= 500`\n*   `1 <= nums[i] <= 100`",
+  "hints": "For each substring calculate the minimum number of steps to make it palindrome and store it in a table. Create a dp(pos, cnt) which means the minimum number of characters changed for the suffix of s starting on pos splitting the suffix on cnt chunks.",
+  "id": 28,
+  "level": "Easy",
+  "tags": [
+    "Array",
+    "Greedy",
+    "Sorting"
+  ],
+  "title": "Minimum Subsequence in Non-Increasing Order",
+  "title_slug": "minimum-subsequence-in-non-increasing-order"
+}

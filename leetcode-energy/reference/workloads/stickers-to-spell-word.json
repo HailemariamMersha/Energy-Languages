@@ -1,0 +1,599 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "stickers = [\"aaa\",\"bbb\"], target = \"aabbbccc\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"a\",\"b\",\"c\"], target = \"abc\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abc\",\"abc\"], target = \"abcabc\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"abcd\"], target = \"abcdabcd\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"abc\"], target = \"d\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"notice\",\"possible\"], target = \"basicbasic\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"abc\"], target = \"abcd\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"abc\",\"ab\",\"bc\"], target = \"abc\"",
+      "output": "1"
+    },
+    {
+      "input": "stickers = [\"abc\",\"def\"], target = \"abcdef\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"a\"], target = \"a\"",
+      "output": "1"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"abc\"], target = \"aabbbccc\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\"], target = \"hold\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"abc\",\"def\",\"ghi\"], target = \"adgbehcfi\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabb\",\"ccdd\"], target = \"abcd\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"with\",\"example\",\"science\"], target = \"thehat\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\"], target = \"helloworld\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"aaa\",\"aa\",\"a\"], target = \"aaaaaaaaa\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"xyz\",\"zyx\",\"yxz\"], target = \"zyxyzyxyzyx\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"again\"], target = \"aginwodlloleh\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\"], target = \"abcdefghijklmnopqr\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"mississippi\",\"helloworld\"], target = \"mississippiworldhello\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"aabb\",\"bbcc\",\"cdda\"], target = \"aabbccddaabb\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"sun\",\"moon\",\"star\"], target = \"starstarsun\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\",\"four\",\"five\"], target = \"onetwothreefourfive\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"mississippi\",\"pennsylvania\"], target = \"mississippipennsylvania\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"aaaaa\",\"bbbbb\",\"ccccc\",\"ddddd\",\"eeeee\"], target = \"abcdeabcde\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"flower\",\"garden\",\"sun\",\"moon\",\"star\"], target = \"flowergardenstar\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"abcabc\",\"aabbc\"], target = \"abcabcabc\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"alphabet\",\"soup\",\"letters\",\"words\",\"sticker\",\"pack\"], target = \"alphabetwordsoupstickersoup\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"ab\",\"bc\",\"cd\"], target = \"abcdabcd\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"quick\",\"brown\",\"fox\"], target = \"quickbrownfox\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"efgh\",\"ijkl\"], target = \"dgheijlkfabci\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"apple\",\"banana\",\"cherry\"], target = \"bananaapple\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"red\",\"blue\",\"green\"], target = \"bluegreenred\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"dcba\",\"abdc\",\"bacd\"], target = \"abcdabcd\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"zzz\",\"zzzz\",\"zzzzz\"], target = \"zzzzzzzzzzzzzzz\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"programming\",\"is\",\"fun\"], target = \"funisprogramming\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"leetcode\",\"love\",\"coding\"], target = \"lovecodingleetcode\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"python\"], target = \"pythonhello\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"abc\",\"abac\"], target = \"aabbccabc\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"abacd\",\"bdfgh\",\"cdhij\",\"efgik\",\"ghklm\"], target = \"abcdefghijklim\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"again\"], target = \"againhelloagainworld\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"puzzle\",\"piece\",\"fit\"], target = \"fittingpuzzle\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"happy\",\"birthday\",\"friend\"], target = \"happybirthdayfriend\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aaa\",\"bbb\",\"ccc\"], target = \"aabbbccc\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"abc\",\"def\",\"ghi\",\"jkl\"], target = \"helloworldabcdefghijk\"",
+      "output": "6"
+    },
+    {
+      "input": "stickers = [\"sunshine\",\"rainbow\",\"cloud\"], target = \"sunshinecloud\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"xyz\",\"abc\",\"def\",\"ghi\"], target = \"zyxwvutsrqponmlkjihgfedcba\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"zoo\",\"book\",\"look\"], target = \"bookzoolook\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"magic\",\"wand\",\"spell\"], target = \"spellmagic\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"bbccdd\",\"aaccdd\"], target = \"aabbccddee\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"cat\",\"dog\",\"bird\"], target = \"cattog\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"orange\",\"juice\",\"smoothie\"], target = \"smoothieorangejuice\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabb\",\"bbcc\",\"ccdd\"], target = \"bbaaccd\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"quick\",\"brown\",\"fox\",\"jumps\",\"over\",\"lazy\"], target = \"quickbrownfoxjumpsoveralazydog\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"algorithm\",\"data\",\"structure\"], target = \"datadstructure\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"cat\",\"bat\",\"rat\",\"car\"], target = \"catabtar\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"zebra\",\"lion\",\"tiger\"], target = \"tigerlionzebra\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"apple\",\"banana\",\"cherry\"], target = \"bananaapplecherry\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"algorithm\",\"data\",\"structure\"], target = \"algorithmdatastructure\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"repeat\",\"again\",\"once\"], target = \"repeatagainonce\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"sticker\",\"stamps\",\"books\"], target = \"tsickerbomskps\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"dcba\",\"efgh\",\"hgf\",\"ijkl\",\"lkji\"], target = \"abcdefghijklij\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abcdefg\",\"ghijklm\",\"nopqrstu\",\"vwxyz\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"aaaa\",\"bbbb\",\"cccc\"], target = \"aabbcc\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabbccddeeff\",\"bbccddeeffgghh\",\"ccddeeffgghhiijj\"], target = \"aabbccddeeffgghhiijj\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"sticker\",\"book\",\"a\"], target = \"stickers\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"x\",\"y\",\"z\"], target = \"zyxzyxzyx\"",
+      "output": "9"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"efgh\",\"ijkl\"], target = \"ijklabcdeffgh\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"sticker\",\"book\",\"target\"], target = \"booktarget\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"python\"], target = \"pythonworldhello\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"ddeeff\",\"gghhii\",\"jjkkll\",\"mmnnoo\"], target = \"aabbccddeeffgghhiijjkkllmmnnoo\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"jump\",\"over\",\"lazy\"], target = \"jumplazyover\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\",\"stuvwx\",\"yzabcd\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"abcdefghij\",\"klmnopqrst\",\"uvwxyz\",\"mnopqrstuv\",\"wxyzabcde\"], target = \"zyxwvutsrqponmlkjihgfedcba\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"again\"], target = \"helloworldhelloagainworld\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"unique\",\"letters\"], target = \"uniquelettersuniqueletters\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"cat\",\"dog\",\"bird\"], target = \"birdcatdog\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"example\",\"science\",\"with\"], target = \"thehatexample\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\",\"stuvwx\",\"yz\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"laptop\",\"phone\",\"tablet\"], target = \"telephonetablet\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"efgh\",\"ijkl\"], target = \"abcdefghijlkl\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\"], target = \"mnopqrfedcba\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"overlap\",\"partial\",\"coverage\"], target = \"overlappartialcoverage\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabb\",\"bbcc\",\"ccdd\",\"ddeeff\",\"ffgg\"], target = \"aabbccddeeffgg\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"zzz\",\"yyy\",\"xxx\",\"www\"], target = \"zzzyyyxxxwww\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"coding\",\"is\",\"fun\"], target = \"sindgnif\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"happy\",\"birthday\",\"party\"], target = \"birthdaypartyparty\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"zzzz\",\"yyyy\",\"xxxx\"], target = \"zyxwvutsrqponmlkjihgfedcba\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"pizza\",\"pie\",\"cake\"], target = \"pizzacakepie\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"fox\",\"quick\",\"brown\"], target = \"brownquickfox\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"sticky\",\"loop\",\"again\"], target = \"programming\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"python\",\"java\",\"cplus\"], target = \"javapythoncpluspython\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"steak\",\"egg\",\"bacon\"], target = \"eggnestake\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"xy\",\"yz\",\"zx\"], target = \"xyzyzxzyxzyzx\"",
+      "output": "7"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\",\"stuvwx\",\"yzabcd\",\"efghij\",\"klmnop\",\"qrstuv\",\"wxzyab\"], target = \"abcdefghijklmnopqrstuvwxyzabc\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\",\"four\",\"five\",\"six\"], target = \"onetwothreefourfivesix\"",
+      "output": "6"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\"], target = \"onetwothreeonetwothree\"",
+      "output": "6"
+    },
+    {
+      "input": "stickers = [\"dog\",\"cat\",\"bird\"], target = \"catdogbird\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\"], target = \"onetwothree\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"red\",\"green\",\"blue\"], target = \"greenbluegreengreen\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"up\",\"down\",\"left\",\"right\"], target = \"rightleftdownup\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"red\",\"blue\",\"green\",\"yellow\",\"purple\"], target = \"bluegreenyellowpurple\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\"], target = \"threetwoone\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"quick\",\"brown\",\"fox\"], target = \"uqcfkibrowno\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"a\",\"ab\",\"abc\",\"abcd\",\"abcde\"], target = \"abcdeabcde\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"cat\",\"dog\",\"bird\"], target = \"cogbat\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"programming\",\"in\",\"python\"], target = \"grammipnnoingtih\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"bbccdd\",\"ccddeeff\",\"ddeeffgg\"], target = \"aabbccddeeffgg\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"apple\",\"banana\",\"cherry\",\"date\"], target = \"abacaxibananacherry\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"abcdefgh\",\"ijklmnop\",\"qrstuvwx\",\"yz\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abc\",\"bcd\",\"cde\",\"def\",\"efg\"], target = \"abcdefg\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"red\",\"blue\",\"green\"], target = \"greengreenblue\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"python\"], target = \"worldhellopython\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"zzz\",\"yyy\",\"xxx\"], target = \"zzzyyyxxx\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"fast\",\"food\",\"truck\"], target = \"truckfastfood\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"dcba\",\"abcd\"], target = \"abcdabcdabcd\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"ddeeff\",\"gghhii\"], target = \"abcdefghi\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"foo\",\"bar\",\"baz\"], target = \"helloworldfoobarbaz\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"python\",\"programming\"], target = \"helloprogrammingworld\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"repeated\",\"words\",\"here\"], target = \"repeatedwordshere\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"happy\",\"new\",\"year\"], target = \"happynewyear\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"jump\",\"high\",\"long\"], target = \"highjumplong\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"sticker\",\"sticker\",\"sticker\"], target = \"stickers\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"ab\",\"cd\",\"ef\",\"gh\",\"ij\",\"kl\",\"mn\",\"op\",\"qr\",\"st\",\"uv\",\"wx\",\"yz\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "13"
+    },
+    {
+      "input": "stickers = [\"ab\",\"bc\",\"ca\"], target = \"abcabcabc\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"repeated\",\"words\",\"here\",\"in\",\"this\",\"example\"], target = \"repeatedwordshereinthisexample\"",
+      "output": "6"
+    },
+    {
+      "input": "stickers = [\"abcd\",\"efgh\",\"ijkl\"], target = \"fedcbahjiglke\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"hello\",\"world\",\"wide\"], target = \"worldwide\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"abcdefg\",\"hijklmn\",\"opqrstu\",\"vwxyz\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"jump\",\"over\",\"lazy\"], target = \"lazyjumpover\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"sun\",\"moon\",\"star\"], target = \"moonstarsun\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"apple\",\"orange\",\"banana\"], target = \"poeplange\"",
+      "output": "2"
+    },
+    {
+      "input": "stickers = [\"one\",\"two\",\"three\"], target = \"threethreetwoone\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"xylophone\",\"piano\",\"violin\"], target = \"xylophonepianoviolin\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"aabbcc\",\"bbccdd\",\"ccddaa\"], target = \"aabbccbbccddccddaa\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"abcde\",\"abcd\"], target = \"abcdef\"",
+      "output": "1"
+    },
+    {
+      "input": "stickers = [\"abcde\",\"fghij\",\"klmno\"], target = \"ejihfckgmldnbaio\"",
+      "output": "4"
+    },
+    {
+      "input": "stickers = [\"abcdef\",\"ghijkl\",\"mnopqr\"], target = \"jklmnopqrfgedbica\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"abc\",\"def\",\"ghi\",\"jkl\"], target = \"abcdefghijkln\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"abcde\",\"fghij\",\"klmno\",\"pqrst\",\"uvwxy\"], target = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "-1"
+    },
+    {
+      "input": "stickers = [\"quick\",\"brown\",\"fox\",\"jumps\",\"over\",\"lazy\",\"dog\"], target = \"quickbrownfoxjumpsoverlazydog\"",
+      "output": "7"
+    },
+    {
+      "input": "stickers = [\"race\",\"car\",\"seat\"], target = \"crecarstae\"",
+      "output": "3"
+    },
+    {
+      "input": "stickers = [\"xy\",\"yx\",\"zz\"], target = \"zyxzyxzyx\"",
+      "output": "5"
+    },
+    {
+      "input": "stickers = [\"xy\",\"yz\",\"za\",\"ax\"], target = \"xyzaxyzaxyza\"",
+      "output": "6"
+    },
+    {
+      "input": "stickers = [\"cat\",\"dog\",\"bird\"], target = \"birdcattwo\"",
+      "output": "-1"
+    }
+  ],
+  "entry_point": "Solution().minStickers",
+  "language_independent_cases": true,
+  "problem": "stickers-to-spell-word",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def minStickers(self, stickers: List[str], target: str) -> int:\n        ",
+  "test": "def _same_unordered(actual, expected):\n    return sorted(actual) == sorted(expected)\n\ndef _valid_di_string(actual, pattern):\n    if not isinstance(actual, list) or sorted(actual) != list(range(len(pattern) + 1)):\n        return False\n    return all(\n        (char == \"I\" and actual[index] < actual[index + 1])\n        or (char == \"D\" and actual[index] > actual[index + 1])\n        for index, char in enumerate(pattern)\n    )\n\ndef _valid_restore(actual, adjacent_pairs):\n    if not isinstance(actual, list) or len(actual) != len(adjacent_pairs) + 1:\n        return False\n    expected = Counter(frozenset(pair) for pair in adjacent_pairs)\n    produced = Counter(\n        frozenset((actual[index], actual[index + 1]))\n        for index in range(len(actual) - 1)\n    )\n    return produced == expected\n\ndef _valid_no_triples(actual, a, b):\n    return (\n        isinstance(actual, str)\n        and len(actual) == a + b\n        and actual.count(\"a\") == a\n        and actual.count(\"b\") == b\n        and \"aaa\" not in actual\n        and \"bbb\" not in actual\n    )\n\ndef check(candidate):\n    assert candidate(stickers=['aaa', 'bbb'], target='aabbbccc') == -1\n    assert candidate(stickers=['a', 'b', 'c'], target='abc') == 3\n    assert candidate(stickers=['abc', 'abc'], target='abcabc') == 2\n    assert candidate(stickers=['abcd'], target='abcdabcd') == 2\n    assert candidate(stickers=['abc'], target='d') == -1\n    assert candidate(stickers=['notice', 'possible'], target='basicbasic') == -1\n    assert candidate(stickers=['abc'], target='abcd') == -1\n    assert candidate(stickers=['abc', 'ab', 'bc'], target='abc') == 1\n    assert candidate(stickers=['abc', 'def'], target='abcdef') == 2\n    assert candidate(stickers=['a'], target='a') == 1\n    assert candidate(stickers=['aabbcc', 'abc'], target='aabbbccc') == 2\n    assert candidate(stickers=['hello', 'world'], target='hold') == 2\n    assert candidate(stickers=['abc', 'def', 'ghi'], target='adgbehcfi') == 3\n    assert candidate(stickers=['aabb', 'ccdd'], target='abcd') == 2\n    assert candidate(stickers=['with', 'example', 'science'], target='thehat') == 3\n    assert candidate(stickers=['hello', 'world'], target='helloworld') == 2\n    assert candidate(stickers=['aaa', 'aa', 'a'], target='aaaaaaaaa') == 3\n    assert candidate(stickers=['xyz', 'zyx', 'yxz'], target='zyxyzyxyzyx') == 5\n    assert candidate(stickers=['hello', 'world', 'again'], target='aginwodlloleh') == 3\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr'], target='abcdefghijklmnopqr') == 3\n    assert candidate(stickers=['mississippi', 'helloworld'], target='mississippiworldhello') == 2\n    assert candidate(stickers=['aabb', 'bbcc', 'cdda'], target='aabbccddaabb') == 4\n    assert candidate(stickers=['sun', 'moon', 'star'], target='starstarsun') == 3\n    assert candidate(stickers=['one', 'two', 'three', 'four', 'five'], target='onetwothreefourfive') == 5\n    assert candidate(stickers=['mississippi', 'pennsylvania'], target='mississippipennsylvania') == 2\n    assert candidate(stickers=['aaaaa', 'bbbbb', 'ccccc', 'ddddd', 'eeeee'], target='abcdeabcde') == 5\n    assert candidate(stickers=['flower', 'garden', 'sun', 'moon', 'star'], target='flowergardenstar') == 3\n    assert candidate(stickers=['aabbcc', 'abcabc', 'aabbc'], target='abcabcabc') == 2\n    assert candidate(stickers=['alphabet', 'soup', 'letters', 'words', 'sticker', 'pack'], target='alphabetwordsoupstickersoup') == 5\n    assert candidate(stickers=['ab', 'bc', 'cd'], target='abcdabcd') == 4\n    assert candidate(stickers=['quick', 'brown', 'fox'], target='quickbrownfox') == 3\n    assert candidate(stickers=['abcd', 'efgh', 'ijkl'], target='dgheijlkfabci') == 4\n    assert candidate(stickers=['apple', 'banana', 'cherry'], target='bananaapple') == 2\n    assert candidate(stickers=['red', 'blue', 'green'], target='bluegreenred') == 3\n    assert candidate(stickers=['abcd', 'dcba', 'abdc', 'bacd'], target='abcdabcd') == 2\n    assert candidate(stickers=['zzz', 'zzzz', 'zzzzz'], target='zzzzzzzzzzzzzzz') == 3\n    assert candidate(stickers=['programming', 'is', 'fun'], target='funisprogramming') == 3\n    assert candidate(stickers=['leetcode', 'love', 'coding'], target='lovecodingleetcode') == 3\n    assert candidate(stickers=['hello', 'world', 'python'], target='pythonhello') == 2\n    assert candidate(stickers=['aabbcc', 'abc', 'abac'], target='aabbccabc') == 2\n    assert candidate(stickers=['abacd', 'bdfgh', 'cdhij', 'efgik', 'ghklm'], target='abcdefghijklim') == 4\n    assert candidate(stickers=['hello', 'world', 'again'], target='againhelloagainworld') == 4\n    assert candidate(stickers=['puzzle', 'piece', 'fit'], target='fittingpuzzle') == -1\n    assert candidate(stickers=['happy', 'birthday', 'friend'], target='happybirthdayfriend') == 3\n    assert candidate(stickers=['aaa', 'bbb', 'ccc'], target='aabbbccc') == 3\n    assert candidate(stickers=['hello', 'world', 'abc', 'def', 'ghi', 'jkl'], target='helloworldabcdefghijk') == 6\n    assert candidate(stickers=['sunshine', 'rainbow', 'cloud'], target='sunshinecloud') == 2\n    assert candidate(stickers=['xyz', 'abc', 'def', 'ghi'], target='zyxwvutsrqponmlkjihgfedcba') == -1\n    assert candidate(stickers=['zoo', 'book', 'look'], target='bookzoolook') == 3\n    assert candidate(stickers=['magic', 'wand', 'spell'], target='spellmagic') == 2\n    assert candidate(stickers=['aabbcc', 'bbccdd', 'aaccdd'], target='aabbccddee') == -1\n    assert candidate(stickers=['cat', 'dog', 'bird'], target='cattog') == 3\n    assert candidate(stickers=['orange', 'juice', 'smoothie'], target='smoothieorangejuice') == 3\n    assert candidate(stickers=['aabb', 'bbcc', 'ccdd'], target='bbaaccd') == 2\n    assert candidate(stickers=['quick', 'brown', 'fox', 'jumps', 'over', 'lazy'], target='quickbrownfoxjumpsoveralazydog') == -1\n    assert candidate(stickers=['algorithm', 'data', 'structure'], target='datadstructure') == 3\n    assert candidate(stickers=['cat', 'bat', 'rat', 'car'], target='catabtar') == 3\n    assert candidate(stickers=['zebra', 'lion', 'tiger'], target='tigerlionzebra') == 3\n    assert candidate(stickers=['apple', 'banana', 'cherry'], target='bananaapplecherry') == 3\n    assert candidate(stickers=['algorithm', 'data', 'structure'], target='algorithmdatastructure') == 3\n    assert candidate(stickers=['repeat', 'again', 'once'], target='repeatagainonce') == 3\n    assert candidate(stickers=['sticker', 'stamps', 'books'], target='tsickerbomskps') == 3\n    assert candidate(stickers=['abcd', 'dcba', 'efgh', 'hgf', 'ijkl', 'lkji'], target='abcdefghijklij') == 4\n    assert candidate(stickers=['abcdefg', 'ghijklm', 'nopqrstu', 'vwxyz'], target='abcdefghijklmnopqrstuvwxyz') == 4\n    assert candidate(stickers=['aaaa', 'bbbb', 'cccc'], target='aabbcc') == 3\n    assert candidate(stickers=['aabbccddeeff', 'bbccddeeffgghh', 'ccddeeffgghhiijj'], target='aabbccddeeffgghhiijj') == 2\n    assert candidate(stickers=['sticker', 'book', 'a'], target='stickers') == 2\n    assert candidate(stickers=['x', 'y', 'z'], target='zyxzyxzyx') == 9\n    assert candidate(stickers=['abcd', 'efgh', 'ijkl'], target='ijklabcdeffgh') == 4\n    assert candidate(stickers=['sticker', 'book', 'target'], target='booktarget') == 2\n    assert candidate(stickers=['hello', 'world', 'python'], target='pythonworldhello') == 3\n    assert candidate(stickers=['aabbcc', 'ddeeff', 'gghhii', 'jjkkll', 'mmnnoo'], target='aabbccddeeffgghhiijjkkllmmnnoo') == 5\n    assert candidate(stickers=['jump', 'over', 'lazy'], target='jumplazyover') == 3\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr', 'stuvwx', 'yzabcd'], target='abcdefghijklmnopqrstuvwxyz') == 5\n    assert candidate(stickers=['abcdefghij', 'klmnopqrst', 'uvwxyz', 'mnopqrstuv', 'wxyzabcde'], target='zyxwvutsrqponmlkjihgfedcba') == 3\n    assert candidate(stickers=['hello', 'world', 'again'], target='helloworldhelloagainworld') == 5\n    assert candidate(stickers=['unique', 'letters'], target='uniquelettersuniqueletters') == 4\n    assert candidate(stickers=['cat', 'dog', 'bird'], target='birdcatdog') == 3\n    assert candidate(stickers=['example', 'science', 'with'], target='thehatexample') == 4\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr', 'stuvwx', 'yz'], target='abcdefghijklmnopqrstuvwxyz') == 5\n    assert candidate(stickers=['laptop', 'phone', 'tablet'], target='telephonetablet') == 4\n    assert candidate(stickers=['abcd', 'efgh', 'ijkl'], target='abcdefghijlkl') == 4\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr'], target='mnopqrfedcba') == 2\n    assert candidate(stickers=['overlap', 'partial', 'coverage'], target='overlappartialcoverage') == 3\n    assert candidate(stickers=['aabb', 'bbcc', 'ccdd', 'ddeeff', 'ffgg'], target='aabbccddeeffgg') == 4\n    assert candidate(stickers=['zzz', 'yyy', 'xxx', 'www'], target='zzzyyyxxxwww') == 4\n    assert candidate(stickers=['coding', 'is', 'fun'], target='sindgnif') == 3\n    assert candidate(stickers=['happy', 'birthday', 'party'], target='birthdaypartyparty') == 3\n    assert candidate(stickers=['zzzz', 'yyyy', 'xxxx'], target='zyxwvutsrqponmlkjihgfedcba') == -1\n    assert candidate(stickers=['pizza', 'pie', 'cake'], target='pizzacakepie') == 3\n    assert candidate(stickers=['fox', 'quick', 'brown'], target='brownquickfox') == 3\n    assert candidate(stickers=['sticky', 'loop', 'again'], target='programming') == -1\n    assert candidate(stickers=['python', 'java', 'cplus'], target='javapythoncpluspython') == 4\n    assert candidate(stickers=['steak', 'egg', 'bacon'], target='eggnestake') == 4\n    assert candidate(stickers=['xy', 'yz', 'zx'], target='xyzyzxzyxzyzx') == 7\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr', 'stuvwx', 'yzabcd', 'efghij', 'klmnop', 'qrstuv', 'wxzyab'], target='abcdefghijklmnopqrstuvwxyzabc') == 5\n    assert candidate(stickers=['one', 'two', 'three', 'four', 'five', 'six'], target='onetwothreefourfivesix') == 6\n    assert candidate(stickers=['one', 'two', 'three'], target='onetwothreeonetwothree') == 6\n    assert candidate(stickers=['dog', 'cat', 'bird'], target='catdogbird') == 3\n    assert candidate(stickers=['one', 'two', 'three'], target='onetwothree') == 3\n    assert candidate(stickers=['red', 'green', 'blue'], target='greenbluegreengreen') == 4\n    assert candidate(stickers=['up', 'down', 'left', 'right'], target='rightleftdownup') == 4\n    assert candidate(stickers=['red', 'blue', 'green', 'yellow', 'purple'], target='bluegreenyellowpurple') == 4\n    assert candidate(stickers=['one', 'two', 'three'], target='threetwoone') == 3\n    assert candidate(stickers=['quick', 'brown', 'fox'], target='uqcfkibrowno') == 3\n    assert candidate(stickers=['a', 'ab', 'abc', 'abcd', 'abcde'], target='abcdeabcde') == 2\n    assert candidate(stickers=['cat', 'dog', 'bird'], target='cogbat') == 3\n    assert candidate(stickers=['programming', 'in', 'python'], target='grammipnnoingtih') == 4\n    assert candidate(stickers=['aabbcc', 'bbccdd', 'ccddeeff', 'ddeeffgg'], target='aabbccddeeffgg') == 2\n    assert candidate(stickers=['apple', 'banana', 'cherry', 'date'], target='abacaxibananacherry') == -1\n    assert candidate(stickers=['abcdefgh', 'ijklmnop', 'qrstuvwx', 'yz'], target='abcdefghijklmnopqrstuvwxyz') == 4\n    assert candidate(stickers=['abc', 'bcd', 'cde', 'def', 'efg'], target='abcdefg') == 3\n    assert candidate(stickers=['red', 'blue', 'green'], target='greengreenblue') == 3\n    assert candidate(stickers=['hello', 'world', 'python'], target='worldhellopython') == 3\n    assert candidate(stickers=['zzz', 'yyy', 'xxx'], target='zzzyyyxxx') == 3\n    assert candidate(stickers=['fast', 'food', 'truck'], target='truckfastfood') == 3\n    assert candidate(stickers=['abcd', 'dcba', 'abcd'], target='abcdabcdabcd') == 3\n    assert candidate(stickers=['aabbcc', 'ddeeff', 'gghhii'], target='abcdefghi') == 3\n    assert candidate(stickers=['hello', 'world', 'foo', 'bar', 'baz'], target='helloworldfoobarbaz') == 5\n    assert candidate(stickers=['hello', 'world', 'python', 'programming'], target='helloprogrammingworld') == 3\n    assert candidate(stickers=['repeated', 'words', 'here'], target='repeatedwordshere') == 3\n    assert candidate(stickers=['happy', 'new', 'year'], target='happynewyear') == 3\n    assert candidate(stickers=['jump', 'high', 'long'], target='highjumplong') == 3\n    assert candidate(stickers=['sticker', 'sticker', 'sticker'], target='stickers') == 2\n    assert candidate(stickers=['ab', 'cd', 'ef', 'gh', 'ij', 'kl', 'mn', 'op', 'qr', 'st', 'uv', 'wx', 'yz'], target='abcdefghijklmnopqrstuvwxyz') == 13\n    assert candidate(stickers=['ab', 'bc', 'ca'], target='abcabcabc') == 5\n    assert candidate(stickers=['repeated', 'words', 'here', 'in', 'this', 'example'], target='repeatedwordshereinthisexample') == 6\n    assert candidate(stickers=['abcd', 'efgh', 'ijkl'], target='fedcbahjiglke') == 4\n    assert candidate(stickers=['hello', 'world', 'wide'], target='worldwide') == 2\n    assert candidate(stickers=['abcdefg', 'hijklmn', 'opqrstu', 'vwxyz'], target='abcdefghijklmnopqrstuvwxyz') == 4\n    assert candidate(stickers=['jump', 'over', 'lazy'], target='lazyjumpover') == 3\n    assert candidate(stickers=['sun', 'moon', 'star'], target='moonstarsun') == 3\n    assert candidate(stickers=['apple', 'orange', 'banana'], target='poeplange') == 2\n    assert candidate(stickers=['one', 'two', 'three'], target='threethreetwoone') == 4\n    assert candidate(stickers=['xylophone', 'piano', 'violin'], target='xylophonepianoviolin') == 3\n    assert candidate(stickers=['aabbcc', 'bbccdd', 'ccddaa'], target='aabbccbbccddccddaa') == 3\n    assert candidate(stickers=['abcdef', 'abcde', 'abcd'], target='abcdef') == 1\n    assert candidate(stickers=['abcde', 'fghij', 'klmno'], target='ejihfckgmldnbaio') == 4\n    assert candidate(stickers=['abcdef', 'ghijkl', 'mnopqr'], target='jklmnopqrfgedbica') == 3\n    assert candidate(stickers=['abc', 'def', 'ghi', 'jkl'], target='abcdefghijkln') == -1\n    assert candidate(stickers=['abcde', 'fghij', 'klmno', 'pqrst', 'uvwxy'], target='abcdefghijklmnopqrstuvwxyz') == -1\n    assert candidate(stickers=['quick', 'brown', 'fox', 'jumps', 'over', 'lazy', 'dog'], target='quickbrownfoxjumpsoverlazydog') == 7\n    assert candidate(stickers=['race', 'car', 'seat'], target='crecarstae') == 3\n    assert candidate(stickers=['xy', 'yx', 'zz'], target='zyxzyxzyx') == 5\n    assert candidate(stickers=['xy', 'yz', 'za', 'ax'], target='xyzaxyzaxyza') == 6\n    assert candidate(stickers=['cat', 'dog', 'bird'], target='birdcattwo') == -1\n",
+  "workload_hash": "f04264e9cb415535721e0e1cc797adeecfdf7941e35b54010b64f648bc0f5e3a"
+}

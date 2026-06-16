@@ -1,0 +1,435 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "word1 = [\"abc\", \"d\", \"defg\"], word2 = [\"abcddefg\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"x\"], word2 = [\"y\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"different\"], word2 = [\"string\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"hello\", \"world\"], word2 = [\"helloworld\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\"], word2 = [\"onetwothree\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\"], word2 = [\"a\", \"b\", \"c\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\"], word2 = [\"ab\", \"c\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"xyz\"], word2 = [\"x\", \"y\", \"z\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"hello\", \"world\"], word2 = [\"helloWorld\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"ab\", \"c\"], word2 = [\"a\", \"bc\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\"], word2 = [\"a\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"cb\"], word2 = [\"ab\", \"c\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"hello\"], word2 = [\"hello\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"test\"], word2 = [\"t\", \"es\", \"t\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\"], word2 = [\"ab\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"string\"], word2 = [\"same\", \"string\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\"], word2 = [\"a\", \"b\", \"c\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\"], word2 = [\"abcdefg\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"split\", \"in\", \"pieces\"], word2 = [\"spli\", \"tin\", \"pi\", \"eces\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"], word2 = [\"abcdef\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"complex\", \"string\", \"example\"], word2 = [\"com\", \"plex\", \"string\", \"ex\", \"ample\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\"], word2 = [\"ab\", \"c\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"same\", \"same\"], word2 = [\"same\", \"same\", \"same\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"split\", \"this\", \"up\"], word2 = [\"splitthis\", \"up\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\"], word2 = [\"d\", \"e\", \"f\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"xyz\", \"123\", \"abc\"], word2 = [\"xyz1\", \"23abc\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abcdef\"], word2 = [\"abc\", \"d\", \"e\", \"f\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abcd\", \"efgh\", \"ijkl\"], word2 = [\"abcdefgh\", \"ijkl\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\"], word2 = [\"abcdefg\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"abc\", \"d\", \"efghi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"complex\", \"word\"], word2 = [\"c\", \"o\", \"m\", \"p\", \"l\", \"e\", \"x\", \"word\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"partial\", \"match\"], word2 = [\"partialm\", \"atch\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"bc\", \"def\", \"ghij\"], word2 = [\"abc\", \"defghij\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"equal\", \"strings\"], word2 = [\"equalstrings\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"example\"], word2 = [\"ex\", \"ample\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"complex\", \"example\"], word2 = [\"com\", \"plexex\", \"ample\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abcdefg\", \"hijklmn\"], word2 = [\"abc\", \"defghijklmn\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\"], word2 = [\"s\", \"a\", \"m\", \"e\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"long\", \"word\", \"sequence\"], word2 = [\"l\", \"ongw\", \"ordsequ\", \"ence\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"very\", \"long\", \"string\", \"here\"], word2 = [\"averylongstringhere\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"string\"], word2 = [\"sam\", \"e\", \"string\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"defg\", \"hijkl\"], word2 = [\"abcdefg\", \"hijkl\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"abcdef\", \"ghi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"abcdefg\", \"hi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"long\", \"string\", \"here\"], word2 = [\"longstring\", \"here\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"x\", \"y\", \"z\"], word2 = [\"xyz\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"z\"], word2 = [\"z\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\", \"four\"], word2 = [\"onetwo\", \"three\", \"four\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\", \"four\"], word2 = [\"onetwo\", \"threefour\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"x\", \"y\", \"z\"], word2 = [\"x\", \"yz\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"xyz\", \"uvw\"], word2 = [\"xy\", \"zu\", \"vw\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\", \"d\", \"e\"], word2 = [\"abcd\", \"e\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longerstring\", \"here\"], word2 = [\"longerstringhere\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"onetwothree\"], word2 = [\"one\", \"two\", \"three\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"ab\", \"cdef\", \"ghi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abcd\"], word2 = [\"ab\", \"c\", \"d\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\", \"four\"], word2 = [\"onetwothreefour\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"almost\", \"thesame\"], word2 = [\"almostthesame\", \"extra\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"split\", \"into\", \"multiple\", \"parts\"], word2 = [\"splitint\", \"omulti\", \"pleparts\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"ab\", \"cde\", \"f\"], word2 = [\"abc\", \"def\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"string\", \"here\"], word2 = [\"samestringhere\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"xyz\", \"uvw\", \"mnop\"], word2 = [\"xyzu\", \"vw\", \"mnop\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"xyz\", \"uvw\", \"qrst\"], word2 = [\"xyzuvw\", \"qrst\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"string\", \"here\"], word2 = [\"sam\", \"e\", \"stringhere\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longstringhere\", \"another\"], word2 = [\"longstringhereanother\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"this\", \"is\", \"a\", \"test\"], word2 = [\"thi\", \"sisa\", \"test\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"defg\", \"hijk\", \"lmnop\"], word2 = [\"abcdefg\", \"hijklmnop\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longstringhere\", \"anotherlongstringhere\"], word2 = [\"longstringhereanotherlongstringhere\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\", \"d\", \"e\"], word2 = [\"abcde\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"part1\", \"part2\", \"part3\"], word2 = [\"part\", \"1part2\", \"part3\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"longer\", \"string\", \"here\"], word2 = [\"a\", \"longerstring\", \"here\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"part1\", \"part2\"], word2 = [\"part1part2\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\"], word2 = [\"abc\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"different\", \"length\"], word2 = [\"differentlen\", \"gth\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longstringone\", \"longstringtwo\"], word2 = [\"longstringone\", \"long\", \"string\", \"two\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"same\", \"string\", \"here\"], word2 = [\"samestring\", \"here\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"short\"], word2 = [\"loooooooonger\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"hello\", \"world\"], word2 = [\"he\", \"ll\", \"o\", \"wor\", \"ld\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"hello\", \"world\", \"python\"], word2 = [\"hello\", \"wor\", \"ldpy\", \"thon\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"another\", \"example\", \"with\", \"spaces\"], word2 = [\"anotherexam\", \"plewithspaces\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"xyz\", \"uvw\", \"rst\"], word2 = [\"xyzuvw\", \"rst\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\"], word2 = [\"a\", \"bc\", \"d\", \"ef\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"this\", \"is\", \"a\", \"test\"], word2 = [\"thisisatest\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"samestringhere\"], word2 = [\"same\", \"string\", \"here\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abcd\"], word2 = [\"a\", \"b\", \"c\", \"d\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"abcdefghi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"a\", \"a\", \"a\", \"a\"], word2 = [\"a\", \"a\", \"a\", \"a\", \"a\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"a\", \"a\", \"a\", \"a\"], word2 = [\"aaaaa\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"mismatch\", \"here\"], word2 = [\"mismatch\", \"there\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\"], word2 = [\"on\", \"etwothree\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"part\", \"one\"], word2 = [\"p\", \"artone\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"equal\", \"length\", \"words\"], word2 = [\"equal\", \"length\", \"word\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"abc\", \"def\", \"ghi\"], word2 = [\"abc\", \"def\", \"ghi\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"equal\", \"length\"], word2 = [\"equal\", \"length\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longwordhere\"], word2 = [\"l\", \"on\", \"g\", \"wo\", \"rd\", \"here\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"longer\", \"string\", \"example\"], word2 = [\"longerstringexample\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"singleword\"], word2 = [\"single\", \"word\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"different\", \"sizes\"], word2 = [\"different\", \"siz\", \"es\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\"], word2 = [\"b\"]",
+      "output": "False"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\"], word2 = [\"one\", \"twothree\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"split\", \"this\", \"way\"], word2 = [\"sp\", \"lit\", \"thi\", \"sway\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"one\", \"two\", \"three\"], word2 = [\"onetwo\", \"three\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"this\", \"is\", \"a\", \"test\"], word2 = [\"thisis\", \"atest\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"a\", \"b\", \"c\", \"d\"], word2 = [\"abcd\"]",
+      "output": "True"
+    },
+    {
+      "input": "word1 = [\"split\", \"across\", \"multiple\", \"parts\"], word2 = [\"splitacrossmultip\", \"leparts\"]",
+      "output": "True"
+    }
+  ],
+  "entry_point": "Solution().arrayStringsAreEqual",
+  "language_independent_cases": true,
+  "problem": "check-if-two-string-arrays-are-equivalent",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:\n        ",
+  "test": "def check(candidate):\n    assert candidate(word1 = ['abc', 'd', 'defg'],word2 = ['abcddefg']) == True\n    assert candidate(word1 = ['x'],word2 = ['y']) == False\n    assert candidate(word1 = ['different'],word2 = ['string']) == False\n    assert candidate(word1 = ['hello', 'world'],word2 = ['helloworld']) == True\n    assert candidate(word1 = ['one', 'two', 'three'],word2 = ['onetwothree']) == True\n    assert candidate(word1 = ['abc'],word2 = ['a', 'b', 'c']) == True\n    assert candidate(word1 = ['abc'],word2 = ['ab', 'c']) == True\n    assert candidate(word1 = ['xyz'],word2 = ['x', 'y', 'z']) == True\n    assert candidate(word1 = ['hello', 'world'],word2 = ['helloWorld']) == False\n    assert candidate(word1 = ['ab', 'c'],word2 = ['a', 'bc']) == True\n    assert candidate(word1 = ['a'],word2 = ['a']) == True\n    assert candidate(word1 = ['a', 'cb'],word2 = ['ab', 'c']) == False\n    assert candidate(word1 = ['hello'],word2 = ['hello']) == True\n    assert candidate(word1 = ['test'],word2 = ['t', 'es', 't']) == True\n    assert candidate(word1 = ['a', 'b'],word2 = ['ab']) == True\n    assert candidate(word1 = ['same', 'string'],word2 = ['same', 'string']) == True\n    assert candidate(word1 = ['a', 'b', 'c'],word2 = ['a', 'b', 'c']) == True\n    assert candidate(word1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'],word2 = ['abcdefg']) == True\n    assert candidate(word1 = ['split', 'in', 'pieces'],word2 = ['spli', 'tin', 'pi', 'eces']) == True\n    assert candidate(word1 = ['a', 'b', 'c', 'd', 'e', 'f'],word2 = ['abcdef']) == True\n    assert candidate(word1 = ['complex', 'string', 'example'],word2 = ['com', 'plex', 'string', 'ex', 'ample']) == True\n    assert candidate(word1 = ['a', 'b', 'c'],word2 = ['ab', 'c']) == True\n    assert candidate(word1 = ['same', 'same', 'same'],word2 = ['same', 'same', 'same']) == True\n    assert candidate(word1 = ['split', 'this', 'up'],word2 = ['splitthis', 'up']) == True\n    assert candidate(word1 = ['a', 'b', 'c'],word2 = ['d', 'e', 'f']) == False\n    assert candidate(word1 = ['xyz', '123', 'abc'],word2 = ['xyz1', '23abc']) == True\n    assert candidate(word1 = ['abcdef'],word2 = ['abc', 'd', 'e', 'f']) == True\n    assert candidate(word1 = ['abcd', 'efgh', 'ijkl'],word2 = ['abcdefgh', 'ijkl']) == True\n    assert candidate(word1 = ['abc', 'def'],word2 = ['abcdefg']) == False\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['abc', 'd', 'efghi']) == True\n    assert candidate(word1 = ['complex', 'word'],word2 = ['c', 'o', 'm', 'p', 'l', 'e', 'x', 'word']) == True\n    assert candidate(word1 = ['partial', 'match'],word2 = ['partialm', 'atch']) == True\n    assert candidate(word1 = ['a', 'bc', 'def', 'ghij'],word2 = ['abc', 'defghij']) == True\n    assert candidate(word1 = ['equal', 'strings'],word2 = ['equalstrings']) == True\n    assert candidate(word1 = ['example'],word2 = ['ex', 'ample']) == True\n    assert candidate(word1 = ['complex', 'example'],word2 = ['com', 'plexex', 'ample']) == True\n    assert candidate(word1 = ['abcdefg', 'hijklmn'],word2 = ['abc', 'defghijklmn']) == True\n    assert candidate(word1 = ['same'],word2 = ['s', 'a', 'm', 'e']) == True\n    assert candidate(word1 = ['long', 'word', 'sequence'],word2 = ['l', 'ongw', 'ordsequ', 'ence']) == True\n    assert candidate(word1 = ['a', 'very', 'long', 'string', 'here'],word2 = ['averylongstringhere']) == True\n    assert candidate(word1 = ['same', 'string'],word2 = ['sam', 'e', 'string']) == True\n    assert candidate(word1 = ['abc', 'defg', 'hijkl'],word2 = ['abcdefg', 'hijkl']) == True\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['abcdef', 'ghi']) == True\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['abcdefg', 'hi']) == True\n    assert candidate(word1 = ['long', 'string', 'here'],word2 = ['longstring', 'here']) == True\n    assert candidate(word1 = ['x', 'y', 'z'],word2 = ['xyz']) == True\n    assert candidate(word1 = ['z'],word2 = ['z']) == True\n    assert candidate(word1 = ['one', 'two', 'three', 'four'],word2 = ['onetwo', 'three', 'four']) == True\n    assert candidate(word1 = ['one', 'two', 'three', 'four'],word2 = ['onetwo', 'threefour']) == True\n    assert candidate(word1 = ['x', 'y', 'z'],word2 = ['x', 'yz']) == True\n    assert candidate(word1 = ['xyz', 'uvw'],word2 = ['xy', 'zu', 'vw']) == True\n    assert candidate(word1 = ['a', 'b', 'c', 'd', 'e'],word2 = ['abcd', 'e']) == True\n    assert candidate(word1 = ['longerstring', 'here'],word2 = ['longerstringhere']) == True\n    assert candidate(word1 = ['onetwothree'],word2 = ['one', 'two', 'three']) == True\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['ab', 'cdef', 'ghi']) == True\n    assert candidate(word1 = ['abcd'],word2 = ['ab', 'c', 'd']) == True\n    assert candidate(word1 = ['one', 'two', 'three', 'four'],word2 = ['onetwothreefour']) == True\n    assert candidate(word1 = ['almost', 'thesame'],word2 = ['almostthesame', 'extra']) == False\n    assert candidate(word1 = ['split', 'into', 'multiple', 'parts'],word2 = ['splitint', 'omulti', 'pleparts']) == True\n    assert candidate(word1 = ['ab', 'cde', 'f'],word2 = ['abc', 'def']) == True\n    assert candidate(word1 = ['same', 'string', 'here'],word2 = ['samestringhere']) == True\n    assert candidate(word1 = ['xyz', 'uvw', 'mnop'],word2 = ['xyzu', 'vw', 'mnop']) == True\n    assert candidate(word1 = ['xyz', 'uvw', 'qrst'],word2 = ['xyzuvw', 'qrst']) == True\n    assert candidate(word1 = ['same', 'string', 'here'],word2 = ['sam', 'e', 'stringhere']) == True\n    assert candidate(word1 = ['longstringhere', 'another'],word2 = ['longstringhereanother']) == True\n    assert candidate(word1 = ['this', 'is', 'a', 'test'],word2 = ['thi', 'sisa', 'test']) == True\n    assert candidate(word1 = ['abc', 'defg', 'hijk', 'lmnop'],word2 = ['abcdefg', 'hijklmnop']) == True\n    assert candidate(word1 = ['longstringhere', 'anotherlongstringhere'],word2 = ['longstringhereanotherlongstringhere']) == True\n    assert candidate(word1 = ['a', 'b', 'c', 'd', 'e'],word2 = ['abcde']) == True\n    assert candidate(word1 = ['part1', 'part2', 'part3'],word2 = ['part', '1part2', 'part3']) == True\n    assert candidate(word1 = ['a', 'longer', 'string', 'here'],word2 = ['a', 'longerstring', 'here']) == True\n    assert candidate(word1 = ['part1', 'part2'],word2 = ['part1part2']) == True\n    assert candidate(word1 = ['a', 'b', 'c'],word2 = ['abc']) == True\n    assert candidate(word1 = ['different', 'length'],word2 = ['differentlen', 'gth']) == True\n    assert candidate(word1 = ['longstringone', 'longstringtwo'],word2 = ['longstringone', 'long', 'string', 'two']) == True\n    assert candidate(word1 = ['same', 'string', 'here'],word2 = ['samestring', 'here']) == True\n    assert candidate(word1 = ['short'],word2 = ['loooooooonger']) == False\n    assert candidate(word1 = ['hello', 'world'],word2 = ['he', 'll', 'o', 'wor', 'ld']) == True\n    assert candidate(word1 = ['hello', 'world', 'python'],word2 = ['hello', 'wor', 'ldpy', 'thon']) == True\n    assert candidate(word1 = ['another', 'example', 'with', 'spaces'],word2 = ['anotherexam', 'plewithspaces']) == True\n    assert candidate(word1 = ['xyz', 'uvw', 'rst'],word2 = ['xyzuvw', 'rst']) == True\n    assert candidate(word1 = ['abc', 'def'],word2 = ['a', 'bc', 'd', 'ef']) == True\n    assert candidate(word1 = ['this', 'is', 'a', 'test'],word2 = ['thisisatest']) == True\n    assert candidate(word1 = ['samestringhere'],word2 = ['same', 'string', 'here']) == True\n    assert candidate(word1 = ['abcd'],word2 = ['a', 'b', 'c', 'd']) == True\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['abcdefghi']) == True\n    assert candidate(word1 = ['a', 'a', 'a', 'a', 'a'],word2 = ['a', 'a', 'a', 'a', 'a']) == True\n    assert candidate(word1 = ['a', 'a', 'a', 'a', 'a'],word2 = ['aaaaa']) == True\n    assert candidate(word1 = ['mismatch', 'here'],word2 = ['mismatch', 'there']) == False\n    assert candidate(word1 = ['one', 'two', 'three'],word2 = ['on', 'etwothree']) == True\n    assert candidate(word1 = ['part', 'one'],word2 = ['p', 'artone']) == True\n    assert candidate(word1 = ['equal', 'length', 'words'],word2 = ['equal', 'length', 'word']) == False\n    assert candidate(word1 = ['abc', 'def', 'ghi'],word2 = ['abc', 'def', 'ghi']) == True\n    assert candidate(word1 = ['equal', 'length'],word2 = ['equal', 'length']) == True\n    assert candidate(word1 = ['longwordhere'],word2 = ['l', 'on', 'g', 'wo', 'rd', 'here']) == True\n    assert candidate(word1 = ['longer', 'string', 'example'],word2 = ['longerstringexample']) == True\n    assert candidate(word1 = ['singleword'],word2 = ['single', 'word']) == True\n    assert candidate(word1 = ['different', 'sizes'],word2 = ['different', 'siz', 'es']) == True\n    assert candidate(word1 = ['a'],word2 = ['b']) == False\n    assert candidate(word1 = ['one', 'two', 'three'],word2 = ['one', 'twothree']) == True\n    assert candidate(word1 = ['split', 'this', 'way'],word2 = ['sp', 'lit', 'thi', 'sway']) == True\n    assert candidate(word1 = ['one', 'two', 'three'],word2 = ['onetwo', 'three']) == True\n    assert candidate(word1 = ['this', 'is', 'a', 'test'],word2 = ['thisis', 'atest']) == True\n    assert candidate(word1 = ['a', 'b', 'c', 'd'],word2 = ['abcd']) == True\n    assert candidate(word1 = ['split', 'across', 'multiple', 'parts'],word2 = ['splitacrossmultip', 'leparts']) == True\n",
+  "workload_hash": "80d55793df7cad67c8d0b1233c53005c3ae6ee51faba32c20abd61365fee565e"
+}

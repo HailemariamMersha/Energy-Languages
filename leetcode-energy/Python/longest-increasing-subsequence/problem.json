@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def lengthOfLIS(self, nums: List[int]) -> int:\n        "
+  },
+  "content": "Given an integer array `nums`, return _the length of the longest **strictly increasing**_ _**subsequence**_.\n\n**Example 1:**\n\n**Input:** nums = \\[10,9,2,5,3,7,101,18\\]\n**Output:** 4\n**Explanation:** The longest increasing subsequence is \\[2,3,7,101\\], therefore the length is 4.\n\n**Example 2:**\n\n**Input:** nums = \\[0,1,0,3,2,3\\]\n**Output:** 4\n\n**Example 3:**\n\n**Input:** nums = \\[7,7,7,7,7,7,7\\]\n**Output:** 1\n\n**Constraints:**\n\n*   `1 <= nums.length <= 2500`\n*   `-104 <= nums[i] <= 104`\n\n**Follow up:** Can you come up with an algorithm that runs in `O(n log(n))` time complexity?",
+  "hints": null,
+  "id": 47,
+  "level": "Medium",
+  "tags": [
+    "Array",
+    "Binary Search",
+    "Dynamic Programming"
+  ],
+  "title": "Longest Increasing Subsequence",
+  "title_slug": "longest-increasing-subsequence"
+}

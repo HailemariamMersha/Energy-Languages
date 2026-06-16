@@ -1,0 +1,34 @@
+{
+  "code_snippets": {
+    "c": "int ladderLength(char* beginWord, char* endWord, char** wordList, int wordListSize) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public int LadderLength(string beginWord, string endWord, IList<string> wordList) {\n        \n    }\n}",
+    "dart": "class Solution {\n  int ladderLength(String beginWord, String endWord, List<String> wordList) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec ladder_length(begin_word :: String.t, end_word :: String.t, word_list :: [String.t]) :: integer\n  def ladder_length(begin_word, end_word, word_list) do\n    \n  end\nend",
+    "erlang": "-spec ladder_length(BeginWord :: unicode:unicode_binary(), EndWord :: unicode:unicode_binary(), WordList :: [unicode:unicode_binary()]) -> integer().\nladder_length(BeginWord, EndWord, WordList) ->\n  .",
+    "golang": "func ladderLength(beginWord string, endWord string, wordList []string) int {\n    \n}",
+    "java": "class Solution {\n    public int ladderLength(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {string} beginWord\n * @param {string} endWord\n * @param {string[]} wordList\n * @return {number}\n */\nvar ladderLength = function(beginWord, endWord, wordList) {\n    \n};",
+    "kotlin": "class Solution {\n    fun ladderLength(beginWord: String, endWord: String, wordList: List<String>): Int {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param String $beginWord\n     * @param String $endWord\n     * @param String[] $wordList\n     * @return Integer\n     */\n    function ladderLength($beginWord, $endWord, $wordList) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def ladderLength(self, beginWord, endWord, wordList):\n        \"\"\"\n        :type beginWord: str\n        :type endWord: str\n        :type wordList: List[str]\n        :rtype: int\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:\n        ",
+    "racket": "(define/contract (ladder-length beginWord endWord wordList)\n  (-> string? string? (listof string?) exact-integer?)\n  )",
+    "ruby": "# @param {String} begin_word\n# @param {String} end_word\n# @param {String[]} word_list\n# @return {Integer}\ndef ladder_length(begin_word, end_word, word_list)\n    \nend",
+    "rust": "impl Solution {\n    pub fn ladder_length(begin_word: String, end_word: String, word_list: Vec<String>) -> i32 {\n        \n    }\n}",
+    "scala": "object Solution {\n    def ladderLength(beginWord: String, endWord: String, wordList: List[String]): Int = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int {\n        \n    }\n}",
+    "typescript": "function ladderLength(beginWord: string, endWord: string, wordList: string[]): number {\n    \n};"
+  },
+  "content": "A **transformation sequence** from word `beginWord` to word `endWord` using a dictionary `wordList` is a sequence of words `beginWord -> s1 -> s2 -> ... -> sk` such that:\n\n*   Every adjacent pair of words differs by a single letter.\n*   Every `si` for `1 <= i <= k` is in `wordList`. Note that `beginWord` does not need to be in `wordList`.\n*   `sk == endWord`\n\nGiven two words, `beginWord` and `endWord`, and a dictionary `wordList`, return _the **number of words** in the **shortest transformation sequence** from_ `beginWord` _to_ `endWord`_, or_ `0` _if no such sequence exists._\n\n**Example 1:**\n\n**Input:** beginWord =  \"hit \", endWord =  \"cog \", wordList = \\[ \"hot \", \"dot \", \"dog \", \"lot \", \"log \", \"cog \"\\]\n**Output:** 5\n**Explanation:** One shortest transformation sequence is  \"hit \" ->  \"hot \" ->  \"dot \" ->  \"dog \" -> cog \", which is 5 words long.\n\n**Example 2:**\n\n**Input:** beginWord =  \"hit \", endWord =  \"cog \", wordList = \\[ \"hot \", \"dot \", \"dog \", \"lot \", \"log \"\\]\n**Output:** 0\n**Explanation:** The endWord  \"cog \" is not in wordList, therefore there is no valid transformation sequence.\n\n**Constraints:**\n\n*   `1 <= beginWord.length <= 10`\n*   `endWord.length == beginWord.length`\n*   `1 <= wordList.length <= 5000`\n*   `wordList[i].length == beginWord.length`\n*   `beginWord`, `endWord`, and `wordList[i]` consist of lowercase English letters.\n*   `beginWord != endWord`\n*   All the words in `wordList` are **unique**.",
+  "hints": null,
+  "id": 74,
+  "level": "Hard",
+  "tags": [
+    "Hash Table",
+    "String",
+    "Breadth-First Search"
+  ],
+  "title": "Word Ladder",
+  "title_slug": "word-ladder"
+}

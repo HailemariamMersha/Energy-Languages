@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def hitBricks(self, grid: List[List[int]], hits: List[List[int]]) -> List[int]:\n        "
+  },
+  "content": "You are given an `m x n` binary `grid`, where each `1` represents a brick and `0` represents an empty space. A brick is **stable** if:\n\n*   It is directly connected to the top of the grid, or\n*   At least one other brick in its four adjacent cells is **stable**.\n\nYou are also given an array `hits`, which is a sequence of erasures we want to apply. Each time we want to erase the brick at the location `hits[i] = (rowi, coli)`. The brick on that location (if it exists) will disappear. Some other bricks may no longer be stable because of that erasure and will **fall**. Once a brick falls, it is **immediately** erased from the `grid` (i.e., it does not land on other stable bricks).\n\nReturn _an array_ `result`_, where each_ `result[i]` _is the number of bricks that will **fall** after the_ `ith` _erasure is applied._\n\n**Note** that an erasure may refer to a location with no brick, and if it does, no bricks drop.\n\n**Example 1:**\n\n**Input:** grid = \\[\\[1,0,0,0\\],\\[1,1,1,0\\]\\], hits = \\[\\[1,0\\]\\]\n**Output:** \\[2\\]\n**Explanation:** Starting with the grid:\n\\[\\[1,0,0,0\\],\n \\[1,1,1,0\\]\\]\nWe erase the underlined brick at (1,0), resulting in the grid:\n\\[\\[1,0,0,0\\],\n \\[0,1,1,0\\]\\]\nThe two underlined bricks are no longer stable as they are no longer connected to the top nor adjacent to another stable brick, so they will fall. The resulting grid is:\n\\[\\[1,0,0,0\\],\n \\[0,0,0,0\\]\\]\nHence the result is \\[2\\].\n\n**Example 2:**\n\n**Input:** grid = \\[\\[1,0,0,0\\],\\[1,1,0,0\\]\\], hits = \\[\\[1,1\\],\\[1,0\\]\\]\n**Output:** \\[0,0\\]\n**Explanation:** Starting with the grid:\n\\[\\[1,0,0,0\\],\n \\[1,1,0,0\\]\\]\nWe erase the underlined brick at (1,1), resulting in the grid:\n\\[\\[1,0,0,0\\],\n \\[1,0,0,0\\]\\]\nAll remaining bricks are still stable, so no bricks fall. The grid remains the same:\n\\[\\[1,0,0,0\\],\n \\[1,0,0,0\\]\\]\nNext, we erase the underlined brick at (1,0), resulting in the grid:\n\\[\\[1,0,0,0\\],\n \\[0,0,0,0\\]\\]\nOnce again, all remaining bricks are still stable, so no bricks fall.\nHence the result is \\[0,0\\].\n\n**Constraints:**\n\n*   `m == grid.length`\n*   `n == grid[i].length`\n*   `1 <= m, n <= 200`\n*   `grid[i][j]` is `0` or `1`.\n*   `1 <= hits.length <= 4 * 104`\n*   `hits[i].length == 2`\n*   `0 <= xi <= m - 1`\n*   `0 <= yi <= n - 1`\n*   All `(xi, yi)` are unique.",
+  "hints": null,
+  "id": 73,
+  "level": "Hard",
+  "tags": [
+    "Array",
+    "Union-Find",
+    "Matrix"
+  ],
+  "title": "Bricks Falling When Hit",
+  "title_slug": "bricks-falling-when-hit"
+}

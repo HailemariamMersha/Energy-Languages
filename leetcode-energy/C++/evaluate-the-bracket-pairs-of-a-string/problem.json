@@ -1,0 +1,34 @@
+{
+  "code_snippets": {
+    "c": "char* evaluate(char* s, char*** knowledge, int knowledgeSize, int* knowledgeColSize) {\n    \n}",
+    "cpp": "class Solution {\npublic:\n    string evaluate(string s, vector<vector<string>>& knowledge) {\n        \n    }\n};",
+    "csharp": "public class Solution {\n    public string Evaluate(string s, IList<IList<string>> knowledge) {\n        \n    }\n}",
+    "dart": "class Solution {\n  String evaluate(String s, List<List<String>> knowledge) {\n    \n  }\n}",
+    "elixir": "defmodule Solution do\n  @spec evaluate(s :: String.t, knowledge :: [[String.t]]) :: String.t\n  def evaluate(s, knowledge) do\n    \n  end\nend",
+    "erlang": "-spec evaluate(S :: unicode:unicode_binary(), Knowledge :: [[unicode:unicode_binary()]]) -> unicode:unicode_binary().\nevaluate(S, Knowledge) ->\n  .",
+    "golang": "func evaluate(s string, knowledge [][]string) string {\n    \n}",
+    "java": "class Solution {\n    public String evaluate(String s, List<List<String>> knowledge) {\n        \n    }\n}",
+    "javascript": "/**\n * @param {string} s\n * @param {string[][]} knowledge\n * @return {string}\n */\nvar evaluate = function(s, knowledge) {\n    \n};",
+    "kotlin": "class Solution {\n    fun evaluate(s: String, knowledge: List<List<String>>): String {\n        \n    }\n}",
+    "php": "class Solution {\n\n    /**\n     * @param String $s\n     * @param String[][] $knowledge\n     * @return String\n     */\n    function evaluate($s, $knowledge) {\n        \n    }\n}",
+    "python": "class Solution(object):\n    def evaluate(self, s, knowledge):\n        \"\"\"\n        :type s: str\n        :type knowledge: List[List[str]]\n        :rtype: str\n        \"\"\"\n        ",
+    "python3": "class Solution:\n    def evaluate(self, s: str, knowledge: List[List[str]]) -> str:\n        ",
+    "racket": "(define/contract (evaluate s knowledge)\n  (-> string? (listof (listof string?)) string?)\n  )",
+    "ruby": "# @param {String} s\n# @param {String[][]} knowledge\n# @return {String}\ndef evaluate(s, knowledge)\n    \nend",
+    "rust": "impl Solution {\n    pub fn evaluate(s: String, knowledge: Vec<Vec<String>>) -> String {\n        \n    }\n}",
+    "scala": "object Solution {\n    def evaluate(s: String, knowledge: List[List[String]]): String = {\n        \n    }\n}",
+    "swift": "class Solution {\n    func evaluate(_ s: String, _ knowledge: [[String]]) -> String {\n        \n    }\n}",
+    "typescript": "function evaluate(s: string, knowledge: string[][]): string {\n    \n};"
+  },
+  "content": "You are given a string `s` that contains some bracket pairs, with each pair containing a **non-empty** key.\n\n*   For example, in the string `\"(name)is(age)yearsold \"`, there are **two** bracket pairs that contain the keys `\"name \"` and `\"age \"`.\n\nYou know the values of a wide range of keys. This is represented by a 2D string array `knowledge` where each `knowledge[i] = [keyi, valuei]` indicates that key `keyi` has a value of `valuei`.\n\nYou are tasked to evaluate **all** of the bracket pairs. When you evaluate a bracket pair that contains some key `keyi`, you will:\n\n*   Replace `keyi` and the bracket pair with the key's corresponding `valuei`.\n*   If you do not know the value of the key, you will replace `keyi` and the bracket pair with a question mark `\"? \"` (without the quotation marks).\n\nEach key will appear at most once in your `knowledge`. There will not be any nested brackets in `s`.\n\nReturn _the resulting string after evaluating **all** of the bracket pairs._\n\n**Example 1:**\n\n**Input:** s =  \"(name)is(age)yearsold \", knowledge = \\[\\[ \"name \", \"bob \"\\],\\[ \"age \", \"two \"\\]\\]\n**Output:**  \"bobistwoyearsold \"\n**Explanation:**\nThe key  \"name \" has a value of  \"bob \", so replace  \"(name) \" with  \"bob \".\nThe key  \"age \" has a value of  \"two \", so replace  \"(age) \" with  \"two \".\n\n**Example 2:**\n\n**Input:** s =  \"hi(name) \", knowledge = \\[\\[ \"a \", \"b \"\\]\\]\n**Output:**  \"hi? \"\n**Explanation:** As you do not know the value of the key  \"name \", replace  \"(name) \" with  \"? \".\n\n**Example 3:**\n\n**Input:** s =  \"(a)(a)(a)aaa \", knowledge = \\[\\[ \"a \", \"yes \"\\]\\]\n**Output:**  \"yesyesyesaaa \"\n**Explanation:** The same key can appear multiple times.\nThe key  \"a \" has a value of  \"yes \", so replace all occurrences of  \"(a) \" with  \"yes \".\nNotice that the  \"a \"s not in a bracket pair are not evaluated.\n\n**Constraints:**\n\n*   `1 <= s.length <= 105`\n*   `0 <= knowledge.length <= 105`\n*   `knowledge[i].length == 2`\n*   `1 <= keyi.length, valuei.length <= 10`\n*   `s` consists of lowercase English letters and round brackets `'('` and `')'`.\n*   Every open bracket `'('` in `s` will have a corresponding close bracket `')'`.\n*   The key in each bracket pair of `s` will be non-empty.\n*   There will not be any nested bracket pairs in `s`.\n*   `keyi` and `valuei` consist of lowercase English letters.\n*   Each `keyi` in `knowledge` is unique.",
+  "hints": "Process pairs from right to left to handle repeats Keep track of the current enclosed string using another string",
+  "id": 58,
+  "level": "Medium",
+  "tags": [
+    "Array",
+    "Hash Table",
+    "String"
+  ],
+  "title": "Evaluate the Bracket Pairs of a String",
+  "title_slug": "evaluate-the-bracket-pairs-of-a-string"
+}

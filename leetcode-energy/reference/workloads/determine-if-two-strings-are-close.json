@@ -1,0 +1,439 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "word1 = \"leetcode\", word2 = \"coeddlet\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaa\", word2 = \"bbb\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbbbccdddd\", word2 = \"bbbbaacdddd\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefghijklmnopqrstuvwxyz\", word2 = \"zyxwvutsrqponmlkjihgfedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aabbcc\", word2 = \"ccbbaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abc\", word2 = \"bca\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcabcabc\", word2 = \"bcbcbcbcb\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcde\", word2 = \"edcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"cabbba\", word2 = \"abbccc\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"xyzz\", word2 = \"zzxy\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"xyz\", word2 = \"zyx\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcd\", word2 = \"abce\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbbbcc\", word2 = \"bbbcccaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"uau\", word2 = \"ssx\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbbbccddd\", word2 = \"bbbccdddcccc\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbbbccc\", word2 = \"bbcccaaaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abab\", word2 = \"baba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaabbbbcc\", word2 = \"aaaabbbcc\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"a\", word2 = \"aa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aab\", word2 = \"bba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcd\", word2 = \"dcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\", word2 = \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaaabbbbccccdddd\", word2 = \"ddddeeeeffffgggg\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbcccddeeefffggghhhhiiiii\", word2 = \"iiiiihhhgggfffeeedddcccbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"xyzxyzxyz\", word2 = \"zyxzyxzyx\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abacabadabacaba\", word2 = \"bbacabadabacaba\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbcccddddeeeeeffffffgggggghhhhhiiiijjjjkkkkklllllmmmmnnooooppqqrrsstttuuuuuvvvvvvvwwxxxxxyyyyzzzzz\", word2 = \"zzzzzyyyyxxxwwwvvvvvvuuuuutttssrrqqppoonnmmllkkjjiihhhgggfffddddccccbbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeff\", word2 = \"ffeeddccbbaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaabbbcccdddeeefff\", word2 = \"ffeeeedddcccbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"mississippi\", word2 = \"ppissimissi\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdabcabcabcd\", word2 = \"dcbaababdcbaabab\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abacabadabacaba\", word2 = \"bacabacababacab\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzxxyywwvvuuttssrrqqppoonnmmllkkjjiihhggffeeeeddccbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"ppppoooonnnnmmmlllkkeeeeeddcccbbbaaa\", word2 = \"aaaaaaaaabbbbbbccccdddddeeeeeeeekkkkkklllllmmmmmmmnnnnnnnnoooooooooppppppp\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"qqqwwwweeerrrttt\", word2 = \"tttwwweerrrqqq\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcabcabc\", word2 = \"ccbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"qwertypoiuytrewq\", word2 = \"poiuytrewqqwertypo\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\", word2 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefabcdefabcdef\", word2 = \"fedcbafedcbafedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdefghij\", word2 = \"jihgfedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdefgh\", word2 = \"hgfedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abacabadabacaba\", word2 = \"cbacbacbcacbacb\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefg\", word2 = \"gfedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"loooooonnnngggggwwwoooorrrrddddsssaaammmmeeeerrttttyyyyyyyyyyyynnnnnnnnnn\", word2 = \"nnnnnnnnnnyyyyyyyyyyyttttyyyyymmmeeraatttddddsssaaawwwggggnnnllllloooooo\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"xylophone\", word2 = \"phonexylo\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdefghijklopqrstuvwxyz\", word2 = \"zyxwvutsrqponmlkjihgfedcba\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefghijklmnopqrstuvwxyz\", word2 = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\", word2 = \"zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdefabcabc\", word2 = \"abcabcabcdef\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaaaabbbbcccccccdddddddd\", word2 = \"ddddddddcccccccbbbbaaaaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"mnopqr\", word2 = \"rpqomn\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"mississippi\", word2 = \"ppiimssisss\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzyyxxwwvvuuttssrrqppoonnmlkkjjiihhggffeeeeddccbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"anotherexample\", word2 = \"mpleaxarnothee\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaaaabbbbbccccc\", word2 = \"bbbbbcccccaaaaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"zzzzzzyyyxxx\", word2 = \"yyyxxxzzzzzy\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\", word2 = \"yzxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"xyzxyzxyzxyzxyzxyzxyz\", word2 = \"zyxzyxzyxzyxzyxzyxzyxzyxzyx\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabccddddeeeeefffffff\", word2 = \"eeeeeeffffffdddddcccbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"mnopqr\", word2 = \"rstuvw\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\", word2 = \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeff\", word2 = \"abcdeffedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"abcdefghijklmnopqrstuvxyzmnopqrstuvwxyzabcdefg\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"uniqueletters\", word2 = \"letterniquesu\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzxxyywwvvuuttssrrqqlloonnmmllkkjjiihhggeeddbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcabcabcabcabcabcabcabcabcabc\", word2 = \"bcabacabcabacabcabacabcabacabcabac\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefghijk\", word2 = \"abcdefghijl\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"thisisatest\", word2 = \"esttasisthi\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"qqwweerrttyyuuiiooppllaaassddffgg\", word2 = \"ggffddssaallooppuiiyyttreeewwqq\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abacabadaba\", word2 = \"dabacababad\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"pneumonoultramicroscopicsilicovolcanoconiosis\", word2 = \"oconsinolpnacirosccvilcooimmutapernovulcrosmicn\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcabcabcabc\", word2 = \"cccbbbaaabbb\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"leetcode\", word2 = \"codeleet\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"z\", word2 = \"z\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aabbaa\", word2 = \"bbaabb\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaabbbccc\", word2 = \"bbbaaacc\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"transform\", word2 = \"rmorfnapt\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaaabbbbccccddddeeeeeffffffgggggg\", word2 = \"ggggggffffffeeeeeeeeeccccbbbbaaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abacabadabacabad\", word2 = \"badacabdacabad\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"hello\", word2 = \"ollhe\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"uniquestring\", word2 = \"stringunique\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdef\", word2 = \"gfedcb\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"xyxyxyxyxyxyxyxyxyxy\", word2 = \"yyxyxyxyxyxyxyxyxyxxyx\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaaaabbbbccccdddd\", word2 = \"ddddccccbbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcde\", word2 = \"fghij\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\", word2 = \"ddddccccbbbbaaaaaaddddccccbbbbaaaaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbbcccc\", word2 = \"cccbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeee\", word2 = \"eeeedddccbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"thisisatest\", word2 = \"esttisita\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaabbbcccddd\", word2 = \"ddddcccbbbbaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefghijabcdefghijabcdefghij\", word2 = \"abcdefghijabcdefghijabcdefghij\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"zzzzzzzzzz\", word2 = \"zzzzzzzzzz\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdeabcde\", word2 = \"edcbaedcba\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"abcdabcdabcdabcdabcdabcd\", word2 = \"dcbaabcdabcdabcdabcdabcd\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzzyyxwwvvuuttrrqqppoonnmmllkkiijjgghhffeeeeddccbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdexyz\", word2 = \"zyxwvuts\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"qqwweerrttyyuuiiooppaassddffgg\", word2 = \"ggffddssaappoouuiittyyerrrwwqq\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdefg\", word2 = \"ghijklm\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\", word2 = \"zzxxwwvvuuttssrrqqlloonnmmllkkjjiihhggeeddbbaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"aaaabbbbccccddddeee\", word2 = \"eeedddccccbbbbaaaa\"",
+      "output": "False"
+    },
+    {
+      "input": "word1 = \"abcdabcd\", word2 = \"dcbaabcd\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"closestrings\", word2 = \"stringsclose\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"aaaabbbbccccdddd\", word2 = \"ddddccccbbbbaaaa\"",
+      "output": "True"
+    },
+    {
+      "input": "word1 = \"xyzzzz\", word2 = \"zzzzxy\"",
+      "output": "True"
+    }
+  ],
+  "entry_point": "Solution().closeStrings",
+  "language_independent_cases": true,
+  "problem": "determine-if-two-strings-are-close",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def closeStrings(self, word1: str, word2: str) -> bool:\n        ",
+  "test": "def check(candidate):\n    assert candidate(word1 = \"leetcode\",word2 = \"coeddlet\") == False\n    assert candidate(word1 = \"aaa\",word2 = \"bbb\") == False\n    assert candidate(word1 = \"aaabbbbccdddd\",word2 = \"bbbbaacdddd\") == False\n    assert candidate(word1 = \"abcdefghijklmnopqrstuvwxyz\",word2 = \"zyxwvutsrqponmlkjihgfedcba\") == True\n    assert candidate(word1 = \"aabbcc\",word2 = \"ccbbaa\") == True\n    assert candidate(word1 = \"abc\",word2 = \"bca\") == True\n    assert candidate(word1 = \"abcabcabc\",word2 = \"bcbcbcbcb\") == False\n    assert candidate(word1 = \"abcde\",word2 = \"edcba\") == True\n    assert candidate(word1 = \"cabbba\",word2 = \"abbccc\") == True\n    assert candidate(word1 = \"xyzz\",word2 = \"zzxy\") == True\n    assert candidate(word1 = \"xyz\",word2 = \"zyx\") == True\n    assert candidate(word1 = \"abcd\",word2 = \"abce\") == False\n    assert candidate(word1 = \"aaabbbbcc\",word2 = \"bbbcccaaa\") == False\n    assert candidate(word1 = \"uau\",word2 = \"ssx\") == False\n    assert candidate(word1 = \"aaabbbbccddd\",word2 = \"bbbccdddcccc\") == False\n    assert candidate(word1 = \"aabbbbccc\",word2 = \"bbcccaaaa\") == True\n    assert candidate(word1 = \"abab\",word2 = \"baba\") == True\n    assert candidate(word1 = \"aaabbbbcc\",word2 = \"aaaabbbcc\") == True\n    assert candidate(word1 = \"a\",word2 = \"aa\") == False\n    assert candidate(word1 = \"aab\",word2 = \"bba\") == True\n    assert candidate(word1 = \"abcd\",word2 = \"dcba\") == True\n    assert candidate(word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\",word2 = \"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\") == False\n    assert candidate(word1 = \"aaaabbbbccccdddd\",word2 = \"ddddeeeeffffgggg\") == False\n    assert candidate(word1 = \"aaabbcccddeeefffggghhhhiiiii\",word2 = \"iiiiihhhgggfffeeedddcccbbaaa\") == False\n    assert candidate(word1 = \"xyzxyzxyz\",word2 = \"zyxzyxzyx\") == True\n    assert candidate(word1 = \"abacabadabacaba\",word2 = \"bbacabadabacaba\") == False\n    assert candidate(word1 = \"aaabbcccddddeeeeeffffffgggggghhhhhiiiijjjjkkkkklllllmmmmnnooooppqqrrsstttuuuuuvvvvvvvwwxxxxxyyyyzzzzz\",word2 = \"zzzzzyyyyxxxwwwvvvvvvuuuuutttssrrqqppoonnmmllkkjjiihhhgggfffddddccccbbbbaaa\") == False\n    assert candidate(word1 = \"aabbccddeeff\",word2 = \"ffeeddccbbaa\") == True\n    assert candidate(word1 = \"aaabbbcccdddeeefff\",word2 = \"ffeeeedddcccbbbaaa\") == False\n    assert candidate(word1 = \"mississippi\",word2 = \"ppissimissi\") == True\n    assert candidate(word1 = \"abcdabcabcabcd\",word2 = \"dcbaababdcbaabab\") == False\n    assert candidate(word1 = \"abacabadabacaba\",word2 = \"bacabacababacab\") == False\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzxxyywwvvuuttssrrqqppoonnmmllkkjjiihhggffeeeeddccbbaa\") == False\n    assert candidate(word1 = \"ppppoooonnnnmmmlllkkeeeeeddcccbbbaaa\",word2 = \"aaaaaaaaabbbbbbccccdddddeeeeeeeekkkkkklllllmmmmmmmnnnnnnnnoooooooooppppppp\") == False\n    assert candidate(word1 = \"qqqwwwweeerrrttt\",word2 = \"tttwwweerrrqqq\") == False\n    assert candidate(word1 = \"abcabcabc\",word2 = \"ccbbbaaa\") == False\n    assert candidate(word1 = \"qwertypoiuytrewq\",word2 = \"poiuytrewqqwertypo\") == False\n    assert candidate(word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\",word2 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\") == False\n    assert candidate(word1 = \"abcdefabcdefabcdef\",word2 = \"fedcbafedcbafedcba\") == True\n    assert candidate(word1 = \"abcdefghij\",word2 = \"jihgfedcba\") == True\n    assert candidate(word1 = \"abcdefgh\",word2 = \"hgfedcba\") == True\n    assert candidate(word1 = \"abacabadabacaba\",word2 = \"cbacbacbcacbacb\") == False\n    assert candidate(word1 = \"abcdefg\",word2 = \"gfedcba\") == True\n    assert candidate(word1 = \"loooooonnnngggggwwwoooorrrrddddsssaaammmmeeeerrttttyyyyyyyyyyyynnnnnnnnnn\",word2 = \"nnnnnnnnnnyyyyyyyyyyyttttyyyyymmmeeraatttddddsssaaawwwggggnnnllllloooooo\") == False\n    assert candidate(word1 = \"xylophone\",word2 = \"phonexylo\") == True\n    assert candidate(word1 = \"abcdefghijklopqrstuvwxyz\",word2 = \"zyxwvutsrqponmlkjihgfedcba\") == False\n    assert candidate(word1 = \"abcdefghijklmnopqrstuvwxyz\",word2 = \"abcdefghijklmnopqrstuvwxyz\") == True\n    assert candidate(word1 = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\",word2 = \"zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcba\") == True\n    assert candidate(word1 = \"abcdefabcabc\",word2 = \"abcabcabcdef\") == True\n    assert candidate(word1 = \"aaaaabbbbcccccccdddddddd\",word2 = \"ddddddddcccccccbbbbaaaaa\") == True\n    assert candidate(word1 = \"mnopqr\",word2 = \"rpqomn\") == True\n    assert candidate(word1 = \"mississippi\",word2 = \"ppiimssisss\") == False\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzyyxxwwvvuuttssrrqppoonnmlkkjjiihhggffeeeeddccbbaa\") == False\n    assert candidate(word1 = \"anotherexample\",word2 = \"mpleaxarnothee\") == True\n    assert candidate(word1 = \"aaaaabbbbbccccc\",word2 = \"bbbbbcccccaaaaa\") == True\n    assert candidate(word1 = \"zzzzzzyyyxxx\",word2 = \"yyyxxxzzzzzy\") == False\n    assert candidate(word1 = \"xyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\",word2 = \"yzxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxyxy\") == False\n    assert candidate(word1 = \"xyzxyzxyzxyzxyzxyzxyz\",word2 = \"zyxzyxzyxzyxzyxzyxzyxzyxzyx\") == False\n    assert candidate(word1 = \"aabccddddeeeeefffffff\",word2 = \"eeeeeeffffffdddddcccbaaa\") == False\n    assert candidate(word1 = \"mnopqr\",word2 = \"rstuvw\") == False\n    assert candidate(word1 = \"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\",word2 = \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\") == False\n    assert candidate(word1 = \"aabbccddeeff\",word2 = \"abcdeffedcba\") == True\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"abcdefghijklmnopqrstuvxyzmnopqrstuvwxyzabcdefg\") == False\n    assert candidate(word1 = \"uniqueletters\",word2 = \"letterniquesu\") == True\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzxxyywwvvuuttssrrqqlloonnmmllkkjjiihhggeeddbbaa\") == False\n    assert candidate(word1 = \"abcabcabcabcabcabcabcabcabcabc\",word2 = \"bcabacabcabacabcabacabcabacabcabac\") == False\n    assert candidate(word1 = \"abcdefghijk\",word2 = \"abcdefghijl\") == False\n    assert candidate(word1 = \"thisisatest\",word2 = \"esttasisthi\") == True\n    assert candidate(word1 = \"qqwweerrttyyuuiiooppllaaassddffgg\",word2 = \"ggffddssaallooppuiiyyttreeewwqq\") == False\n    assert candidate(word1 = \"abacabadaba\",word2 = \"dabacababad\") == False\n    assert candidate(word1 = \"pneumonoultramicroscopicsilicovolcanoconiosis\",word2 = \"oconsinolpnacirosccvilcooimmutapernovulcrosmicn\") == False\n    assert candidate(word1 = \"abcabcabcabc\",word2 = \"cccbbbaaabbb\") == False\n    assert candidate(word1 = \"leetcode\",word2 = \"codeleet\") == True\n    assert candidate(word1 = \"z\",word2 = \"z\") == True\n    assert candidate(word1 = \"aabbaa\",word2 = \"bbaabb\") == True\n    assert candidate(word1 = \"aaabbbccc\",word2 = \"bbbaaacc\") == False\n    assert candidate(word1 = \"transform\",word2 = \"rmorfnapt\") == False\n    assert candidate(word1 = \"aaaabbbbccccddddeeeeeffffffgggggg\",word2 = \"ggggggffffffeeeeeeeeeccccbbbbaaaa\") == False\n    assert candidate(word1 = \"abacabadabacabad\",word2 = \"badacabdacabad\") == False\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzyyxxwwvvuuttssrrqqppoonnmmllkkjjiihhggffeeddccbbaa\") == True\n    assert candidate(word1 = \"hello\",word2 = \"ollhe\") == True\n    assert candidate(word1 = \"uniquestring\",word2 = \"stringunique\") == True\n    assert candidate(word1 = \"abcdef\",word2 = \"gfedcb\") == False\n    assert candidate(word1 = \"xyxyxyxyxyxyxyxyxyxy\",word2 = \"yyxyxyxyxyxyxyxyxyxxyx\") == False\n    assert candidate(word1 = \"aaaaabbbbccccdddd\",word2 = \"ddddccccbbbbaaa\") == False\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\") == True\n    assert candidate(word1 = \"abcde\",word2 = \"fghij\") == False\n    assert candidate(word1 = \"abcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\",word2 = \"ddddccccbbbbaaaaaaddddccccbbbbaaaaaa\") == False\n    assert candidate(word1 = \"aabbbcccc\",word2 = \"cccbbbaaa\") == False\n    assert candidate(word1 = \"aabbccddeee\",word2 = \"eeeedddccbbbaaa\") == False\n    assert candidate(word1 = \"thisisatest\",word2 = \"esttisita\") == False\n    assert candidate(word1 = \"aaabbbcccddd\",word2 = \"ddddcccbbbbaaa\") == False\n    assert candidate(word1 = \"abcdefghijabcdefghijabcdefghij\",word2 = \"abcdefghijabcdefghijabcdefghij\") == True\n    assert candidate(word1 = \"zzzzzzzzzz\",word2 = \"zzzzzzzzzz\") == True\n    assert candidate(word1 = \"abcdeabcde\",word2 = \"edcbaedcba\") == True\n    assert candidate(word1 = \"abcdabcdabcdabcdabcdabcd\",word2 = \"dcbaabcdabcdabcdabcdabcd\") == True\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzzyyxwwvvuuttrrqqppoonnmmllkkiijjgghhffeeeeddccbbaa\") == False\n    assert candidate(word1 = \"abcdexyz\",word2 = \"zyxwvuts\") == False\n    assert candidate(word1 = \"qqwweerrttyyuuiiooppaassddffgg\",word2 = \"ggffddssaappoouuiittyyerrrwwqq\") == False\n    assert candidate(word1 = \"abcdefg\",word2 = \"ghijklm\") == False\n    assert candidate(word1 = \"aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\",word2 = \"zzxxwwvvuuttssrrqqlloonnmmllkkjjiihhggeeddbbaa\") == False\n    assert candidate(word1 = \"aaaabbbbccccddddeee\",word2 = \"eeedddccccbbbbaaaa\") == False\n    assert candidate(word1 = \"abcdabcd\",word2 = \"dcbaabcd\") == True\n    assert candidate(word1 = \"closestrings\",word2 = \"stringsclose\") == True\n    assert candidate(word1 = \"aaaabbbbccccdddd\",word2 = \"ddddccccbbbbaaaa\") == True\n    assert candidate(word1 = \"xyzzzz\",word2 = \"zzzzxy\") == True\n",
+  "workload_hash": "3e408dd8b3c62c02220fca7b253dbbee6fff7bfb9896854ca7251bc933c9a368"
+}

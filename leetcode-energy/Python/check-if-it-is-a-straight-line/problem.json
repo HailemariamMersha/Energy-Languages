@@ -1,0 +1,16 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:\n        "
+  },
+  "content": "You are given an array `coordinates`, `coordinates[i] = [x, y]`, where `[x, y]` represents the coordinate of a point. Check if these points make a straight line in the XY plane.\n\n**Example 1:**\n\n**Input:** coordinates = \\[\\[1,2\\],\\[2,3\\],\\[3,4\\],\\[4,5\\],\\[5,6\\],\\[6,7\\]\\]\n**Output:** true\n\n**Example 2:**\n\n**Input:** coordinates = \\[\\[1,1\\],\\[2,2\\],\\[3,4\\],\\[4,5\\],\\[5,6\\],\\[7,7\\]\\]\n**Output:** false\n\n**Constraints:**\n\n*   `2 <= coordinates.length <= 1000`\n*   `coordinates[i].length == 2`\n*   `-10^4 <= coordinates[i][0], coordinates[i][1] <= 10^4`\n*   `coordinates` contains no duplicate point.",
+  "hints": "If you draw a graph with the value on one axis and the absolute difference between the target and the array sum, what will you get? That graph is uni-modal. Use ternary search on that graph to find the best value.",
+  "id": 25,
+  "level": "Easy",
+  "tags": [
+    "Array",
+    "Math",
+    "Geometry"
+  ],
+  "title": "Check If It Is a Straight Line",
+  "title_slug": "check-if-it-is-a-straight-line"
+}

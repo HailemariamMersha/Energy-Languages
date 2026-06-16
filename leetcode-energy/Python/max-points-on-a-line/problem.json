@@ -1,0 +1,17 @@
+{
+  "code_snippets": {
+    "python3": "class Solution:\n    def maxPoints(self, points: List[List[int]]) -> int:\n        "
+  },
+  "content": "Given an array of `points` where `points[i] = [xi, yi]` represents a point on the **X-Y** plane, return _the maximum number of points that lie on the same straight line_.\n\n**Example 1:**\n\n**Input:** points = \\[\\[1,1\\],\\[2,2\\],\\[3,3\\]\\]\n**Output:** 3\n\n**Example 2:**\n\n**Input:** points = \\[\\[1,1\\],\\[3,2\\],\\[5,3\\],\\[4,1\\],\\[2,3\\],\\[1,4\\]\\]\n**Output:** 4\n\n**Constraints:**\n\n*   `1 <= points.length <= 300`\n*   `points[i].length == 2`\n*   `-104 <= xi, yi <= 104`\n*   All the `points` are **unique**.",
+  "hints": null,
+  "id": 80,
+  "level": "Hard",
+  "tags": [
+    "Array",
+    "Hash Table",
+    "Math",
+    "Geometry"
+  ],
+  "title": "Max Points on a Line",
+  "title_slug": "max-points-on-a-line"
+}

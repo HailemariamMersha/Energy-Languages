@@ -1,0 +1,455 @@
+{
+  "benchmark": "leetcode-energy",
+  "cases": [
+    {
+      "input": "word = \"aeiou\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiofvuaeiou\"",
+      "output": "3"
+    },
+    {
+      "input": "word = \"uoiea\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouxaeeiaouoieua\"",
+      "output": "28"
+    },
+    {
+      "input": "word = \"aeiaaioaaaaeiiiiouuuooaauuaeiu\"",
+      "output": "175"
+    },
+    {
+      "input": "word = \"aeiaaioaaaaeiiiiouuuoo\"",
+      "output": "55"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiou\"",
+      "output": "66"
+    },
+    {
+      "input": "word = \"unicornarihan\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"aaaaaeeeeeeiiiiioooooouuuuu\"",
+      "output": "25"
+    },
+    {
+      "input": "word = \"aeiouu\"",
+      "output": "2"
+    },
+    {
+      "input": "word = \"a\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"abcdefghijklmnopqrstuvwxyz\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"vowelsaeiou\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"cuaieuouac\"",
+      "output": "7"
+    },
+    {
+      "input": "word = \"aeiooauuieoiau\"",
+      "output": "41"
+    },
+    {
+      "input": "word = \"bcdfeioau\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"zzzzzaeiouzzzzzzzzzzzzzzzzzzzz\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiou\"",
+      "output": "43"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "496"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiouaeiou\"",
+      "output": "22"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "1326"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiou\"",
+      "output": "2"
+    },
+    {
+      "input": "word = \"xyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "63"
+    },
+    {
+      "input": "word = \"aeiouuuueeiooiaaaeeoioioiaaaeeuuuiooiiuaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "1565"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiou\"",
+      "output": "231"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiou\"",
+      "output": "63"
+    },
+    {
+      "input": "word = \"uoieaueoiaueoiaueoiaueoi\"",
+      "output": "208"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "666"
+    },
+    {
+      "input": "word = \"aeioubcdfghjklmnpqrstvwxyzaeiou\"",
+      "output": "2"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "63"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeiouf\"",
+      "output": "15"
+    },
+    {
+      "input": "word = \"bcdaeioufghijklmnopqrstuvwxyz\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouwxyzaeiouwxyzaeiouwxyzaeiouwxyz\"",
+      "output": "4"
+    },
+    {
+      "input": "word = \"xayaioeoiuaueoieoiauiouio\"",
+      "output": "139"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeioubaeiouxyzaeiouaeiouaeioubaeiou\"",
+      "output": "90"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeiou\"",
+      "output": "3"
+    },
+    {
+      "input": "word = \"bcaeiouaeiouaieouacb\"",
+      "output": "77"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "42"
+    },
+    {
+      "input": "word = \"aieouaeiouaieouaeiouaieouaeiouaieou\"",
+      "output": "490"
+    },
+    {
+      "input": "word = \"aeiouuueeiooiaaaeeoioioiaaaeeuuuiooiiu\"",
+      "output": "348"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeioucaeiou\"",
+      "output": "23"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouzzzzzzzzz\"",
+      "output": "231"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyz\"",
+      "output": "8"
+    },
+    {
+      "input": "word = \"aeiouxyzzyxwvutsrqponmlkjihgfedcbaeiouaeiou\"",
+      "output": "22"
+    },
+    {
+      "input": "word = \"aeiouxyaeiouaeiou\"",
+      "output": "22"
+    },
+    {
+      "input": "word = \"aeeeeiiiioouuuaeiouaaaeioueee\"",
+      "output": "247"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyz\"",
+      "output": "5"
+    },
+    {
+      "input": "word = \"aeioucaeioubaeiouaeiou\"",
+      "output": "23"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiou\"",
+      "output": "5"
+    },
+    {
+      "input": "word = \"xyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "42"
+    },
+    {
+      "input": "word = \"mnopqrstuvwxyaeiouaeiouxyzaeiouxyzzyxwvutsrqponmlkjihgfedcbaeiou\"",
+      "output": "23"
+    },
+    {
+      "input": "word = \"bcaeiouc\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "4656"
+    },
+    {
+      "input": "word = \"aeioueoiuaeiouaeioua\"",
+      "output": "125"
+    },
+    {
+      "input": "word = \"aabbccddeeeffgghhiijjkkllmmnnooouuupppqqrrsstttuuuvvvwwxxyyzz\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "1081"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "105"
+    },
+    {
+      "input": "word = \"aeiouaeiouxxxaeiouaeiou\"",
+      "output": "42"
+    },
+    {
+      "input": "word = \"aebcioudfeiauoceioua\"",
+      "output": "2"
+    },
+    {
+      "input": "word = \"aouieaeioueaouieaeiou\"",
+      "output": "139"
+    },
+    {
+      "input": "word = \"aeiouaeiouabcdeiouaeiouabcdeiouaeiou\"",
+      "output": "64"
+    },
+    {
+      "input": "word = \"zzzzzvvvvvaeeeiioouuuaeiou\"",
+      "output": "44"
+    },
+    {
+      "input": "word = \"uoieaueoiaueoiaueoiaueoiaeiou\"",
+      "output": "317"
+    },
+    {
+      "input": "word = \"bcdfeaioueaiouaeioueaioueaiou\"",
+      "output": "229"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "1596"
+    },
+    {
+      "input": "word = \"ueaiaoueoiuaeiouaeiouaeiou\"",
+      "output": "245"
+    },
+    {
+      "input": "word = \"aeiaeiouoieiouaeiou\"",
+      "output": "93"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeioudaeioufaeioubaeioucaeioudaeioufaeioubaeioucaeioudaeioufxyzaeioubaeioucaeioudaeioufaeioubaeioucaeioudaeiouf\"",
+      "output": "20"
+    },
+    {
+      "input": "word = \"uoieaueoiaueoiaueoiaueoiaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "1027"
+    },
+    {
+      "input": "word = \"aeiooouiaeiouaeiou\"",
+      "output": "92"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeioubaeiouxyzaeiouaeiouaeioubaeiouxyzaeiouaeioubaeiou\"",
+      "output": "112"
+    },
+    {
+      "input": "word = \"aabbccddeeffggahhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"xyzaeiouaeiouxyz\"",
+      "output": "21"
+    },
+    {
+      "input": "word = \"aeioueoiuaeiouaeioueoiuaeiouaeioueoiu\"",
+      "output": "529"
+    },
+    {
+      "input": "word = \"zzzzzaeiouzzzzzzzzzz\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"zbcdefghijklmnopqrstuvwxyaeiou\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"bcdfgohueaioeuncdfeoiu\"",
+      "output": "5"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeioudaeioubaeioucaeioudaeioubaeioucaeiou\"",
+      "output": "9"
+    },
+    {
+      "input": "word = \"xaaaeeeiiiiooooouuuuuaaaeiiiou\"",
+      "output": "131"
+    },
+    {
+      "input": "word = \"eiaouoieaueioaeioaeiaoueioea\"",
+      "output": "253"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouxyzaeiouaeiouaeiouxyzaeiouaeiou\"",
+      "output": "153"
+    },
+    {
+      "input": "word = \"aeiouxyzaeiouxyzaeiouxyz\"",
+      "output": "3"
+    },
+    {
+      "input": "word = \"mnopqrstuvwxyaeiouaeiouxyz\"",
+      "output": "21"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "84"
+    },
+    {
+      "input": "word = \"xyzaeiouaeiouaeiouaeiouaeiouaeiouxyz\"",
+      "output": "351"
+    },
+    {
+      "input": "word = \"baeiouaeiouaeiouaeiouaeiou\"",
+      "output": "231"
+    },
+    {
+      "input": "word = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\"",
+      "output": "0"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeioudeaeiouf\"",
+      "output": "5"
+    },
+    {
+      "input": "word = \"oiueaeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "461"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeiouaeiouaeiou\"",
+      "output": "137"
+    },
+    {
+      "input": "word = \"zzzzzaeiouzzzzz\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"baeioucaeiouaeioucb\"",
+      "output": "22"
+    },
+    {
+      "input": "word = \"eiouaeioua\"",
+      "output": "21"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeioubaeiou\"",
+      "output": "23"
+    },
+    {
+      "input": "word = \"xyzabcdeioufghijklmnopqrstuvwaeiou\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouaeeeeeiioouuuuuaeiou\"",
+      "output": "146"
+    },
+    {
+      "input": "word = \"abcdeioua\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeiouf\"",
+      "output": "10"
+    },
+    {
+      "input": "word = \"aeioueaioueaioueaioueaioueaiou\"",
+      "output": "350"
+    },
+    {
+      "input": "word = \"aeioubaeiouaeioubaeiouaeiou\"",
+      "output": "43"
+    },
+    {
+      "input": "word = \"aeiouaeiouaebcdeaeiouaeiou\"",
+      "output": "63"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "351"
+    },
+    {
+      "input": "word = \"aeiouaeiouaeiouaeiou\"",
+      "output": "136"
+    },
+    {
+      "input": "word = \"xyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiou\"",
+      "output": "84"
+    },
+    {
+      "input": "word = \"aeiouzyxwvutsrqponmlkjihgfedcbaeiou\"",
+      "output": "2"
+    },
+    {
+      "input": "word = \"aeiouzzzzzzzzzzzzzzzzzzzz\"",
+      "output": "1"
+    },
+    {
+      "input": "word = \"aeiouxyzzyxwvutsrqponmlkjihgfedcbaeiouaeiouaeiouxyzaeiouxyzzyxwvutsrqponmlkjihgfedcbaeiou\"",
+      "output": "69"
+    },
+    {
+      "input": "word = \"eiouaeiouaeiouaeiouaeiouaeiou\"",
+      "output": "325"
+    },
+    {
+      "input": "word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\"",
+      "output": "147"
+    },
+    {
+      "input": "word = \"xzaeiouaeiouaeiouaeiouaeioux\"",
+      "output": "231"
+    }
+  ],
+  "entry_point": "Solution().countVowelSubstrings",
+  "language_independent_cases": true,
+  "problem": "count-vowel-substrings-of-a-string",
+  "prompt": "import random\nimport functools\nimport collections\nimport string\nimport math\nimport datetime\n\nfrom typing import *\nfrom functools import *\nfrom collections import *\nfrom itertools import *\nfrom heapq import *\nfrom bisect import *\nfrom string import *\nfrom operator import *\nfrom math import *\n\ninf = float('inf')\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef list_node(values: list):\n    if not values:\n        return None\n    head = ListNode(values[0])\n    p = head\n    for val in values[1:]:\n        node = ListNode(val)\n        p.next = node\n        p = node\n    return head\n\ndef is_same_list(p1, p2):\n    if p1 is None and p2 is None:\n        return True\n    if not p1 or not p2:\n        return False\n    return p1.val == p2.val and is_same_list(p1.next, p2.next)\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef tree_node(values: list):\n    if not values:\n        return None\n    root = TreeNode(values[0])\n    i = 1\n    queue = deque()\n    queue.append(root)\n    while queue:\n        node = queue.popleft()\n        if i < len(values) and values[i] is not None:\n            node.left = TreeNode(values[i])\n            queue.append(node.left)\n        i += 1\n        if i < len(values) and values[i] is not None:\n            node.right = TreeNode(values[i])\n            queue.append(node.right)\n        i += 1\n    return root\n\ndef is_same_tree(p, q):\n    if not p and not q:\n        return True\n    elif not p or not q:\n        return False\n    elif p.val != q.val:\n        return False\n    else:\n        return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)\n",
+  "schema_version": 2,
+  "source_dataset": "leetcode_energy_93_curated.jsonl",
+  "source_dataset_sha256": "1b56e4a02bb35712ba41e0189b2cee937d15eec90a00bd9e6e2b1cb96764ea50",
+  "starter_code": "class Solution:\n    def countVowelSubstrings(self, word: str) -> int:\n        ",
+  "test": "def check(candidate):\n    assert candidate(word = \"aeiou\") == 1\n    assert candidate(word = \"aeiofvuaeiou\") == 3\n    assert candidate(word = \"uoiea\") == 1\n    assert candidate(word = \"aeiouxaeeiaouoieua\") == 28\n    assert candidate(word = \"aeiaaioaaaaeiiiiouuuooaauuaeiu\") == 175\n    assert candidate(word = \"aeiaaioaaaaeiiiiouuuoo\") == 55\n    assert candidate(word = \"aeiouaeiouaeiou\") == 66\n    assert candidate(word = \"unicornarihan\") == 0\n    assert candidate(word = \"aaaaaeeeeeeiiiiioooooouuuuu\") == 25\n    assert candidate(word = \"aeiouu\") == 2\n    assert candidate(word = \"a\") == 0\n    assert candidate(word = \"abcdefghijklmnopqrstuvwxyz\") == 0\n    assert candidate(word = \"vowelsaeiou\") == 1\n    assert candidate(word = \"cuaieuouac\") == 7\n    assert candidate(word = \"aeiooauuieoiau\") == 41\n    assert candidate(word = \"bcdfeioau\") == 1\n    assert candidate(word = \"zzzzzaeiouzzzzzzzzzzzzzzzzzzzz\") == 1\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiou\") == 43\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 496\n    assert candidate(word = \"aeiouxyzaeiouaeiou\") == 22\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 1326\n    assert candidate(word = \"aeiouxyzaeiou\") == 2\n    assert candidate(word = \"xyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\") == 63\n    assert candidate(word = \"aeiouuuueeiooiaaaeeoioioiaaaeeuuuiooiiuaeiouaeiouaeiouaeiouaeiou\") == 1565\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiou\") == 231\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiou\") == 63\n    assert candidate(word = \"uoieaueoiaueoiaueoiaueoi\") == 208\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 666\n    assert candidate(word = \"aeioubcdfghjklmnpqrstvwxyzaeiou\") == 2\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\") == 63\n    assert candidate(word = \"aeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeiouf\") == 15\n    assert candidate(word = \"bcdaeioufghijklmnopqrstuvwxyz\") == 1\n    assert candidate(word = \"aeiouwxyzaeiouwxyzaeiouwxyzaeiouwxyz\") == 4\n    assert candidate(word = \"xayaioeoiuaueoieoiauiouio\") == 139\n    assert candidate(word = \"aeioubaeiouaeioubaeiouxyzaeiouaeiouaeioubaeiou\") == 90\n    assert candidate(word = \"aeioubaeioucaeiou\") == 3\n    assert candidate(word = \"bcaeiouaeiouaieouacb\") == 77\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyz\") == 42\n    assert candidate(word = \"aieouaeiouaieouaeiouaieouaeiouaieou\") == 490\n    assert candidate(word = \"aeiouuueeiooiaaaeeoioioiaaaeeuuuiooiiu\") == 348\n    assert candidate(word = \"aeioubaeiouaeioucaeiou\") == 23\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouzzzzzzzzz\") == 231\n    assert candidate(word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyz\") == 8\n    assert candidate(word = \"aeiouxyzzyxwvutsrqponmlkjihgfedcbaeiouaeiou\") == 22\n    assert candidate(word = \"aeiouxyaeiouaeiou\") == 22\n    assert candidate(word = \"aeeeeiiiioouuuaeiouaaaeioueee\") == 247\n    assert candidate(word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiouxyz\") == 5\n    assert candidate(word = \"aeioucaeioubaeiouaeiou\") == 23\n    assert candidate(word = \"aeiouxyzaeiouxyzaeiouxyzaeiouxyzaeiou\") == 5\n    assert candidate(word = \"xyzaeiouaeiouxyzaeiouaeiouxyz\") == 42\n    assert candidate(word = \"mnopqrstuvwxyaeiouaeiouxyzaeiouxyzzyxwvutsrqponmlkjihgfedcbaeiou\") == 23\n    assert candidate(word = \"bcaeiouc\") == 1\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 4656\n    assert candidate(word = \"aeioueoiuaeiouaeioua\") == 125\n    assert candidate(word = \"aabbccddeeeffgghhiijjkkllmmnnooouuupppqqrrsstttuuuvvvwwxxyyzz\") == 0\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 1081\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\") == 105\n    assert candidate(word = \"aeiouaeiouxxxaeiouaeiou\") == 42\n    assert candidate(word = \"aebcioudfeiauoceioua\") == 2\n    assert candidate(word = \"aouieaeioueaouieaeiou\") == 139\n    assert candidate(word = \"aeiouaeiouabcdeiouaeiouabcdeiouaeiou\") == 64\n    assert candidate(word = \"zzzzzvvvvvaeeeiioouuuaeiou\") == 44\n    assert candidate(word = \"uoieaueoiaueoiaueoiaueoiaeiou\") == 317\n    assert candidate(word = \"bcdfeaioueaiouaeioueaioueaiou\") == 229\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiouaeiou\") == 1596\n    assert candidate(word = \"ueaiaoueoiuaeiouaeiouaeiou\") == 245\n    assert candidate(word = \"aeiaeiouoieiouaeiou\") == 93\n    assert candidate(word = \"aeioubaeioucaeioudaeioufaeioubaeioucaeioudaeioufaeioubaeioucaeioudaeioufxyzaeioubaeioucaeioudaeioufaeioubaeioucaeioudaeiouf\") == 20\n    assert candidate(word = \"uoieaueoiaueoiaueoiaueoiaeiouaeiouaeiouaeiouaeiou\") == 1027\n    assert candidate(word = \"aeiooouiaeiouaeiou\") == 92\n    assert candidate(word = \"aeioubaeiouaeioubaeiouxyzaeiouaeiouaeioubaeiouxyzaeiouaeioubaeiou\") == 112\n    assert candidate(word = \"aabbccddeeffggahhiiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz\") == 0\n    assert candidate(word = \"xyzaeiouaeiouxyz\") == 21\n    assert candidate(word = \"aeioueoiuaeiouaeioueoiuaeiouaeioueoiu\") == 529\n    assert candidate(word = \"zzzzzaeiouzzzzzzzzzz\") == 1\n    assert candidate(word = \"zbcdefghijklmnopqrstuvwxyaeiou\") == 1\n    assert candidate(word = \"bcdfgohueaioeuncdfeoiu\") == 5\n    assert candidate(word = \"aeioubaeioucaeioudaeioubaeioucaeioudaeioubaeioucaeiou\") == 9\n    assert candidate(word = \"xaaaeeeiiiiooooouuuuuaaaeiiiou\") == 131\n    assert candidate(word = \"eiaouoieaueioaeioaeiaoueioea\") == 253\n    assert candidate(word = \"aeiouaeiouaeiouxyzaeiouaeiouaeiouxyzaeiouaeiou\") == 153\n    assert candidate(word = \"aeiouxyzaeiouxyzaeiouxyz\") == 3\n    assert candidate(word = \"mnopqrstuvwxyaeiouaeiouxyz\") == 21\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\") == 84\n    assert candidate(word = \"xyzaeiouaeiouaeiouaeiouaeiouaeiouxyz\") == 351\n    assert candidate(word = \"baeiouaeiouaeiouaeiouaeiou\") == 231\n    assert candidate(word = \"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz\") == 0\n    assert candidate(word = \"aeioubaeioucaeioudeaeiouf\") == 5\n    assert candidate(word = \"oiueaeiouaeiouaeiouaeiouaeiouaeiou\") == 461\n    assert candidate(word = \"aeioubaeiouaeiouaeiouaeiou\") == 137\n    assert candidate(word = \"zzzzzaeiouzzzzz\") == 1\n    assert candidate(word = \"baeioucaeiouaeioucb\") == 22\n    assert candidate(word = \"eiouaeioua\") == 21\n    assert candidate(word = \"aeioubaeiouaeioubaeiou\") == 23\n    assert candidate(word = \"xyzabcdeioufghijklmnopqrstuvwaeiou\") == 1\n    assert candidate(word = \"aeiouaeeeeeiioouuuuuaeiou\") == 146\n    assert candidate(word = \"abcdeioua\") == 1\n    assert candidate(word = \"aeioubaeioucaeioudeaeioufaeioubaeioucaeioudeaeiouf\") == 10\n    assert candidate(word = \"aeioueaioueaioueaioueaioueaiou\") == 350\n    assert candidate(word = \"aeioubaeiouaeioubaeiouaeiou\") == 43\n    assert candidate(word = \"aeiouaeiouaebcdeaeiouaeiou\") == 63\n    assert candidate(word = \"aeiouaeiouaeiouaeiouaeiouaeiou\") == 351\n    assert candidate(word = \"aeiouaeiouaeiouaeiou\") == 136\n    assert candidate(word = \"xyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiou\") == 84\n    assert candidate(word = \"aeiouzyxwvutsrqponmlkjihgfedcbaeiou\") == 2\n    assert candidate(word = \"aeiouzzzzzzzzzzzzzzzzzzzz\") == 1\n    assert candidate(word = \"aeiouxyzzyxwvutsrqponmlkjihgfedcbaeiouaeiouaeiouxyzaeiouxyzzyxwvutsrqponmlkjihgfedcbaeiou\") == 69\n    assert candidate(word = \"eiouaeiouaeiouaeiouaeiouaeiou\") == 325\n    assert candidate(word = \"aeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyzaeiouaeiouxyz\") == 147\n    assert candidate(word = \"xzaeiouaeiouaeiouaeiouaeioux\") == 231\n",
+  "workload_hash": "5042d9aa5650f05c98e6e9d5b38ec0bd15207e3a8a28d40ea2526a5044a5aebd"
+}
