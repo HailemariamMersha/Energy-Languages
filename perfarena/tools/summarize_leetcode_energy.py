@@ -55,8 +55,14 @@ def summarize(input_path: Path, summaries_root: Path) -> dict[str, Any]:
         )
 
     model_slug = rows[0]["model_slug"] if rows else None
+    benchmark = rows[0].get("benchmark") if rows else "leetcode-energy-curated"
+    skipped_glob = (
+        "*/energy_stress_*.json"
+        if benchmark == "leetcode-energy-stress"
+        else "*/energy_curated_*.json"
+    )
     skipped: list[dict[str, str]] = []
-    for path in summaries_root.glob("*/energy_curated_*.json"):
+    for path in summaries_root.glob(skipped_glob):
         data = json.loads(path.read_text())
         if data.get("model_slug") == model_slug and not data.get("measured"):
             skipped.append(
@@ -67,9 +73,16 @@ def summarize(input_path: Path, summaries_root: Path) -> dict[str, Any]:
             )
 
     phase_counts = Counter(row["phase"] for row in rows)
+    case_repeats = sorted(
+        {
+            row["case_repeat"]
+            for row in problems
+            if row.get("case_repeat") is not None
+        }
+    )
     return {
         "schema_version": 1,
-        "benchmark": "leetcode-energy-curated",
+        "benchmark": benchmark,
         "input": str(input_path),
         "model_slug": model_slug,
         "language": rows[0]["language"] if rows else None,
@@ -90,7 +103,7 @@ def summarize(input_path: Path, summaries_root: Path) -> dict[str, Any]:
             "idle_seconds": 2,
             "warmup_iterations": 3,
             "measurement_iterations": 10,
-            "case_repeat": 1,
+            "case_repeat": case_repeats,
         },
         "interpretation": {
             "energy_values": "raw CodeCarbon estimates in microjoules",
@@ -126,21 +139,43 @@ def write_outputs(summary: dict[str, Any], output_prefix: Path) -> None:
         writer.writeheader()
         writer.writerows(summary["problems"])
 
+    benchmark = summary.get("benchmark", "leetcode-energy-curated")
+    title = (
+        "Python Stress LeetCode Energy Results"
+        if benchmark == "leetcode-energy-stress"
+        else "Python Curated LeetCode Energy Results"
+    )
+    workload_label = (
+        "Stress cases executed per full pass"
+        if benchmark == "leetcode-energy-stress"
+        else "Curated cases executed per full pass"
+    )
+    backend_line = (
+        "- Backend: CodeCarbon on macOS; stress values are raw estimates."
+        if benchmark == "leetcode-energy-stress"
+        else "- Backend: CodeCarbon on macOS; values are raw estimates."
+    )
     top_energy = sorted(
         summary["problems"], key=lambda row: row["median_energy_j"], reverse=True
     )[:10]
+    repeat_values = summary["measurement_protocol"].get("case_repeat") or []
+    repeat_text = (
+        str(repeat_values[0])
+        if len(repeat_values) == 1
+        else ", ".join(str(value) for value in repeat_values)
+    )
     lines = [
-        "# Python Curated LeetCode Energy Results",
+        f"# {title}",
         "",
         "## Run Summary",
         "",
         f"- Measured accepted problems: **{summary['measured_problems']}**",
         f"- Skipped accepted problems: **{len(summary['skipped_accepted_problems'])}**",
-        f"- Curated cases executed per full pass: **{summary['total_workload_cases']}**",
+        f"- {workload_label}: **{summary['total_workload_cases']}**",
         f"- Measurement rows: **{summary['phase_counts'].get('measure', 0)}**",
         f"- Nonzero child exits: **{summary['nonzero_exit_rows']}**",
-        "- Protocol: 2 s idle, 3 warmups, 10 measurements, one workload pass per child.",
-        "- Backend: CodeCarbon on macOS; values are raw estimates.",
+        f"- Protocol: 2 s idle, 3 warmups, 10 measurements, case repeat(s): {repeat_text}.",
+        backend_line,
         "",
         "## Highest Raw Median Energy",
         "",
@@ -162,20 +197,24 @@ def write_outputs(summary: dict[str, Any], output_prefix: Path) -> None:
     )
     for row in summary["skipped_accepted_problems"]:
         lines.append(f"- `{row['problem']}`: {row['reason']}.")
-    lines.extend(
-        [
-            "",
-            "## Interpretation",
-            "",
+    if benchmark == "leetcode-energy-stress":
+        interpretation = [
+            "The stress workload intentionally uses a small set of larger deterministic",
+            "cases. CodeCarbon still reports raw local estimates, but longer measured",
+            "child processes reduce the startup and tracker overhead that dominated the",
+            "short curated workload. Direct Linux RAPL measurements remain the better",
+            "source for final cross-language claims.",
+        ]
+    else:
+        interpretation = [
             "The raw energy values include CodeCarbon tracker and Python process startup",
             "overhead. Most workloads complete in about 0.1 seconds, while CodeCarbon's",
             "tracking interval is substantially longer. Idle subtraction was rejected",
             "because it produced negative values on this machine. These results verify the",
             "pipeline and provide raw local estimates, but direct Linux RAPL measurements",
             "with longer repeated workloads are required for final cross-language claims.",
-            "",
         ]
-    )
+    lines.extend(["", "## Interpretation", "", *interpretation, ""])
     output_prefix.with_suffix(".md").write_text("\n".join(lines))
 
 

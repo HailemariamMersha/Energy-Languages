@@ -9,6 +9,7 @@ console script installed by ``pyproject.toml``. Commands:
 - ``exec-check``      -- sanity-check an executor (local or SSH).
 - ``harness-run``     -- drive ``make <action>`` over a cell via an executor.
 """
+
 from __future__ import annotations
 
 import json
@@ -20,7 +21,7 @@ from rich.console import Console
 from rich.table import Table
 
 from .config import load_config
-from .executors import LocalExecutor, SSHExecutor, from_config
+from .executors import LocalExecutor, from_config
 from .executors.base import Executor
 from .generation.pipeline import (
     GenerationRequest,
@@ -30,6 +31,7 @@ from .generation.pipeline import (
 from .harness import Harness
 from . import static_analysis
 from . import leetcode_energy as leetcode
+from . import casewise_energy
 from .measurement import (
     group_iterations,
     join_group_with_meta,
@@ -38,7 +40,8 @@ from .measurement import (
     write_jsonl,
 )
 from .tools import patch_makefiles as patcher
-from .tools import summarize_leetcode_energy as leetcode_summary
+from .tools import summarize_leetcode_casewise as casewise_summary
+from .tools import visualize_leetcode_casewise as casewise_viz
 
 app = typer.Typer(
     help=(
@@ -107,15 +110,11 @@ def generate(
     max_tokens: int = typer.Option(4096, help="Max output tokens"),
     top_p: Optional[float] = typer.Option(None, help="Nucleus-sampling top-p"),
     top_k: Optional[int] = typer.Option(None, help="Top-k sampling"),
-    seed: Optional[int] = typer.Option(
-        None, help="Provider seed (where exposed)"
-    ),
+    seed: Optional[int] = typer.Option(None, help="Provider seed (where exposed)"),
     system_template: str = typer.Option(
         "system.txt", help="System prompt template filename"
     ),
-    user_template: str = typer.Option(
-        "user.txt", help="User prompt template filename"
-    ),
+    user_template: str = typer.Option("user.txt", help="User prompt template filename"),
     via_agent: bool = typer.Option(
         False,
         "--via-agent",
@@ -295,10 +294,7 @@ def leetcode_import_solutions_cmd(
     ),
     languages: str = typer.Option(
         "python",
-        help=(
-            "Comma-separated Energy-Languages keys to import. Defaults to "
-            "python."
-        ),
+        help=("Comma-separated Energy-Languages keys to import. Defaults to python."),
     ),
     model: Optional[str] = typer.Option(
         None,
@@ -360,7 +356,9 @@ def leetcode_import_solutions_cmd(
 
 @app.command("leetcode-generate")
 def leetcode_generate_cmd(
-    provider: str = typer.Option(..., help="LLM provider: openai | anthropic | google | ollama"),
+    provider: str = typer.Option(
+        ..., help="LLM provider: openai | anthropic | google | ollama"
+    ),
     model: str = typer.Option(..., help="Model name understood by the provider"),
     problem: str = typer.Option(..., help="LeetCode title slug"),
     language: str = typer.Option(..., help="Energy-Languages key"),
@@ -452,7 +450,9 @@ def leetcode_check_cmd(
     ),
     provider: str = typer.Option("manual", help="Provider name for new submissions."),
     model: str = typer.Option("manual", help="Model name for new submissions."),
-    model_version: str = typer.Option("manual", help="Model version for new submissions."),
+    model_version: str = typer.Option(
+        "manual", help="Model version for new submissions."
+    ),
     generation_meta: Optional[Path] = typer.Option(
         None,
         help="Optional generation meta.json to include in attempt trace.",
@@ -496,11 +496,19 @@ def leetcode_check_cmd(
 
 @app.command("leetcode-run")
 def leetcode_run_cmd(
-    provider: str = typer.Option(..., help="LLM provider: openai | anthropic | google | ollama"),
+    provider: str = typer.Option(
+        ..., help="LLM provider: openai | anthropic | google | ollama"
+    ),
     model: str = typer.Option(..., help="Model name understood by the provider"),
-    model_version: str = typer.Option("ollama", help="Version label stored in backend submission"),
-    languages: str = typer.Option("", help="Comma-separated Energy-Languages keys. Defaults to all 10."),
-    problems: str = typer.Option("", help="Comma-separated LeetCode title slugs. Defaults to all 99."),
+    model_version: str = typer.Option(
+        "ollama", help="Version label stored in backend submission"
+    ),
+    languages: str = typer.Option(
+        "", help="Comma-separated Energy-Languages keys. Defaults to all 10."
+    ),
+    problems: str = typer.Option(
+        "", help="Comma-separated LeetCode title slugs. Defaults to all 99."
+    ),
     temperature: float = typer.Option(0.2, help="Sampling temperature"),
     max_tokens: int = typer.Option(4096, help="Max output tokens"),
     base_url: Optional[str] = typer.Option(
@@ -575,7 +583,9 @@ def leetcode_workload_build_cmd(
     cfg = load_config()
     lang = leetcode.get_language(language)
     if lang.key != "python":
-        console.print("[red]leetcode-workload-build currently supports python only[/red]")
+        console.print(
+            "[red]leetcode-workload-build currently supports python only[/red]"
+        )
         raise typer.Exit(code=2)
     selected = leetcode.accepted_results_from_progress(
         cfg.repo_root,
@@ -791,22 +801,35 @@ def leetcode_measure_model_cmd(
         "--curated-dataset",
         help="Curated LeetCodeDataset93 JSONL. Defaults to the sibling dataset.",
     ),
-    warmup: int = typer.Option(3, help="CodeCarbon/RAPL warmup iterations."),
-    measure: int = typer.Option(10, help="CodeCarbon/RAPL measurement iterations."),
-    idle_s: int = typer.Option(2, help="Idle baseline seconds."),
-    case_repeat: int = typer.Option(
-        1,
-        help="Repeat the full workload inside each measured child process.",
+    warmup_seconds: float = typer.Option(
+        60.0,
+        min=0.0,
+        help="Persistent full-workload warmup duration per problem.",
+    ),
+    measurements: int = typer.Option(
+        10,
+        min=1,
+        help="Independent measured batches per curated test case.",
+    ),
+    batch_seconds: float = typer.Option(
+        1.0,
+        min=0.01,
+        help="Calibration target for each unchanged case batch.",
+    ),
+    powermetrics_interval_ms: int = typer.Option(
+        100,
+        min=10,
+        help="Direct powermetrics sampling interval in milliseconds.",
     ),
     rerun: bool = typer.Option(
         False,
         "--rerun",
         help="Replace an existing model measurement output.",
     ),
-    append: bool = typer.Option(
-        False,
-        "--append",
-        help="Append to an existing model measurement output.",
+    resume: bool = typer.Option(
+        True,
+        "--resume/--no-resume",
+        help="Resume case/iteration checkpoints from an existing JSONL file.",
     ),
     hydrate_problem: bool = typer.Option(
         True,
@@ -818,12 +841,15 @@ def leetcode_measure_model_cmd(
     cfg = load_config()
     lang = leetcode.get_language(language)
     if lang.key != "python":
-        console.print("[red]leetcode-measure-model currently supports python only[/red]")
+        console.print(
+            "[red]leetcode-measure-model currently supports python only[/red]"
+        )
         raise typer.Exit(code=2)
-    if rerun and append:
-        console.print("[red]Use only one of --rerun or --append[/red]")
+    if not accepted_only:
+        console.print(
+            "[red]Casewise energy measurement requires --accepted-only.[/red]"
+        )
         raise typer.Exit(code=2)
-
     resolved_base_url = (base_url or leetcode.default_base_url()).rstrip("/")
     rows = list(
         leetcode.iter_dataset_solutions(
@@ -854,17 +880,19 @@ def leetcode_measure_model_cmd(
         resolved_model_slug,
         lang,
     )
-    output = leetcode.model_measurement_path(cfg.repo_root, resolved_model_slug, lang)
-    summary_prefix = leetcode.model_summary_prefix(
+    output = casewise_energy.measurement_path(
         cfg.repo_root,
         resolved_model_slug,
-        lang,
+        lang.key,
+    )
+    summary_prefix = casewise_energy.summary_prefix(
+        cfg.repo_root, resolved_model_slug, lang.key
     )
     summary_json = summary_prefix.with_suffix(".json")
-    if output.exists() and not rerun and not append:
+    if output.exists() and not rerun and not resume:
         console.print(
-            f"[yellow]Existing measurement found for {resolved_model_slug}; "
-            "skipping. Use --rerun to replace or --append to append.[/yellow]"
+            f"[yellow]Existing casewise measurement found for {resolved_model_slug}; "
+            "skipping. Use --resume or --rerun.[/yellow]"
         )
         console.print(f"aggregate: {output}")
         if summary_json.exists():
@@ -883,7 +911,9 @@ def leetcode_measure_model_cmd(
         stage_solution=False,
     )
     stats = progress_data.get("dataset_import_stats", {})
-    dataset_path = curated_dataset or leetcode.default_curated_dataset_path(cfg.repo_root)
+    dataset_path = curated_dataset or leetcode.default_curated_dataset_path(
+        cfg.repo_root
+    )
     synced = leetcode.sync_curated_dataset_workloads(
         cfg.repo_root,
         dataset_path,
@@ -901,31 +931,24 @@ def leetcode_measure_model_cmd(
             f"[red]No accepted imported results selected for {resolved_model_slug}.[/red]"
         )
         raise typer.Exit(code=1)
-    measured_rows = leetcode.measure_curated_accepted_results(
-        cfg.repo_root,
-        selected,
-        model_slug=resolved_model_slug,
-        warmup=warmup,
-        measure=measure,
-        idle_s=idle_s,
-        case_repeat=case_repeat,
-        output=output,
-        reset_output=rerun and not append,
-    )
-    if measured_rows:
-        summary = leetcode_summary.summarize(
-            output,
-            leetcode.leetcode_root(cfg.repo_root) / lang.folder,
+    try:
+        measured_rows = casewise_energy.measure_casewise_results(
+            cfg.repo_root,
+            selected,
+            model_slug=resolved_model_slug,
+            warmup_seconds=warmup_seconds,
+            measurements=measurements,
+            batch_seconds=batch_seconds,
+            interval_ms=powermetrics_interval_ms,
+            output=output,
+            resume=resume and not rerun,
+            reset_output=rerun,
         )
-        leetcode_summary.write_outputs(summary, summary_prefix)
-
-    skipped = sum(
-        1
-        for path in (leetcode.leetcode_root(cfg.repo_root) / lang.folder).glob(
-            f"*/energy_curated_{resolved_model_slug}.json"
-        )
-        if not json.loads(path.read_text()).get("measured")
-    )
+    except RuntimeError as exc:
+        console.print(f"[red]Casewise measurement failed: {exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    summary = casewise_summary.summarize(output, expected_measurements=measurements)
+    casewise_summary.write_outputs(summary, summary_prefix)
     console.print(
         "leetcode-measure-model: "
         f"model_slug={resolved_model_slug} "
@@ -933,7 +956,10 @@ def leetcode_measure_model_cmd(
         f"imported={stats.get('imported', 0)} "
         f"selected={len(selected)} "
         f"measured_rows={len(measured_rows)} "
-        f"skipped={skipped}"
+        f"complete_cases={summary['complete_cases']} "
+        f"skipped_problems={summary['skipped_problems']} "
+        f"failed_problems={summary['failed_problems']} "
+        f"incomplete_cases={len(summary['incomplete_cases'])}"
     )
     console.print(
         f"curated workloads: problems={len(synced)} "
@@ -941,8 +967,209 @@ def leetcode_measure_model_cmd(
     )
     console.print(f"progress:  {progress}")
     console.print(f"aggregate: {output}")
-    if measured_rows:
-        console.print(f"summary:   {summary_prefix.with_suffix('.md')}")
+    console.print(f"summary:   {summary_prefix.with_suffix('.md')}")
+
+
+@app.command("leetcode-case-measure")
+def leetcode_case_measure_cmd(
+    model_slug: str = typer.Option(..., help="Model slug to measure."),
+    progress: Optional[Path] = typer.Option(
+        None,
+        help=(
+            "Accepted progress JSON. Defaults to "
+            "perfarena_out/leetcode_imports/<model_slug>/python_progress.json."
+        ),
+    ),
+    language: str = typer.Option("python", help="Only python is supported in v1."),
+    problems: str = typer.Option(
+        "",
+        help="Comma-separated curated slugs. Defaults to all accepted rows.",
+    ),
+    accepted_only: bool = typer.Option(True, "--accepted-only/--all-results"),
+    warmup_seconds: float = typer.Option(
+        60.0, min=0.0, help="Persistent full-workload warmup duration per problem."
+    ),
+    measurements: int = typer.Option(
+        10, min=1, help="Independent measured batches per curated test case."
+    ),
+    batch_seconds: float = typer.Option(
+        1.0, min=0.01, help="Calibration target for each unchanged case batch."
+    ),
+    powermetrics_interval_ms: int = typer.Option(
+        100, min=10, help="Direct powermetrics sample interval in milliseconds."
+    ),
+    output: Optional[Path] = typer.Option(
+        None,
+        help="Casewise JSONL path. Defaults under perfarena_out/leetcode_measurements.",
+    ),
+    rerun: bool = typer.Option(
+        False,
+        "--rerun",
+        help="Replace an existing casewise output.",
+    ),
+    resume: bool = typer.Option(
+        True,
+        "--resume/--no-resume",
+        help="Resume completed case/iteration checkpoints.",
+    ),
+) -> None:
+    """Measure unchanged curated Python cases with direct powermetrics."""
+    cfg = load_config()
+    lang = leetcode.get_language(language)
+    if lang.key != "python":
+        console.print("[red]leetcode-case-measure currently supports python only[/red]")
+        raise typer.Exit(code=2)
+    if not accepted_only:
+        console.print(
+            "[red]Casewise energy measurement requires --accepted-only.[/red]"
+        )
+        raise typer.Exit(code=2)
+
+    progress_path = progress or leetcode.model_import_progress_path(
+        cfg.repo_root,
+        model_slug,
+        lang,
+    )
+    out_path = output or casewise_energy.measurement_path(
+        cfg.repo_root, model_slug, lang.key
+    )
+    output_prefix = (
+        out_path.with_name(f"{out_path.stem}_summary")
+        if output is not None
+        else casewise_energy.summary_prefix(cfg.repo_root, model_slug, lang.key)
+    )
+    selected = leetcode.accepted_results_from_progress(
+        cfg.repo_root,
+        progress_path,
+        lang,
+        model_slug=model_slug,
+        accepted_only=accepted_only,
+        problem_slugs=leetcode.parse_slug_list(problems),
+    )
+    if not selected:
+        console.print(
+            f"[red]No accepted curated candidates selected for {model_slug} "
+            f"from {progress_path}.[/red]"
+        )
+        raise typer.Exit(code=1)
+    try:
+        measured_rows = casewise_energy.measure_casewise_results(
+            cfg.repo_root,
+            selected,
+            model_slug=model_slug,
+            warmup_seconds=warmup_seconds,
+            measurements=measurements,
+            batch_seconds=batch_seconds,
+            interval_ms=powermetrics_interval_ms,
+            output=out_path,
+            resume=resume and not rerun,
+            reset_output=rerun,
+        )
+    except RuntimeError as exc:
+        console.print(f"[red]Casewise measurement failed: {exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    summary = casewise_summary.summarize(out_path, expected_measurements=measurements)
+    casewise_summary.write_outputs(summary, output_prefix)
+    console.print(
+        "leetcode-case-measure: "
+        f"model_slug={model_slug} "
+        f"selected={len(selected)} "
+        f"new_rows={len(measured_rows)} "
+        f"complete_cases={summary['complete_cases']} "
+        f"skipped_problems={summary['skipped_problems']} "
+        f"failed_problems={summary['failed_problems']} "
+        f"incomplete_cases={len(summary['incomplete_cases'])}"
+    )
+    console.print(f"aggregate: {out_path}")
+    console.print(f"summary:   {output_prefix.with_suffix('.md')}")
+
+
+@app.command("leetcode-compare-models")
+def leetcode_compare_models_cmd(
+    model_slugs: str = typer.Option(
+        ...,
+        "--models",
+        help="Comma-separated model slugs with completed casewise summaries.",
+    ),
+    language: str = typer.Option("python", help="Only python is supported in v1."),
+    output_prefix: Optional[Path] = typer.Option(
+        None,
+        help="Optional output prefix for the comparison JSON, CSV, and Markdown.",
+    ),
+) -> None:
+    """Compare models over their common completed problem/case intersection."""
+    cfg = load_config()
+    lang = leetcode.get_language(language)
+    if lang.key != "python":
+        console.print(
+            "[red]leetcode-compare-models currently supports python only[/red]"
+        )
+        raise typer.Exit(code=2)
+    requested = [value.strip() for value in model_slugs.split(",") if value.strip()]
+    if len(requested) < 2:
+        console.print("[red]Pass at least two model slugs with --models.[/red]")
+        raise typer.Exit(code=2)
+
+    summaries: list[dict[str, object]] = []
+    missing: list[Path] = []
+    for model_slug in requested:
+        path = casewise_energy.summary_prefix(
+            cfg.repo_root, model_slug, lang.key
+        ).with_suffix(".json")
+        if not path.exists():
+            missing.append(path)
+            continue
+        summaries.append(json.loads(path.read_text()))
+    if missing:
+        console.print("[red]Missing casewise summaries:[/red]")
+        for path in missing:
+            console.print(f"  {path}")
+        raise typer.Exit(code=1)
+
+    try:
+        comparison = casewise_summary.compare_models(summaries)
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    prefix = output_prefix or casewise_summary.comparison_prefix(
+        cfg.repo_root / "perfarena_out" / "leetcode_measurements",
+        requested,
+        lang.key,
+    )
+    casewise_summary.write_comparison(comparison, prefix)
+    console.print(
+        "leetcode-compare-models: "
+        f"models={len(requested)} "
+        f"common_problems={comparison['common_problems']} "
+        f"common_cases={comparison['common_cases']}"
+    )
+    console.print(f"comparison: {prefix.with_suffix('.md')}")
+
+
+@app.command("leetcode-visualize-casewise")
+def leetcode_visualize_casewise_cmd(
+    model_slug: str = typer.Option(..., help="Model slug with completed casewise CSVs."),
+    language: str = typer.Option("python", help="Only python is supported in v1."),
+    output: Optional[Path] = typer.Option(
+        None,
+        help="Optional HTML output path. Defaults under the model measurement folder.",
+    ),
+) -> None:
+    """Generate a self-contained HTML/SVG report for casewise LeetCode results."""
+    cfg = load_config()
+    lang = leetcode.get_language(language)
+    if lang.key != "python":
+        console.print(
+            "[red]leetcode-visualize-casewise currently supports python only[/red]"
+        )
+        raise typer.Exit(code=2)
+    root = casewise_viz.measurement_root(cfg.repo_root, model_slug)
+    try:
+        report = casewise_viz.write_report(root, lang.key, output)
+    except FileNotFoundError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    console.print(f"casewise report: {report}")
 
 
 # --- exec-check ------------------------------------------------------------
@@ -1139,7 +1366,8 @@ def ingest_measurements_cmd(
 
     iterations = read_rapl_jsonl(jsonl)
     groups = [
-        g for g in group_iterations(iterations)
+        g
+        for g in group_iterations(iterations)
         if g.language == lang.folder and g.test == problem
     ]
     if not groups:

@@ -225,7 +225,9 @@ def test_dataset_import_keeps_models_in_distinct_source_files(tmp_path: Path) ->
     assert (
         tmp_path / "leetcode-energy" / "Python" / "two-sum" / "solution.py"
     ).read_text() == ""
-    assert imported["records"]["ollama__gemma4_e4b|python|two-sum"]["source"] == str(gemma)
+    assert imported["records"]["ollama__gemma4_e4b|python|two-sum"]["source"] == str(
+        gemma
+    )
     assert imported["records"]["ollama__qwen3_8b|python|two-sum"]["source"] == str(qwen)
 
 
@@ -330,17 +332,17 @@ def test_leetcode_measure_model_skips_existing_output(
         lambda **kwargs: iter([_dataset_row()]),
     )
 
-    output = leetcode.model_measurement_path(
+    output = cli_module.casewise_energy.measurement_path(
         tmp_path,
         "ollama__gemma4_e4b",
-        lang,
+        lang.key,
     )
     output.parent.mkdir(parents=True)
     output.write_text('{"model_slug":"ollama__gemma4_e4b"}\n')
-    summary_prefix = leetcode.model_summary_prefix(
+    summary_prefix = cli_module.casewise_energy.summary_prefix(
         tmp_path,
         "ollama__gemma4_e4b",
-        lang,
+        lang.key,
     )
     summary_prefix.with_suffix(".json").write_text("{}")
     summary_prefix.with_suffix(".md").write_text("# existing\n")
@@ -360,11 +362,12 @@ def test_leetcode_measure_model_skips_existing_output(
             "gemma4:e4b",
             "--language",
             "python",
+            "--no-resume",
         ],
     )
 
     assert result.exit_code == 0
-    assert "Existing measurement found for ollama__gemma4_e4b" in result.output
+    assert "Existing casewise measurement found for ollama__gemma4_e4b" in result.output
     assert output.read_text() == '{"model_slug":"ollama__gemma4_e4b"}\n'
 
 
@@ -632,7 +635,9 @@ def test_build_workload_writes_deterministic_shared_files(tmp_path: Path) -> Non
         result,
         overwrite=True,
     )
-    workload = json.loads(leetcode.workload_path(tmp_path, problem["title_slug"]).read_text())
+    workload = json.loads(
+        leetcode.workload_path(tmp_path, problem["title_slug"]).read_text()
+    )
     expected = json.loads(
         leetcode.expected_output_path(tmp_path, problem["title_slug"]).read_text()
     )
@@ -680,7 +685,9 @@ def test_unsupported_workload_shape_is_skipped(tmp_path: Path) -> None:
     )
 
     row = leetcode.build_workload_for_accepted_result(tmp_path, result, overwrite=True)
-    workload = json.loads(leetcode.workload_path(tmp_path, problem["title_slug"]).read_text())
+    workload = json.loads(
+        leetcode.workload_path(tmp_path, problem["title_slug"]).read_text()
+    )
 
     assert row["status"] == "skipped"
     assert workload["skipped"] is True
@@ -729,9 +736,7 @@ def test_curated_sync_writes_shared_workload_and_prunes_old_files(
 def test_curated_runner_validates_then_executes_cases(tmp_path: Path) -> None:
     source = tmp_path / "solution.py"
     source.write_text(
-        "class Solution:\n"
-        "    def restore(self, pairs):\n"
-        "        return [1, 2, 3]\n"
+        "class Solution:\n    def restore(self, pairs):\n        return [1, 2, 3]\n"
     )
     workload = {
         "problem": "restore",
@@ -758,3 +763,19 @@ def test_curated_runner_validates_then_executes_cases(tmp_path: Path) -> None:
     assert result["ok"] is True
     assert result["cases"] == 1
     assert result["repeat"] == 2
+
+
+def test_case_measure_rejects_non_python() -> None:
+    result = runner.invoke(
+        app,
+        [
+            "leetcode-case-measure",
+            "--model-slug",
+            "ollama__gemma4_e4b",
+            "--language",
+            "java",
+        ],
+    )
+
+    assert result.exit_code == 2
+    assert "supports python only" in result.output
