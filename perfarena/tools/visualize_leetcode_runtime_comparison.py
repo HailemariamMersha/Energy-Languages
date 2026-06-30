@@ -31,17 +31,49 @@ def _read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(fh))
 
 
-def load_local_problems(root: Path, language: str) -> list[dict[str, str]]:
+def load_local_problem_suites(root: Path, language: str) -> list[dict[str, Any]]:
+    cases_path = root / f"{language}_casewise_cases.csv"
     problems_path = root / f"{language}_casewise_problems.csv"
     summary_path = root / f"{language}_casewise_summary.json"
-    missing = [path for path in (problems_path, summary_path) if not path.exists()]
+    missing = [
+        path for path in (cases_path, problems_path, summary_path) if not path.exists()
+    ]
     if missing:
         joined = "\n".join(f"  {path}" for path in missing)
         raise FileNotFoundError(f"missing required casewise files:\n{joined}")
     problems = _read_csv(problems_path)
     if not problems:
         raise ValueError("casewise problem CSV contains no rows")
-    return problems
+    cases = _read_csv(cases_path)
+    grouped: dict[str, list[dict[str, str]]] = {}
+    for row in cases:
+        grouped.setdefault(row["problem"], []).append(row)
+
+    suites: list[dict[str, Any]] = []
+    for problem in problems:
+        slug = problem["problem"]
+        problem_cases = grouped.get(slug, [])
+        expected = int(float(problem["case_count"]))
+        if len(problem_cases) != expected:
+            raise ValueError(
+                f"{slug}: expected {expected} complete case rows, found "
+                f"{len(problem_cases)}"
+            )
+        suites.append(
+            {
+                "problem": slug,
+                "case_count": expected,
+                "local_suite_wall_ms": math.fsum(
+                    float(row["median_wall_ms_per_call"])
+                    for row in problem_cases
+                ),
+                "local_suite_energy_j": math.fsum(
+                    float(row["median_cpu_energy_j_per_call"])
+                    for row in problem_cases
+                ),
+            }
+        )
+    return suites
 
 
 def _runtime_projection(row: dict[str, Any]) -> dict[str, Any]:
@@ -145,7 +177,7 @@ def spearman(values_a: list[float], values_b: list[float]) -> float | None:
 
 
 def join_problem_rows(
-    local_rows: list[dict[str, str]], runtime_rows: list[dict[str, Any]]
+    local_rows: list[dict[str, Any]], runtime_rows: list[dict[str, Any]]
 ) -> dict[str, Any]:
     local = {row["problem"]: row for row in local_rows}
     remote = {str(row["problem_slug"]): row for row in runtime_rows}
@@ -164,15 +196,15 @@ def join_problem_rows(
                 "leetcode_runtime_ms": float(right["runtime_ms"]),
                 "runtime_percentile": right.get("runtime_percentile"),
                 "total_testcases": right.get("total_testcases"),
-                "case_count": int(float(left["case_count"])),
-                "local_wall_ms_per_call": float(left["median_case_wall_ms"]),
-                "local_energy_j_per_call": float(left["median_case_cpu_energy_j"]),
+                "case_count": int(left["case_count"]),
+                "local_suite_wall_ms": float(left["local_suite_wall_ms"]),
+                "local_suite_energy_j": float(left["local_suite_energy_j"]),
             }
         )
 
     runtime_ranks = average_ranks([row["leetcode_runtime_ms"] for row in rows])
-    energy_ranks = average_ranks([row["local_energy_j_per_call"] for row in rows])
-    wall_ranks = average_ranks([row["local_wall_ms_per_call"] for row in rows])
+    energy_ranks = average_ranks([row["local_suite_energy_j"] for row in rows])
+    wall_ranks = average_ranks([row["local_suite_wall_ms"] for row in rows])
     for row, runtime_rank, energy_rank, wall_rank in zip(
         rows, runtime_ranks, energy_ranks, wall_ranks
     ):
@@ -190,11 +222,11 @@ def join_problem_rows(
         "runtime_only": sorted(set(remote) - set(local)),
         "runtime_wall_spearman": spearman(
             [row["leetcode_runtime_ms"] for row in rows],
-            [row["local_wall_ms_per_call"] for row in rows],
+            [row["local_suite_wall_ms"] for row in rows],
         ),
         "runtime_energy_spearman": spearman(
             [row["leetcode_runtime_ms"] for row in rows],
-            [row["local_energy_j_per_call"] for row in rows],
+            [row["local_suite_energy_j"] for row in rows],
         ),
     }
 
@@ -311,8 +343,8 @@ def _table(rows: list[dict[str, Any]]) -> str:
             f'<td class="num">{"-" if percentile is None else f"{float(percentile):.2f}%"}</td>'
             f'<td class="num">{"-" if tests is None else int(tests)}</td>'
             f'<td class="num">{row["case_count"]}</td>'
-            f'<td class="num">{row["local_wall_ms_per_call"]:.6g}</td>'
-            f'<td class="num">{row["local_energy_j_per_call"]:.6g}</td>'
+            f'<td class="num">{row["local_suite_wall_ms"]:.6g}</td>'
+            f'<td class="num">{row["local_suite_energy_j"]:.6g}</td>'
             f'<td class="num">{row["leetcode_runtime_rank"]:.1f}</td>'
             f'<td class="num">{row["local_energy_rank"]:.1f}</td>'
             f'<td class="num">{row["energy_rank_difference"]:+.1f}</td>'
@@ -322,7 +354,7 @@ def _table(rows: list[dict[str, Any]]) -> str:
         '<div class="table-wrap"><table><thead><tr>'
         "<th>Problem</th><th>Difficulty</th><th>LC runtime ms</th>"
         "<th>LC runtime %ile</th><th>LC testcases</th><th>Local cases</th>"
-        "<th>Local wall ms/call</th><th>Local CPU J/call</th>"
+        "<th>Local suite wall ms</th><th>Local suite CPU J</th>"
         "<th>LC rank</th><th>Energy rank</th><th>Rank difference</th>"
         "</tr></thead><tbody>" + "".join(body) + "</tbody></table></div>"
     )
@@ -364,15 +396,15 @@ svg text {{ fill: #111827; }}
 <div class="card"><div class="label">Runtime vs local energy rho</div><div class="value">{_correlation(data["runtime_energy_spearman"])}</div></div>
 </section>
 
-<section class="note"><strong>Important limitation:</strong> rows are paired by problem slug and model name, not by source hash. The currently hosted accepted Gemma code revisions do not exactly match the source revisions used in the completed energy run. LeetCode also uses hidden workloads and different machines, harnesses, and testcase sizes. Treat correlation and rank agreement as context only; absolute times and Joules are not directly equivalent, and LeetCode runtime is not divided by testcase count.</section>
+<section class="note"><strong>Important limitation:</strong> rows are paired by problem slug and model name, not by source hash. The currently hosted accepted Gemma code revisions do not exactly match the source revisions used in the completed energy run. LeetCode and the local benchmark execute complete suites, but those suites contain different inputs and run on different machines and harnesses. Treat correlation and rank agreement as context only; absolute times and Joules are not directly equivalent, and LeetCode runtime is not divided by testcase count.</section>
 
 <h2>LeetCode Runtime vs Local Wall Time</h2>
-<p class="muted">Each point is one overlapping problem. Both axes are logarithmic. Local wall time is the median of that problem's case-level median time per call.</p>
-<div class="panel">{_scatter(rows, "local_wall_ms_per_call", "Local median wall time per call (ms)", "#2563eb")}</div>
+<p class="muted">Each point is one overlapping problem. Both axes are logarithmic. Local suite wall time is the sum of every curated case's median wall time per call, representing one execution of each local case.</p>
+<div class="panel">{_scatter(rows, "local_suite_wall_ms", "Local curated-suite wall time (ms)", "#2563eb")}</div>
 
 <h2>LeetCode Runtime vs Local CPU Energy</h2>
-<p class="muted">Local energy is the median of the problem's case-level median CPU energy per call. Hover over a point to see its problem and values.</p>
-<div class="panel">{_scatter(rows, "local_energy_j_per_call", "Local median CPU energy per call (J)", "#0f766e")}</div>
+<p class="muted">Local suite energy is the sum of every curated case's median CPU energy per call, representing one execution of each local case. Hover over a point to see its problem and values.</p>
+<div class="panel">{_scatter(rows, "local_suite_energy_j", "Local curated-suite CPU energy (J)", "#0f766e")}</div>
 
 <h2>Runtime Rank vs Energy Rank</h2>
 <p class="muted">Rank 1 is the lowest value. Problems are ordered by the absolute difference between their LeetCode-runtime rank and local-energy rank.</p>
@@ -400,7 +432,7 @@ def write_report(
     snapshot: dict[str, Any],
     output: Path | None = None,
 ) -> Path:
-    local_rows = load_local_problems(root, language)
+    local_rows = load_local_problem_suites(root, language)
     comparison = join_problem_rows(local_rows, snapshot["rows"])
     out = output or report_path(root, language)
     out.parent.mkdir(parents=True, exist_ok=True)

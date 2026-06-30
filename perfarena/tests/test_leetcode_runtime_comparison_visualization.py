@@ -13,25 +13,15 @@ def _local_rows() -> list[dict[str, str]]:
     return [
         {
             "problem": "alpha-problem",
-            "case_count": "2",
-            "expected_case_count": "2",
-            "median_case_wall_ms": "0.5",
-            "median_case_cpu_energy_j": "0.005",
-            "median_case_energy_cv": "0.03",
-            "max_case_energy_cv": "0.05",
-            "warmup_stable": "True",
-            "workload_hash": "w1",
+            "case_count": 2,
+            "local_suite_wall_ms": 1.0,
+            "local_suite_energy_j": 0.01,
         },
         {
             "problem": "beta-problem",
-            "case_count": "1",
-            "expected_case_count": "1",
-            "median_case_wall_ms": "0.05",
-            "median_case_cpu_energy_j": "0.0005",
-            "median_case_energy_cv": "0.02",
-            "max_case_energy_cv": "0.02",
-            "warmup_stable": "True",
-            "workload_hash": "w2",
+            "case_count": 1,
+            "local_suite_wall_ms": 0.1,
+            "local_suite_energy_j": 0.001,
         },
     ]
 
@@ -72,11 +62,47 @@ def _runtime_rows() -> list[dict[str, object]]:
 
 
 def _write_local_fixture(root: Path) -> None:
-    rows = _local_rows()
+    rows = [
+        {
+            "problem": "alpha-problem",
+            "case_count": 2,
+            "expected_case_count": 2,
+            "median_case_wall_ms": 0.5,
+            "median_case_cpu_energy_j": 0.005,
+        },
+        {
+            "problem": "beta-problem",
+            "case_count": 1,
+            "expected_case_count": 1,
+            "median_case_wall_ms": 0.1,
+            "median_case_cpu_energy_j": 0.001,
+        },
+    ]
     with (root / "python_casewise_problems.csv").open("w", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
+    case_rows = [
+        {
+            "problem": "alpha-problem",
+            "median_wall_ms_per_call": 0.4,
+            "median_cpu_energy_j_per_call": 0.004,
+        },
+        {
+            "problem": "alpha-problem",
+            "median_wall_ms_per_call": 0.6,
+            "median_cpu_energy_j_per_call": 0.006,
+        },
+        {
+            "problem": "beta-problem",
+            "median_wall_ms_per_call": 0.1,
+            "median_cpu_energy_j_per_call": 0.001,
+        },
+    ]
+    with (root / "python_casewise_cases.csv").open("w", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=list(case_rows[0]))
+        writer.writeheader()
+        writer.writerows(case_rows)
     (root / "python_casewise_summary.json").write_text(
         json.dumps({"model_slug": "test-model", "measured_problems": 2})
     )
@@ -196,6 +222,16 @@ def test_report_generation_from_fixture(tmp_path: Path) -> None:
     assert "alpha-problem" in report
 
 
+def test_local_suite_sums_each_case_median_once(tmp_path: Path) -> None:
+    _write_local_fixture(tmp_path)
+
+    suites = viz.load_local_problem_suites(tmp_path, "python")
+    alpha = next(row for row in suites if row["problem"] == "alpha-problem")
+
+    assert alpha["local_suite_wall_ms"] == pytest.approx(1.0)
+    assert alpha["local_suite_energy_j"] == pytest.approx(0.01)
+
+
 def test_load_local_problems_requires_summary_and_csv(tmp_path: Path) -> None:
     with pytest.raises(FileNotFoundError, match="missing required casewise files"):
-        viz.load_local_problems(tmp_path, "python")
+        viz.load_local_problem_suites(tmp_path, "python")
