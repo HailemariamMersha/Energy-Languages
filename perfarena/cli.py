@@ -42,6 +42,7 @@ from .measurement import (
 from .tools import patch_makefiles as patcher
 from .tools import summarize_leetcode_casewise as casewise_summary
 from .tools import visualize_leetcode_casewise as casewise_viz
+from .tools import visualize_leetcode_runtime_comparison as runtime_comparison_viz
 
 app = typer.Typer(
     help=(
@@ -1170,6 +1171,70 @@ def leetcode_visualize_casewise_cmd(
         console.print(f"[red]{exc}[/red]")
         raise typer.Exit(code=1) from exc
     console.print(f"casewise report: {report}")
+
+
+@app.command("leetcode-visualize-runtime-comparison")
+def leetcode_visualize_runtime_comparison_cmd(
+    model_slug: str = typer.Option(..., help="Model slug with completed casewise outputs."),
+    perfarena_model: str = typer.Option(
+        ..., help="PerfArena model_name used to fetch accepted runtime rows."
+    ),
+    language: str = typer.Option("python", help="Only python is supported in v1."),
+    base_url: Optional[str] = typer.Option(
+        None,
+        help=(
+            "PerfArena dataset API base URL. Defaults to "
+            "PERFARENA_LEETCODE_BASE_URL, ARENA_BASE_URL, or localhost."
+        ),
+    ),
+    refresh_runtime: bool = typer.Option(
+        False,
+        "--refresh-runtime",
+        help="Fetch a new runtime snapshot instead of reusing the cached snapshot.",
+    ),
+    output: Optional[Path] = typer.Option(
+        None,
+        help="Optional HTML output path. Defaults under the model measurement folder.",
+    ),
+) -> None:
+    """Compare casewise energy with PerfArena LeetCode runtime by problem slug."""
+    cfg = load_config()
+    lang = leetcode.get_language(language)
+    if lang.key != "python":
+        console.print(
+            "[red]leetcode-visualize-runtime-comparison currently supports "
+            "python only[/red]"
+        )
+        raise typer.Exit(code=2)
+    root = casewise_viz.measurement_root(cfg.repo_root, model_slug)
+    resolved_base_url = (base_url or leetcode.default_base_url()).rstrip("/")
+    cached_snapshot = runtime_comparison_viz.snapshot_path(root, lang.key)
+
+    def fetch_rows():
+        return leetcode.iter_dataset_solutions(
+            base_url=resolved_base_url,
+            language=lang,
+            model=perfarena_model,
+            only_accepted=True,
+        )
+
+    try:
+        snapshot = runtime_comparison_viz.load_or_fetch_snapshot(
+            cached_snapshot,
+            base_url=resolved_base_url,
+            model=perfarena_model,
+            language=lang.api_language,
+            fetcher=fetch_rows,
+            refresh=refresh_runtime,
+        )
+        report = runtime_comparison_viz.write_report(
+            root, lang.key, snapshot, output
+        )
+    except (FileNotFoundError, ValueError, leetcode.LeetCodeApiError) as exc:
+        console.print(f"[red]Runtime comparison report failed: {exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    console.print(f"runtime snapshot: {cached_snapshot}")
+    console.print(f"comparison report: {report}")
 
 
 # --- exec-check ------------------------------------------------------------
