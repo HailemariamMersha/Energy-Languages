@@ -1271,7 +1271,7 @@ def leetcode_publish_casewise_cmd(
             only_accepted=True,
         )
     )
-    if not rows:
+    if not rows and not model_version:
         console.print(f"[red]No accepted PerfArena rows found for {model!r}.[/red]")
         raise typer.Exit(code=1)
     try:
