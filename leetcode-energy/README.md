@@ -273,6 +273,38 @@ using only that matched set. Outputs are written under:
 perfarena_out/leetcode_measurements/comparisons/
 ```
 
+## Publish Results To PerfArena
+
+The website stores compact run, problem, and case summaries. It does not
+receive source code, local paths, raw batch JSONL, or raw `powermetrics` files.
+
+Validate the payload without uploading:
+
+```bash
+perfarena leetcode-publish-casewise \
+  --base-url https://perfarena.ngrok.app \
+  --model gemma4:e4b \
+  --model-slug ollama__gemma4_e4b \
+  --language python \
+  --dry-run
+```
+
+Publish with an administrator API key:
+
+```bash
+export ARENA_API_KEY=<admin-api-key>
+
+perfarena leetcode-publish-casewise \
+  --base-url https://perfarena.ngrok.app \
+  --model gemma4:e4b \
+  --model-slug ollama__gemma4_e4b \
+  --language python
+```
+
+Uploads are idempotent by canonical payload hash. The website labels these
+values `Local benchmark · powermetrics`; LeetCode runtime/memory and LLM
+generation energy remain separate metric sources.
+
 ## Methodology References
 
 - [CodeCarbon methodology](https://mlco2.github.io/codecarbon/methodology)
