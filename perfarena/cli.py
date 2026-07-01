@@ -43,6 +43,7 @@ from .tools import patch_makefiles as patcher
 from .tools import summarize_leetcode_casewise as casewise_summary
 from .tools import visualize_leetcode_casewise as casewise_viz
 from .tools import visualize_leetcode_runtime_comparison as runtime_comparison_viz
+from .tools import publish_leetcode_casewise as casewise_publisher
 
 app = typer.Typer(
     help=(
@@ -1235,6 +1236,77 @@ def leetcode_visualize_runtime_comparison_cmd(
         raise typer.Exit(code=1) from exc
     console.print(f"runtime snapshot: {cached_snapshot}")
     console.print(f"comparison report: {report}")
+
+
+@app.command("leetcode-publish-casewise")
+def leetcode_publish_casewise_cmd(
+    model: str = typer.Option(..., help="PerfArena model_name."),
+    model_slug: str = typer.Option(..., help="Local casewise model slug."),
+    language: str = typer.Option("python", help="Only python is supported in v1."),
+    base_url: Optional[str] = typer.Option(
+        None, help="PerfArena API base URL. Defaults to configured environment."
+    ),
+    model_version: Optional[str] = typer.Option(
+        None, help="Explicit version when dataset rows contain multiple versions."
+    ),
+    duration_seconds: Optional[float] = typer.Option(
+        None, min=0.001, help="Override measured run duration in seconds."
+    ),
+    dry_run: bool = typer.Option(
+        False, "--dry-run", help="Validate and print metadata without uploading."
+    ),
+) -> None:
+    """Publish compact local casewise summaries to the PerfArena website."""
+    cfg = load_config()
+    lang = leetcode.get_language(language)
+    if lang.key != "python":
+        console.print("[red]leetcode-publish-casewise currently supports python only[/red]")
+        raise typer.Exit(code=2)
+    resolved_base_url = (base_url or leetcode.default_base_url()).rstrip("/")
+    rows = list(
+        leetcode.iter_dataset_solutions(
+            base_url=resolved_base_url,
+            language=lang,
+            model=model,
+            only_accepted=True,
+        )
+    )
+    if not rows:
+        console.print(f"[red]No accepted PerfArena rows found for {model!r}.[/red]")
+        raise typer.Exit(code=1)
+    try:
+        version = casewise_publisher.resolve_model_version(rows, model_version)
+        root = casewise_viz.measurement_root(cfg.repo_root, model_slug)
+        payload = casewise_publisher.build_payload(
+            root,
+            model_name=model,
+            model_version=version,
+            model_slug=model_slug,
+            language=lang.key,
+            duration_seconds=duration_seconds,
+        )
+        payload["language"] = lang.api_language
+    except (FileNotFoundError, ValueError, KeyError) as exc:
+        console.print(f"[red]Cannot build casewise publication: {exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    summary = casewise_publisher.payload_summary(payload)
+    if dry_run:
+        console.print_json(data=summary)
+        return
+    try:
+        response = leetcode.LeetCodeApiClient(
+            base_url=resolved_base_url
+        ).publish_local_measurement(payload)
+    except leetcode.LeetCodeApiError as exc:
+        console.print(f"[red]Casewise publication failed: {exc}[/red]")
+        raise typer.Exit(code=1) from exc
+    console.print(
+        "leetcode-publish-casewise: "
+        f"run_id={response.get('id')} model={model} version={version} "
+        f"problems={response.get('measured_problems')} "
+        f"cases={response.get('complete_cases')} "
+        f"source={response.get('metric_source')}"
+    )
 
 
 # --- exec-check ------------------------------------------------------------

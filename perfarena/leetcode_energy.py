@@ -397,6 +397,14 @@ class LeetCodeApiClient:
     def create_submission(self, payload: dict[str, Any]) -> dict[str, Any]:
         return self.request("POST", "/api/submissions", body=payload, auth=True)
 
+    def publish_local_measurement(self, payload: dict[str, Any]) -> dict[str, Any]:
+        return self.request(
+            "POST",
+            "/api/admin/measurements/local/runs",
+            body=payload,
+            auth=True,
+        )
+
     def append_attempts(
         self,
         submission_id: int,
