@@ -3,6 +3,8 @@ from __future__ import annotations
 import gzip
 import json
 import plistlib
+import subprocess
+import sys
 import time
 from pathlib import Path
 from types import SimpleNamespace
@@ -247,7 +249,7 @@ class _RecordingWorker:
     def __init__(self, repo_root: Path, source: Path, workload: Path) -> None:
         pass
 
-    def request(self, payload: dict) -> dict:
+    def request(self, payload: dict, **kwargs) -> dict:
         self.events.append(payload)
         if payload["action"] == "validate":
             return {"ok": True}
@@ -417,3 +419,60 @@ def test_validation_failure_skips_measurement(tmp_path: Path) -> None:
 
     assert rows[0]["status"] == "skipped_validation_failed"
     assert all(row["phase"] != "measure" for row in rows)
+
+
+def test_resume_skips_terminal_problem_status(tmp_path: Path, monkeypatch) -> None:
+    workload_path = (
+        tmp_path / "leetcode-energy" / "reference" / "workloads" / "mutating-case.json"
+    )
+    workload_path.parent.mkdir(parents=True)
+    workload_path.write_text(json.dumps(_workload()))
+    source = _source(tmp_path / "solution.py")
+    accepted = SimpleNamespace(
+        problem_slug="mutating-case",
+        source_path=source,
+        result_path=tmp_path / "result.json",
+        language=get_language("python"),
+    )
+    output = tmp_path / "casewise.jsonl"
+    output.write_text(
+        json.dumps(
+            {
+                "phase": "status",
+                "problem": "mutating-case",
+                "status": "skipped_validation_failed",
+            }
+        )
+        + "\n"
+    )
+    _RecordingWorker.events = []
+    monkeypatch.setattr(casewise_energy, "WorkerClient", _RecordingWorker)
+    monkeypatch.setattr(casewise_energy.platform, "system", lambda: "TestOS")
+
+    rows = casewise_energy.measure_casewise_results(
+        tmp_path,
+        [accepted],
+        model_slug="model",
+        measurements=1,
+        output=output,
+        sampler_factory=_FakeSampler,
+    )
+
+    assert rows == []
+    assert _RecordingWorker.events == []
+
+
+def test_worker_read_timeout_terminates_process() -> None:
+    worker = casewise_energy.WorkerClient.__new__(casewise_energy.WorkerClient)
+    worker.proc = subprocess.Popen(
+        [sys.executable, "-c", "import time; time.sleep(60)"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+
+    with pytest.raises(RuntimeError, match="timed out"):
+        worker._read(timeout=0.01)
+
+    assert worker.proc.poll() is not None

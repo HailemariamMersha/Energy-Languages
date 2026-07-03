@@ -9,6 +9,7 @@ import os
 import platform
 import plistlib
 import random
+import select
 import shutil
 import subprocess
 import sys
@@ -325,23 +326,35 @@ class WorkerClient:
             text=True,
             bufsize=1,
         )
-        ready = self._read()
+        ready = self._read(timeout=10)
         if not ready.get("ready"):
             raise RuntimeError(f"case worker did not become ready: {ready}")
 
-    def _read(self) -> dict[str, Any]:
+    def _read(self, timeout: float | None = None) -> dict[str, Any]:
         assert self.proc.stdout is not None
+        if timeout is not None:
+            readable, _, _ = select.select([self.proc.stdout], [], [], timeout)
+            if not readable:
+                self.proc.terminate()
+                try:
+                    self.proc.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    self.proc.kill()
+                    self.proc.wait(timeout=3)
+                raise RuntimeError(f"case worker timed out after {timeout:g} seconds")
         line = self.proc.stdout.readline()
         if not line:
             stderr = self.proc.stderr.read() if self.proc.stderr else ""
             raise RuntimeError(f"case worker exited unexpectedly: {stderr}")
         return json.loads(line)
 
-    def request(self, payload: dict[str, Any]) -> dict[str, Any]:
+    def request(
+        self, payload: dict[str, Any], *, timeout: float | None = None
+    ) -> dict[str, Any]:
         assert self.proc.stdin is not None
         self.proc.stdin.write(json.dumps(payload) + "\n")
         self.proc.stdin.flush()
-        response = self._read()
+        response = self._read(timeout=timeout)
         if not response.get("ok"):
             raise RuntimeError(response.get("error", "case worker failed"))
         return response
@@ -522,6 +535,14 @@ def measure_casewise_results(
     try:
         for accepted in accepted_results:
             slug = accepted.problem_slug
+            if any(
+                (slug, status) in statuses
+                for status in (
+                    "skipped_missing_workload",
+                    "skipped_validation_failed",
+                )
+            ):
+                continue
             workload_path = (
                 repo_root
                 / "leetcode-energy"
@@ -566,7 +587,7 @@ def measure_casewise_results(
                     worker = WorkerClient(
                         repo_root, accepted.source_path, workload_path
                     )
-                    worker.request({"action": "validate"})
+                    worker.request({"action": "validate"}, timeout=20)
                 except RuntimeError as exc:
                     status_key = (slug, "skipped_validation_failed")
                     if status_key not in statuses:
