@@ -88,6 +88,7 @@ def test_build_payload_contains_compact_server_contract(tmp_path: Path) -> None:
     assert payload["measured_problems"] == 1
     assert payload["complete_cases"] == 1
     assert payload["measurement_rows"] == 10
+    assert payload["harness_slug"] == "local-powermetrics"
     assert payload["duration_seconds"] == 62_340
     assert payload["problems"][0]["local_suite_wall_ms"] == pytest.approx(0.1)
     assert payload["problems"][0]["local_suite_cpu_energy_j"] == pytest.approx(0.001)
@@ -145,3 +146,4 @@ def test_payload_summary_is_small_and_stable(tmp_path: Path) -> None:
     assert len(summary["payload_hash"]) == 64
     assert "problems" not in summary
     assert summary["complete_cases"] == 1
+    assert summary["harness_slug"] == "local-powermetrics"

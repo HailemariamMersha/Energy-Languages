@@ -1249,6 +1249,10 @@ def leetcode_publish_casewise_cmd(
     model_version: Optional[str] = typer.Option(
         None, help="Explicit version when dataset rows contain multiple versions."
     ),
+    harness_slug: str = typer.Option(
+        "local-powermetrics",
+        help="PerfArena arena-local harness that owns the measurement run.",
+    ),
     duration_seconds: Optional[float] = typer.Option(
         None, min=0.001, help="Override measured run duration in seconds."
     ),
@@ -1283,6 +1287,7 @@ def leetcode_publish_casewise_cmd(
             model_version=version,
             model_slug=model_slug,
             language=lang.key,
+            harness_slug=harness_slug,
             duration_seconds=duration_seconds,
         )
         payload["language"] = lang.api_language

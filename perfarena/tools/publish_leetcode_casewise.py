@@ -88,6 +88,7 @@ def build_payload(
     model_version: str,
     model_slug: str,
     language: str,
+    harness_slug: str = "local-powermetrics",
     duration_seconds: float | None = None,
 ) -> dict[str, Any]:
     summary_path = root / f"{language}_casewise_summary.json"
@@ -170,6 +171,7 @@ def build_payload(
         "model_version": model_version,
         "model_slug": model_slug,
         "language": language,
+        "harness_slug": harness_slug,
         "benchmark": summary.get("benchmark", "leetcode-energy-casewise"),
         "energy_source": summary.get("energy_source", "powermetrics-cpu"),
         "machine_metadata": host,
@@ -197,6 +199,7 @@ def payload_summary(payload: dict[str, Any]) -> dict[str, Any]:
         "model_name": payload["model_name"],
         "model_version": payload["model_version"],
         "language": payload["language"],
+        "harness_slug": payload["harness_slug"],
         "measured_problems": payload["measured_problems"],
         "complete_cases": payload["complete_cases"],
         "measurement_rows": payload["measurement_rows"],
