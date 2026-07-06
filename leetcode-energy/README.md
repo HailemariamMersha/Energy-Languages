@@ -301,9 +301,18 @@ perfarena leetcode-publish-casewise \
   --language python
 ```
 
-Uploads are idempotent by canonical payload hash. The website labels these
-values `Local benchmark · powermetrics`; LeetCode runtime/memory and LLM
+Uploads default to the seeded `local-powermetrics` arena harness; override it
+with `--harness-slug` only when publishing to another active `arena-local`
+harness. Uploads are idempotent by canonical payload hash. The website labels
+these values `Local benchmark · powermetrics`; LeetCode runtime/memory and LLM
 generation energy remain separate metric sources.
+
+The completed Qwen runs use the same command shape with:
+
+```text
+qwen2.5:7b  -> ollama__qwen2.5_7b
+qwen3:4b    -> ollama__qwen3_4b
+```
 
 ## Methodology References
 
