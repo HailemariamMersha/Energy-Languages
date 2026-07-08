@@ -275,6 +275,9 @@ perfarena_out/leetcode_measurements/comparisons/
 
 ## Publish Results To PerfArena
 
+For a teammate-facing summary of the files to copy and the HTTP upload path,
+see [Local Energy Publishing Handoff](../docs/LOCAL_ENERGY_PUBLISHING.md).
+
 The website stores compact run, problem, and case summaries. It does not
 receive source code, local paths, raw batch JSONL, or raw `powermetrics` files.
 
