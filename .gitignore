@@ -1,6 +1,7 @@
 *tmp
 .tmp*
 tmp.*
+.DS_Store
 .NETCore*
 *.class
 lshw
@@ -9,6 +10,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 perfarena_out/
+local-energy-measurements-share.tar.gz
 powermetrics_log.txt
 leetcode-energy/**/Python.jsonl
 leetcode-energy/**/compile.json
