@@ -2,6 +2,8 @@
 
 This document explains which files hold the local LeetCode energy measurements
 and how the `Energy-Languages` publisher sends them to the PerfArena website.
+For the broader local measurement workflow and `perfarena_out` structure, see
+[Local Measurement Architecture](LOCAL_MEASUREMENT_ARCHITECTURE.md).
 
 ## Repository Roles
 
