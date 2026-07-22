@@ -32,6 +32,7 @@ class RawIteration:
     samples: int
     exit_code: int
     source_file: str = ""
+    peak_rss_kb: int = 0
 
     @classmethod
     def from_jsonl_line(cls, line: str, source_file: str = "") -> "RawIteration":
@@ -48,6 +49,7 @@ class RawIteration:
             samples=int(data.get("samples", 0)),
             exit_code=int(data.get("exit_code", 0)),
             source_file=source_file,
+            peak_rss_kb=int(data.get("peak_rss_kb", 0)),
         )
 
 
@@ -168,6 +170,7 @@ class MeasurementRow:
     inference_metrics: dict[str, Any] = field(default_factory=dict)
     prompt_pair_sha256: str = ""
     provenance: dict[str, Any] = field(default_factory=dict)
+    peak_rss_kb: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -191,6 +194,7 @@ class MeasurementRow:
             "inference_metrics": self.inference_metrics,
             "prompt_pair_sha256": self.prompt_pair_sha256,
             "provenance": self.provenance,
+            "peak_rss_kb": self.peak_rss_kb,
         }
 
 
@@ -234,6 +238,7 @@ def join_group_with_meta(
             inference_metrics=inference_metrics,
             prompt_pair_sha256=(meta.get("prompts") or {}).get("prompt_pair_sha256", ""),
             provenance=meta.get("provenance", {}),
+            peak_rss_kb=it.peak_rss_kb,
         )
 
 

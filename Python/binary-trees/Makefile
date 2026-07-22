@@ -3,7 +3,8 @@ TEST        = binary-trees
 SOURCE      = binarytrees.python3
 OUTPUT      = binarytrees.py
 ARG         = 21
-RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+PYTHON      ?= python3
+RUN_CMD     = $(PYTHON) -OO $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
 VALIDATION_N       = 10

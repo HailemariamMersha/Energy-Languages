@@ -32,8 +32,7 @@ function work()
 
 $headers = $workers = [];
 $seq = '';
-while (true) {
-    $line = fgets(STDIN);
+while (($line = fgets(STDIN)) !== false) {
     if ($line[0] === '>') {
         $headers[] = $line;
         if (!empty($seq)) {
@@ -42,9 +41,6 @@ while (true) {
         }
     } else {
         $seq .= $line;
-        if (!$line) {
-            break;
-        }
     }
 }
 work();

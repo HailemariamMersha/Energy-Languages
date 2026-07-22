@@ -14,7 +14,8 @@
 #include <cstring>
 #include <algorithm>
 #include <map>
-#include <ext/pb_ds/assoc_container.hpp>
+#include <unordered_map>
+#include <vector>
 #include <future>
 #include <unistd.h>
 
@@ -74,10 +75,12 @@ struct T{
    unsigned char size;
 };
 
-__gnu_pbds::cc_hash_table<T,unsigned,T::hash>
+using Table = std::unordered_map<T,unsigned,T::hash>;
+
+Table
 calculate(const std::string& input,unsigned size, unsigned beg=0,unsigned incr=1)
 {
-   __gnu_pbds::cc_hash_table<T,unsigned,T::hash> frequencies;
+   Table frequencies;
    T tmp;
    for (unsigned i = beg, i_end = input.size() + 1 - size; i < i_end; i+=incr)
    {
@@ -87,12 +90,12 @@ calculate(const std::string& input,unsigned size, unsigned beg=0,unsigned incr=1
    return frequencies;
 }
 
-__gnu_pbds::cc_hash_table<T,unsigned,T::hash>
+Table
 tcalculate(const std::string& input,unsigned size)
 {
    unsigned N = sysconf (_SC_NPROCESSORS_ONLN);
 
-   std::future<__gnu_pbds::cc_hash_table<T,unsigned,T::hash>> ft[N];
+   std::vector<std::future<Table>> ft(N);
    for(unsigned i = 0; i<N;++i)
       ft[i] = std::async(std::launch::async,calculate,std::ref(input),size,i,N);
 

@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f binary-trees.js\ncp binarytrees.node binary-trees.js\nvalidate: running binary-trees at N=10...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict binary-trees.js 10\" JavaScript binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:24] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 71.054,
+    "peak_rss_kb": 29600,
+    "energy_uj": 2036061,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f fannkuch-redux.js\ncp fannkuchredux.node-4.node fannkuch-redux.js\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict fannkuch-redux.js 7\" JavaScript fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:36] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 52.145,
+    "peak_rss_kb": 32896,
+    "energy_uj": 1334402,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f fasta.js\ncp fasta.node-4.node fasta.js\nvalidate: running fasta at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict fasta.js 1000\" JavaScript fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:44] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 53.852,
+    "peak_rss_kb": 36800,
+    "energy_uj": 1441957,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f k-nucleotide.js\ncp knucleotide.node-2.node k-nucleotide.js\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict k-nucleotide.js 0 < ../../reference/inputs/fasta-10000.txt\" JavaScript k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:52] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 219.448,
+    "peak_rss_kb": 50896,
+    "energy_uj": 5816576,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f mandelbrot.js\ncp mandelbrot.node mandelbrot.js\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict mandelbrot.js 200\" JavaScript mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:02] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 64.16,
+    "peak_rss_kb": 35504,
+    "energy_uj": 2680175,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f n-body.js\ncp nbody.node n-body.js\nvalidate: running n-body at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict n-body.js 1000\" JavaScript n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:11] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 78.204,
+    "peak_rss_kb": 29728,
+    "energy_uj": 1684138,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f pidigits.run.js\ncp pidigits.js pidigits.run.js\nvalidate: running pidigits at N=28...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict pidigits.run.js 28\" JavaScript pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:22] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 67.871,
+    "peak_rss_kb": 29712,
+    "energy_uj": 2017191,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f regex-redux.js\ncp regexredux.node-2.node regex-redux.js\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict regex-redux.js 0 < ../../reference/inputs/fasta-10000.txt\" JavaScript regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:30] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 86.672,
+    "peak_rss_kb": 35056,
+    "energy_uj": 2431781,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f reverse-complement.js\ncp revcomp.node-7.node reverse-complement.js\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict reverse-complement.js 0 < ../../reference/inputs/fasta-10000.txt\" JavaScript reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:38] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 67.866,
+    "peak_rss_kb": 31712,
+    "energy_uj": 1935513,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f spectral-norm.js\ncp spectralnorm.node-2.node spectral-norm.js\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node --use_strict spectral-norm.js 100\" JavaScript spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:50] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../JavaScript.jsonl\n",
+    "wall_ms": 45.155,
+    "peak_rss_kb": 35776,
+    "energy_uj": 978236,
+    "energy_source_status": "codecarbon"
+  }
+]

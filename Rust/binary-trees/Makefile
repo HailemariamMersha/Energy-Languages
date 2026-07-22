@@ -2,7 +2,7 @@ LANG    = Rust
 TEST    = binary-trees
 SOURCE  = binarytrees.rs
 OUTPUT  = binary-trees.rust_run
-ARG     = 21
+ARG         = 21
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 RUSTC       ?= rustc
@@ -14,7 +14,7 @@ else
   RUSTC_TARGET_FLAG =
 endif
 
-COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
+COMPILE_CMD = cargo build --release --manifest-path ../Cargo.toml --bin binary-trees && cp ../target/release/binary-trees $(OUTPUT)
 
 VALIDATION_N       = 10
 REFERENCE_OUTPUT   = ../../reference/outputs/binary-trees.txt

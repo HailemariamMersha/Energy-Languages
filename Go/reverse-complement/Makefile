@@ -2,7 +2,7 @@ LANG    = Go
 TEST    = reverse-complement
 SOURCE  = revcomp.go-6.go
 OUTPUT  = reverse-complement.go_run
-ARG     = 21
+ARG         = 0
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)

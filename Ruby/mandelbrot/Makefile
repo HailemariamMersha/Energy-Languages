@@ -7,7 +7,7 @@ RUN_CMD     = ruby $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
 VALIDATION_N       = 200
-REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot.pbm
+REFERENCE_OUTPUT   = ../../reference/outputs/mandelbrot/ruby.pbm
 BINARY_OUTPUT      = 1
 
 include ../../perfarena.mk

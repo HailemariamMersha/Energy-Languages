@@ -2,7 +2,7 @@ LANG    = Java
 TEST    = spectral-norm
 SOURCE  = spectralnorm.java-2.java
 OUTPUT  = spectralnorm.class
-ARG     = 5500
+ARG         = 5500
 RUN_CMD = java spectralnorm $(ARG)
 
 JAVAC ?= javac

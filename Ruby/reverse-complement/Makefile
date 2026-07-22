@@ -2,7 +2,7 @@ LANG        = Ruby
 TEST        = reverse-complement
 SOURCE      = revcomp.yarv-3.yarv
 OUTPUT      = reverse-complement.rb
-ARG         = 21
+ARG         = 0
 RUN_CMD     = ruby $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 

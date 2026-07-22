@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f binary-trees.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 binarytrees.portable.cpp -o binary-trees.gpp_run\nvalidate: running binary-trees at N=10...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./binary-trees.gpp_run 10\" C++ binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:15] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 18.512,
+    "peak_rss_kb": 704,
+    "energy_uj": 161720,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f fannkuch-redux.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 fannkuchredux.gpp-5.c++ -o fannkuch-redux.gpp_run\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\nfannkuchredux.gpp-5.c++:103:21: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]\n  103 |         int8_t temp[n];\n      |                     ^\nfannkuchredux.gpp-5.c++:103:21: note: initializer of 'n' is not a constant expression\nfannkuchredux.gpp-5.c++:96:16: note: declared here\n   96 |     const auto n = current.size();\n      |                ^\n1 warning generated.\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./fannkuch-redux.gpp_run 7\" C++ fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:27] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 12.252,
+    "peak_rss_kb": 656,
+    "energy_uj": 130685,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f fasta.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 fasta.gpp-5.c++ -o fasta.gpp_run\nvalidate: running fasta at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./fasta.gpp_run 1000\" C++ fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:36] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 29.85,
+    "peak_rss_kb": 1552,
+    "energy_uj": 327718,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f k-nucleotide.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 knucleotide.gpp-3.c++ -o k-nucleotide.gpp_run\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./k-nucleotide.gpp_run 0 < ../../reference/inputs/fasta-10000.txt\" C++ k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:44] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 27.924,
+    "peak_rss_kb": 6288,
+    "energy_uj": 273474,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f mandelbrot.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 mandelbrot.portable.cpp -o mandelbrot.gpp_run\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./mandelbrot.gpp_run 200\" C++ mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:56] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 11.718,
+    "peak_rss_kb": 640,
+    "energy_uj": 108548,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f n-body.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 nbody.portable.cpp -o n-body.gpp_run\nvalidate: running n-body at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./n-body.gpp_run 1000\" C++ n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:04] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 11.962,
+    "peak_rss_kb": 32,
+    "energy_uj": 121204,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f pidigits.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 -I/opt/homebrew/opt/boost/include pidigits.gpp-4.c++ -o pidigits.gpp_run\nvalidate: running pidigits at N=28...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./pidigits.gpp_run 28\" C++ pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:13] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 12.053,
+    "peak_rss_kb": 672,
+    "energy_uj": 141564,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f regex-redux.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 regexredux.gpp-3.c++ -o regex-redux.gpp_run\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./regex-redux.gpp_run 0 < ../../reference/inputs/fasta-10000.txt\" C++ regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:25] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 138.219,
+    "peak_rss_kb": 2320,
+    "energy_uj": 2055988,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f reverse-complement.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 revcomp.portable.cpp -o reverse-complement.gpp_run\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./reverse-complement.gpp_run 0 < ../../reference/inputs/fasta-10000.txt\" C++ reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:33] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 30.506,
+    "peak_rss_kb": 608,
+    "energy_uj": 331065,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f spectral-norm.gpp_run\nc++ -O3 -fomit-frame-pointer -std=c++17 spectralnorm.portable.cpp -o spectral-norm.gpp_run\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./spectral-norm.gpp_run 100\" C++ spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:45] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../C++.jsonl\n",
+    "wall_ms": 12.108,
+    "peak_rss_kb": 32,
+    "energy_uj": 168627,
+    "energy_source_status": "codecarbon"
+  }
+]

@@ -2,7 +2,7 @@ LANG    = CSharp
 TEST    = fasta
 SOURCE  = Program.cs
 OUTPUT  = bin/Release/fasta
-ARG     = 25000000
+ARG         = 25000000
 RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
 COMPILE_CMD = dotnet build --configuration Release --nologo

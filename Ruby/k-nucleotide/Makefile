@@ -2,7 +2,7 @@ LANG        = Ruby
 TEST        = k-nucleotide
 SOURCE      = knucleotide.yarv-7.yarv
 OUTPUT      = k-nucleotide.rb
-ARG         = 21
+ARG         = 0
 RUN_CMD     = ruby $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 

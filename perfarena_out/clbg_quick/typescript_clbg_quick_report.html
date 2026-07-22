@@ -1,0 +1,110 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<title>TypeScript CLBG quick check</title><style>
+body{font:15px system-ui;max-width:1200px;margin:2rem auto;padding:0 1rem;color:#18212b}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccd5df;padding:.5rem;text-align:left}
+th{background:#edf2f7}.ok{color:#087830;font-weight:700}.bad{color:#b42318;font-weight:700}
+pre{white-space:pre-wrap;max-width:650px}code{background:#eef2f6;padding:.1rem .25rem}</style></head><body>
+<h1>TypeScript CLBG quick check</h1><p><strong>10/10 passed</strong>. Generated 2026-07-20T20:21:23.802316+00:00 on macOS-26.5-arm64-arm-64bit-Mach-O.</p>
+<p>Each passing cell was compiled, checked against its small reference output, then sampled once. Energy is reported by the configured platform backend and peak RSS covers the benchmark process tree.</p>
+<h2>Toolchain</h2><ul><li><code>npx</code>: 11.17.0</li><li><code>make</code>: GNU Make 3.81</li></ul><table><thead><tr><th>Problem</th><th>Result</th><th>Wall (ms)</th><th>Peak RSS (MiB)</th><th>Energy (J)</th><th>Energy source</th><th>Details</th></tr></thead>
+<tbody><tr><td>binary-trees</td><td class='ok'>PASS</td><td>66.25</td><td>29.00</td><td>1.970266</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f binary-trees.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . binarytrees.typescript-2.ts &amp;&amp; if [ &quot;binarytrees.typescript-2.js&quot; != &quot;binary-trees.js&quot; ]; then mv binarytrees.typescript-2.js binary-trees.js; fi
+validate: running binary-trees at N=10...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node binary-trees.js 10&quot; TypeScript binary-trees 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:25] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>fannkuch-redux</td><td class='ok'>PASS</td><td>46.00</td><td>35.33</td><td>1.154299</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fannkuch-redux.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . fannkuchredux.ts &amp;&amp; if [ &quot;fannkuchredux.js&quot; != &quot;fannkuch-redux.js&quot; ]; then mv fannkuchredux.js fannkuch-redux.js; fi
+validate: running fannkuch-redux at N=7...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node fannkuch-redux.js 7&quot; TypeScript fannkuch-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:37] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>fasta</td><td class='ok'>PASS</td><td>45.30</td><td>35.39</td><td>1.003568</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fasta.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . fasta.ts &amp;&amp; if [ &quot;fasta.js&quot; != &quot;fasta.js&quot; ]; then mv fasta.js fasta.js; fi
+validate: running fasta at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node fasta.js 1000&quot; TypeScript fasta 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:46] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>k-nucleotide</td><td class='ok'>PASS</td><td>90.09</td><td>72.72</td><td>2.674066</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f k-nucleotide.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . knucleotide.ts &amp;&amp; if [ &quot;knucleotide.js&quot; != &quot;k-nucleotide.js&quot; ]; then mv knucleotide.js k-nucleotide.js; fi
+validate: running k-nucleotide at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node k-nucleotide.js 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; TypeScript k-nucleotide 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:58] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>mandelbrot</td><td class='ok'>PASS</td><td>88.54</td><td>35.58</td><td>2.365219</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f mandelbrot.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . mandelbrot.ts &amp;&amp; if [ &quot;mandelbrot.js&quot; != &quot;mandelbrot.js&quot; ]; then mv mandelbrot.js mandelbrot.js; fi
+validate: running mandelbrot at N=200...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node mandelbrot.js 200&quot; TypeScript mandelbrot 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:07] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>n-body</td><td class='ok'>PASS</td><td>87.27</td><td>13.31</td><td>2.429499</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f n-body.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . nbody.typescript-3.ts &amp;&amp; if [ &quot;nbody.typescript-3.js&quot; != &quot;n-body.js&quot; ]; then mv nbody.typescript-3.js n-body.js; fi
+validate: running n-body at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node n-body.js 1000&quot; TypeScript n-body 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:16] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>pidigits</td><td class='ok'>PASS</td><td>69.59</td><td>0.73</td><td>2.311036</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f pidigits.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . pidigits.ts &amp;&amp; if [ &quot;pidigits.js&quot; != &quot;pidigits.js&quot; ]; then mv pidigits.js pidigits.js; fi
+validate: running pidigits at N=28...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node pidigits.js 28&quot; TypeScript pidigits 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:27] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>regex-redux</td><td class='ok'>PASS</td><td>44.71</td><td>37.05</td><td>1.773014</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f regex-redux.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . regexredux.typescript-3.ts &amp;&amp; if [ &quot;regexredux.typescript-3.js&quot; != &quot;regex-redux.js&quot; ]; then mv regexredux.typescript-3.js regex-redux.js; fi
+validate: running regex-redux at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node regex-redux.js 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; TypeScript regex-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:37] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>reverse-complement</td><td class='ok'>PASS</td><td>70.64</td><td>30.83</td><td>1.641738</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f reverse-complement.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . revcomp.ts &amp;&amp; if [ &quot;revcomp.js&quot; != &quot;reverse-complement.js&quot; ]; then mv revcomp.js reverse-complement.js; fi
+validate: running reverse-complement at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node reverse-complement.js 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; TypeScript reverse-complement 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:49] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr><tr><td>spectral-norm</td><td class='ok'>PASS</td><td>67.82</td><td>33.89</td><td>0.956318</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f spectral-norm.js
+npx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . spectralnorm.ts &amp;&amp; if [ &quot;spectralnorm.js&quot; != &quot;spectral-norm.js&quot; ]; then mv spectralnorm.js spectral-norm.js; fi
+validate: running spectral-norm at N=100...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;node spectral-norm.js 100&quot; TypeScript spectral-norm 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:57] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../TypeScript.jsonl
+</pre></details></td></tr></tbody></table></body></html>

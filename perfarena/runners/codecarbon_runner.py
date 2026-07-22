@@ -30,6 +30,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+import psutil
+
 try:
     from codecarbon import EmissionsTracker
 except ImportError:
@@ -56,6 +58,7 @@ def _write_row(
     energy_source: str,
     samples: int,
     exit_code: int,
+    peak_rss_kb: int = 0,
     extra: dict[str, Any] | None = None,
 ) -> None:
     row: dict[str, Any] = {
@@ -71,6 +74,7 @@ def _write_row(
         "energy_source": energy_source,
         "samples": samples,
         "exit_code": exit_code,
+        "peak_rss_kb": peak_rss_kb,
     }
     if extra:
         row["extra"] = extra
@@ -78,22 +82,39 @@ def _write_row(
     out.flush()
 
 
-def _run_child(command: str, timeout: float = 600.0) -> tuple[int, float]:
-    """Run a shell command and return (exit_code, wall_ms)."""
+def _run_child(command: str, timeout: float = 600.0) -> tuple[int, float, int]:
+    """Run a command and return exit code, wall time, and process-tree peak RSS."""
     t0 = time.monotonic()
-    proc = subprocess.run(
-        ["sh", "-c", command],
-        capture_output=True,
-        timeout=timeout,
+    proc = subprocess.Popen(
+        ["sh", "-c", f"exec {command}"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
     )
+    root = psutil.Process(proc.pid)
+    try:
+        peak_rss = root.memory_info().rss
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        peak_rss = 0
+    while proc.poll() is None:
+        if time.monotonic() - t0 > timeout:
+            proc.kill()
+            proc.wait()
+            raise subprocess.TimeoutExpired(command, timeout)
+        try:
+            processes = [root, *root.children(recursive=True)]
+            peak_rss = max(peak_rss, sum(p.memory_info().rss for p in processes))
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+        time.sleep(0.001)
     wall = (time.monotonic() - t0) * 1000.0
-    return proc.returncode, wall
+    return int(proc.returncode), wall, peak_rss // 1024
 
 
 def _measure_with_codecarbon(
     command: str,
     timeout: float = 600.0,
-) -> tuple[int, float, int, str, dict[str, Any]]:
+) -> tuple[int, float, int, int, str, dict[str, Any]]:
     """Run a command under CodeCarbon tracking.
 
     Returns (exit_code, wall_ms, energy_uj, energy_source, extra).
@@ -101,8 +122,8 @@ def _measure_with_codecarbon(
     extra: dict[str, Any] = {}
     if EmissionsTracker is None:
         # No CodeCarbon installed; fall back to wall-time only.
-        exit_code, wall_ms = _run_child(command, timeout)
-        return exit_code, wall_ms, 0, "none", {"note": "codecarbon not installed"}
+        exit_code, wall_ms, peak_rss_kb = _run_child(command, timeout)
+        return exit_code, wall_ms, peak_rss_kb, 0, "none", {"note": "codecarbon not installed"}
 
     tracker = EmissionsTracker(
         project_name="perfarena-measure",
@@ -113,15 +134,15 @@ def _measure_with_codecarbon(
     )
 
     tracker.start()
-    exit_code, wall_ms = _run_child(command, timeout)
+    exit_code, wall_ms, peak_rss_kb = _run_child(command, timeout)
     try:
         tracker.stop()
     except Exception as exc:  # noqa: BLE001
-        return exit_code, wall_ms, 0, "codecarbon-error", {"error": str(exc)}
+        return exit_code, wall_ms, peak_rss_kb, 0, "codecarbon-error", {"error": str(exc)}
 
     data = tracker.final_emissions_data
     if data is None or data.energy_consumed is None:
-        return exit_code, wall_ms, 0, "codecarbon-no-data", {}
+        return exit_code, wall_ms, peak_rss_kb, 0, "codecarbon-no-data", {}
 
     energy_uj = _kwh_to_uj(data.energy_consumed)
     extra = {
@@ -132,7 +153,7 @@ def _measure_with_codecarbon(
         "emissions_kg_co2": data.emissions,
         "duration_s": data.duration,
     }
-    return exit_code, wall_ms, energy_uj, "codecarbon", extra
+    return exit_code, wall_ms, peak_rss_kb, energy_uj, "codecarbon", extra
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -201,10 +222,10 @@ def main(argv: list[str] | None = None) -> int:
             f"[codecarbon-runner] {phase} {i + 1}/{total}...",
             file=sys.stderr,
         )
-        exit_code, wall_ms, energy_uj, source, extra = _measure_with_codecarbon(command)
+        exit_code, wall_ms, peak_rss_kb, energy_uj, source, extra = _measure_with_codecarbon(command)
         _write_row(
             out, test, language, i + 1, phase,
-            wall_ms, energy_uj, source, 0, exit_code, extra,
+            wall_ms, energy_uj, source, 0, exit_code, peak_rss_kb, extra,
         )
 
     out.close()

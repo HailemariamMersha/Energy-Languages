@@ -4,7 +4,7 @@
  * contributed by Mike Pall
  * java port by Stefan Krause
 */
-
+import java.math.BigInteger;
 
 public class pidigits {
    
@@ -109,57 +109,24 @@ public class pidigits {
 
 
 class GmpInteger {
-   
-   // Public methods
-   
-   public GmpInteger() {
-      mpz_init();
-   }
+   private BigInteger value;
+
+   public GmpInteger() { value = BigInteger.ZERO; }
 
    public GmpInteger(int value) {
       this();
-      mpz_set_si(pointer, value);
+      set(value);
    }
    
-   public void set(int value) { mpz_set_si(pointer, value); }
+   public void set(int value) { this.value = BigInteger.valueOf(value); }
 
-   public void mul(GmpInteger src, int val) { mpz_mul_si(pointer, src.pointer, val); }
+   public void mul(GmpInteger src, int val) { value = src.value.multiply(BigInteger.valueOf(val)); }
    
-   public void add(GmpInteger op1, GmpInteger op2) { mpz_add(pointer, op1.pointer, op2.pointer); }
+   public void add(GmpInteger op1, GmpInteger op2) { value = op1.value.add(op2.value); }
    
-   public void div(GmpInteger op1, GmpInteger op2) { mpz_tdiv_q(pointer, op1.pointer, op2.pointer); }
+   public void div(GmpInteger op1, GmpInteger op2) { value = op1.value.divide(op2.value); }
    
-   public int intValue() { return mpz_get_si(pointer); }
+   public int intValue() { return value.intValue(); }
    
-   public double doubleValue() { return mpz_get_d(pointer); } 
-
-   // Non public stuff
-   
-   static {
-      System.loadLibrary("jgmplib");
-   }
-   private long pointer;
-   
-   protected void finalize()  {
-      mpz_clear(pointer);
-   }
-   
-   private native void mpz_init();
-
-   private native void mpz_clear(long src);
-
-   private static native void mpz_mul_si(long dest, long src,
-         int val);
-
-   private static native void mpz_add(long dest, long src,
-         long src2);
-
-   private static native void mpz_tdiv_q(long dest, long src,
-         long src2);
-
-   private static native void mpz_set_si(long src, int value);
-
-   private static native int mpz_get_si(long src);
-
-   private static native double mpz_get_d(long src);
+   public double doubleValue() { return value.doubleValue(); }
 }

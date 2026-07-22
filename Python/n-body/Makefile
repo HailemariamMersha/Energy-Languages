@@ -3,7 +3,8 @@ TEST        = n-body
 SOURCE      = nbody.python3
 OUTPUT      = nbody.py
 ARG         = 50000000
-RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+PYTHON      ?= python3
+RUN_CMD     = $(PYTHON) -OO $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
 VALIDATION_N       = 1000

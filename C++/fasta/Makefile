@@ -2,10 +2,13 @@ LANG    = C++
 TEST    = fasta
 SOURCE  = fasta.gpp-5.c++
 OUTPUT  = fasta.gpp_run
-ARG     = 11
+ARG         = 25000000
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
-CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++17
+ifeq (,$(findstring Apple clang,$(shell $(CXX) --version)))
+  CXXFLAGS += -fopenmp
+endif
 
 COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 

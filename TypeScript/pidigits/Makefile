@@ -1,11 +1,15 @@
-compile:
+LANG        = TypeScript
+TEST        = pidigits
+SOURCE      = pidigits.ts
+OUTPUT      = pidigits.js
+ARG         = 10000
+RUN_CMD     = node $(OUTPUT) $(ARG)
 
-xmeasure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "" TypeScript pidigits
+TSC ?= npx --yes -p typescript@5.9.3 tsc
 
-mem:
-	/usr/bin/time -v ./binarytrees.gpp-9.gpp_run 21
+COMPILE_CMD = $(TSC) --target es2020 --module commonjs --skipLibCheck --outDir . $(SOURCE) && if [ "$(SOURCE:.ts=.js)" != "$(OUTPUT)" ]; then mv $(SOURCE:.ts=.js) $(OUTPUT); fi
 
-valgrind:
-	valgrind --tool=massif --stacks=yes ./binarytrees.gpp-9.gpp_run 21
+VALIDATION_N       = 28
+REFERENCE_OUTPUT   = ../../reference/outputs/pidigits.txt
+
+include ../../perfarena.mk

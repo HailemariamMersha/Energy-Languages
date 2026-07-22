@@ -54,6 +54,10 @@ public final class mandelbrot {
    public static void main(String[] args) throws Exception {
       int N=6000;
       if (args.length>=1) N=Integer.parseInt(args[0]);
+      if (N <= 200) {
+         simpleMandelbrot(N);
+         return;
+      }
 
       Crb=new double[N+7]; Cib=new double[N+7];
       double invN=2.0/N; for(int i=0;i<N;i++){ Cib[i]=i*invN-1.0; Crb[i]=i*invN-1.5; }
@@ -74,5 +78,46 @@ public final class mandelbrot {
       stream.write(("P4\n"+N+" "+N+"\n").getBytes());
       for(int i=0;i<N;i++) stream.write(out[i]);
       stream.close();
+   }
+
+   static void simpleMandelbrot(int n) throws Exception {
+      OutputStream stream = new BufferedOutputStream(System.out);
+      stream.write(("P4\n"+n+" "+n+"\n").getBytes());
+      double c1 = 2.0 / n;
+      for (int y=0; y<n; y++) {
+         byte[] row = new byte[(n+7)/8];
+         double ci = y * c1 - 1.0;
+         for (int xByte=0; xByte<row.length; xByte++) {
+            int bits = 0;
+            for (int bit=0; bit<8; bit++) {
+               int x = xByte * 8 + bit;
+               if (x < n && simplePixel(x * c1 - 1.5, ci)) {
+                  bits |= 128 >> bit;
+               }
+            }
+            row[xByte] = (byte)bits;
+         }
+         if (n % 8 != 0) {
+            row[row.length - 1] &= (byte)(0xff << (8 - n % 8));
+         }
+         stream.write(row);
+      }
+      stream.close();
+   }
+
+   static boolean simplePixel(double cr, double ci) {
+      double zr = cr;
+      double zi = ci;
+      for (int outer=0; outer<7; outer++) {
+         for (int inner=0; inner<7; inner++) {
+            double nzr = zr*zr - zi*zi + cr;
+            zi = zr*zi + zr*zi + ci;
+            zr = nzr;
+         }
+         if (zr*zr + zi*zi >= 4.0) {
+            return false;
+         }
+      }
+      return true;
    }
 }

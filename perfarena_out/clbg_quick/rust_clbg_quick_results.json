@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f binary-trees.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin binary-trees && cp ../target/release/binary-trees binary-trees.rust_run\nvalidate: running binary-trees at N=10...\nvalidate: PASS\nwarning: variable does not need to be mutable\n  --> binary-trees/binarytrees.rs:29:9\n   |\n29 |     let mut tree = arena.alloc(Tree { children: None });\n   |         ----^^^^\n   |         |\n   |         help: remove this `mut`\n   |\n   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default\n\nwarning: `perfarena-clbg-rust` (bin \"binary-trees\") generated 1 warning (run `cargo fix --bin \"binary-trees\" -p perfarena-clbg-rust` to apply 1 suggestion)\n    Finished `release` profile [optimized] target(s) in 0.02s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./binary-trees.rust_run 10\" Rust binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:14] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 27.126,
+    "peak_rss_kb": 624,
+    "energy_uj": 259434,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f fannkuch-redux.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin fannkuch-redux && cp ../target/release/fannkuch-redux fannkuch-redux.rust_run\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./fannkuch-redux.rust_run 7\" Rust fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:27] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.155,
+    "peak_rss_kb": 32,
+    "energy_uj": 145218,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f fasta.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin fasta && cp ../target/release/fasta fasta.rust_run\nvalidate: running fasta at N=1000...\nvalidate: PASS\nwarning: use of deprecated macro `try`: use the `?` operator instead\n   --> fasta/fasta.rs:107:5\n    |\n107 |     try!(sysout.write_all(header.as_bytes()));\n    |     ^^^\n    |\n    = note: `#[warn(deprecated)]` on by default\n\nwarning: use of deprecated macro `try`: use the `?` operator instead\n   --> fasta/fasta.rs:116:9\n    |\n116 |         try!(sysout.write_all(&line[..(nb+1)]));\n    |         ^^^\n\nwarning: unnecessary parentheses around `for` iterator expression\n   --> fasta/fasta.rs:111:18\n    |\n111 |         for i in (0..nb) {\n    |                  ^     ^\n    |\n    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default\nhelp: remove these parentheses\n    |\n111 -         for i in (0..nb) {\n111 +         for i in 0..nb {\n    |\n\nwarning: use of deprecated macro `try`: use the `?` operator instead\n   --> fasta/fasta.rs:165:5\n    |\n165 |     try!(io::stdout().write_all(header.as_bytes()));\n    |     ^^^\n\nwarning: `perfarena-clbg-rust` (bin \"fasta\") generated 4 warnings (run `cargo fix --bin \"fasta\" -p perfarena-clbg-rust` to apply 1 suggestion)\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./fasta.rust_run 1000\" Rust fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:35] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 11.833,
+    "peak_rss_kb": 96,
+    "energy_uj": 147881,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f k-nucleotide.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin k-nucleotide && cp ../target/release/k-nucleotide k-nucleotide.rust_run\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\nwarning: hiding a lifetime that's elided elsewhere is confusing\n  --> k-nucleotide/knucleotide.rs:87:19\n   |\n87 |     fn new(input: &[u8], frame: usize) -> Iter {\n   |                   ^^^^^                   ^^^^ the same lifetime is hidden here\n   |                   |\n   |                   the lifetime is elided here\n   |\n   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing\n   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default\nhelp: use `'_` for type paths\n   |\n87 |     fn new(input: &[u8], frame: usize) -> Iter<'_> {\n   |                                               ++++\n\nwarning: `perfarena-clbg-rust` (bin \"k-nucleotide\") generated 1 warning (run `cargo fix --bin \"k-nucleotide\" -p perfarena-clbg-rust` to apply 1 suggestion)\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./k-nucleotide.rust_run 0 < ../../reference/inputs/fasta-10000.txt\" Rust k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:43] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.192,
+    "peak_rss_kb": 32,
+    "energy_uj": 140948,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f mandelbrot.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin mandelbrot && cp ../target/release/mandelbrot mandelbrot.rust_run\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./mandelbrot.rust_run 200\" Rust mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:24:54] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 11.787,
+    "peak_rss_kb": 480,
+    "energy_uj": 123872,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f n-body.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin n-body && cp ../target/release/n-body n-body.rust_run\nvalidate: running n-body at N=1000...\nvalidate: PASS\nwarning: unnecessary parentheses around `for` iterator expression\n   --> n-body/nbody.rs:189:14\n    |\n189 |     for _ in (0..n) {\n    |              ^    ^\n    |\n    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default\nhelp: remove these parentheses\n    |\n189 -     for _ in (0..n) {\n189 +     for _ in 0..n {\n    |\n\nwarning: variable does not need to be mutable\n   --> n-body/nbody.rs:150:12\n    |\n150 | fn advance(mut bodies: &mut [Planet; N_BODIES], dt: f64,\n    |            ----^^^^^^\n    |            |\n    |            help: remove this `mut`\n    |\n    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default\n\nwarning: `perfarena-clbg-rust` (bin \"n-body\") generated 2 warnings (run `cargo fix --bin \"n-body\" -p perfarena-clbg-rust` to apply 2 suggestions)\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./n-body.rust_run 1000\" Rust n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:02] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.002,
+    "peak_rss_kb": 464,
+    "energy_uj": 128533,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f pidigits.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin pidigits && cp ../target/release/pidigits pidigits.rust_run\nvalidate: running pidigits at N=28...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./pidigits.rust_run 28\" Rust pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:10] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 11.598,
+    "peak_rss_kb": 480,
+    "energy_uj": 109260,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f regex-redux.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin regex-redux && cp ../target/release/regex-redux regex-redux.rust_run\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./regex-redux.rust_run 0 < ../../reference/inputs/fasta-10000.txt\" Rust regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:22] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.224,
+    "peak_rss_kb": 608,
+    "energy_uj": 127060,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f reverse-complement.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin reverse-complement && cp ../target/release/reverse-complement reverse-complement.rust_run\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./reverse-complement.rust_run 0 < ../../reference/inputs/fasta-10000.txt\" Rust reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:30] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.175,
+    "peak_rss_kb": 304,
+    "energy_uj": 109621,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f spectral-norm.rust_run\ncargo build --release --manifest-path ../Cargo.toml --bin spectral-norm && cp ../target/release/spectral-norm spectral-norm.rust_run\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n    Finished `release` profile [optimized] target(s) in 0.01s\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"./spectral-norm.rust_run 100\" Rust spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:25:38] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Rust.jsonl\n",
+    "wall_ms": 12.104,
+    "peak_rss_kb": 608,
+    "energy_uj": 115587,
+    "energy_source_status": "codecarbon"
+  }
+]

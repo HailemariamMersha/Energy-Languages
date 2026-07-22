@@ -46,7 +46,7 @@ def key_frequency(key_length, seq)
   count = Hash.new(0)
   start_index = 0
   last_length = seq.size - key_length
-  while start_index < last_length
+  while start_index <= last_length
     key = seq.byteslice(start_index, key_length)
     count[key] += 1
     start_index += 1
@@ -62,13 +62,13 @@ end
 
 def percentage(keys)
   frequency(keys).sort { |a,b| b[1] <=> a[1] }.map do |key, value|
-    "%s %.3f" % [ key.upcase, ( (value*100).to_f / @seq.size) ]
+    "%s %.3f" % [ key.upcase, ( (value*100).to_f / (@seq.size - key.size + 1)) ]
   end
 end
 
 def count(keys)
   frequency(keys).sort_by { |a| a[0].size }.map do |key, value|
-    "#{value.to_s}\t#{key.upcase}"
+    "#{value.to_i}\t#{key.upcase}"
   end
 end
 

@@ -11,7 +11,7 @@ function approximate(n: number): number {
    for (let i=0; i<n; ++i) {
       u[i] = 1.0     
    }
-   for (let i=0; i<10; ++i) {
+   for (let i=0; i<n; ++i) {
       multiplyAtAv(n,u,v)
       multiplyAtAv(n,v,u)
    }
@@ -28,18 +28,18 @@ function a(i,j: number): number {
 }
 
 function multiplyAv(n: number, v: number[], av: number[]) {
-   for (let i=0; i<n-1; ++i) {
+   for (let i=0; i<n; ++i) {
       av[i] = 0.0
-      for (let j=0; j<n-1; ++j) {
+      for (let j=0; j<n; ++j) {
          av[i] += a(i,j) * v[j] 
       }
    }
 }
 
 function multiplyAtv(n: number, v: number[], atv: number[]) {
-   for (let i=0; i<n-1; ++i) {
+   for (let i=0; i<n; ++i) {
       atv[i] = 0.0
-      for (let j=0; j<n-1; ++j) {
+      for (let j=0; j<n; ++j) {
          atv[i] += a(j,i) * v[j] 
       }
    }

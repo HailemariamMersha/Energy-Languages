@@ -62,6 +62,7 @@ CXX ?= g++
 VALIDATION_N       ?=
 REFERENCE_OUTPUT   ?=
 BINARY_OUTPUT      ?= 0
+_VALIDATION_ACTUAL ?= .perfarena_validate_actual.out
 
 # Build the full run command, appending stdin redirect if needed.
 ifdef STDIN_FILE
@@ -93,7 +94,11 @@ else
 endif
 
 mem:
+ifeq ($(shell uname -s),Darwin)
+	/usr/bin/time -l $(_FULL_RUN_CMD)
+else
 	/usr/bin/time -v $(_FULL_RUN_CMD)
+endif
 
 # Correctness oracle: run the benchmark at a small N and compare
 # output against the reference. Measurement should be gated behind
@@ -104,13 +109,13 @@ validate:
 	    exit 1 ; \
 	fi
 	@echo "validate: running $(TEST) at N=$(VALIDATION_N)..."
-	@$(_FULL_VALIDATE_CMD) > /tmp/_perfarena_validate_actual.out 2>/dev/null
+	@$(_FULL_VALIDATE_CMD) > $(_VALIDATION_ACTUAL) 2>/dev/null
 	@if [ "$(BINARY_OUTPUT)" = "1" ]; then \
-	    cmp -s /tmp/_perfarena_validate_actual.out $(REFERENCE_OUTPUT) ; \
+	    cmp -s $(_VALIDATION_ACTUAL) $(REFERENCE_OUTPUT) ; \
 	else \
-	    diff -q /tmp/_perfarena_validate_actual.out $(REFERENCE_OUTPUT) > /dev/null ; \
+	    diff -q $(_VALIDATION_ACTUAL) $(REFERENCE_OUTPUT) > /dev/null ; \
 	fi && echo "validate: PASS" || { echo "validate: FAIL (output differs from $(REFERENCE_OUTPUT))" >&2 ; exit 1 ; }
-	@rm -f /tmp/_perfarena_validate_actual.out
+	@rm -f $(_VALIDATION_ACTUAL)
 
 clean:
 	rm -f $(OUTPUT)

@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f bin/Release/binary-trees\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/binary-trees/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.18\nvalidate: running binary-trees at N=10...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 10\" CSharp binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:26] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 940.102,
+    "peak_rss_kb": 238432,
+    "energy_uj": 24237874,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f bin/Release/fannkuch-redux\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/fannkuch-redux/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.71\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 7\" CSharp fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:40] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 1366.755,
+    "peak_rss_kb": 255520,
+    "energy_uj": 32794374,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f bin/Release/fasta\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/fasta/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.56\nvalidate: running fasta at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 1000\" CSharp fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:51] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 1490.159,
+    "peak_rss_kb": 255088,
+    "energy_uj": 26376280,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f bin/Release/k-nucleotide\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/k-nucleotide/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.85\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 0 < ../../reference/inputs/fasta-10000.txt\" CSharp k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:06] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 963.542,
+    "peak_rss_kb": 270544,
+    "energy_uj": 23214941,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f bin/Release/mandelbrot\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/mandelbrot/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.64\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 200\" CSharp mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:16] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 1113.076,
+    "peak_rss_kb": 245408,
+    "energy_uj": 22039502,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f bin/Release/n-body\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/n-body/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.60\nvalidate: running n-body at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 1000\" CSharp n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:30] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 1089.349,
+    "peak_rss_kb": 239616,
+    "energy_uj": 28146994,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f bin/Release/pidigits\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/pidigits/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.62\nvalidate: running pidigits at N=28...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 28\" CSharp pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:41] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 1303.25,
+    "peak_rss_kb": 254672,
+    "energy_uj": 32058932,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f bin/Release/regex-redux\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/regex-redux/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.66\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 0 < ../../reference/inputs/fasta-10000.txt\" CSharp regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:55] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 942.512,
+    "peak_rss_kb": 263968,
+    "energy_uj": 14076825,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f bin/Release/reverse-complement\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/reverse-complement/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.49\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 0 < ../../reference/inputs/fasta-10000.txt\" CSharp reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:23:06] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 918.976,
+    "peak_rss_kb": 259168,
+    "energy_uj": 7954652,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f bin/Release/spectral-norm\ndotnet build --configuration Release --nologo\n  Determining projects to restore...\n  All projects are up-to-date for restore.\n  tmp -> /Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/CSharp/spectral-norm/bin/Release/net10.0/tmp.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.45\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"dotnet run --configuration Release -- 100\" CSharp spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:23:21] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../CSharp.jsonl\n",
+    "wall_ms": 904.369,
+    "peak_rss_kb": 254352,
+    "energy_uj": 7726626,
+    "energy_source_status": "codecarbon"
+  }
+]

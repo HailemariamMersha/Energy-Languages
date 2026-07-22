@@ -2,10 +2,13 @@ LANG    = C++
 TEST    = k-nucleotide
 SOURCE  = knucleotide.gpp-3.c++
 OUTPUT  = k-nucleotide.gpp_run
-ARG     = 14
+ARG         = 0
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
-CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++17
+ifeq (,$(findstring Apple clang,$(shell $(CXX) --version)))
+  CXXFLAGS += -fopenmp
+endif
 
 COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 

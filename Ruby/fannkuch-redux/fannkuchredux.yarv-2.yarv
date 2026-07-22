@@ -5,6 +5,7 @@
 # Parallelised by Scott Leggett
 
 module MiniParallel
+    require 'etc'
     class Worker
         def initialize(read, write)
             @read, @write = read, write
@@ -30,7 +31,7 @@ module MiniParallel
     end
 
     def self.core_count
-        @@core_count ||= IO.read("/proc/cpuinfo").scan(/^processor/).size
+        @@core_count ||= Etc.nprocessors
     end
 
     private
@@ -168,6 +169,7 @@ end
 abort "Usage: #{__FILE__} n\n(n > 6)" if (n = ARGV[0].to_i) < 6
 
 core_count = MiniParallel.core_count
+core_count -= 1 if core_count > 1 && core_count.odd?
 chunk_size = (1..n).reduce(:*) / core_count
 
 sum, flips =

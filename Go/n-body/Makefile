@@ -2,7 +2,7 @@ LANG    = Go
 TEST    = n-body
 SOURCE  = nbody.go
 OUTPUT  = n-body.go_run
-ARG     = 50000000
+ARG         = 50000000
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)

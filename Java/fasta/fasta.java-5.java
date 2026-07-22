@@ -36,6 +36,13 @@ public class fasta {
         if (args.length > 0) {
             n = Integer.parseInt(args[0]);
         }
+        if (n < LINE_COUNT * LINE_LENGTH * BUFFERS_IN_PLAY) {
+            try {
+                simpleFasta(System.out, n);
+            } catch (IOException ex) {
+            }
+            return;
+        }
         for (int i = 0; i < WORKERS.length; i++) {
             WORKERS[i] = new NucleotideSelector();
             WORKERS[i].setDaemon(true);
@@ -71,6 +78,68 @@ public class fasta {
         } catch (IOException ex) {
         }
      }
+
+    private static void simpleFasta(OutputStream writer, int n) throws IOException {
+        byte[] alu = (
+                "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGG"
+                + "GAGGCCGAGGCGGGCGGATCACCTGAGGTCAGGAGTTCGAGA"
+                + "CCAGCCTGGCCAACATGGTGAAACCCCGTCTCTACTAAAAAT"
+                + "ACAAAAATTAGCCGGGCGTGGTGGCGCGCGCCTGTAATCCCA"
+                + "GCTACTCGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCGGG"
+                + "AGGCGGAGGTTGCAGTGAGCCGAGATCGCGCCACTGCACTCC"
+                + "AGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA").getBytes();
+        byte[] iubChars = new byte[]{'a','c','g','t','B','D','H','K','M','N','R','S','V','W','Y'};
+        double[] iubProbs = new double[]{0.27,0.12,0.12,0.27,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02};
+        byte[] sapienChars = new byte[]{'a','c','g','t'};
+        double[] sapienProbs = new double[]{0.3029549426680,0.1979883004921,0.1975473066391,0.3015094502008};
+
+        writer.write(">ONE Homo sapiens alu\n".getBytes());
+        writeRepeat(writer, alu, n * 2);
+        writer.write(">TWO IUB ambiguity codes\n".getBytes());
+        writeRandom(writer, iubChars, cumulative(iubProbs), n * 3);
+        writer.write(">THREE Homo sapiens frequency\n".getBytes());
+        writeRandom(writer, sapienChars, cumulative(sapienProbs), n * 5);
+    }
+
+    private static double[] cumulative(double[] probabilities) {
+        double[] result = new double[probabilities.length];
+        double sum = 0.0;
+        for (int i = 0; i < probabilities.length; i++) {
+            sum += probabilities[i];
+            result[i] = sum;
+        }
+        return result;
+    }
+
+    private static void writeRepeat(OutputStream writer, byte[] sequence, int count) throws IOException {
+        for (int i = 0; i < count; i += LINE_LENGTH) {
+            int line = Math.min(LINE_LENGTH, count - i);
+            for (int j = 0; j < line; j++) {
+                writer.write(sequence[(i + j) % sequence.length]);
+            }
+            writer.write('\n');
+        }
+    }
+
+    private static void writeRandom(OutputStream writer, byte[] chars, double[] probs, int count) throws IOException {
+        for (int i = 0; i < count; i += LINE_LENGTH) {
+            int line = Math.min(LINE_LENGTH, count - i);
+            for (int j = 0; j < line; j++) {
+                double r = nextRandom();
+                int k = 0;
+                while (probs[k] < r) {
+                    k++;
+                }
+                writer.write(chars[k]);
+            }
+            writer.write('\n');
+        }
+    }
+
+    private static double nextRandom() {
+        last = (last * IA + IC) % IM;
+        return last * (1.0 / IM);
+    }
 
     private static void lineFillALU(AbstractBuffer buffer) {
         WORKERS[OUT.incrementAndGet() % WORKERS.length].put(buffer);

@@ -2,7 +2,7 @@ LANG    = Rust
 TEST    = reverse-complement
 SOURCE  = revcomp.rs
 OUTPUT  = reverse-complement.rust_run
-ARG     = 16
+ARG         = 0
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 RUSTC       ?= rustc
@@ -14,7 +14,7 @@ else
   RUSTC_TARGET_FLAG =
 endif
 
-COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
+COMPILE_CMD = cargo build --release --manifest-path ../Cargo.toml --bin reverse-complement && cp ../target/release/reverse-complement $(OUTPUT)
 
 VALIDATION_N       = 0
 REFERENCE_OUTPUT   = ../../reference/outputs/reverse-complement.txt

@@ -5,8 +5,6 @@
  modified by Tagir Valeev
  */
 
-import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -177,5 +176,31 @@ public class knucleotide {
         }
 
         System.out.print(sb);
+    }
+}
+
+class Long2IntOpenHashMap {
+    private final HashMap<Long, Integer> delegate = new HashMap<>();
+
+    void addTo(long key, int value) {
+        delegate.put(key, delegate.getOrDefault(key, 0) + value);
+    }
+
+    int get(long key) {
+        return delegate.getOrDefault(key, 0);
+    }
+
+    int size() {
+        return delegate.size();
+    }
+
+    void forEach(LongIntConsumer consumer) {
+        for (Map.Entry<Long, Integer> entry : delegate.entrySet()) {
+            consumer.accept(entry.getKey(), entry.getValue());
+        }
+    }
+
+    interface LongIntConsumer {
+        void accept(long key, int value);
     }
 }

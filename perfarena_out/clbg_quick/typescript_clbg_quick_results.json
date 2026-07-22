@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f binary-trees.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . binarytrees.typescript-2.ts && if [ \"binarytrees.typescript-2.js\" != \"binary-trees.js\" ]; then mv binarytrees.typescript-2.js binary-trees.js; fi\nvalidate: running binary-trees at N=10...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node binary-trees.js 10\" TypeScript binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:25] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 66.246,
+    "peak_rss_kb": 29696,
+    "energy_uj": 1970266,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f fannkuch-redux.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . fannkuchredux.ts && if [ \"fannkuchredux.js\" != \"fannkuch-redux.js\" ]; then mv fannkuchredux.js fannkuch-redux.js; fi\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node fannkuch-redux.js 7\" TypeScript fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:37] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 46.003,
+    "peak_rss_kb": 36176,
+    "energy_uj": 1154299,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f fasta.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . fasta.ts && if [ \"fasta.js\" != \"fasta.js\" ]; then mv fasta.js fasta.js; fi\nvalidate: running fasta at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node fasta.js 1000\" TypeScript fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:46] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 45.301,
+    "peak_rss_kb": 36240,
+    "energy_uj": 1003568,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f k-nucleotide.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . knucleotide.ts && if [ \"knucleotide.js\" != \"k-nucleotide.js\" ]; then mv knucleotide.js k-nucleotide.js; fi\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node k-nucleotide.js 0 < ../../reference/inputs/fasta-10000.txt\" TypeScript k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:58] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 90.09,
+    "peak_rss_kb": 74464,
+    "energy_uj": 2674066,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f mandelbrot.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . mandelbrot.ts && if [ \"mandelbrot.js\" != \"mandelbrot.js\" ]; then mv mandelbrot.js mandelbrot.js; fi\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node mandelbrot.js 200\" TypeScript mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:07] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 88.54,
+    "peak_rss_kb": 36432,
+    "energy_uj": 2365219,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f n-body.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . nbody.typescript-3.ts && if [ \"nbody.typescript-3.js\" != \"n-body.js\" ]; then mv nbody.typescript-3.js n-body.js; fi\nvalidate: running n-body at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node n-body.js 1000\" TypeScript n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:16] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 87.272,
+    "peak_rss_kb": 13632,
+    "energy_uj": 2429499,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f pidigits.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . pidigits.ts && if [ \"pidigits.js\" != \"pidigits.js\" ]; then mv pidigits.js pidigits.js; fi\nvalidate: running pidigits at N=28...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node pidigits.js 28\" TypeScript pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:27] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 69.587,
+    "peak_rss_kb": 752,
+    "energy_uj": 2311036,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f regex-redux.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . regexredux.typescript-3.ts && if [ \"regexredux.typescript-3.js\" != \"regex-redux.js\" ]; then mv regexredux.typescript-3.js regex-redux.js; fi\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node regex-redux.js 0 < ../../reference/inputs/fasta-10000.txt\" TypeScript regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:37] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 44.714,
+    "peak_rss_kb": 37936,
+    "energy_uj": 1773014,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f reverse-complement.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . revcomp.ts && if [ \"revcomp.js\" != \"reverse-complement.js\" ]; then mv revcomp.js reverse-complement.js; fi\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node reverse-complement.js 0 < ../../reference/inputs/fasta-10000.txt\" TypeScript reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:49] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 70.643,
+    "peak_rss_kb": 31568,
+    "energy_uj": 1641738,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f spectral-norm.js\nnpx --yes -p typescript@5.9.3 tsc --target es2020 --module commonjs --skipLibCheck --outDir . spectralnorm.ts && if [ \"spectralnorm.js\" != \"spectral-norm.js\" ]; then mv spectralnorm.js spectral-norm.js; fi\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"node spectral-norm.js 100\" TypeScript spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:57] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../TypeScript.jsonl\n",
+    "wall_ms": 67.817,
+    "peak_rss_kb": 34704,
+    "energy_uj": 956318,
+    "energy_source_status": "codecarbon"
+  }
+]

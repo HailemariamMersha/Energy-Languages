@@ -75,7 +75,7 @@ def _get_problem_meta() -> dict[str, dict[str, Any]]:
     return _PROBLEM_META
 
 
-def _validation_block(problem_key: str) -> str:
+def _validation_block(problem_key: str, language_folder: str = "") -> str:
     """Return the Makefile lines for VALIDATION_N, REFERENCE_OUTPUT,
     STDIN_FILE, and BINARY_OUTPUT for a given problem."""
     meta = _get_problem_meta().get(problem_key, {})
@@ -84,6 +84,14 @@ def _validation_block(problem_key: str) -> str:
     if vn:
         lines.append(f"VALIDATION_N       = {vn}")
     ref = meta.get("reference_output", "")
+    if problem_key == "mandelbrot" and language_folder not in {"", "Python"}:
+        key = {
+            "C++": "cpp", "CSharp": "csharp", "Java": "java",
+            "JavaScript": "javascript", "TypeScript": "typescript",
+            "PHP": "php", "Go": "go", "Rust": "rust", "Ruby": "ruby",
+        }.get(language_folder)
+        if key:
+            ref = f"reference/outputs/mandelbrot/{key}.pbm"
     if ref:
         lines.append(f"REFERENCE_OUTPUT   = ../../{ref}")
     if meta.get("needs_stdin"):
@@ -117,6 +125,10 @@ def _infer_arg(makefile_text: str, default: str) -> str:
     return default
 
 
+def _default_arg(cell: Path) -> str:
+    return str(_get_problem_meta().get(cell.name, {}).get("default_argument", "21"))
+
+
 def _already_patched(text: str) -> bool:
     return "include ../../perfarena.mk" in text
 
@@ -129,9 +141,9 @@ def _first_file_matching(cell: Path, patterns: list[str]) -> str | None:
     return None
 
 
-def _finalize(body: str, cell_name: str) -> str:
+def _finalize(body: str, cell_name: str, language_folder: str = "") -> str:
     """Append validation metadata and the include line."""
-    vblock = _validation_block(cell_name)
+    vblock = _validation_block(cell_name, language_folder)
     parts = [body.rstrip()]
     if vblock:
         parts.append("")
@@ -153,28 +165,29 @@ def _rewrite_python(cell: Path, original: str) -> str | None:
         return None
     stem = source.split(".")[0]
     output = f"{stem}.py"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG        = Python\n"
         f"TEST        = {cell.name}\n"
         f"SOURCE      = {source}\n"
         f"OUTPUT      = {output}\n"
         f"ARG         = {arg}\n"
-        f"RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)\n"
+        f"PYTHON      ?= python3\n"
+        f"RUN_CMD     = $(PYTHON) -OO $(OUTPUT) $(ARG)\n"
         f"COMPILE_CMD = cp $(SOURCE) $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_cpp(cell: Path, original: str) -> str | None:
     source = _first_file_matching(
         cell,
-        ["*.gpp-*.c++", "*.cpp", "*.cc", "*.c++"],
+        ["*.portable.cpp", "*.gpp-*.c++", "*.cpp", "*.cc", "*.c++"],
     )
     if source is None:
         return None
     output = f"{cell.name}.gpp_run"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG    = C++\n"
         f"TEST    = {cell.name}\n"
@@ -183,11 +196,14 @@ def _rewrite_cpp(cell: Path, original: str) -> str | None:
         f"ARG     = {arg}\n"
         f"RUN_CMD = ./$(OUTPUT) $(ARG)\n"
         f"\n"
-        f"CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp\n"
+        f"CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++17\n"
+        f"ifeq (,$(findstring Apple clang,$(shell $(CXX) --version)))\n"
+        f"  CXXFLAGS += -fopenmp\n"
+        f"endif\n"
         f"\n"
         f"COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_rust(cell: Path, original: str) -> str | None:
@@ -195,7 +211,7 @@ def _rewrite_rust(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"{cell.name}.rust_run"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG    = Rust\n"
         f"TEST    = {cell.name}\n"
@@ -213,9 +229,9 @@ def _rewrite_rust(cell: Path, original: str) -> str | None:
         f"  RUSTC_TARGET_FLAG =\n"
         f"endif\n"
         f"\n"
-        f"COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)\n"
+        f"COMPILE_CMD = cargo build --release --manifest-path ../Cargo.toml --bin $(TEST) && cp ../target/release/$(TEST) $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_go(cell: Path, original: str) -> str | None:
@@ -223,7 +239,7 @@ def _rewrite_go(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"{cell.name}.go_run"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG    = Go\n"
         f"TEST    = {cell.name}\n"
@@ -234,7 +250,7 @@ def _rewrite_go(cell: Path, original: str) -> str | None:
         f"\n"
         f"COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_java(cell: Path, original: str) -> str | None:
@@ -243,7 +259,7 @@ def _rewrite_java(cell: Path, original: str) -> str | None:
         return None
     # Assume the benchmark uses a class named after the file stem.
     class_name = source.split(".")[0]
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG    = Java\n"
         f"TEST    = {cell.name}\n"
@@ -256,7 +272,7 @@ def _rewrite_java(cell: Path, original: str) -> str | None:
         f"\n"
         f"COMPILE_CMD = cp $(SOURCE) {class_name}.java && $(JAVAC) -d . {class_name}.java\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_javascript(cell: Path, original: str) -> str | None:
@@ -264,7 +280,9 @@ def _rewrite_javascript(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"{cell.name}.js"
-    arg = _infer_arg(original, "21")
+    if output == source:
+        output = f"{cell.name}.run.js"
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG        = JavaScript\n"
         f"TEST        = {cell.name}\n"
@@ -274,7 +292,7 @@ def _rewrite_javascript(cell: Path, original: str) -> str | None:
         f"RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)\n"
         f"COMPILE_CMD = cp $(SOURCE) $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_typescript(cell: Path, original: str) -> str | None:
@@ -282,7 +300,7 @@ def _rewrite_typescript(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     js_output = f"{cell.name}.js"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG        = TypeScript\n"
         f"TEST        = {cell.name}\n"
@@ -291,11 +309,12 @@ def _rewrite_typescript(cell: Path, original: str) -> str | None:
         f"ARG         = {arg}\n"
         f"RUN_CMD     = node $(OUTPUT) $(ARG)\n"
         f"\n"
-        f"TSC ?= tsc\n"
+        f"TSC ?= npx --yes -p typescript@5.9.3 tsc\n"
         f"\n"
-        f"COMPILE_CMD = $(TSC) --target es2020 --outFile $(OUTPUT) $(SOURCE)\n"
+        f"COMPILE_CMD = $(TSC) --target es2020 --module commonjs --skipLibCheck --outDir . $(SOURCE) && "
+        f"if [ \"$(SOURCE:.ts=.js)\" != \"$(OUTPUT)\" ]; then mv $(SOURCE:.ts=.js) $(OUTPUT); fi\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_csharp(cell: Path, original: str) -> str | None:
@@ -303,7 +322,7 @@ def _rewrite_csharp(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"bin/Release/{cell.name}"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG    = CSharp\n"
         f"TEST    = {cell.name}\n"
@@ -314,7 +333,7 @@ def _rewrite_csharp(cell: Path, original: str) -> str | None:
         f"\n"
         f"COMPILE_CMD = dotnet build --configuration Release --nologo\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_php(cell: Path, original: str) -> str | None:
@@ -322,7 +341,7 @@ def _rewrite_php(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"{cell.name}.php"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG        = PHP\n"
         f"TEST        = {cell.name}\n"
@@ -332,7 +351,7 @@ def _rewrite_php(cell: Path, original: str) -> str | None:
         f"RUN_CMD     = php -n -d memory_limit=2G $(OUTPUT) $(ARG)\n"
         f"COMPILE_CMD = cp $(SOURCE) $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 def _rewrite_ruby(cell: Path, original: str) -> str | None:
@@ -340,7 +359,7 @@ def _rewrite_ruby(cell: Path, original: str) -> str | None:
     if source is None:
         return None
     output = f"{cell.name}.rb"
-    arg = _infer_arg(original, "21")
+    arg = _infer_arg(original, _default_arg(cell))
     body = (
         f"LANG        = Ruby\n"
         f"TEST        = {cell.name}\n"
@@ -350,7 +369,7 @@ def _rewrite_ruby(cell: Path, original: str) -> str | None:
         f"RUN_CMD     = ruby $(OUTPUT) $(ARG)\n"
         f"COMPILE_CMD = cp $(SOURCE) $(OUTPUT)\n"
     )
-    return _finalize(body, cell.name)
+    return _finalize(body, cell.name, cell.parent.name)
 
 
 # Mapping: canonical language folder name -> rewriter.

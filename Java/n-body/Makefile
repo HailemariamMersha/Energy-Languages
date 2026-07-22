@@ -2,7 +2,7 @@ LANG    = Java
 TEST    = n-body
 SOURCE  = nbody.java-4.java
 OUTPUT  = nbody.class
-ARG     = 50000000
+ARG         = 50000000
 RUN_CMD = java nbody $(ARG)
 
 JAVAC ?= javac

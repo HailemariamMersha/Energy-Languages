@@ -6,7 +6,7 @@
 
 import sys
 from io import StringIO
-from gmpy2 import xmpz,div,mul,add
+from gmpy2 import xmpz,t_div as div,mul,add
 
 N = int(sys.argv[1])
 f = StringIO()

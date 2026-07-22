@@ -1,0 +1,45 @@
+[package]
+name = "perfarena-clbg-rust"
+version = "0.1.0"
+edition = "2015"
+
+[dependencies]
+futures = "0.1"
+futures-cpupool = "0.1"
+num_cpus = "1"
+num-bigint = "0.4"
+ordermap = "0.3"
+rayon = "1"
+regex = "1"
+typed-arena = "2"
+
+[[bin]]
+name = "binary-trees"
+path = "binary-trees/binarytrees.rs"
+[[bin]]
+name = "fannkuch-redux"
+path = "fannkuch-redux/fannkuchredux.rs"
+[[bin]]
+name = "fasta"
+path = "fasta/fasta.rs"
+[[bin]]
+name = "k-nucleotide"
+path = "k-nucleotide/knucleotide.rs"
+[[bin]]
+name = "mandelbrot"
+path = "mandelbrot/mandelbrot.rs"
+[[bin]]
+name = "n-body"
+path = "n-body/nbody.rs"
+[[bin]]
+name = "pidigits"
+path = "pidigits/pidigits.rs"
+[[bin]]
+name = "regex-redux"
+path = "regex-redux/regexredux.rs"
+[[bin]]
+name = "reverse-complement"
+path = "reverse-complement/revcomp.rs"
+[[bin]]
+name = "spectral-norm"
+path = "spectral-norm/spectralnorm.rs"

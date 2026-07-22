@@ -161,7 +161,7 @@ problems:
     algorithm_class: "arbitrary-precision arithmetic"
     needs_stdin: false
     stdin_input_file: ""
-    validation_n: "27"
+    validation_n: "28"
     reference_output: "reference/outputs/pidigits.txt"
     binary_output: false
 

@@ -123,18 +123,18 @@ function write_count($sequence, $key) {
  */
 function generate_frequencies($sequence, $key_length, $compute_freq = true) {
    $result = array();
-   $total = strlen($sequence) - $key_length;
-   $i = $total;
+   $total = strlen($sequence) - $key_length + 1;
+   $i = $total - 1;
    if ($key_length === 1) { 
       do {
          $x = &$result[$sequence[$i--]];
          $x++;
-      } while ($i);
+      } while ($i >= 0);
    } else {
       do {
          $x = &$result[substr($sequence, $i--, $key_length)];
          $x++;
-      } while ($i);
+      } while ($i >= 0);
    }
    if($compute_freq) {
       foreach($result as $k => $v) {

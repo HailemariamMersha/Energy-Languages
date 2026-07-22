@@ -1,0 +1,110 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<title>Java CLBG quick check</title><style>
+body{font:15px system-ui;max-width:1200px;margin:2rem auto;padding:0 1rem;color:#18212b}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccd5df;padding:.5rem;text-align:left}
+th{background:#edf2f7}.ok{color:#087830;font-weight:700}.bad{color:#b42318;font-weight:700}
+pre{white-space:pre-wrap;max-width:650px}code{background:#eef2f6;padding:.1rem .25rem}</style></head><body>
+<h1>Java CLBG quick check</h1><p><strong>10/10 passed</strong>. Generated 2026-07-20T20:21:23.817136+00:00 on macOS-26.5-arm64-arm-64bit-Mach-O.</p>
+<p>Each passing cell was compiled, checked against its small reference output, then sampled once. Energy is reported by the configured platform backend and peak RSS covers the benchmark process tree.</p>
+<h2>Toolchain</h2><ul><li><code>javac</code>: javac 17.0.18</li><li><code>make</code>: GNU Make 3.81</li></ul><table><thead><tr><th>Problem</th><th>Result</th><th>Wall (ms)</th><th>Peak RSS (MiB)</th><th>Energy (J)</th><th>Energy source</th><th>Details</th></tr></thead>
+<tbody><tr><td>binary-trees</td><td class='ok'>PASS</td><td>120.62</td><td>41.34</td><td>3.273691</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f binarytrees.class
+cp binarytrees.java-7.java binarytrees.java &amp;&amp; javac -d . binarytrees.java
+validate: running binary-trees at N=10...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java binarytrees 10&quot; Java binary-trees 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:25] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>fannkuch-redux</td><td class='ok'>PASS</td><td>103.72</td><td>43.25</td><td>2.437060</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fannkuchredux.class
+javac -d . fannkuchredux.java
+validate: running fannkuch-redux at N=7...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java fannkuchredux 7&quot; Java fannkuch-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:36] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>fasta</td><td class='ok'>PASS</td><td>66.39</td><td>35.38</td><td>1.561139</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fasta.class
+cp fasta.java-5.java fasta.java &amp;&amp; javac -d . fasta.java
+validate: running fasta at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java fasta 1000&quot; Java fasta 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:45] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>k-nucleotide</td><td class='ok'>PASS</td><td>222.46</td><td>76.09</td><td>5.508925</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f knucleotide.class
+javac -d . knucleotide.java
+validate: running k-nucleotide at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java knucleotide 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Java k-nucleotide 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:21:54] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>mandelbrot</td><td class='ok'>PASS</td><td>107.62</td><td>34.77</td><td>2.461969</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f mandelbrot.class
+cp mandelbrot.java-2.java mandelbrot.java &amp;&amp; javac -d . mandelbrot.java
+validate: running mandelbrot at N=200...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java mandelbrot 200&quot; Java mandelbrot 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:03] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>n-body</td><td class='ok'>PASS</td><td>70.57</td><td>29.84</td><td>1.777726</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f nbody.class
+cp nbody.java-4.java nbody.java &amp;&amp; javac -d . nbody.java
+validate: running n-body at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java nbody 1000&quot; Java n-body 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:12] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>pidigits</td><td class='ok'>PASS</td><td>72.62</td><td>39.88</td><td>2.097016</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f pidigits.class
+cp pidigits.java-2.java pidigits.java &amp;&amp; javac -d . pidigits.java
+validate: running pidigits at N=28...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java pidigits 28&quot; Java pidigits 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:24] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>regex-redux</td><td class='ok'>PASS</td><td>154.97</td><td>54.95</td><td>3.892594</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f regexredux.class
+cp regexredux.java-3.java regexredux.java &amp;&amp; javac -d . regexredux.java
+validate: running regex-redux at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java regexredux 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Java regex-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:33] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>reverse-complement</td><td class='ok'>PASS</td><td>62.44</td><td>60.05</td><td>1.762631</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f revcomp.class
+cp revcomp.java-3.java revcomp.java &amp;&amp; javac -d . revcomp.java
+validate: running reverse-complement at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java revcomp 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Java reverse-complement 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:41] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr><tr><td>spectral-norm</td><td class='ok'>PASS</td><td>95.26</td><td>42.45</td><td>1.778014</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f spectralnorm.class
+cp spectralnorm.java-2.java spectralnorm.java &amp;&amp; javac -d . spectralnorm.java
+validate: running spectral-norm at N=100...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;java spectralnorm 100&quot; Java spectral-norm 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:22:53] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Java.jsonl
+</pre></details></td></tr></tbody></table></body></html>

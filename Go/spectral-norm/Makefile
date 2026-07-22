@@ -2,7 +2,7 @@ LANG    = Go
 TEST    = spectral-norm
 SOURCE  = spectralnorm.go-4.go
 OUTPUT  = spectral-norm.go_run
-ARG     = 5500
+ARG         = 5500
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 COMPILE_CMD = go build -o $(OUTPUT) $(SOURCE)

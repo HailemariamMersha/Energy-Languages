@@ -2,7 +2,7 @@ LANG        = Ruby
 TEST        = regex-redux
 SOURCE      = regexredux.yarv-2.yarv
 OUTPUT      = regex-redux.rb
-ARG         = 21
+ARG         = 0
 RUN_CMD     = ruby $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 

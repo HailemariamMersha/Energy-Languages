@@ -2,8 +2,9 @@ LANG        = Python
 TEST        = regex-redux
 SOURCE      = regexredux.python3
 OUTPUT      = regexredux.py
-ARG         = 21
-RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+ARG         = 0
+PYTHON      ?= python3
+RUN_CMD     = $(PYTHON) -OO $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
 VALIDATION_N       = 0

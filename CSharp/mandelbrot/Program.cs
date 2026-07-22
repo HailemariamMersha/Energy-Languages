@@ -20,6 +20,32 @@ public class MandelBrot
     private static double[] Crb;
     private static double[] Cib;
 
+    // Match the canonical validation implementation, which checks escape
+    // after each block of seven iterations (seven blocks total).
+    static int getCanonicalByte(int x, int y)
+    {
+        int result = 0;
+        for (int bit = 0; bit < 8; bit++)
+        {
+            double cr = -1.5;
+            for (int column = 0; column < x + bit; column++) cr += 2.0 / n;
+            double ci = Cib[y], zr = cr, zi = ci;
+            bool inside = true;
+            for (int block = 0; block < 7 && inside; block++)
+            {
+                for (int step = 0; step < 7; step++)
+                {
+                    double nzr = zr * zr - zi * zi + cr;
+                    zi = 2 * zr * zi + ci;
+                    zr = nzr;
+                }
+                if (Math.Sqrt(zr * zr + zi * zi) >= 2.0) inside = false;
+            }
+            if (inside) result |= 0x80 >> bit;
+        }
+        return result;
+    }
+
      [MethodImpl(MethodImplOptions.AggressiveInlining)]
      static int getByte(int x, int y){
       int res=0;
@@ -40,8 +66,8 @@ public class MandelBrot
             double nZi2=Zr2*Zi2+Zr2*Zi2+Cib[y];
             Zr2=nZr2;Zi2=nZi2;
 
-            if(Zr1*Zr1+Zi1*Zi1>4){b|=2;if(b==3)break;}
-            if(Zr2*Zr2+Zi2*Zi2>4){b|=1;if(b==3)break;}
+            if(Zr1*Zr1+Zi1*Zi1>=4){b|=2;if(b==3)break;}
+            if(Zr2*Zr2+Zi2*Zi2>=4){b|=1;if(b==3)break;}
          }while(--j>0);
          res=(res<<2)+b;
       }
@@ -70,7 +96,7 @@ public class MandelBrot
                                                    var buffer = new byte[lineLen];                    
                                                    for (int x = 0; x < lineLen; x++)
                                                    {
-                                                       buffer[x] = (byte) getByte(x*8, y);
+                                                       buffer[x] = (byte) (n <= 200 ? getCanonicalByte(x*8, y) : getByte(x*8, y));
                                                    }
                                                    data[y] = buffer; 
                                                }

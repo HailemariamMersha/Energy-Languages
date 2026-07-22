@@ -14,8 +14,7 @@ import (
    "io/ioutil"
    "os"
    "runtime"
-
-   "github.com/glenn-brown/golang-pkg-pcre/src/pkg/pcre"
+   "regexp"
 )
 //   "github.com/tuxychandru/golang-pkg-pcre/src/pkg/pcre"
 
@@ -45,13 +44,7 @@ var substs = []Subst{
 }
 
 func countMatches(pat string, bytes []byte) int {
-   m := pcre.MustCompile(pat, 0).Matcher(bytes, 0)
-   n := 0
-   for f := m.Matches(); f; f = m.Match(bytes, 0) {
-      n++
-      bytes = bytes[m.Index()[1]:]
-   }
-   return n
+   return len(regexp.MustCompile(pat).FindAllIndex(bytes, -1))
 }
 
 func main() {
@@ -63,7 +56,7 @@ func main() {
    }
    ilen := len(bytes)
    // Delete the comment lines and newlines
-   bytes = pcre.MustCompile("(>[^\n]+)?\n", 0).ReplaceAll(bytes, []byte{}, 0)
+   bytes = regexp.MustCompile("(?m)^>.*\n|\n").ReplaceAll(bytes, []byte{})
    clen := len(bytes)
 
    mresults := make([]chan int, len(variants))
@@ -81,7 +74,7 @@ func main() {
    bb := bytes
    go func() {
       for _, sub := range substs {
-         bb = pcre.MustCompile(sub.pat, 0).ReplaceAll(bb, []byte(sub.repl), 0)
+         bb = regexp.MustCompile(sub.pat).ReplaceAll(bb, []byte(sub.repl))
       }
       lenresult <- len(bb)
    }()

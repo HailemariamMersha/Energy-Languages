@@ -2,7 +2,7 @@ LANG    = Rust
 TEST    = fannkuch-redux
 SOURCE  = fannkuchredux.rs
 OUTPUT  = fannkuch-redux.rust_run
-ARG     = 16
+ARG         = 12
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 RUSTC       ?= rustc
@@ -14,7 +14,7 @@ else
   RUSTC_TARGET_FLAG =
 endif
 
-COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
+COMPILE_CMD = cargo build --release --manifest-path ../Cargo.toml --bin fannkuch-redux && cp ../target/release/fannkuch-redux $(OUTPUT)
 
 VALIDATION_N       = 7
 REFERENCE_OUTPUT   = ../../reference/outputs/fannkuch-redux.txt

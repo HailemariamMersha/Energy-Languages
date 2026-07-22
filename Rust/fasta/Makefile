@@ -2,7 +2,7 @@ LANG    = Rust
 TEST    = fasta
 SOURCE  = fasta.rs
 OUTPUT  = fasta.rust_run
-ARG     = 16
+ARG         = 25000000
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
 RUSTC       ?= rustc
@@ -14,7 +14,7 @@ else
   RUSTC_TARGET_FLAG =
 endif
 
-COMPILE_CMD = $(RUSTC) $(RUSTC_FLAGS) $(RUSTC_TARGET_FLAG) $(SOURCE) -o $(OUTPUT)
+COMPILE_CMD = cargo build --release --manifest-path ../Cargo.toml --bin fasta && cp ../target/release/fasta $(OUTPUT)
 
 VALIDATION_N       = 1000
 REFERENCE_OUTPUT   = ../../reference/outputs/fasta.txt

@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "binary-trees",
+    "status": "PASS",
+    "log": "rm -f binary-trees.rb\ncp binarytrees.yarv-5.yarv binary-trees.rb\nvalidate: running binary-trees at N=10...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby binary-trees.rb 10\" Ruby binary-trees 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:24] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 130.363,
+    "peak_rss_kb": 28752,
+    "energy_uj": 3305657,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fannkuch-redux",
+    "status": "PASS",
+    "log": "rm -f fannkuch-redux.rb\ncp fannkuchredux.yarv-2.yarv fannkuch-redux.rb\nvalidate: running fannkuch-redux at N=7...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby fannkuch-redux.rb 7\" Ruby fannkuch-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:36] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 125.417,
+    "peak_rss_kb": 29744,
+    "energy_uj": 2824958,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "fasta",
+    "status": "PASS",
+    "log": "rm -f fasta.rb\ncp fasta.yarv-3.yarv fasta.rb\nvalidate: running fasta at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby fasta.rb 1000\" Ruby fasta 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:44] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 106.868,
+    "peak_rss_kb": 28288,
+    "energy_uj": 2307121,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "k-nucleotide",
+    "status": "PASS",
+    "log": "rm -f k-nucleotide.rb\ncp knucleotide.yarv-7.yarv k-nucleotide.rb\nvalidate: running k-nucleotide at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby k-nucleotide.rb 0 < ../../reference/inputs/fasta-10000.txt\" Ruby k-nucleotide 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:21:53] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 204.115,
+    "peak_rss_kb": 47296,
+    "energy_uj": 4425193,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "mandelbrot",
+    "status": "PASS",
+    "log": "rm -f mandelbrot.rb\ncp mandelbrot.yarv-5.yarv mandelbrot.rb\nvalidate: running mandelbrot at N=200...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby mandelbrot.rb 200\" Ruby mandelbrot 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:03] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 131.732,
+    "peak_rss_kb": 59600,
+    "energy_uj": 2964388,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "n-body",
+    "status": "PASS",
+    "log": "rm -f n-body.rb\ncp nbody.yarv-2.yarv n-body.rb\nvalidate: running n-body at N=1000...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby n-body.rb 1000\" Ruby n-body 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:12] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 78.931,
+    "peak_rss_kb": 28784,
+    "energy_uj": 1780857,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "pidigits",
+    "status": "PASS",
+    "log": "rm -f pidigits.rb\ncp pidigits.yarv-5.yarv pidigits.rb\nvalidate: running pidigits at N=28...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby pidigits.rb 28\" Ruby pidigits 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:23] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 111.505,
+    "peak_rss_kb": 28032,
+    "energy_uj": 3007688,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "regex-redux",
+    "status": "PASS",
+    "log": "rm -f regex-redux.rb\ncp regexredux.yarv-2.yarv regex-redux.rb\nvalidate: running regex-redux at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby regex-redux.rb 0 < ../../reference/inputs/fasta-10000.txt\" Ruby regex-redux 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:32] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 224.977,
+    "peak_rss_kb": 31760,
+    "energy_uj": 6078092,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "reverse-complement",
+    "status": "PASS",
+    "log": "rm -f reverse-complement.rb\ncp revcomp.yarv-3.yarv reverse-complement.rb\nvalidate: running reverse-complement at N=0...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby reverse-complement.rb 0 < ../../reference/inputs/fasta-10000.txt\" Ruby reverse-complement 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:40] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 98.778,
+    "peak_rss_kb": 30272,
+    "energy_uj": 2844223,
+    "energy_source_status": "codecarbon"
+  },
+  {
+    "problem": "spectral-norm",
+    "status": "PASS",
+    "log": "rm -f spectral-norm.rb\ncp spectralnorm.yarv-5.yarv spectral-norm.rb\nvalidate: running spectral-norm at N=100...\nvalidate: PASS\n\n/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner \"ruby spectral-norm.rb 100\" Ruby spectral-norm 0 1 0\n[codecarbon-runner] idle baseline (0s)...\n[codecarbon WARNING @ 00:22:52] Multiple instances of codecarbon are allowed to run at the same time.\n[codecarbon-runner] measure 1/1...\n[codecarbon-runner] done. wrote ../Ruby.jsonl\n",
+    "wall_ms": 257.715,
+    "peak_rss_kb": 29984,
+    "energy_uj": 6445414,
+    "energy_source_status": "codecarbon"
+  }
+]

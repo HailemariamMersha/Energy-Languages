@@ -6,7 +6,7 @@
    converted from regex-dna program
 */
 
-#include <boost/regex.hpp>
+#include <regex>
 #include <cassert>
 #include <iostream>
 #include <cstdio>
@@ -14,7 +14,7 @@
 using namespace std;
 
 const std::size_t BUFSIZE = 1024;
-const boost::regex::flag_type re_flags = boost::regex::perl;
+const std::regex::flag_type re_flags = std::regex::ECMAScript;
 
 int main(void)
 {
@@ -52,8 +52,8 @@ int main(void)
     assert(read_size);
 
     len1 = str.length();
-    boost::regex re1 (">[^\\n]+\\n|[\\n]", re_flags);
-    boost::regex_replace (str, re1, "").swap (str);
+    std::regex re1 (">[^\\n]+\\n|[\\n]", re_flags);
+    std::regex_replace (str, re1, "").swap (str);
     len2 = str.length();
 
     out = str;
@@ -65,10 +65,10 @@ int main(void)
         #pragma omp parallel for
         for (int i = 0; i < pattern1_count; i++)
         {
-            boost::regex pat(pattern1[i], re_flags);
-            boost::smatch m;
+            std::regex pat(pattern1[i], re_flags);
+            std::smatch m;
             std::string::const_iterator start = str.begin (), end = str.end (); 
-            while (boost::regex_search (start, end, m, pat))
+            while (std::regex_search (start, end, m, pat))
             {
                 ++counts[i];
                 start += m.position () + m.length ();
@@ -79,8 +79,8 @@ int main(void)
         #pragma omp section
         for (int i = 0; i < (int)(sizeof(pattern2) / sizeof(string)); i += 2)
         {
-            boost::regex re (pattern2[i], re_flags);
-            boost::regex_replace (out, re, pattern2[i + 1]).swap (out);
+            std::regex re (pattern2[i], re_flags);
+            std::regex_replace (out, re, pattern2[i + 1]).swap (out);
         }
     }
 

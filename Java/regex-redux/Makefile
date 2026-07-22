@@ -2,7 +2,7 @@ LANG    = Java
 TEST    = regex-redux
 SOURCE  = regexredux.java-3.java
 OUTPUT  = regexredux.class
-ARG     = 21
+ARG         = 0
 RUN_CMD = java regexredux $(ARG)
 
 JAVAC ?= javac

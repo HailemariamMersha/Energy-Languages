@@ -2,7 +2,7 @@ LANG    = CSharp
 TEST    = reverse-complement
 SOURCE  = Program.cs
 OUTPUT  = bin/Release/reverse-complement
-ARG     = 21
+ARG         = 0
 RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
 COMPILE_CMD = dotnet build --configuration Release --nologo

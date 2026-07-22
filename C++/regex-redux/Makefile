@@ -2,10 +2,13 @@ LANG    = C++
 TEST    = regex-redux
 SOURCE  = regexredux.gpp-3.c++
 OUTPUT  = regex-redux.gpp_run
-ARG     = 21
+ARG         = 0
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
-CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++17
+ifeq (,$(findstring Apple clang,$(shell $(CXX) --version)))
+  CXXFLAGS += -fopenmp
+endif
 
 COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 

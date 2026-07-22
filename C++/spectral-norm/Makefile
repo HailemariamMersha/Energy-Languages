@@ -1,11 +1,14 @@
 LANG    = C++
 TEST    = spectral-norm
-SOURCE  = spectralnorm.gpp-6.c++
+SOURCE  = spectralnorm.portable.cpp
 OUTPUT  = spectral-norm.gpp_run
-ARG     = 5500
+ARG         = 5500
 RUN_CMD = ./$(OUTPUT) $(ARG)
 
-CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++14 -fopenmp
+CXXFLAGS ?= -O3 -fomit-frame-pointer -std=c++17
+ifeq (,$(findstring Apple clang,$(shell $(CXX) --version)))
+  CXXFLAGS += -fopenmp
+endif
 
 COMPILE_CMD = $(CXX) $(CXXFLAGS) $(SOURCE) -o $(OUTPUT)
 

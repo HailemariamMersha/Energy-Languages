@@ -1,0 +1,110 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<title>Python 3 CLBG quick check</title><style>
+body{font:15px system-ui;max-width:1200px;margin:2rem auto;padding:0 1rem;color:#18212b}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccd5df;padding:.5rem;text-align:left}
+th{background:#edf2f7}.ok{color:#087830;font-weight:700}.bad{color:#b42318;font-weight:700}
+pre{white-space:pre-wrap;max-width:650px}code{background:#eef2f6;padding:.1rem .25rem}</style></head><body>
+<h1>Python 3 CLBG quick check</h1><p><strong>10/10 passed</strong>. Generated 2026-07-20T20:19:04.820145+00:00 on macOS-26.5-arm64-arm-64bit-Mach-O.</p>
+<p>Each passing cell was compiled, checked against its small reference output, then sampled once. Energy is reported by the configured platform backend and peak RSS covers the benchmark process tree.</p>
+<h2>Toolchain</h2><ul><li><code>python3</code>: Python 3.14.6</li><li><code>make</code>: GNU Make 3.81</li></ul><table><thead><tr><th>Problem</th><th>Result</th><th>Wall (ms)</th><th>Peak RSS (MiB)</th><th>Energy (J)</th><th>Energy source</th><th>Details</th></tr></thead>
+<tbody><tr><td>binary-trees</td><td class='ok'>PASS</td><td>184.30</td><td>274.58</td><td>1.694110</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f binarytrees.py
+cp binarytrees.python3 binarytrees.py
+validate: running binary-trees at N=10...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO binarytrees.py 10&quot; Python binary-trees 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:06] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>fannkuch-redux</td><td class='ok'>PASS</td><td>42.63</td><td>16.30</td><td>0.761455</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fannkuchredux.py
+cp fannkuchredux.python3-4.python3 fannkuchredux.py
+validate: running fannkuch-redux at N=7...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO fannkuchredux.py 7&quot; Python fannkuch-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:17] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>fasta</td><td class='ok'>PASS</td><td>65.58</td><td>12.81</td><td>1.622251</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f fasta.py
+cp fasta.python3-3.python3 fasta.py
+validate: running fasta at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO fasta.py 1000&quot; Python fasta 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:25] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>k-nucleotide</td><td class='ok'>PASS</td><td>188.80</td><td>294.70</td><td>1.695711</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f knucleotide.py
+cp knucleotide.python3-3.python3 knucleotide.py
+validate: running k-nucleotide at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO knucleotide.py 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Python k-nucleotide 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:36] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>mandelbrot</td><td class='ok'>PASS</td><td>189.47</td><td>274.34</td><td>2.553089</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f mandelbrot.py
+cp mandelbrot.python3-7.python3 mandelbrot.py
+validate: running mandelbrot at N=200...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO mandelbrot.py 200&quot; Python mandelbrot 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:46] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>n-body</td><td class='ok'>PASS</td><td>60.01</td><td>13.80</td><td>1.724236</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f nbody.py
+cp nbody.python3 nbody.py
+validate: running n-body at N=1000...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO nbody.py 1000&quot; Python n-body 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:19:54] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>pidigits</td><td class='ok'>PASS</td><td>44.04</td><td>16.36</td><td>0.709185</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f pidigits.py
+cp pidigits.python3-2.python3 pidigits.py
+validate: running pidigits at N=28...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO pidigits.py 28&quot; Python pidigits 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:20:05] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>regex-redux</td><td class='ok'>PASS</td><td>384.16</td><td>282.48</td><td>3.337277</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f regexredux.py
+cp regexredux.python3 regexredux.py
+validate: running regex-redux at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO regexredux.py 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Python regex-redux 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:20:15] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>reverse-complement</td><td class='ok'>PASS</td><td>63.48</td><td>15.67</td><td>1.632582</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f revcomp.py
+cp revcomp.python3-6.python3 revcomp.py
+validate: running reverse-complement at N=0...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO revcomp.py 0 &lt; ../../reference/inputs/fasta-10000.txt&quot; Python reverse-complement 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:20:23] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr><tr><td>spectral-norm</td><td class='ok'>PASS</td><td>149.53</td><td>126.86</td><td>1.297709</td><td>codecarbon</td><td><details><summary>log</summary><pre>rm -f spectralnorm.py
+cp spectralnorm.python3-5.python3 spectralnorm.py
+validate: running spectral-norm at N=100...
+validate: PASS
+
+/Users/haile/Desktop/spring26/sanad_lab/perfArena/Energy-Languages/.venv/bin/python -m perfarena.runners.codecarbon_runner &quot;python3 -OO spectralnorm.py 100&quot; Python spectral-norm 0 1 0
+[codecarbon-runner] idle baseline (0s)...
+[codecarbon WARNING @ 00:20:34] Multiple instances of codecarbon are allowed to run at the same time.
+[codecarbon-runner] measure 1/1...
+[codecarbon-runner] done. wrote ../Python.jsonl
+</pre></details></td></tr></tbody></table></body></html>

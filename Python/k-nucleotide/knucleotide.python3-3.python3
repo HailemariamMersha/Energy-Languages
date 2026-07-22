@@ -172,10 +172,8 @@ def main():
     if n == 1:
         results = list(chain(*starmap(count_frequencies, count_jobs)))
     else:
-        lean_jobs = list(starmap(lean_args, count_jobs))
         with Pool() as pool:
-            async_results = pool.starmap_async(
-                lean_call(count_frequencies), lean_jobs)
+            async_results = pool.starmap_async(count_frequencies, count_jobs)
             results = list(chain(*async_results.get()))
 
     display(results, display_list(mono_nucleotides), relative=True, sort=True)

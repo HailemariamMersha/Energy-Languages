@@ -2,7 +2,7 @@ LANG    = CSharp
 TEST    = n-body
 SOURCE  = Program.cs
 OUTPUT  = bin/Release/n-body
-ARG     = 50000000
+ARG         = 50000000
 RUN_CMD = dotnet run --configuration Release -- $(ARG)
 
 COMPILE_CMD = dotnet build --configuration Release --nologo

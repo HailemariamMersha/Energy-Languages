@@ -9,6 +9,7 @@
 #  parallelised by Scott Leggett
 
 module MiniParallel
+    require 'etc'
     class Worker
         def initialize(read, write)
             @read, @write = read, write
@@ -34,7 +35,7 @@ module MiniParallel
     end
 
     def self.core_count
-        @@core_count ||= IO.read("/proc/cpuinfo").scan(/^processor/).size
+        @@core_count ||= Etc.nprocessors
     end
 
     private

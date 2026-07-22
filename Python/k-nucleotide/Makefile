@@ -2,8 +2,9 @@ LANG        = Python
 TEST        = k-nucleotide
 SOURCE      = knucleotide.python3-3.python3
 OUTPUT      = knucleotide.py
-ARG         = 21
-RUN_CMD     = python3 -OO $(OUTPUT) $(ARG)
+ARG         = 0
+PYTHON      ?= python3
+RUN_CMD     = $(PYTHON) -OO $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 
 VALIDATION_N       = 0

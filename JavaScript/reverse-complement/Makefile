@@ -2,7 +2,7 @@ LANG        = JavaScript
 TEST        = reverse-complement
 SOURCE      = revcomp.node-7.node
 OUTPUT      = reverse-complement.js
-ARG         = 21
+ARG         = 0
 RUN_CMD     = node --use_strict $(OUTPUT) $(ARG)
 COMPILE_CMD = cp $(SOURCE) $(OUTPUT)
 

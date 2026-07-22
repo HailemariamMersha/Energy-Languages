@@ -2,7 +2,7 @@ LANG    = Java
 TEST    = reverse-complement
 SOURCE  = revcomp.java-3.java
 OUTPUT  = revcomp.class
-ARG     = 21
+ARG         = 0
 RUN_CMD = java revcomp $(ARG)
 
 JAVAC ?= javac

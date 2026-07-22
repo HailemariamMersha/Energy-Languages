@@ -2,7 +2,7 @@ LANG    = Java
 TEST    = fasta
 SOURCE  = fasta.java-5.java
 OUTPUT  = fasta.class
-ARG     = 25000000
+ARG         = 25000000
 RUN_CMD = java fasta $(ARG)
 
 JAVAC ?= javac
